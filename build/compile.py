@@ -10,6 +10,7 @@ import os
 import zlib
 import datetime
 import sys
+import string
 
 INDENT = ' '*4
 OUTPUT_DIR = 'docs'
@@ -265,7 +266,7 @@ def parse_block(state:ParseState) -> str:
                 s.append(parse_paragraph(state))
     return '\n'.join(s)
 
-def parse_root(state:ParseState, node) -> str:
+def parse_root(state:ParseState, slug:str, node) -> str:
     node_type = node['type']
     node_name = node['name']
     s = [f'<h1 class="{node_type}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="{NODE_TYPE_FULL_NAME[node_type]}"><use x="0" y="0" width="1" height="1" href="#{node_type}_icon"/></svg> {node_name}</h1>']
@@ -278,10 +279,13 @@ def parse_root(state:ParseState, node) -> str:
             case 'Authors':
                 version_name = get_version_name(state.date_str)
                 if state.authors:
+                    first_char = slug[0].upper()
+                    if first_char not in string.ascii_uppercase:
+                        first_char = '_'
                     s.append(f'''<h2>Credits</h2>
     <p>Written by: {", ".join(state.authors)}</p>
     <p>Last updated: {state.date_str} ({version_name})</p>
-    <p><a href="#">See Edit History</a></p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/{first_char}/{slug}.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>''')
                 else:
                     s.append(f'''<h2>Credits</h2>
@@ -358,7 +362,7 @@ if __name__ == '__main__':
         date = checksums.get(slug, dict()).get('date', CURRENT_DATE_STR)
         parse_state = ParseState(full_path, markdown_text, date)
         node = NODE_DATA[slug]
-        html_text = parse_root(parse_state, node)
+        html_text = parse_root(parse_state, slug, node)
         node['stub'] = len(parse_state.authors) == 0
         output_path = f'../{OUTPUT_DIR}/data/{slug}.html'
         with open(output_path, 'w', encoding='utf-8') as file:
