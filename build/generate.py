@@ -93,7 +93,7 @@ if __name__ == '__main__':
 '''
         generated_docs[node_slug] = new_doc
 
-    with open('../www/nodes.json', 'w', encoding='utf-8') as file:
+    with open('../docs/nodes.json', 'w', encoding='utf-8') as file:
         json.dump({'nodes': node_list}, file, indent=4)
 
     for dir in ['doc_generated', 'doc_written']:

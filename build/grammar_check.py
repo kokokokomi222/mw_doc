@@ -87,4 +87,4 @@ def check_spell(html_file_path:str) -> int:
     return len(raw_text.split())
 
 if __name__ == '__main__':
-    check_spell('../www/data/create_entity.html')
+    check_spell('../docs/data/create_entity.html')

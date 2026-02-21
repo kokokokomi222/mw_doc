@@ -12,6 +12,7 @@ import datetime
 import sys
 
 INDENT = ' '*4
+OUTPUT_DIR = 'docs'
 
 NODE_TYPE_FULL_NAME = {
     'execution': 'Execution Node',
@@ -38,7 +39,7 @@ def get_version_name(date:str) -> str:
         return 'Luna VIII'
     return 'Unknown version'
 
-with open('../www/nodes.json', 'r', encoding='utf-8') as file:
+with open(f'../{OUTPUT_DIR}/nodes.json', 'r', encoding='utf-8') as file:
     NODES = json.load(file)['nodes']
     NODE_DATA = {
         node['slug']: node
@@ -124,7 +125,7 @@ def parse_link(state:ParseState) -> str:
         case 'image':
             alt_text = tokens[1].replace('_', ' ')
             link_url = f"image/{tokens[1]}.webp"
-            if not os.path.isfile(os.path.join("../www", link_url)):
+            if not os.path.isfile(os.path.join(f"../{OUTPUT_DIR}", link_url)):
                 state.raise_error(f'Image does not exist: {tokens[1]}')
             return f'<img src="/{link_url}" alt="{alt_text}" class="expandable_img" loading="lazy"/>'
         case 'hoyo':
@@ -359,7 +360,7 @@ if __name__ == '__main__':
         node = NODE_DATA[slug]
         html_text = parse_root(parse_state, node)
         node['stub'] = len(parse_state.authors) == 0
-        output_path = f'../www/data/{slug}.html'
+        output_path = f'../{OUTPUT_DIR}/data/{slug}.html'
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write(html_text)
         return output_path
@@ -380,5 +381,5 @@ if __name__ == '__main__':
             if slug in slug_with_change:
                 compile_doc(full_path, slug)
 
-    with open('../www/nodes.json', 'w', encoding='utf-8') as file:
+    with open('../{OUTPUT_DIR}/nodes.json', 'w', encoding='utf-8') as file:
         json.dump({'nodes': NODES}, file, indent=4)

@@ -15,7 +15,7 @@ CSS = dump('global.css')
 SVG = dump('symbols.svg')
 
 def page(slug:str, title:str, header_breadcrumb:str) -> str:
-    path = f'../www/{slug}/index.html' if slug != 'index' else f'../www/index.html'
+    path = f'../docs/{slug}/index.html' if slug != 'index' else f'../docs/index.html'
 
     with open(path, 'w', encoding='utf-8') as file:
         file.write(TEMPLATE.substitute(
