@@ -72,7 +72,7 @@ nav {
             text-overflow: ellipsis;
             overflow-x: hidden;
             white-space: nowrap;
-            line-height: 1.2rem;
+            line-height: 1.5rem;
         }
         & a svg {
             display: inline;
@@ -113,6 +113,9 @@ ul.see_also .node {
         }
         & #nav_list {
             height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 6rem);
+            & a div {
+                line-height: 2rem;
+            }
         }
     }
     nav.nav_collapsed {
