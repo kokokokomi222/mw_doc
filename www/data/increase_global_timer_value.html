@@ -1,0 +1,26 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Global Timer Value</h1>
+<p>
+     Adjust the time of a running Global Timer via the Node Graph If the timer is paused first and then modified to reduce the time, the modified time will be at least 0 seconds. For countdown timers, pausing followed by modifying the time to 0s will trigger the [When the Global Timer Is Triggered] event upon resuming the timer. If the timer is paused first, then modified to 0s, followed by modifying the time to increase it, and finally resumed, the [When the Global Timer Is Triggered] event will not be triggered.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Name</span> (String) - Identifier for the Timer. Only Timer Names configured in Timer Management can be referenced
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Increase Value</span> (Floating Point Numbers) - For a Countdown Timer, a positive value increases the remaining time; a negative value decreases the remaining timeIf the timer is set to Stopwatch, a positive value increases the accumulated time, while a negative value decreases it
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

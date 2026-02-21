@@ -1,0 +1,57 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Sorting</h1>
+<p>
+    Sorts a list.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic List) - List to sort. Must be a list of integers or floats. This list will be modified.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sort By</span> (Sorting Rules Enum) - Ascending or Descending
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to sort a list of numbers.
+</p>
+
+<h2>Example</h2>
+<p>
+    This node graph sorts a list of integers: <code>[100, 3, 99, 0, -5]</code>.
+    The resulting list is: <code>[-5, 0, 3, 99, 100]</code>.
+    <img src="/image/list_sorting_example.webp" alt="list sorting example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you do not select <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sort By</span> enum, this node is a no-op.
+        It will silently do nothing and continue execution.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For random integer list of length 10, it took ~4 units to run on average.
+</p>
+<p>
+    For random integer list of length 1000, it took ~50 units to run on average.
+</p>
+<p>
+    This node runs faster on pre-sorted list, or almost sorted list.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,102 @@
+<h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Assembly List</h1>
+<p>
+    Makes a list by specifying each entry.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 0~99</span> (Generic) - Entries of the list
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> List</span> (Generic List) - Assembled list
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to easily create a small list.
+    In many cases, it is probably preferred for future maintenance your node graph
+    to have the list specified in a custom or node graph variable instead.
+    However, this node lets you specify entries of the list dynamically,
+    which cannot be done by custom or node graph variable.
+</p>
+<p>
+    If the output list is used repeatedly,
+    you may want to set the list to a local variable for performance,
+    because a new list is constructed every time when this node's output is used.
+    You must set the local variable with <a href="?node=set_local_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Local Variable</a>,
+    instead of using "Initial Value" which will not help.
+    See "Notes" section below for detail.
+</p>
+<p>
+    An input pin can be deleted by right-clicking and selecting "delete".
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, a list <code>["One", "Two", "Three"]</code> is assembled.
+    We store this list in a local variable and then iterate through this list and print the entries.
+    <img src="/image/assembly_list_example.webp" alt="assembly list example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        The name "Assembly List" is probably a localization mistake.
+        <a href="?node=assemble_structure" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Assemble Structure</a> is named with correct grammar.  
+    </li>
+    <li>
+        Changing the type of any entries (or <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> List</span>)
+        will change the type of all entries (and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> List</span>) to match it.
+    </li>
+    <li>
+        Entries cannot be set to list or dictionary,
+        because Miliastra does not allow list or dictionary as list entries.
+        Use a structure to have containers as entries of a list.
+    </li>
+    <li>
+        The maximum number of entries that can be added with this node is 100.
+    </li>
+    <li>
+        A new list is constructed every time when this node's output is used.
+        Below example illustrates how that works.
+        We use the output of the assembly list twice,
+        and between the two uses, we change the local variable from
+        <code>"Barbara"</code> to <code>"Kokomi"</code>, which gets used as the second entry of the assembled list.
+        As a result, <code>first_sentence</code> is set to <code>["I love", "Barbara"]</code>
+        and <code>second_sentence</code> is set to <code>["I love", "Kokomi"]</code>.
+        <img src="/image/assembly_list_repeat_example.webp" alt="assembly list repeat example" class="expandable_img" loading="lazy"/>
+        Thus, the list reference this node outputs is temporary.
+        If you modify the output list with list operations like <a href="?node=set_list_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set List Value</a> or <a href="?node=insert_value_into_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Insert Value Into List</a>
+        without storing in a variable first, the modification will be lost.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For a list of 5 entries, this node ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=assembly_dictionary" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Assembly Dictionary</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,98 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Movement SPD Meets Condition</h1>
+<p>
+    Triggers when "Monitor Movement Rate" unit status effect meets the condition.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Character entity that has the "Monitor Movement Rate" unit status effect and met its condition.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - Always <code>0</code>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Unit Status Config ID</span> (Config ID) - Configuration ID of the unit status. e.g. <code>1012345678</code>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Condition: Comparison Type</span> (Enumeration) - One of <code>Less Than</code>, <code>Less Than or Equal To</code>, <code>Greater Than</code>, <code>Greater Than or Equal To</code>. It cannot be <code>Equal To</code>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Condition: Comparison Value</span> (Floating Point Numbers) - Speed to compare with, as specified in the "Monitor Movement Rate" unit status effect. Unit is meter/second.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Movement SPD</span> (Floating Point Numbers) - Current speed of the character entity. Unit is meter/second.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    To use this node, first a unit status must be created with an effect "Monitor Movement Rate".
+    In the example below, this effect will trigger when the character's speed is greater than <code>5.00</code> meter/second,
+    and it will not trigger again for <code>1.50</code> seconds while in cooldown.
+    <img src="/image/when_character_movement_spd_meets_condition_unit_status_configuration.webp" alt="when character movement spd meets condition unit status configuration" class="expandable_img" loading="lazy"/>
+    Next, character must have the unit status so that it can monitor the speed.
+    You can also use <a href="?node=add_unit_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Unit Status</a> to add the unit status to the character.
+    <img src="/image/when_character_movement_spd_meets_condition_character_configuration.webp" alt="when character movement spd meets condition character configuration" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    A character can have multiple "Monitor Movement Rate" unit status effects,
+    so <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Unit Status Config ID</span> can be used to tell them apart with <a href="?node=multiple_branches" class="node flow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#flow_icon"/></svg> Multiple Branches</a>.
+</p>
+<p>
+    You may want to use <a href="?node=query_characters_current_movement_spd" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Character's Current Movement SPD</a> instead if you just need to get the speed,
+    but you still need the unit status effect on the character.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, when the character triggers the speed monitor,
+    we play a timed VFX <code>10002128</code> (Anemo Shockwave) at the character.
+    <img src="/image/when_character_movement_spd_meets_condition_example.webp" alt="when character movement spd meets condition example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        Even if "Trigger CD" is set to <code>0.00</code> or negative value,
+        this node only triggers about 2 times per second.
+        So the lowest effective "Trigger CD" is roughly <code>0.5</code> seconds.
+        There is a huge delay between character accelerating and this node triggering,
+        and that may have to do with very infrequent event polling rate, but we cannot be sure.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Movement SPD</span> includes the vertical component. When falling or jumping, the character may have higher speed than expected.
+    </li>
+    <li>
+        The walking speed of Manekin/Manekina is roughly 5.
+        Sprinting speed of Manekin/Manekina is roughly 8, but it can reach around 10 briefly.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=query_characters_current_movement_spd" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Character's Current Movement SPD</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,53 @@
+<h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Equal</h1>
+<p>
+    Returns whether two values are equal.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input 1</span> (Generic) - First value to compare
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input 2</span> (Generic) - Second value to compare
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Boolean) - <code>Yes</code> if equal, <code>No</code> if not equal
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to see whether two values are equal.
+</p>
+<p>
+    For floating point numbers and 3D vectors, this node does approximate equality instead of exact equality.
+    So <code>2.0000001</code> and <code>2.0</code> are considered equal by this node.
+    In almost all situations, this is the behavior you want when you test equality of floating point numbers,
+    because float operations are not exact and losses precision
+    (e.g. <code>0.1+0.2</code> is <span class="emphasis">NOT</span> exactly equal to <code>0.3</code> in IEEE 754 32-bit float).
+</p>
+
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        It is difficult to say,
+        but the behavior of float comparison seems to be described by the following Python-like pseudocode:
+        <pre>
+    # TODO: It feels like something like this. Actually figure out the bounds.
+    abs(a-b) < max(max(abs(a), abs(b)) * 0.000001, 0.000001)</pre>
+    </li>
+</ul>
+
+
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

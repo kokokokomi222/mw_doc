@@ -1,0 +1,73 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Timestamp (UTC+0)</h1>
+<p>
+    Gets the current time.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timestamp</span> (Integer) - <a class="outbound_link" href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a>, number of seconds since 00:00:00 UTC+0 on January 1, 1970.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This node allows us to know what year / month / day / hour / minute / second it is right now
+    by using it with <a href="?node=calculate_formatted_time_from_timestamp" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Calculate Formatted Time From Timestamp</a>.
+</p>
+<p>
+    If you want to measure the duration of a span of time within a game,
+    it is more precise to use <a href="?node=get_current_global_timer_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Current Global Timer Time</a>,
+    as it outputs the time in seconds as float.
+</p>
+<p>
+    You also may want to use <a href="?node=query_game_time_elapsed" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Game Time Elapsed</a> instead
+    if you just want to know how long the game has been running.
+</p>
+
+<h2>Example</h2>
+<p>
+    This example gets the current Unix time and print what day it is.
+    <img src="/image/query_timestamp_utc0_example.webp" alt="query timestamp utc0 example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        The returned time is in UTC+0, so it will be incorrect for your server's timezone.
+        Add correction by using <a href="?node=query_server_time_zone" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Server Time Zone</a>.
+    </li>
+    <li>
+        It will overflow on January 19, 2038!
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=calculate_formatted_time_from_timestamp" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Calculate Formatted Time From Timestamp</a>
+    </li>
+    <li>
+        <a href="?node=calculate_day_of_the_week_from_timestamp" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Calculate Day of the Week From Timestamp</a>
+    </li>
+    <li>
+        <a href="?node=query_game_time_elapsed" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Game Time Elapsed</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

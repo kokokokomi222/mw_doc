@@ -1,0 +1,80 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Model Display</h1>
+<p>
+    Makes entity visible or invisible.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to change visibility.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) - <code>Yes</code> to make entity visible, <code>No</code> to make entity invisible.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to make the model of an entity visible or invisible to all players.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, selecting the tab of this entity makes the entity invisible.
+    <img src="/image/activate_disable_model_display_example.webp" alt="activate disable model display example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you want to make an entity invisible and keep it that way,
+        you can just set the model visibility to false in the entity details panel.
+        <img src="/image/activate_disable_model_display_initial_visibility_setting.webp" alt="activate disable model display initial visibility setting" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        Decoration and VFX also become invisible if the entity is invisible.
+    </li>
+    <li>
+        Light source, tab, text bubble, nameplate, and scan tag stay visible even if the entity is invisible.
+    </li>
+    <li>
+        Collision is not affected by visibility.
+    </li>
+    <li>
+        Mini-map marker can be set to follow the visibility of the entity.
+        <img src="/image/activate_disable_model_display_mini_map_marker_setting.webp" alt="activate disable model display mini map marker setting" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist, this node is no-op.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> can be a character entity, and it works perfectly fine.
+        You may want to use "Invisible to Other Players"
+        and/or "Character Hidden" (makes the character look semi-transparent or fully invisible to owning player) unit status instead.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> can be a creation entity, and it works perfectly fine.
+        You may want to use "Creation Invisible" unit status instead.
+    </li>
+    <li>
+        There is no node for querying model visibility.
+        You may want to track it yourself with a node graph variable or a custom variable.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

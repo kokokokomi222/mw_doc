@@ -1,0 +1,79 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> List Includes This Value</h1>
+<p>
+    Returns whether a list contains a value.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic) - List to search in.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Generic) - Value to search for.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Include</span> (Boolean) - <code>Yes</code> if the value is in the list, <code>No</code> otherwise.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to test whether a certain value is in a list.
+    If you also need to know at which index the value is at,
+    use <a href="?node=search_list_and_return_value_id" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Search List and Return Value ID</a> instead.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a string list <code>["Kokomi", "Furina", "Yelan", "Escoffier"]</code>.
+    We check whether <code>"Furina"</code> is in this list, then print <code>"Furina is in the team!"</code> if true.
+    <img src="/image/list_includes_this_value_example.webp" alt="list includes this value example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> will change the type of the other to match it.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> is left empty, this node is guaranteed to return <code>No</code> regardless of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span>.
+    </li>
+    <li>
+        For floating point numbers, this node uses approximate equality
+        (e.g. <code>10.0</code> and <code>10.00001</code> is considered equal by this node).
+        This approximate equality seems to be same as <a href="?node=equal" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Equal</a>,
+        but we cannot be completely sure.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For integer list of length 10, this node took ~1 units to run on average.
+</p>
+<p>
+    For integer list of length 1000, this node took ~6 units to run on average.
+    When the value was located at index 0 of the list, performance does not seem to be affected visibly.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=search_list_and_return_value_id" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Search List and Return Value ID</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

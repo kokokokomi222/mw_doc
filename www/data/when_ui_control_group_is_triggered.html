@@ -1,0 +1,29 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When UI Control Group Is Triggered</h1>
+<p>
+     Only UI Controls of the Interactive Button and Item Display types trigger this event The Node Graph event "UI Control Group Triggered" is sent during Stage runtime when a UI Control Group created through an Interactive Button or an Item Display UI Control is interacted with. This event can only be received by the Node Graph of the Player who triggered the interaction
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> UI Control Group Composite Index</span> (Integer) - If the UI control that triggered this event forms a multi-control UI group with other controls, this output parameter returns the corresponding group value
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> UI Control Group Index</span> (Integer) - If the triggering UI control is a single-control UI group, this value represents the ID of that UI control groupIf the triggering UI control is part of a multi-control UI group, this value represents the ID of the control within that group
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

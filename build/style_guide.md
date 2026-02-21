@@ -1,0 +1,15 @@
+# Style Guide
+
+## General
+* Texts are given in complete sentences, aside from "Input Parameters" / "Output Values" descriptions.
+* Use the precise input parameter / output value name with the "markdown link" to make it clear what input/output we are referring to (e.g. `Changing the type of [output:Pre-Change_Value] or [output:Post-Change_Value] will change the type of the other to match it.`). Same when other nodes are getting mentioned. Only exception is for its own node. It's okay to say "this node", and it is preferred.
+
+## Sections
+* "Summary" text is written as tersely as possible to give one succinct sentence. It starts with a verb with third person singular subject ommited (e.g. "**Does** this and that."). It should not have any detail.
+* "Input Parameters" / "Output Values" description is written precisely to describe what it is, but it should generally fit in one sentence. The first sentence is not a complete sentence and only has a subject without article (e.g. "Name of the changed custom variable." without "the" at the beginning). Additional info can be added after if it is crucial to know for the use of this node (e.g. whether it's 0-indexed or 1-indexed, whether it has specific type restriction), but any extraneous info should go under "Notes" section instead (e.g. what happens if the input value is invalid). Add an example value if it is not obvious at a glance (e.g. "(e.g. `100010060`)").
+* If the official name of the input parameter is empty, I assign it with "A", "B", and so on (see "Multiplication" node).
+* I'm still debating how to write the usage section. Let's say I have "Set Local Variable" and "Get Local Variable". Should I put general info about "Local Variable" in a different section of the website and link there? Or should I just duplicate the content? I'm duplicating for now, because the other option feels like it will become a feature creep.
+* Strive to keep the examples very small (~5 nodes), but not contrived. Entry event is usually "When Tab is Selected", because it's easiest to control during testing. If relevant, also show screenshot from the game editor if certain configuration is needed outside the node editor. It's okay to not have an example for constant value nodes like "3D Vector: Forward" or "Pi (π)".
+* Capture the node graph screenshot at 100% for 1080p resolution. If the node graph is too big and does not fit, try 80% instead.
+* Performance section is formatted as "*Doing this and that* took ~*123* units to run on average.". 
+If certain configuration does not affect performance, it is formatted as "*Doing this* do/does not seem to visibly affect the performance of this node.". There is no need to test every possible scenario (I won't ever finish if I do). Usually I do one typical scenario and one extreme scenario.

@@ -1,0 +1,77 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Random Floating Point Number</h1>
+<p>
+    Returns a random float from range.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lower Limit</span> (Floating Point Numbers) - Lower bound of the random range (range includes this value)
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Upper Limit</span> (Floating Point Numbers) - Upper bound of the random range (range includes this value)
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Floating Point Numbers) - Randomly generated float in the range
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to get a random floating point number.
+    The range is inclusive of both ends, 
+    so it is possible to have <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> be the same value as <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lower Limit</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Upper Limit</span>.
+</p>
+<p>
+    Although the official documentation does not state it,
+    we can probably assume that it tries to approximate uniform distribution
+    (i.e. the probability density function is constant over the interval),
+    but we can't say anything about the quality of the randomness.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we print a random floating point number between 0 and 1.
+    <img src="/image/get_random_floating_point_number_example.webp" alt="get random floating point number example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lower Limit</span> is greater than <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Upper Limit</span>, this node returns <code>0.0</code>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<p>
+    Input values do not seem to visibly affect the performance.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_random_integer" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Random Integer</a>
+    </li>
+    <li>
+        <a href="?node=weighted_random" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Weighted Random</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

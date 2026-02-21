@@ -1,0 +1,42 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Unit Status</h1>
+<p>
+     Add a specified Stack Count of Unit Status to the Target Entity
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Applier Entity</span> (Entity) - Determines the Applier Entity for this action. Defaults to the Entity associated with this Node Graph
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Application Target Entity</span> (Entity) - The Entity that actually receives this Unit Status
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Status Config ID</span> (Config ID) - Identifier for this Unit Status
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Applied Stacks</span> (Integer) - The Stack Count for this Unit Status
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Status Parameter Dictionary</span> (Dictionary) - You can carry a set of parameters to override the configuration values in the unit's state.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Application Result</span> (Enumeration) - Failed, other exceptionsFailed: Yielded to another status. A yielding relationship exists between the Target's current Unit Status and the one being appliedFailed: Maximum coexistence limit reached. The specified Unit Status on the Target Entity has reached its Coexistence LimitFailed: Unable to add additional stack. Stack addition failedSuccess: New status applied. Successfully applied new Unit StatusSuccess: Slot stacking. Target already has this Unit Status, stacking applied
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Slot ID</span> (Integer) - If application succeeds, returns the Unit Status Slot ID containing the instance
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

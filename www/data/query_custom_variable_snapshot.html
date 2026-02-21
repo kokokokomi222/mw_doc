@@ -1,0 +1,88 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Custom Variable Snapshot</h1>
+<p>
+    Gets the value of a custom variable from snapshot on entity destruction.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Custom Variable Component Snapshot</span> (Custom Variable Snapshot) - Snapshot of the custom variables in the destroyed entity. Available as <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Custom Variable Component Snapshot</span> from <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span> (String) - Name of the custom variable in the destroyed entity.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> (Generic) - Value of the custom variable in the destroyed entity.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    We normally use <a href="?node=get_custom_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Custom Variable</a> to get custom variables from entities.
+    But when an entity is destroyed,
+    custom variables from the entity are no longer accessible and is gone forever.
+    If stage is listening to <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>,
+    the event gives us the last minute access to the custom variables
+    of the destroyed entity in the form of custom variable snapshot.
+    This node lets us read from the snapshot.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph for the stage that is listening to the entity destruction event.
+    When the destroyed entity is a creation and is in faction <code>3</code>,
+    then we increment the achievement progress of the player that destroyed the entity
+    by the value of the <code>score</code> custom variable from the destroyed entity.
+    <img src="/image/query_custom_variable_snapshot_example.webp" alt="query custom variable snapshot example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Custom Variable Component Snapshot</span> is left empty,
+        this node raises "Custom Variable does not exist" warning
+        and returns the default value of the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If there was no custom variable named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span> in the destroyed entity,
+        this node raises "Custom Variable does not exist" warning
+        and returns the default value of the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If the type of the custom variable does not match the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Value</span>,
+        this node raises "Custom Variable type error" error
+        and returns the default value of the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> is a container type,
+        then it can be modified and the changes will be kept by the snapshot variable.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For a string variable, it took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

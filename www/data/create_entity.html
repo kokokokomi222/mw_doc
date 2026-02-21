@@ -1,0 +1,109 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Entity</h1>
+<p>
+    Creates a pre-placed entity.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target GUID</span> (GUID) - GUID for the entity to create. Typically copied from the top of the entity details panel. e.g. <code>1012345678</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> (Integer List) - List of unit tag IDs to put on the created entity. e.g. <code>[1023456789, 1023456790]</code>. Can be left empty.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Typically, entities placed in the scene are created when the stage begins.
+    However, "Initial Create" can be set to false under "Create Setting",
+    which allows you to create these entities later with this node.
+    <img src="/image/create_entity_initial_setting.webp" alt="create entity initial setting" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    This node can also be used to recreate entities that have been removed or destroyed,
+    but it cannot be used for entities created by <a href="?node=create_prefab" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab</a> or <a href="?node=create_prefab_group" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab Group</a>
+    because these entities do not have GUID.
+</p>
+<p>
+    Use <a href="?node=create_prefab" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab</a> instead
+    if you want to be able to dynamically set the created entity's location, rotation, level, and even the prefab.
+    This is the most common way to create an entity.
+</p>
+<p>
+    Unit tags let you find all entities with a specific tag.
+    See <a href="?node=add_unit_tag_to_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Unit Tag to Entity</a> for more info.
+    It can be left empty.
+    See "Notes" section below for more detail.
+</p>
+<p>
+    Consider using <a href="?node=activate_disable_entity_deployment_group" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Entity Deployment Group</a> instead
+    if you want to create many entities at once.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we create an entity with GUID <code>1077936436</code>
+    and give unit tags with GUID <code>1073741825</code> and <code>1073741826</code>.
+    <img src="/image/create_entity_example.webp" alt="create entity example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you set unit tags in the entity detail panel, those tags will be overwritten by <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span>.
+        For example, if tag A and B were set in the entity detail panel,
+        but tag B and C were passed into <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span>,
+        then the created entity has tag B and C.
+        However, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> is left empty, or an empty list is passed into it,
+        the tags set in the prefab detail panel will be used.
+    </li>
+    <li>
+        If entity with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target GUID</span> already have been created, this node is no-op.
+        In particular, this node does not modify the tag list of the entity in this case.
+    </li>
+    <li>
+        If the entity with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target GUID</span> does not exist,
+        this node raises a "GUID does not exist" error, but continues the execution.
+    </li>
+    <li>
+        An entity removed with <a href="?node=remove_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Entity</a> or <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a> can be created again with this node.
+    </li>
+    <li>
+        This node works perfectly fine with creations.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    Creating an entity with default dynamic unit setting took ~65 units to run on average.
+    Setting <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> does not seem to visibly affect the performance of this node.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=create_prefab" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab</a>
+    </li>
+    <li>
+        <a href="?node=remove_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Entity</a>
+    </li>
+    <li>
+        <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_entity_deployment_group" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Entity Deployment Group</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,92 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Weighted Random</h1>
+<p>
+    Generates weighted random number.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> (Integer List) - List of weights for each index.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Weight ID</span> (Integer) - Randomly generated index. Ranges from 0 to N-1, where N is the length of the input list.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to generate a random number with weights.
+    Higher the weight, the more likely to generate that number.
+    If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> is <code>[w_0, w_1, ..., w_{n-1}]</code>,
+    then the probability of this node outputting <code>i</code> is <code>w_i / (w_0+w_1+...+w_{n-1})</code>.
+    See the example section below for a concrete example.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, the list <code>[12, 5, 2, 1]</code> is used as weight to generate a random number from <code>0, 1, 2, 3</code>.
+    Because <code>12+5+2+1=20</code>,
+</p>
+<ul>
+    <li>
+        The probability of getting <code>0</code> is 12/20 = 60%.
+    </li>
+    <li>
+        The probability of getting <code>1</code> is 5/20 = 25%.
+    </li>
+    <li>
+        The probability of getting <code>2</code> is 2/20 = 10%.
+    </li>
+    <li>
+        The probability of getting <code>3</code> is 1/20 = 5%.
+    </li>
+</ul>
+<p>
+    We then have a list of chest names, <code>["Common Chest", "Exquisite Chest", "Precious Chest", "Luxurious Chest"]</code>,
+    and we print the corresponding name with the randomly generated index.
+    <img src="/image/weighted_random_example.webp" alt="weighted random example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If the length of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> is 0, this node returns 0.
+    </li>
+    <li>
+        If all entries of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> are 0, this node returns 0.
+    </li>
+    <li>
+        If any entry of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> is negative, this node returns 0.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average for <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> of length 5.
+</p>
+<p>
+    This node took ~9 units to run on average for <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Weight List</span> of length 1000.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_random_integer" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Random Integer</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

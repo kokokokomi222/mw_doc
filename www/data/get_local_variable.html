@@ -1,0 +1,115 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Local Variable</h1>
+<p>
+    Defines a local variable and gets the variable value.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> (Generic) - Default initial value for the local variable
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Local Variable</span> (Local Variable) - Input for <a href="?node=set_local_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Local Variable</a>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> (Generic) - Current value of the local variable.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Local variables are used to keep state within a scope of one execution of a node graph.
+    This node lets us set the value of the variable.
+</p>
+<p>
+    If you have states that only need to live during one execution of a node graph,
+    local variables are what you should use to store those states.
+</p>
+<p>
+    When a node's output is connected to multiple nodes, 
+    that node is evaluated each time the other nodes are evaluated.
+    If that node's output does not change,
+    you may wish to store the output in a local variable for performance.
+</p>
+
+<h2>Example</h2>
+<p>
+    This example removes all entities with a specific prefab ID when the tab is selected.
+    A local variable is used to temporarily store the list of all relevant entities.
+    If the list was directly connected to the loop without using the local variable,
+    this node graph will not work as intended 
+    because the <a href="?node=get_entities_with_specified_prefab_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entities With Specified Prefab on the Field</a>
+    node will be evaluated every iteration and the list will change.
+    <img src="/image/set_local_variable_example.webp" alt="set local variable example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        The behavior of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> can be confusing and potentially cause performance issue,
+        so we suggest only using it for constant literals (e.g. <code>42</code>, <code>"Kokomi"</code>)
+        and never for dynamic containers (e.g. assembled dictionary, dynamically obtained list of entities).
+        Use <a href="?node=set_local_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Local Variable</a> instead.
+        In the following example, <a href="?node=get_random_integer" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Random Integer</a> is only executed once
+        and the two <a href="?node=print_string" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Print String</a> always print the same value.
+        Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> is an integer, we only evaluate the input once.
+        <img src="/image/get_local_variable_initial_1.webp" alt="get local variable initial 1" class="expandable_img" loading="lazy"/>
+        However in the next example, <a href="?node=assembly_list" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Assembly List</a> is executed twice.
+        Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> is a list (which is a container type),
+        it is passed by reference and this node gets the reference each time.
+        <img src="/image/get_local_variable_initial_2.webp" alt="get local variable initial 2" class="expandable_img" loading="lazy"/>
+        If a container operation is performed on <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span>
+        with nodes like <a href="?node=set_list_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set List Value</a> or <a href="?node=set_or_add_key_value_pairs_to_dictionary" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set or Add Key Value Pairs to Dictionary</a>,
+        local variable will remember the change and no longer use <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> for its output.
+        However, the debugger appears to still query <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> every time
+        even after the local variable has been modified,
+        so this can cause performance issue at least in test play
+        (and potentially in release, but we cannot know).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> is left blank,
+        it is set to the default value of the type
+        (e.g. <code>0</code> for integer, <code>""</code> for string, etc.).
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initial Value</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span>
+        will change the type of the other to match it.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average for string type.
+</p>
+<p>
+    This node took ~13 units to run on average for an integer list of length 1000.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_local_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Local Variable</a>
+    </li>
+    <li>
+        <a href="?node=get_node_graph_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Node Graph Variable</a>
+    </li>
+    <li>
+        <a href="?node=get_custom_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Custom Variable</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

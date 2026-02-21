@@ -1,0 +1,2614 @@
+{
+    "nodes": [
+        {
+            "slug": "print_string",
+            "name": "Print String",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_local_variable",
+            "name": "Set Local Variable",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "break_loop",
+            "name": "Break Loop",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "finite_loop",
+            "name": "Finite Loop",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "forwarding_event",
+            "name": "Forwarding Event",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "insert_value_into_list",
+            "name": "Insert Value Into List",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_list_value",
+            "name": "Set List Value",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "remove_value_from_list",
+            "name": "Remove Value From List",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "list_iteration_loop",
+            "name": "List Iteration Loop",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "list_sorting",
+            "name": "List Sorting",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "concatenate_list",
+            "name": "Concatenate List",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "clear_list",
+            "name": "Clear List",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_node_graph_variable",
+            "name": "Set Node Graph Variable",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_custom_variable",
+            "name": "Set Custom Variable",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_preset_status",
+            "name": "Set Preset Status",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "create_entity",
+            "name": "Create Entity",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "create_prefab",
+            "name": "Create Prefab",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "create_prefab_group",
+            "name": "Create Prefab Group",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "activate_disable_model_display",
+            "name": "Activate/Disable Model Display",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "destroy_entity",
+            "name": "Destroy Entity",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "remove_entity",
+            "name": "Remove Entity",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "settle_stage",
+            "name": "Settle Stage",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_current_environment_time",
+            "name": "Set Current Environment Time",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_environment_time_passage_speed",
+            "name": "Set Environment Time Passage Speed",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_entity_faction",
+            "name": "Set Entity Faction",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "teleport_player",
+            "name": "Teleport Player",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "revive_character",
+            "name": "Revive Character",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "revive_all_players_characters",
+            "name": "Revive All Player's Characters",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "defeat_all_players_characters",
+            "name": "Defeat All Player's Characters",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_revive_point",
+            "name": "Activate Revive Point",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_revive_time",
+            "name": "Set Player Revive Time",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_remaining_revives",
+            "name": "Set Player Remaining Revives",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_environment_configuration",
+            "name": "Set Environment Configuration",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "allow_forbid_player_to_revive",
+            "name": "Allow/Forbid Player to Revive",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "deactivate_revive_point",
+            "name": "Deactivate Revive Point",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_characters_elemental_energy",
+            "name": "Set Character's Elemental Energy",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increases_characters_elemental_energy",
+            "name": "Increases Character's Elemental Energy",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_extra_collision",
+            "name": "Activate/Disable Extra Collision",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_extra_collision_climbability",
+            "name": "Activate/Disable Extra Collision Climbability",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_native_collision",
+            "name": "Activate/Disable Native Collision",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_native_collision_climbability",
+            "name": "Activate/Disable Native Collision Climbability",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_collision_trigger",
+            "name": "Activate/Disable Collision Trigger",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "initiate_attack",
+            "name": "Initiate Attack",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "recover_hp",
+            "name": "Recover HP",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "hp_loss",
+            "name": "HP Loss",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "recover_hp_directly",
+            "name": "Recover HP Directly",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "recover_basic_motion_device",
+            "name": "Recover Basic Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_fixed_point_motion_device",
+            "name": "Activate Fixed-Point Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_basic_motion_device",
+            "name": "Activate Basic Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_target_oriented_rotation_based_motion_device",
+            "name": "Add Target-Oriented Rotation-Based Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_uniform_basic_linear_motion_device",
+            "name": "Add Uniform Basic Linear Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_uniform_basic_rotation_based_motion_device",
+            "name": "Add Uniform Basic Rotation-Based Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "stop_and_delete_basic_motion_device",
+            "name": "Stop and Delete Basic Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "pause_basic_motion_device",
+            "name": "Pause Basic Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_follow_motion_device",
+            "name": "Activate/Disable Follow Motion Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_follow_motion_device_target_by_guid",
+            "name": "Switch Follow Motion Device Target by GUID",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_follow_motion_device_target_by_entity",
+            "name": "Switch Follow Motion Device Target by Entity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "create_projectile",
+            "name": "Create Projectile",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "play_timed_effects",
+            "name": "Play Timed Effects",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "clear_special_effects_based_on_special_effect_assets",
+            "name": "Clear Special Effects Based on Special Effect Assets",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "mount_looping_special_effect",
+            "name": "Mount Looping Special Effect",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "clear_looping_special_effect",
+            "name": "Clear Looping Special Effect",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "resume_timer",
+            "name": "Resume Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "start_timer",
+            "name": "Start Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "pause_timer",
+            "name": "Pause Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "stop_timer",
+            "name": "Stop Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "recover_global_timer",
+            "name": "Recover Global Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "start_global_timer",
+            "name": "Start Global Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_global_timer_value",
+            "name": "Increase Global Timer Value",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "pause_global_timer",
+            "name": "Pause Global Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "stop_global_timer",
+            "name": "Stop Global Timer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_main_camera_template",
+            "name": "Switch Main Camera Template",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_character_disruptor_device",
+            "name": "Set Character Disruptor Device",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_unit_status",
+            "name": "Add Unit Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_unit_status",
+            "name": "Remove Unit Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_tab",
+            "name": "Activate/Disable Tab",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_collision_trigger_source",
+            "name": "Activate/Disable Collision Trigger Source",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "change_players_current_class_level",
+            "name": "Change Player's Current Class Level",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "change_player_class",
+            "name": "Change Player Class",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_players_current_class_exp",
+            "name": "Increase Player's Current Class EXP",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_ui_control_group_in_control_group_library",
+            "name": "Activate UI Control Group in Control Group Library",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_current_interface_layout",
+            "name": "Switch Current Interface Layout",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_ui_control_group_status",
+            "name": "Set UI Control (Group) Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_interface_control_group_from_control_group_library",
+            "name": "Remove Interface Control Group From Control Group Library",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_skill_cd_based_on_maximum_cd_percentage",
+            "name": "Set Skill CD Based on Maximum CD Percentage",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "initialize_character_skill",
+            "name": "Initialize Character Skill",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_skill_resource_amount",
+            "name": "Set Skill Resource Amount",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_character_skill_cd",
+            "name": "Set Character Skill CD",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_character_skill",
+            "name": "Add Character Skill",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_skill_resource_amount",
+            "name": "Increase Skill Resource Amount",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_character_skill_cd",
+            "name": "Increase Character Skill CD",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "delete_character_skill_by_slot",
+            "name": "Delete Character Skill by Slot",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "delete_character_skill_by_id",
+            "name": "Delete Character Skill by ID",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "adjust_player_background_music_volume",
+            "name": "Adjust Player Background Music Volume",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "adjust_specified_sound_effect_player",
+            "name": "Adjust Specified Sound Effect Player",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "close_specified_sound_effect_player",
+            "name": "Close Specified Sound Effect Player",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "start_pause_player_background_music",
+            "name": "Start/Pause Player Background Music",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "start_pause_specified_sound_effect_player",
+            "name": "Start/Pause Specified Sound Effect Player",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_sound_effect_player",
+            "name": "Add Sound Effect Player",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "player_plays_one_shot_2d_sound_effect",
+            "name": "Player Plays One-Shot 2D Sound Effect",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_background_music",
+            "name": "Set Player Background Music",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "clear_unit_tags_from_entity",
+            "name": "Clear Unit Tags from Entity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_unit_tag_to_entity",
+            "name": "Add Unit Tag to Entity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_unit_tag_from_entity",
+            "name": "Remove Unit Tag from Entity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "taunt_target",
+            "name": "Taunt Target",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_target_entity_from_aggro_list",
+            "name": "Remove Target Entity From Aggro List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "clear_specified_targets_aggro_list",
+            "name": "Clear Specified Target's Aggro List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_the_aggro_value_of_specified_entity",
+            "name": "Set the Aggro Value of Specified Entity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "send_signal",
+            "name": "Send Signal",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_entity_active_nameplate",
+            "name": "Set Entity Active Nameplate",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_active_text_bubble",
+            "name": "Switch Active Text Bubble",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "close_deck_selector",
+            "name": "Close Deck Selector",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "invoke_deck_selector",
+            "name": "Invoke Deck Selector",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "random_deck_selector_selection_list",
+            "name": "Random Deck Selector Selection List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_settlement_success_status",
+            "name": "Set Player Settlement Success Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_settlement_scoreboard_data_display",
+            "name": "Set Player Settlement Scoreboard Data Display",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_settlement_ranking_value",
+            "name": "Set Player Settlement Ranking Value",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_faction_settlement_success_status",
+            "name": "Set Faction Settlement Success Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_faction_settlement_ranking_value",
+            "name": "Set Faction Settlement Ranking Value",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "toggle_entity_light_source",
+            "name": "Toggle Entity Light Source",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "sort_dictionary_by_key",
+            "name": "Sort Dictionary by Key",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "sort_dictionary_by_value",
+            "name": "Sort Dictionary by Value",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_or_add_key_value_pairs_to_dictionary",
+            "name": "Set or Add Key Value Pairs to Dictionary",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "clear_dictionary",
+            "name": "Clear Dictionary",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_key_value_pairs_from_dictionary_by_key",
+            "name": "Remove Key Value Pairs from Dictionary by Key",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "modify_structure",
+            "name": "Modify Structure",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_item_from_inventory_shop_sales_list",
+            "name": "Remove Item From Inventory Shop Sales List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_item_from_purchase_list",
+            "name": "Remove Item From Purchase List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_item_from_customshop_sales_list",
+            "name": "Remove Item From CustomShop Sales List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "open_shop",
+            "name": "Open Shop",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "close_shop",
+            "name": "Close Shop",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_new_item_to_inventory_shop_sales_list",
+            "name": "Add New Item to Inventory Shop Sales List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_items_to_the_purchase_list",
+            "name": "Add Items to the Purchase List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_new_item_to_custom_shop_sales_list",
+            "name": "Add New Item to Custom Shop Sales List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_inventory_shop_item_sales_info",
+            "name": "Set Inventory Shop Item Sales Info",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_item_purchase_info_in_the_purchase_list",
+            "name": "Set Item Purchase Info in the Purchase List",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_custom_shop_item_sales_info",
+            "name": "Set Custom Shop Item Sales Info",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_equipment_affix_value",
+            "name": "Set Equipment Affix Value",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "remove_equipment_affix",
+            "name": "Remove Equipment Affix",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_affix_to_equipment",
+            "name": "Add Affix to Equipment",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "add_affix_to_equipment_at_specified_id",
+            "name": "Add Affix to Equipment at Specified ID",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "replace_equipment_to_the_specified_slot",
+            "name": "Replace Equipment to the Specified Slot",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_inventoryitem_drop_contents",
+            "name": "Set InventoryItem Drop Contents",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_inventory_drop_items_currency_amount",
+            "name": "Set Inventory Drop Items/Currency Amount",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "trigger_loot_drop",
+            "name": "Trigger Loot Drop",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_loot_drop_content",
+            "name": "Set Loot Drop Content",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_inventory_item_quantity",
+            "name": "Increase Inventory Item Quantity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_inventory_currency_quantity",
+            "name": "Increase Inventory Currency Quantity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_loot_component_item_quantity",
+            "name": "Increase Loot Component Item Quantity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_loot_component_currency_quantity",
+            "name": "Increase Loot Component Currency Quantity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "increase_maximum_inventory_capacity",
+            "name": "Increase Maximum Inventory Capacity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_list_for_visible_mini_map_markers",
+            "name": "Set Player List for Visible Mini-Map Markers",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_markers_on_the_mini_map",
+            "name": "Set Player Markers on the Mini-Map",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_mini_map_marker_activation_status",
+            "name": "Set Mini-Map Marker Activation Status",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_mini_map_zoom",
+            "name": "Set Mini-Map Zoom",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_list_for_tracking_mini_map_markers",
+            "name": "Set Player List for Tracking Mini-Map Markers",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_creation_patrol_template",
+            "name": "Switch Creation Patrol Template",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_leaderboard_score_as_a_float",
+            "name": "Set Player Leaderboard Score as a Float",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_leaderboard_score_as_an_integer",
+            "name": "Set Player Leaderboard Score as an Integer",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "change_achievement_progress_tally",
+            "name": "Change Achievement Progress Tally",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_achievement_progress_tally",
+            "name": "Set Achievement Progress Tally",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_scan_tag_rules",
+            "name": "Set Scan Tag Rules",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_scan_components_active_scan_tag_id",
+            "name": "Set Scan Component's Active Scan Tag ID",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "switch_the_scoring_group_that_affects_players_competitive_rank",
+            "name": "Switch the Scoring Group that Affects Player's Competitive Rank",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_rank_score_change",
+            "name": "Set Player Rank Score Change",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_escape_validity",
+            "name": "Set Player Escape Validity",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "activate_disable_entity_deployment_group",
+            "name": "Activate/Disable Entity Deployment Group",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_chat_channel_switch",
+            "name": "Set Chat Channel Switch",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_players_current_channel",
+            "name": "Set Player's Current Channel",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_player_channel_permissions",
+            "name": "Set Player Channel Permissions",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "consume_gift_box",
+            "name": "Consume Gift Box",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "enable_disable_pathfinding_obstacle",
+            "name": "Enable/Disable Pathfinding Obstacle",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "enable_disable_pathfinding_obstacle_feature",
+            "name": "Enable/Disable Pathfinding Obstacle Feature",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_the_preset_status_value_of_the_complex_creation",
+            "name": "Set the Preset Status Value of the Complex Creation",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "when_node_graph_variable_changes",
+            "name": "When Node Graph Variable Changes",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_custom_variable_changes",
+            "name": "When Custom Variable Changes",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_preset_status_changes",
+            "name": "When Preset Status Changes",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_character_movement_spd_meets_condition",
+            "name": "When Character Movement SPD Meets Condition",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_entity_is_created",
+            "name": "When Entity Is Created",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_entity_is_destroyed",
+            "name": "When Entity Is Destroyed",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_entity_is_removed_destroyed",
+            "name": "When Entity Is Removed/Destroyed",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_entity_faction_changes",
+            "name": "When Entity Faction Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_the_character_is_down",
+            "name": "When the Character Is Down",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_character_revives",
+            "name": "When Character Revives",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_player_teleport_completes",
+            "name": "When Player Teleport Completes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_all_players_characters_are_down",
+            "name": "When All Player's Characters Are Down",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_all_players_characters_are_revived",
+            "name": "When All Player's Characters Are Revived",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_player_is_abnormally_downed_and_revives",
+            "name": "When Player Is Abnormally Downed and Revives",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_the_active_character_changes",
+            "name": "When the Active Character Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_entering_collision_trigger",
+            "name": "When Entering Collision Trigger",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_exiting_collision_trigger",
+            "name": "When Exiting Collision Trigger",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_hp_is_recovered",
+            "name": "When HP Is Recovered",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_initiating_hp_recovery",
+            "name": "When Initiating HP Recovery",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_attack_hits",
+            "name": "When Attack Hits",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_attacked",
+            "name": "When Attacked",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_entering_an_interruptible_state",
+            "name": "When Entering an Interruptible State",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_basic_motion_device_stops",
+            "name": "When Basic Motion Device Stops",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_path_reaches_waypoint",
+            "name": "When Path Reaches Waypoint",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_on_hit_detection_is_triggered",
+            "name": "When On-Hit Detection Is Triggered",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_timer_is_triggered",
+            "name": "When Timer Is Triggered",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_global_timer_is_triggered",
+            "name": "When Global Timer Is Triggered",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_ui_control_group_is_triggered",
+            "name": "When UI Control Group Is Triggered",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_unit_status_changes",
+            "name": "When Unit Status Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_unit_status_ends",
+            "name": "When Unit Status Ends",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_elemental_reaction_event_occurs",
+            "name": "When Elemental Reaction Event Occurs",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_shield_is_attacked",
+            "name": "When Shield Is Attacked",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_tab_is_selected",
+            "name": "When Tab Is Selected",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_creation_enters_combat",
+            "name": "When Creation Enters Combat",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_creation_leaves_combat",
+            "name": "When Creation Leaves Combat",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_player_class_level_changes",
+            "name": "When Player Class Level Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_player_class_changes",
+            "name": "When Player Class Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_player_class_is_removed",
+            "name": "When Player Class Is Removed",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_skill_node_is_called",
+            "name": "When Skill Node Is Called",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_aggro_target_changes",
+            "name": "When Aggro Target Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_self_enters_combat",
+            "name": "When Self Enters Combat",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_self_leaves_combat",
+            "name": "When Self Leaves Combat",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "monitor_signal",
+            "name": "Monitor Signal",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_deck_selector_is_complete",
+            "name": "When Deck Selector Is Complete",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_text_bubble_is_completed",
+            "name": "When Text Bubble Is Completed",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_selling_inventory_items_in_the_shop",
+            "name": "When Selling Inventory Items in the Shop",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_custom_shop_item_is_sold",
+            "name": "When Custom Shop Item Is Sold",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_selling_items_to_the_shop",
+            "name": "When selling items to the shop",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_equipment_is_equipped",
+            "name": "When Equipment Is Equipped",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_equipment_is_unequipped",
+            "name": "When Equipment Is Unequipped",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_equipment_is_initialized",
+            "name": "When Equipment Is Initialized",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_equipment_affix_value_changes",
+            "name": "When Equipment Affix Value Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_item_is_lost_from_inventory",
+            "name": "When Item Is Lost From Inventory",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_the_quantity_of_inventory_item_changes",
+            "name": "When the Quantity of Inventory Item Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_item_is_added_to_inventory",
+            "name": "When Item Is Added to Inventory",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_the_quantity_of_inventory_currency_changes",
+            "name": "When the Quantity of Inventory Currency Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_items_in_the_inventory_are_used",
+            "name": "When Items in the Inventory Are Used",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_creation_reaches_patrol_waypoint",
+            "name": "When Creation Reaches Patrol Waypoint",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "when_complex_creation_preset_status_changes",
+            "name": "When Complex Creation Preset Status Changes",
+            "type": "event",
+            "stub": true
+        },
+        {
+            "slug": "multiple_branches",
+            "name": "Multiple Branches",
+            "type": "flow",
+            "stub": false
+        },
+        {
+            "slug": "double_branch",
+            "name": "Double Branch",
+            "type": "flow",
+            "stub": false
+        },
+        {
+            "slug": "query_game_mode_and_player_number",
+            "name": "Query Game Mode and Player Number",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_local_variable",
+            "name": "Get Local Variable",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_server_time_zone",
+            "name": "Query Server Time Zone",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_timestamp_utc0",
+            "name": "Query Timestamp (UTC+0)",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_random_floating_point_number",
+            "name": "Get Random Floating Point Number",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_random_integer",
+            "name": "Get Random Integer",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "weighted_random",
+            "name": "Weighted Random",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_backward",
+            "name": "3D Vector: Backward",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_zero_vector",
+            "name": "3D Vector: Zero Vector",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_forward",
+            "name": "3D Vector: Forward",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_up",
+            "name": "3D Vector: Up",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_down",
+            "name": "3D Vector: Down",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_right",
+            "name": "3D Vector: Right",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "3d_vector_left",
+            "name": "3D Vector: Left",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "pi",
+            "name": "Pi (\u03c0)",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "search_list_and_return_value_id",
+            "name": "Search List and Return Value ID",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_corresponding_value_from_list",
+            "name": "Get Corresponding Value From List",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_list_length",
+            "name": "Get List Length",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_maximum_value_from_list",
+            "name": "Get Maximum Value from List",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_minimum_value_from_list",
+            "name": "Get Minimum Value From List",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "list_includes_this_value",
+            "name": "List Includes This Value",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_custom_variable_snapshot",
+            "name": "Query Custom Variable Snapshot",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_node_graph_variable",
+            "name": "Get Node Graph Variable",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_custom_variable",
+            "name": "Get Custom Variable",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "get_preset_status",
+            "name": "Get Preset Status",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_characters_current_movement_spd",
+            "name": "Query Character's Current Movement SPD",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_entity_is_on_the_field",
+            "name": "Query If Entity Is on the Field",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_entities_on_the_field",
+            "name": "Get All Entities on the Field",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_specified_type_of_entities_on_the_field",
+            "name": "Get Specified Type of Entities on the Field",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entities_with_specified_prefab_on_the_field",
+            "name": "Get Entities With Specified Prefab on the Field",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_character_attribute",
+            "name": "Get Character Attribute",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_advanced_attribute",
+            "name": "Get Entity Advanced Attribute",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_type",
+            "name": "Get Entity Type",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_location_and_rotation",
+            "name": "Get Entity Location and Rotation",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_forward_vector",
+            "name": "Get Entity Forward Vector",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_upward_vector",
+            "name": "Get Entity Upward Vector",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_right_vector",
+            "name": "Get Entity Right Vector",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_entities_owned_by_the_entity",
+            "name": "Get List of Entities Owned by the Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_elemental_attribute",
+            "name": "Get Entity Elemental Attribute",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_object_attribute",
+            "name": "Get Object Attribute",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_owner_entity",
+            "name": "Get Owner Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_list_by_specified_range",
+            "name": "Get Entity List by Specified Range",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_list_by_specified_type",
+            "name": "Get Entity List by Specified Type",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_list_by_specified_prefab_id",
+            "name": "Get Entity List by Specified Prefab ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_list_by_specified_faction",
+            "name": "Get Entity List by Specified Faction",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_self_entity",
+            "name": "Get Self Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_guid_by_entity",
+            "name": "Query GUID by Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_entity_by_guid",
+            "name": "Query Entity by GUID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "check_entitys_elemental_effect_status",
+            "name": "Check Entity's Elemental Effect Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_current_environment_time",
+            "name": "Query Current Environment Time",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_game_time_elapsed",
+            "name": "Query Game Time Elapsed",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_entity_faction",
+            "name": "Query Entity Faction",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_faction_is_hostile",
+            "name": "Query If Faction Is Hostile",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_all_player_characters_are_down",
+            "name": "Query If All Player Characters Are Down",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_guid_by_player_id",
+            "name": "Get Player GUID by Player ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_id_by_player_guid",
+            "name": "Get Player ID by Player GUID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_client_input_device_type",
+            "name": "Get Player Client Input Device Type",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_entity_to_which_the_character_belongs",
+            "name": "Get Player Entity to Which the Character Belongs",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_revive_time",
+            "name": "Get Player Revive Time",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_nickname",
+            "name": "Get Player Nickname",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_remaining_revives",
+            "name": "Get Player Remaining Revives",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_player_entities_on_the_field",
+            "name": "Get List of Player Entities on the Field",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_character_entities_of_specified_player",
+            "name": "Get All Character Entities of Specified Player",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_active_character_of_specified_player",
+            "name": "Get Active Character of Specified Player",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "check_classic_mode_character_id",
+            "name": "Check Classic Mode Character ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_follow_motion_device_target",
+            "name": "Get Follow Motion Device Target",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_current_global_timer_time",
+            "name": "Get Current Global Timer Time",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_players_current_ui_layout",
+            "name": "Get Player's Current UI Layout",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_creations_current_target",
+            "name": "Get Creation's Current Target",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_aggro_list_of_creation_in_default_mode",
+            "name": "Get Aggro List of Creation in Default Mode",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_creation_attribute",
+            "name": "Get Creation Attribute",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_player_class_level",
+            "name": "Query Player Class Level",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_player_class",
+            "name": "Query Player Class",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_character_skill",
+            "name": "Query Character Skill",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "list_of_slot_ids_querying_unit_status",
+            "name": "List of Slot IDs Querying Unit Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_entity_has_unit_status",
+            "name": "Query If Entity Has Unit Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_unit_status_stacks_by_slot_id",
+            "name": "Query Unit Status Stacks by Slot ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_unit_status_applier_by_slot_id",
+            "name": "Query Unit Status Applier by Slot ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_list_by_unit_tag",
+            "name": "Get Entity List by Unit Tag",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entity_unit_tag_list",
+            "name": "Get Entity Unit Tag List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_global_aggro_transfer_multiplier",
+            "name": "Query Global Aggro Transfer Multiplier",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_the_aggro_multiplier_of_the_specified_entity",
+            "name": "Query the Aggro Multiplier of the Specified Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_the_aggro_value_of_the_specified_entity",
+            "name": "Query the Aggro Value of the Specified Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_specified_entity_is_in_combat",
+            "name": "Query if Specified Entity Is in Combat",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_owners_who_have_the_target_in_their_aggro_list",
+            "name": "Get List of Owners Who Have the Target in Their Aggro List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_owners_that_have_the_target_as_their_aggro_target",
+            "name": "Get List of Owners That Have the Target As Their Aggro Target",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_aggro_list_of_the_specified_entity",
+            "name": "Get the Aggro List of the Specified Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_aggro_target_of_the_specified_entity",
+            "name": "Get the Aggro Target of the Specified Entity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_number_of_waypoints_in_the_global_path",
+            "name": "Get the Number of Waypoints in the Global Path",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_specified_waypoint_info",
+            "name": "Get Specified Waypoint Info",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_preset_point_list_by_unit_tag",
+            "name": "Get Preset Point List by Unit Tag",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_preset_point_position_rotation",
+            "name": "Query Preset Point Position Rotation",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_settlement_success_status",
+            "name": "Get Player Settlement Success Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_settlement_ranking_value",
+            "name": "Get Player Settlement Ranking Value",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_faction_settlement_success_status",
+            "name": "Get Faction Settlement Success Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_faction_settlementranking_value",
+            "name": "Get Faction SettlementRanking Value",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_dictionary_contains_specific_key",
+            "name": "Query If Dictionary Contains Specific Key",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_dictionary_contains_specific_value",
+            "name": "Query If Dictionary Contains Specific Value",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_dictionarys_length",
+            "name": "Query Dictionary's Length",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_dictionary_value_by_key",
+            "name": "Query Dictionary Value by Key",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_keys_from_dictionary",
+            "name": "Get List of Keys from Dictionary",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_list_of_values_from_dictionary",
+            "name": "Get List of Values from Dictionary",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_inventory_shop_item_sales_info",
+            "name": "Query Inventory Shop Item Sales Info",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_inventory_shop_item_sales_list",
+            "name": "Query Inventory Shop Item Sales List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_shop_purchase_item_list",
+            "name": "Query Shop Purchase Item List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_shop_item_purchase_info",
+            "name": "Query Shop Item Purchase Info",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_custom_shop_item_sales_list",
+            "name": "Query Custom Shop Item Sales List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_custom_shop_item_sales_info",
+            "name": "Query Custom Shop Item Sales Info",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_equipment_tag_list",
+            "name": "Query Equipment Tag List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_equipment_config_id_by_equipment_id",
+            "name": "Query Equipment Config ID by Equipment ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_equipment_affix_list",
+            "name": "Get Equipment Affix List",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_equipment_affix_config_id",
+            "name": "Get Equipment Affix Config ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_equipment_affix_value",
+            "name": "Get Equipment Affix Value",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_equipment_index_of_the_specified_equipment_slot",
+            "name": "Get the Equipment Index of the Specified Equipment Slot",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_inventory_item_quantity",
+            "name": "Get Inventory Item Quantity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_inventory_currency_quantity",
+            "name": "Get Inventory Currency Quantity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_inventory_capacity",
+            "name": "Get Inventory Capacity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_currency_from_inventory",
+            "name": "Get All Currency From Inventory",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_basic_items_from_inventory",
+            "name": "Get all basic items from Inventory",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_equipment_from_inventory",
+            "name": "Get all equipment from Inventory",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_loot_component_item_quantity",
+            "name": "Get Loot Component Item Quantity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_loot_component_currency_quantity",
+            "name": "Get Loot Component Currency Quantity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_equipment_from_loot_component",
+            "name": "Get All Equipment from Loot Component",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_items_from_loot_component",
+            "name": "Get All Items from Loot Component",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_currency_from_loot_component",
+            "name": "Get All Currency from Loot Component",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_all_entities_within_the_collision_trigger",
+            "name": "Get All Entities Within the Collision Trigger",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_specified_mini_map_marker_information",
+            "name": "Query Specified Mini-Map Marker Information",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_entitys_mini_map_marker_status",
+            "name": "Get Entity's Mini-Map Marker Status",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_current_creations_patrol_template",
+            "name": "Get Current Creation's Patrol Template",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_if_achievement_is_completed",
+            "name": "Query If Achievement Is Completed",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_currently_active_scan_tag_config_id",
+            "name": "Get the Currently Active Scan Tag Config ID",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_rank_score_change",
+            "name": "Get Player Rank Score Change",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_ranking_info",
+            "name": "Get Player Ranking Info",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_player_escape_validity",
+            "name": "Get Player Escape Validity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_currently_active_entity_deployment_groups",
+            "name": "Get Currently Active Entity Deployment Groups",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_corresponding_gift_box_quantity",
+            "name": "Query Corresponding Gift Box Quantity",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "query_corresponding_gift_box_consumption",
+            "name": "Query Corresponding Gift Box Consumption",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "get_the_preset_status_value_of_the_complex_creation",
+            "name": "Get the Preset Status Value of the Complex Creation",
+            "type": "query",
+            "stub": true
+        },
+        {
+            "slug": "enumerations_equal",
+            "name": "Enumerations Equal",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "assembly_list",
+            "name": "Assembly List",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "equal",
+            "name": "Equal",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "data_type_conversion",
+            "name": "Data Type Conversion",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "split_3d_vector",
+            "name": "Split 3D Vector",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "multiplication",
+            "name": "Multiplication",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "division",
+            "name": "Division",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "create_3d_vector",
+            "name": "Create 3D Vector",
+            "type": "operation",
+            "stub": false
+        },
+        {
+            "slug": "logarithm_operation",
+            "name": "Logarithm Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "arccosine_function",
+            "name": "Arccosine Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "arctangent_function",
+            "name": "Arctangent Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "arcsine_function",
+            "name": "Arcsine Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "range_limiting_operation",
+            "name": "Range Limiting Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "direction_vector_to_rotation",
+            "name": "Direction Vector to Rotation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "calculate_timestamp_from_formatted_time",
+            "name": "Calculate Timestamp From Formatted Time",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "calculate_formatted_time_from_timestamp",
+            "name": "Calculate Formatted Time From Timestamp",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "calculate_day_of_the_week_from_timestamp",
+            "name": "Calculate Day of the Week From Timestamp",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "radians_to_degrees",
+            "name": "Radians to Degrees",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "addition",
+            "name": "Addition",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "subtraction",
+            "name": "Subtraction",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "degrees_to_radians",
+            "name": "Degrees to Radians",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "take_larger_value",
+            "name": "Take Larger Value",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "take_smaller_value",
+            "name": "Take Smaller Value",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "absolute_value_operation",
+            "name": "Absolute Value Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "distance_between_two_coordinate_points",
+            "name": "Distance Between Two Coordinate Points",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "logical_not_operation",
+            "name": "Logical NOT Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "logical_or_operation",
+            "name": "Logical OR Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "logical_xor_operation",
+            "name": "Logical XOR Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "logical_and_operation",
+            "name": "Logical AND Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "exponentiation",
+            "name": "Exponentiation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "modulo_operation",
+            "name": "Modulo Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "arithmetic_square_root_operation",
+            "name": "Arithmetic Square Root Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "sign_operation",
+            "name": "Sign Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "round_to_integer_operation",
+            "name": "Round to Integer Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_normalization",
+            "name": "3D Vector Normalization",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_addition",
+            "name": "3D Vector Addition",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_angle",
+            "name": "3D Vector Angle",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_subtraction",
+            "name": "3D Vector Subtraction",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_modulo_operation",
+            "name": "3D Vector Modulo Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_dot_product",
+            "name": "3D Vector Dot Product",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_zoom",
+            "name": "3D Vector Zoom",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_cross_product",
+            "name": "3D Vector Cross Product",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "3d_vector_rotation",
+            "name": "3D Vector Rotation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "greater_than",
+            "name": "Greater Than",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "greater_than_or_equal_to",
+            "name": "Greater Than or Equal To",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "less_than",
+            "name": "Less Than",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "less_than_or_equal_to",
+            "name": "Less Than or Equal To",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "cosine_function",
+            "name": "Cosine Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "tangent_function",
+            "name": "Tangent Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "sine_function",
+            "name": "Sine Function",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "left_shift_operation",
+            "name": "Left Shift Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "right_shift_operation",
+            "name": "Right Shift Operation",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "bitwise_and",
+            "name": "Bitwise AND",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "bitwise_or",
+            "name": "Bitwise OR",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "xor_exclusive_or",
+            "name": "XOR (Exclusive OR)",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "bitwise_complement",
+            "name": "Bitwise Complement",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "write_by_bit",
+            "name": "Write by bit",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "read_by_bit",
+            "name": "Read by bit",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "create_dictionary",
+            "name": "Create Dictionary",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "assembly_dictionary",
+            "name": "Assembly Dictionary",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "split_structure",
+            "name": "Split Structure",
+            "type": "operation",
+            "stub": true
+        },
+        {
+            "slug": "assemble_structure",
+            "name": "Assemble Structure",
+            "type": "operation",
+            "stub": true
+        }
+    ]
+}

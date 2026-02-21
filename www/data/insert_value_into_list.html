@@ -1,0 +1,99 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Insert Value Into List</h1>
+<p>
+    Inserts an entry into a list.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic List) - List to insert into. This list will be modified.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Insert ID</span> (Integer) - Index to insert the new value into. This is 0-indexed.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Insert Value</span> (Generic) - Value to insert.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to insert a value into a list, right before the specified index. The first entry of a list is indexed as 0. The inserted value ends up at the specified index in the resulting list. For example, if the list is <code>[1,2,3]</code> and <code>99</code> is being inserted:
+</p>
+<ul>
+    <li>
+        Inserting at index 0 yields <code>[99, 1, 2, 3]</code>.
+    </li>
+    <li>
+        Inserting at index 1 yields <code>[1, 99, 2, 3]</code>.
+    </li>
+    <li>
+        Inserting at index 2 yields <code>[1, 2, 99, 3]</code>.
+    </li>
+    <li>
+        Inserting at index 3 yields <code>[1, 2, 3, 99]</code>.
+    </li>
+</ul>
+
+<h2>Example</h2>
+<p>
+    In this example, a local variable was initially set to <code>["Amber", "Lisa", "Kaeya"]</code>.
+    <code>"Traveler"</code> was inserted at index 0, so the resulting list is
+    <code>["Traveler", "Amber", "Lisa", "Kaeya"]</code>.
+    <img src="/image/insert_value_into_list_example.webp" alt="insert value into list example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If a negative index is used, this node is a no-op.
+    </li>
+    <li>
+        If the index is greater than the length of the list, this node is a no-op.
+    </li>
+    <li>
+        The maximum size of a list is 1000. If a value is inserted into a list of length 1000, this node is a no-op.
+    </li>
+    <li>
+        Changing the type of List or Inserted Value will change the type of the other to match it.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For integer list of length 10, it took ~2 units to run on average.
+</p>
+<p>
+    For integer list of length 500, it took ~4 units to run on average.
+</p>
+<p>
+    Index does not seem to affect performance visibly, regardless of inserting at 0 or at the end of the list.
+</p>
+<p>
+    I did not observe any kinks in performance at specific list length that might arise from reallocation while doubling the capacity of a dynamic array.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_list_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set List Value</a>
+    </li>
+    <li>
+        <a href="?node=remove_value_from_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Value From List</a>
+    </li>
+    <li>
+        <a href="?node=concatenate_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Concatenate List</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

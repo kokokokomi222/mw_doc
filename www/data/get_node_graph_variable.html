@@ -1,0 +1,91 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Node Graph Variable</h1>
+<p>
+    Gets the value of a node graph variable.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span> (String) - Name of the node graph variable.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> (Generic) - Value of the node graph variable.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Node graph variable can be used to hold state that only needs to be known by the node graph.
+    If you do not need this state to persist past a node graph execution, use local variable instead.
+    If you want the state to be read and/or written from other node graphs,
+    or to be used in string formatting of UI text box or text bubble, use custom variable instead.
+</p>
+<p>
+    Node graph variable is scoped for each created entities that hold this node graph.
+    All node graph variable values are lost if the entity is removed or destroyed from the scene,
+    and the values do not get restored if it is recreated by <a href="?node=create_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Entity</a>.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we get the node graph variable named <code>favorite_character</code> and print its value.
+    <img src="/image/get_node_graph_variable_example.webp" alt="get node graph variable example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span> can be selected from the list of node graph variables
+        by clicking the magnifying glass icon.
+        Sadly, this does not set the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If there does not exist a node graph variable named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span>,
+        this node raises a "Custom Variable does not exist" error
+        (misleading because "custom variable" and "node graph variable" are different)
+        and returns <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhk23ora1wom">the default value of the type</a> selected for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> does not match the type of the node graph variable,
+        this node raises a "Custom Variable type error" error
+        (misleading because "custom variable" and "node graph variable" are different)
+        and returns <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhk23ora1wom">the default value of the type</a> selected for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    Getting a string node graph variable took ~3 units to run on average.
+</p>
+<p>
+    Getting an integer list of length 1000 took ~9 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_node_graph_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Node Graph Variable</a>
+    </li>
+    <li>
+        <a href="?node=get_local_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Local Variable</a>
+    </li>
+    <li>
+        <a href="?node=get_custom_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Custom Variable</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

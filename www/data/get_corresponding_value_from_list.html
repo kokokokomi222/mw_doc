@@ -1,0 +1,77 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Corresponding Value From List</h1>
+<p>
+    Gets an entry from a list by index.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic) - List to get the entry from.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> (Integer) - Index for the entry to get. This is 0-indexed.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> (Generic) - Entry of the list at the index.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to read from a list.
+    You may want to use <a href="?node=list_iteration_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Iteration Loop</a> instead if you want to iterate over every entry.
+</p>
+<p>
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is 0-indexed, so the first entry's index is 0, index of the second is 1, third is 2, and so on.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a string list <code>["Barbara", "Mona", "Kokomi", "Mualani"]</code>.
+    We get the entry at index 2 (which is third entry, because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is 0-indexed), which is <code>"Kokomi"</code>.
+    <img src="/image/get_corresponding_value_from_list_example.webp" alt="get corresponding value from list example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is negative, this node raises a "List INDEX error" error, but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to <code>""</code> (empty string).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is not less than the length of the list, "Index exceeds list length" error (little misleading, because if index is equal to list length, this error still occurs), but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to <code>""</code> (empty string).
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> will change the type of the other to match it.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For string list of length 10, this node took ~2 units to run on average.
+</p>
+<p>
+    For integer list of length 1000, this node took ~7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=list_iteration_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Iteration Loop</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

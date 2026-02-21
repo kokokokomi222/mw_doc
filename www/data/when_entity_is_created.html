@@ -1,0 +1,64 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Created</h1>
+<p>
+    Triggers when an entity is created.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that is created.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if the entity was created dynamically.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to listen to event where entity is created.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, when entity with the node graph is created,
+    it plays a timed VFX (<code>47</code>, "White Appearing Dust") at the entity.
+    <img src="/image/when_entity_is_created_example.webp" alt="when entity is created example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Stage, player, and character entity all trigger this event.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~1 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=create_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Entity</a>
+    </li>
+    <li>
+        <a href="?node=create_prefab" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

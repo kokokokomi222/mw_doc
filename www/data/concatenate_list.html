@@ -1,0 +1,64 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Concatenate List</h1>
+<p>
+    Appends a list to the end of another list.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target List</span> (Generic List) - List to append to. This list will be modified.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input List</span> (Generic List) - List to append.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to append a list to the end of another list. For example, if the target list is <code>[1, 2, 3]</code>, and the input list is <code>[99, 100]</code>, the target list will be modified to <code>[1, 2, 3, 99, 100]</code>.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, a local variable was initially set to <code>["Venti", "Zhongli", "Raiden"]</code>. A second list, <code>["Nahida", "Furina", "Mavuika"]</code>, was appended to the end of the first list. The first list is modified to <code>["Venti", "Zhongli", "Raiden", "Nahida", "Furina", "Mavuika"]</code> after this node graph runs.
+    <img src="/image/concatenate_list_example.webp" alt="concatenate list example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        The maximum size of a list is 1000. 
+        If the resulting list would have the length greater than 1000,
+        this node is a no-op. It will NOT partially append until 1000 entries are filled.
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target List</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input List</span> will change the type of the other to match it.
+    </li>
+    <li>
+        Passing the same reference of a list to both <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target List</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input List</span> works as expected, doubling the target list's size.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    Concatenating a list of length 500 with another list of length 500 took 7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=insert_value_into_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Insert Value Into List</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,41 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</h1>
+<p>
+     Make the specified Entity initiate an attack. The Entity that uses this node must have the corresponding Ability Unit configured. There are two usage modes: When the Ability Unit is [Hitbox Attack], it executes a hitbox attack centered on the Target Entity's Location When the Ability Unit is [Direct Attack], it directly attacks the Target Entity
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Depending on the Ability Unit, this can be treated either as the reference target for the Hitbox Location or as the attack target
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span> (Floating Point Numbers) - The coefficient applied to the damage dealt by this attack
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span> (Floating Point Numbers) - The incremental damage applied by this attack
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - When using Hitbox Attack, determines the Hitbox offsetWhen using Direct Attack, determines the hit-detection location for the attack and thus where on-hit special effects are created
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - When using Hitbox Attack, determines the Hitbox rotationWhen using Direct Attack, determines the hit-detection location for the attack and thus the rotation used for on-hit effects
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> (String) - Referenced Ability Unit. Must be configured on the entity associated with this Node Graph
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Ability Unit Config</span> (Boolean) - When set to True, the four parameters — Damage Coefficient, Damage Increment, Location Offset, and Rotation Offset — overwrite parameters of the same name in the Ability Unit. When set to False, the Ability Unit's original configuration is used
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initiator Entity</span> (Entity) - Determines the Initiator Entity for this attack. Defaults to the Entity associated with this Node Graph. Affects which attacker is identified in events such as On Hit and When Attacked
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

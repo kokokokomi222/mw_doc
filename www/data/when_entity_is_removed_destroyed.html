@@ -1,0 +1,87 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Removed/Destroyed</h1>
+<p>
+    Triggers on the stage when an entity is removed.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the removed entity. <code>0</code> if the entity was created dynamically.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    <span class="emphasis">This node only works with the stage entity!</span>
+    This node must be in a node graph added to the stage entity.
+    When an entity is removed, it cannot run node graphs anymore and trigger events.
+    The stage is listening to destruction of other entities.
+</p>
+<p>
+    The difference between "remove" and "destroy" is important to understand.
+    Firstly, "destroy" could be thought of as a more specific version of "remove".
+    "Remove" and "destroy" both trigger this node,
+    but only "destroy" triggers <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>.
+    When a creation is "destroyed", it plays its death animation and drops energy particles/orbs.
+    However, if it is "removed", it simply disappears into thin air.
+    This node receives much less information about the removed entity than <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>.
+</p>
+<p>
+    Entities can be destroyed by the following methods:
+</p>
+<ul>
+    <li>
+        When a character/creation/object's HP reaches zero.
+    </li>
+    <li>
+        Calling <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a> on an entity.
+    </li>
+</ul>
+<p>
+    Entities can also be removed by the following methods:
+</p>
+<ul>
+    <li>
+        Calling <a href="?node=remove_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Entity</a> on an entity.
+    </li>
+    <li>
+        Calling <a href="?node=activate_disable_entity_deployment_group" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Entity Deployment Group</a> to disable entities.
+    </li>
+    <li>
+        When a player leaves the stage (either by quitting or settling),
+        player and player's characters are removed.
+    </li>
+</ul>
+
+
+
+<h2>Performance</h2>
+<p>
+    When repeatedly creating and destroying one entity with the default setting,
+    this node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>
+    </li>
+    <li>
+        <a href="?node=remove_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Entity</a>
+    </li>
+    <li>
+        <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

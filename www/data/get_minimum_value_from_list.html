@@ -1,0 +1,72 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Minimum Value From List</h1>
+<p>
+    Get the minimum value of a list.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic) - List to get the minimum value from. Must be an integer list or a floating point number list.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Minimum Value</span> (Generic) - Minimum value.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to get the smallest entry of a list.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have an integer list <code>[3, 99, -5, 100, 0]</code>.
+    We get the minimum value of the list (which is <code>-5</code>), convert it to string, and print it.
+    <img src="/image/get_minimum_value_from_list_example.webp" alt="get minimum value from list example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> is empty, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Minimum Value</span> is output as 0,
+        which is not great for most use cases.
+        A more reasonable value to output would have been
+        the maximum integer value <code>2147483647</code> for integer list,
+        or the maximum float value (roughly 3.4*10^38) for floating point number list.
+        You may want to make a composite node version of this node to handle empty list better.
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Minimum Value</span> will change the type of the other to match it.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For integer list of length 10, this node took ~2 unit to run on average.
+</p>
+<p>
+    For integer list of length 1000, this node took ~6 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_maximum_value_from_list" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Maximum Value from List</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

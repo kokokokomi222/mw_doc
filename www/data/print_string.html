@@ -1,0 +1,70 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Print String</h1>
+<p>
+    Outputs a string to the log.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> String</span> (String) - String to be printed
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This is NOT visible to players and is only used for print debugging while testing.
+    Use a <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhnltrr3g966">text box UI control</a> to show a string to players.
+</p>
+<p>
+    To see the output, click Window &gt; Log menu from the top of the Miliastra Sandbox window.
+    Print output will be visible in the log window when testing.
+    <img src="/image/print_string_open_log_window.webp" alt="print string open log window" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    In order to print numbers, integers and floats can be converted into strings with <a href="?node=data_type_conversion" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Data Type Conversion</a>.
+</p>
+
+<h2>Example</h2>
+<p>
+    Below example prints "Entity Created!" to the log when the entity is created.
+    <img src="/image/print_string_example.webp" alt="print string example" class="expandable_img" loading="lazy"/>
+    This is how it appears in the log.
+    <img src="/image/print_string_result.webp" alt="print string result" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node still prints the string even when the node graph is not selected in the log.
+    </li>
+    <li>
+        Long strings are trimmed from the output, only showing the first part of the string that fits in the log window.
+        You may be able to resize the log window to see more.
+    </li>
+    <li>
+        If an empty string is passed, it will still print "print:".
+    </li>
+    <li>
+        The maximum length of a string is 1000.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For a string of length 10, it took ~3 units to run on average.
+</p>
+<p>
+    For a string of length 1000, it took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

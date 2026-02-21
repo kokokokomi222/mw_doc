@@ -1,0 +1,85 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set List Value</h1>
+<p>
+    Sets the value of a list entry.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic List) - List to set. This list will be modified.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> (Integer) - Index of the list entry to modify. This is 0-indexed.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Generic) - New value of the list entry.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to write an entry of the list at the specified index. The first entry of a list is indexed as 0. For example, if the list is <code>[1, 2, 3, 4]</code> and <code>99</code> is being set as the new value:
+</p>
+<ul>
+    <li>
+        Setting at index 0 yields <code>[99, 2, 3, 4]</code>.
+    </li>
+    <li>
+        Setting at index 1 yields <code>[1, 99, 3, 4]</code>.
+    </li>
+    <li>
+        Setting at index 2 yields <code>[1, 2, 99, 4]</code>.
+    </li>
+    <li>
+        Setting at index 3 yields <code>[1, 2, 3, 99]</code>.
+    </li>
+</ul>
+
+<h2>Example</h2>
+<p>
+    In this example, a local variable was initially set to <code>["Neuvillette", "Furina", "Yelan", "Escoffier"]</code>. The entry at index 0 was modified to <code>"Kokomi"</code>, so the resulting list is <code>["Kokomi", "Furina", "Yelan", "Escoffier"]</code>.
+    <img src="/image/set_list_value_example.webp" alt="set list value example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If a negative index is used, this node raises a "List INDEX error" error, but continues the execution.
+    </li>
+    <li>
+        If the index is not less than the length of the list, this node raises an "Index exceeds list length" error (little misleading, because if index is equal to list length, this error still occurs), but continues the execution.
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> will change the type of the other to match it.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For integer list of length 10, it took ~2 units to run on average.
+</p>
+<p>
+    For integer list of length 500, it took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=insert_value_into_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Insert Value Into List</a>
+    </li>
+    <li>
+        <a href="?node=remove_value_from_list" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Value From List</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

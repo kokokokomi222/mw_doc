@@ -1,0 +1,129 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab Group</h1>
+<p>
+    Creates a prefab group.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Prefab Group ID</span> (Integer) - ID for the prefab group to create.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location</span> (3D Vector) - Location of the prefab group center in world coordinate space.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotate</span> (3D Vector) - Rotation of the prefab group center in world coordinate space.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Owner Entity</span> (Entity) - Owner of the created entities. Can be left empty.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> (Integer) - Level of the created entities. Only used if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Level</span> is <code>Yes</code>. Must be between 1 and 200, inclusive.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> (Integer List) - List of unit tag IDs to put on the created entities. e.g. <code>[1023456789, 1023456790]</code>. Can be left empty. See "Notes" section below for detail.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Level</span> (Boolean) - If <code>No</code>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> is ignored and the prefab setting is used.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Created Entity List</span> (Entity List) - Entities created in this way do not have a GUID
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    A prefab group can be created by drag selecting or shift selecting multiple prefabs,
+    and then right click to bring up the context menu and selecting "Create Prefab Group".
+    <img src="/image/create_prefab_group_create_menu.webp" alt="create prefab group create menu" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, entities are created from prefab group with ID <code>1077936135</code>.
+    The center of the prefab group will have the same location and rotation as the event source entity.
+    All created entities will be owned by the tab selecting character,
+    with level 90 and unit tags <code>[1073741826, 1073741827]</code>.
+    <img src="/image/create_prefab_group_example.webp" alt="create prefab group example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If prefab group with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Prefab Group ID</span> does not exist, this node is a no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location</span> is outside the stage's "Effective Scene Range", this node is no-op.
+        No entity is created.
+        <img src="/image/create_prefab_effective_scene_range.webp" alt="create prefab effective scene range" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        If one of the created entity is outside the stage's "Effective Scene Range",
+        it is successfully created.
+        This gives a way to create an entity outside the stage bound,
+        but we would not recommend relying on this behavior
+        since there is a potential for it to be patched.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Owner Entity</span> is set to an entity that does not exist or is removed,
+        this node still works and creates all the entities but sets the owner of the entities to none.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Level</span> is <code>Yes</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> is less than 1 or greater than 200,
+        this node is no-op. No entity is created.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Level</span> is <code>No</code>,
+        any value of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> is fine and the node will successfully execute.
+    </li>
+    <li>
+        If you set unit tags in the prefab detail panel,
+        those tags will be overwritten by <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span>.
+        All the created entities will have exactly these tags and no other tags, regardless of prefab setting.
+        However, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> is left empty, or an empty list is passed into it,
+        the tags set in the prefab detail panel will be used.
+    </li>
+    <li>
+        Entities created by this node do not have a GUID.
+        If <a href="?node=query_guid_by_entity" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query GUID by Entity</a> is called on an entity created by this node, it returns <code>0</code>.
+    </li>
+    <li>
+        TODO: test what happens when dynamic entity limit is reached.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    Creating a prefab group with five prefabs with default setting took ~250 units to run on average.
+    Setting <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> does not seem to visibly affect the performance of this node.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=create_prefab" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Prefab</a>
+    </li>
+    <li>
+        <a href="?node=remove_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Entity</a>
+    </li>
+    <li>
+        <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_entity_deployment_group" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Entity Deployment Group</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

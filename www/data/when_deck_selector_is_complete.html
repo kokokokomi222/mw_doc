@@ -1,0 +1,29 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Deck Selector Is Complete</h1>
+<p>
+     This event is triggered on the Player's Node Graph when the Player completes the Deck Selector, or when it is forcibly closed due to time constraints The output parameters report the Deck Selector's result and the corresponding reason
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Selection Result List</span> (Integer List) - When a selection interaction is triggered, validselection resultsare returned as this output parameter, and the completion reason isCompleted by PlayerWhen aFull Refreshpop-up selection is triggered, the completeselection result listis returned as this output parameter, and the completion reason isRefresh AllWhen aFixed-Quantity Refreshpop-up selection is triggered, validselection resultsare returned as this output parameter, and the completion reason isFixed-Quantity RefreshWhen the Deck Selector times out with no interaction,the default selection is returnedis returned as this output parameter, and the completion reason isTimeoutWhenAllow Discard Selection is enabledand the Deck Selector is closed by the player,the default selection is returnedas this output parameter, and the completion reason isClosedManuallyWhen the Deck Selector is closed via the Node Graph,the default selection is returnedas this output parameter, and the completion reason isClosed byNode Graph
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Completion Reason</span> (Enumeration) - Six reason enumerationsCompleted by Player,Refresh All,Fixed-Quantity Refresh,Timeout, Closed Manually, Closed by Node Graph
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Deck Selector Index</span> (Integer) - Referenced Deck Selector ID
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

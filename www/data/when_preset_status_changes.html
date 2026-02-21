@@ -1,0 +1,86 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Preset Status Changes</h1>
+<p>
+    Triggers when preset status changes.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that has the preset status change.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if the entity was created dynamically.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Preset Status Index</span> (Integer) - Preset status ID, as seen in the details panel in the editor
+        (e.g. <code>100010060</code>).
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Pre-Change Value</span> (Integer) - Previous value of the preset status before the change occurred
+        (e.g. <code>0</code>).
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Post-Change Value</span> (Integer) - New value of the preset status after the change occurred
+        (e.g. <code>1</code>).
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Some prefabricated dynamic units
+    (e.g. Common Chest, Wooden Lever Mechanism, Stone Spiky Platform, Block Figure)
+    comes with built-in preset status.
+    These are different states that the model can be in (e.g. chest can be open or closed; lever can be pulled to left or right; spike trap can be activated or deactivated; block figure can be stopped, walking, running, jumping, or waving),
+    and transitioning animation is shown when preset state changes.
+    This node listens to the change to this preset status.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a Precious Chest entity that has two preset status states:
+    0 for closed and 1 for opened.
+    <img src="/image/when_preset_status_changes_setup.webp" alt="when preset status changes setup" class="expandable_img" loading="lazy"/>
+    When the preset status changes on this chest to 1 (which means opened), it plays a VFX effect.
+    <img src="/image/when_preset_status_changes_example.webp" alt="when preset status changes example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If the previous preset status and the new preset status is the same, it still triggers this event.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        This node has a <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Preset Status Index</span> output because some dynamic units may have multiple preset statuses. As of Luna IV, the only dynamic unit with multiple preset statuses is the "Metal Punching Target".
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_preset_status" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Preset Status</a>
+    </li>
+    <li>
+        <a href="?node=set_preset_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Preset Status</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,109 @@
+<h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Data Type Conversion</h1>
+<p>
+    Converts a value to a different type (e.g. integer <code>123</code> to string <code>"123"</code>).
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input</span> (Generic) - Input value. See usage section below for detail.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Output</span> (Generic) - Output value.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Conversion is limited to the following pairs of types listed below:
+</p>
+<ul>
+    <li>
+        <span class="emphasis">Integer → Boolean</span> : <code>0</code> converts to <code>No</code>, otherwise converts to <code>Yes</code>.
+    </li>
+    <li>
+        <span class="emphasis">Integer → Float</span> : e.g. <code>3</code> converts to <code>3.0</code>.
+    </li>
+    <li>
+        <span class="emphasis">Integer → String</span> : e.g. <code>3</code> converts to <code>"3"</code>.
+    </li>
+    <li>
+        <span class="emphasis">Entity → String</span> : Outputs entity ID as string. e.g. <code>"123"</code>
+    </li>
+    <li>
+        <span class="emphasis">GUID → String</span> : e.g. <code>1012345678</code> converts to <code>"1012345678"</code>
+    </li>
+    <li>
+        <span class="emphasis">Boolean → Integer</span> : <code>No</code> converts to <code>0</code>, <code>Yes</code> converts to <code>1</code>.
+    </li>
+    <li>
+        <span class="emphasis">Boolean → String</span> : <code>No</code> converts to <code>"False"</code>, <code>Yes</code> converts to <code>"True"</code>.
+    </li>
+    <li>
+        <span class="emphasis">Float → Integer</span> : Rounds to the integer. Use <a href="?node=round_to_integer_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Round to Integer Operation</a> instead.
+    </li>
+    <li>
+        <span class="emphasis">Float → String</span> : Outputs the string, preserving up to 6 significant digits.
+        e.g. <code>1.0</code> converts to <code>"1"</code>, <code>1.2</code> converts to <code>"1.2"</code>, <code>1.2345678</code> converts to <code>"1.23457"</code>.
+        See "Notes" section below for more detail.
+    </li>
+    <li>
+        <span class="emphasis">3D Vector → String</span> : e.g. <code>(1.0, 2.0, 3.0)</code> converts to <code>"{1.0, 2.0, 3.0}"</code>.
+    </li>
+    <li>
+        <span class="emphasis">Faction → String</span> : Outputs faction ID as string. e.g. <code>"2"</code>
+    </li>
+</ul>
+<p>
+    <span class="emphasis">Integer → Float</span> is the most important one.
+    <span class="emphasis">Integer → String</span> and <span class="emphasis">Float → String</span> is useful for printing to log with <a href="?node=print_string" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Print String</a>.
+    If you are showing the result of <span class="emphasis">Float → String</span> to players,
+    you may want more precise control over the formatting
+    and end up implementing your own composite node instead.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this first example, we are looking at <span class="emphasis">Integer → Boolean</span> conversion.
+    <code>0</code> converted to boolean is <code>No</code>, so <code>"0 converted to No"</code> is printed.
+    <code>4</code> converted to boolean is <code>Yes</code>, so <code>"4 converted to Yes"</code> is printed.
+    <img src="/image/data_type_conversion_int_to_bool_example.webp" alt="data type conversion int to bool example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    In this next example, we are looking at <span class="emphasis">Integer → Float</span> conversion.
+    We are looping from 0 to 4, converting the current iteration value to float to use it as x-coordinate,
+    and then create prefab at the location.
+    As a result, we get 5 prefabs created, equally spaced apart by 1 unit along x-axis.
+    <img src="/image/data_type_conversion_int_to_float_example.webp" alt="data type conversion int to float example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    In this last example, we are printing the number of players to the log.
+    In order to do so, the integer output from <a href="?node=query_game_mode_and_player_number" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Game Mode and Player Number</a>
+    is converted to a string to input into <a href="?node=print_string" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Print String</a>.
+    <img src="/image/data_type_conversion_int_to_string_example.webp" alt="data type conversion int to string example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        TODO: need to figure out the exact behavior of float → string.
+    </li>
+</ul>
+
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=round_to_integer_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Round to Integer Operation</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

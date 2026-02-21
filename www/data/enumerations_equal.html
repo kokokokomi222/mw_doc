@@ -1,0 +1,77 @@
+<h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Enumerations Equal</h1>
+<p>
+    Returns whether two enumerations are equal.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enumeration 1</span> (Generic) - First value to compare
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enumeration 2</span> (Generic) - Second value to compare
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Boolean) - Output <code>Yes</code> if equal, <code>No</code> if not equal.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This is the only operation available for generic enumerations.
+    Sadly, <a href="?node=multiple_branches" class="node flow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#flow_icon"/></svg> Multiple Branches</a> do not support enumerations,
+    so this node with <a href="?node=double_branch" class="node flow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#flow_icon"/></svg> Double Branch</a> is the only way to change the execution flow with enumerations.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we are querying the gameplay mode, which is an enumeration that can have the value
+    <code>Test Play</code>, <code>Room Play</code>, and <code>Match Play</code>.
+    If the gameplay mode is equal to <code>Match Play</code>,
+    then we give an achievement to the player who selected this tab.
+    <img src="/image/enumerations_equal_example.webp" alt="enumerations equal example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you leave one of the input empty, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> is <code>No</code>.
+        If you leave both of the inputs empty, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> is <code>Yes</code>.
+    </li>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enumeration 1</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enumeration 2</span>
+        will change the type of the other to match it.
+    </li>
+    <li>
+        If you leave the type of the inputs as generic,
+        verification fails with "Node parameter settings error".
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=equal" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Equal</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

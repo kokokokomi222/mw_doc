@@ -1,0 +1,59 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Game Mode and Player Number</h1>
+<p>
+    Gets the number of players and the gameplay mode.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Count</span> (Integer) - Number of players that tried to enter this game.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Gameplay Mode</span> (Enumeration) - <code>Test Play</code>, <code>Room Play</code>, or <code>Match Play</code>.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Count</span> is the number of players that tried to enter this game.
+    If a player attempted to enter the game, but could not load into the game due to network issues,
+    they still count for this value.
+    If a player quit in the middle of the game, either deliberately or by getting disconnected,
+    they still count for this value.
+    This value does not change during the course of a game.
+</p>
+<p>
+    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Gameplay Mode</span> is:
+</p>
+<ul>
+    <li>
+        <code>Test Play</code> - if launched from Miliastra editor as Test Play, or Multiplayer Test Play.
+    </li>
+    <li>
+        <code>Room Play</code> - if launched from a room.
+    </li>
+    <li>
+        <code>Match Play</code> - if launched by going through the match making.
+    </li>
+</ul>
+<p>
+    If a player tried to match, but ended up only getting matched alone or just with their own team,
+    this still counts as <code>Match Play</code> (TODO: verify).
+</p>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

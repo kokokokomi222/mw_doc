@@ -1,0 +1,55 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</h1>
+<p>
+    Forwards an event to another entity.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target entity where the event is being forwarded to
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Forwarded event keeps the same event output values.
+    In particular, event source entity (which is present in many events) is the original entity, not the forwarded entity.
+    Typically, event source entity is same as self entity.
+    But with forwarded event, event source entity may differ from the self entity.
+</p>
+
+<h2>Example</h2>
+<p>
+    A timer event is forwarded to another entity with a specific GUID in this example.
+    <img src="/image/forwarding_event_example.webp" alt="forwarding event example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Forwarded event can be forwarded again. 
+        If an event is forwarded back to an entity that forwarded that event (thus making a loop),
+        it seems to be a no-op (so it does not crash in an infinite loop).
+    </li>
+    <li>
+        Signal event should not be forwarded
+        since it will be already be triggered by the original signal event on the target.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For a timer event, it took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,115 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</h1>
+<p>
+    Triggers on the stage when an entity is destroyed.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Destroyed entity.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if the entity was created dynamically.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Location</span> (3D Vector) - Location of the destroyed entity.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Orientation</span> (3D Vector) - Rotation of the destroyed entity.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Entity Type</span> (Enumeration) - One of <code>Stage</code>, <code>Object</code>, <code>Player</code>, <code>Character</code>, and <code>Creation</code>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Faction</span> (Faction) - Faction of the destroyed entity.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage Source</span> (Entity) - Entity that caused destruction of the entity by making it reach 0 HP. Can be <code>0</code>.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Owner Entity</span> (Entity) - Owner of the destroyed entity. <code>0</code> if the owner does not exist.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Custom Variable Component Snapshot</span> (Custom Variable Snapshot) - Snapshot of the custom variables of the destroyed entity. See <a href="?node=query_custom_variable_snapshot" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Custom Variable Snapshot</a>.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    <span class="emphasis">This node only works with the stage entity!</span>
+    This node must be in a node graph added to the stage entity.
+    When an entity is destroyed, it cannot run node graphs anymore and trigger events.
+    The stage is listening to destruction of other entities.
+</p>
+<p>
+    The difference between "remove" and "destroy" is important to understand.
+    Firstly, "destroy" could be thought of as a more specific version of "remove".
+    "Remove" and "destroy" both trigger <a href="?node=when_entity_is_removed_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Removed/Destroyed</a>,
+    but only "destroy" triggers this node.
+    When a creation is "destroyed", it plays its death animation and drops energy particles/orbs.
+    However, if it is "removed", it simply disappears into thin air.
+    This node receives much more information about the removed entity than <a href="?node=when_entity_is_removed_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Removed/Destroyed</a>.
+</p>
+<p>
+    Entities can be destroyed by the following methods:
+</p>
+<ul>
+    <li>
+        When a character/creation/object's HP reaches zero.
+    </li>
+    <li>
+        Calling <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a> on an entity.
+    </li>
+</ul>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph for the stage that is listening to the entity destruction event.
+    When the destroyed entity is a creation and is in faction <code>3</code>,
+    then we increment the achievement progress of the player that destroyed the entity
+    by the value of the <code>score</code> custom variable from the destroyed entity.
+    <img src="/image/query_custom_variable_snapshot_example.webp" alt="query custom variable snapshot example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Location</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Orientation</span> works with "basic motion device" movement.
+        However, it does not reflect the movement from "projectile motion device" or "follow motion device".
+        The entity will report the original starting location/rotation instead.
+    </li>
+    <li>
+        If the entity was destroyed by <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a>, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage Source</span> is <code>0</code>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    When repeatedly creating and destroying one entity with the default setting,
+    this node took ~3 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_entity_is_removed_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Removed/Destroyed</a>
+    </li>
+    <li>
+        <a href="?node=query_custom_variable_snapshot" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Custom Variable Snapshot</a>
+    </li>
+    <li>
+        <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

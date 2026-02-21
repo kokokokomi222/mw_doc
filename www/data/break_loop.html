@@ -1,0 +1,55 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Break Loop</h1>
+<p>
+    Breaks out of a loop.
+</p>
+
+<h2>Usage</h2>
+<p>
+    Use this node if you want to stop <a href="?node=finite_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Finite Loop</a> or <a href="?node=list_iteration_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Iteration Loop</a> in the middle.
+</p>
+
+<h2>Example</h2>
+<p>
+    In the following example, we are looping from 0 to 99 and printing the value.
+    But we will break out of the loop if the iteration value is no longer less than 10.
+    As a result, this node graph will only print numbers from 0 to 9.
+    <img src="/image/break_loop_example.webp" alt="break loop example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you have a loop in a composite node, or the break loop node is in a composite node, 
+        it will fail verification with the error "Execution flow loop detected in node graph"
+        and the stage will not run.
+        So the loop node and the break loop node must be in the same node graph,
+        i.e. cannot be split into composite nodes.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took less than 1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=finite_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Finite Loop</a>
+    </li>
+    <li>
+        <a href="?node=list_iteration_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Iteration Loop</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

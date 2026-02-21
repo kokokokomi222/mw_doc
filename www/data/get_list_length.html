@@ -1,0 +1,63 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get List Length</h1>
+<p>
+    Returns the length of the list.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> (Generic) - List to get the length of.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Length</span> (Integer) - Length of the list.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to get the length of the list, i.e. number of entries of the list.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a list of 6 strings:
+    <code>["Xilonen", "Ororon", "Kinich", "Mualani", "Iansan", "Chasca"]</code>.
+    We get the length of that list (which is 6), convert it to string, and print it.
+    <img src="/image/get_list_length_example.webp" alt="get list length example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> is not selected and left as generic, verification fails with "Node parameter settings error".
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> is left empty without any input connected, this node returns 0 for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Length</span>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For string list of length 10, this node took ~1 unit to run on average.
+</p>
+<p>
+    For integer list of length 1000, this node took ~6 unit to run on average.
+    This is maybe because the debugger stores and/or serializes the list,
+    but we are unsure how much faster it runs in release.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,88 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Custom Variable</h1>
+<p>
+    Gets the value of a custom variable.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity that holds the custom variable.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span> (String) - Name of the custom variable.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> (Generic) - Value of the custom variable.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Custom variable can be used to hold state that is publicly accessible by all node graphs.
+    It can also be used for string formatting by UI text box, text bubbles, nameplate, and others.
+    If you do not need the state to be read/written from other node graphs,
+    use node graph variable instead.
+</p>
+<p>
+    Custom variable is scoped for each created entities.
+    All custom variable values are lost if the entity is removed or destroyed from the scene,
+    and the values do not get restored if it is recreated by <a href="?node=create_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Entity</a>.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we get the custom variable named <code>weapon</code> from the character that selected the tab and print its value.
+    <img src="/image/get_custom_variable_example.webp" alt="get custom variable example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist, this node raises "Entity does not exist" error,
+        and returns <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhk23ora1wom">the default value of the type</a> selected for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If there does not exist a custom variable named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Variable Name</span>,
+        this node raises a "Custom Variable does not exist" warning
+        and returns <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhk23ora1wom">the default value of the type</a> selected for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+    <li>
+        If the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> does not match the type of the custom variable,
+        this node raises a "Custom Variable type error" error
+        and returns <a class="outbound_link" href="https://act.hoyoverse.com/ys/ugc/tutorial/detail/mhk23ora1wom">the default value of the type</a> selected for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span>.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    Getting a string custom variable took ~3 units to run on average.
+</p>
+<p>
+    Getting an integer list of length 1000 took ~7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_custom_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Custom Variable</a>
+    </li>
+    <li>
+        <a href="?node=get_node_graph_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Node Graph Variable</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

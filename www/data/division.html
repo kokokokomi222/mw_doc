@@ -1,0 +1,94 @@
+<h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Division</h1>
+<p>
+    Performs division.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> A</span> (Generic) - Dividend. Must be integer or floating point number.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> B</span> (Generic) - Divisor. Must be integer or floating point number.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Generic) - Result of the division of the input values.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to divide integers or floating point numbers.
+    If you need to divide a float with an integer,
+    use <a href="?node=data_type_conversion" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Data Type Conversion</a> to convert the integer to float.
+</p>
+<p>
+    Integer division is performed so that the result is rounded toward 0.
+    For example:
+</p>
+<ul>
+    <li>
+        <code>27 / 10</code> results in <code>2</code>.
+    </li>
+    <li>
+        <code>27 / -10</code> results in <code>-2</code>.
+    </li>
+    <li>
+        <code>-27 / 10</code> results in <code>-2</code>.
+    </li>
+    <li>
+        <code>-27 / -10</code> results in <code>2</code>.
+    </li>
+</ul>
+
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> A</span>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> B</span>, or <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span>
+        will change the type of the others to match it.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> B</span> is <code>0</code> (integer), this node returns <code>0</code>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> B</span> is <code>0.0</code> (float), this node returns <code>0.0</code>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> A</span> is <code>-2147483648</code> (smallest possible 32-bit integer) and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> B</span> is <code>-1</code>,
+        this node returns 0 because <code>2147483648</code> cannot be represented as a 32-bit integer.
+    </li>
+    <li>
+        Miliastra uses 32-bit floating point number,
+        so all the usual issues dealing with 32-bit floats are relevant.
+        Repeated arithmetic operations can accumulate precision loss and result in unexpected result.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average (for either integer or float).
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=multiplication" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Multiplication</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

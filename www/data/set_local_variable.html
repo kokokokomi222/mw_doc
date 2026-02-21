@@ -1,0 +1,82 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Local Variable</h1>
+<p>
+    Sets a local variable value.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Local Variable</span> (Local Variable) - Local variable to set. From <a href="?node=get_local_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Local Variable</a>.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Generic) - Value to set the local variable to.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Local variables are used to keep state within a scope of one execution of a node graph.
+    This node lets us set the value of the variable.
+</p>
+<p>
+    If you have states that only need to live during one execution of a node graph,
+    local variables are what you should use to store those states.
+</p>
+<p>
+    When a node's output is connected to multiple nodes, 
+    that node is evaluated each time the other nodes are evaluated.
+    If that node's output does not change,
+    you may wish to store the output in a local variable for performance.
+</p>
+
+<h2>Example</h2>
+<p>
+    This example removes all entities with a specific prefab ID when the tab is selected.
+    A local variable is used to temporarily store the list of all relevant entities.
+    If the list was directly connected to the loop without using the local variable,
+    this node graph will not work as intended 
+    because the <a href="?node=get_entities_with_specified_prefab_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entities With Specified Prefab on the Field</a>
+    node will be evaluated every iteration and the list will change.
+    <img src="/image/set_local_variable_example.webp" alt="set local variable example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If the type of the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Local Variable</span> and the type of the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> is different, this node is no-op.
+        There is no type checking for this, so be careful to set the types correctly.
+    </li>
+    <li>
+        For container types such as list, dictionary, or structure,
+        this node receives the reference of the container as <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span>
+        and copies the content of the input container.
+        The resulting local variable will have different reference as the input value.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For small integer values, it took ~2 units to run on average.
+</p>
+<p>
+    For 1000-character-long string, it took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_local_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Local Variable</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,52 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Pi (π)</h1>
+<p>
+    Returns <code>3.142</code>.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Pi (π)</span> (Floating Point Numbers) - <code>3.142</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This node returns <code>3.142</code>, an approximate value of π.
+    This is weird, because floats in Miliastra are 32-bit,
+    so we can have more precision (roughly 7 decimal digits).
+    You may want to define your own alternative composite node for this node
+    (e.g. <a href="?node=degrees_to_radians" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Degrees to Radians</a> of <code>180</code>, which returns <code>3.1415927</code>),
+    but in most cases the precision shouldn't matter too much (it's only off by ~0.013%).
+</p>
+<p>
+    You may want to use <a href="?node=degrees_to_radians" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Degrees to Radians</a> or <a href="?node=radians_to_degrees" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Radians to Degrees</a> instead
+    if you are working with angles.
+</p>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=degrees_to_radians" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Degrees to Radians</a>
+    </li>
+    <li>
+        <a href="?node=radians_to_degrees" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Radians to Degrees</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,50 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Invoke Deck Selector</h1>
+<p>
+     Open the pre-made Deck Selector for the Target Player
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Specify the runtime Player to invoke the Deck Selector
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Deck Selector ID</span> (Integer) - Referenced UI Control Group ID
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select Duration</span> (Floating Point Numbers) - If empty, uses the Deck Selector's default configuration; otherwise, this time value is used as the effective durationUnit in seconds
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select Result Corresponding List</span> (Integer List) - One-to-one with display items: the Deck Selector returns the result value corresponding to each display itemRecommended configuration: 1 to X
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select Display Corresponding List</span> (Integer List) - Deck Library Configuration Reference
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select Minimum Quantity</span> (Integer) - The minimum number of cards that must be selected for a valid interaction
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select Maximum Quantity</span> (Integer) - The maximum number of cards that can be selected for a valid interaction
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Refresh Mode</span> (Enumeration) - No RefreshThe minimum and maximum refresh count parameters are invalid, and the selection interface has no Refresh button
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Refresh Minimum Quantity</span> (Integer) - The minimum number of cards that must be selected for a valid refresh interaction.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Refresh Maximum Quantity</span> (Integer) - The maximum number of cards that can be selected for a valid refresh interaction
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Default Return Selection</span> (Integer List) - If the Deck Selector times out, has no interaction, or closes abnormally, force-assign this configured resultThe length of this Result List must match the valid card selection count
+    </li>
+</ul>
+
+
+
+
+
+
+<h2>Credits</h2>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,122 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Finite Loop</h1>
+<p>
+    Loops through an integer range.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> (Integer) - Starting integer value for iteration
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> (Integer) - Integer value at which the iteration ends
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Loop Value</span> (Integer) - Current integer value for iteration
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to loop through an integer range.
+    The iteration range is <span class="emphasis">inclusive of both ends</span>.
+    For example, if the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> is 3 and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> is 7,
+    then <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Loop Value</span> will iterate through 3, 4, 5, 6, and 7.
+</p>
+<p>
+    The execution of the node graph will continue along "Loop Complete" after the loop is completed.
+    See <a href="?node=break_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Break Loop</a> to see how to break the loop.
+</p>
+<p>
+    It may be fine to use this node plainly for very simple tasks with a small range.
+    However, this node is notoriously slow for various reasons.
+    If you are intending to do any non-trivial amount of work with this loop,
+    it is important to understand its exact behavior described in the "Notes" section below.
+</p>
+
+<h2>Example</h2>
+<p>
+    This node graph prints numbers from 0 to 9 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 
+    and then prints "Loop completed!".
+    <img src="/image/finite_loop_example.webp" alt="finite loop example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> are evaluated before each iteration.  
+        These values can be modified while the loop is running,
+        and that can change <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Current Loop value</span> during the same iteration.
+        While we cannot be absolutely certain,
+        the behavior seems to be described by the following Python-like pseudocode:
+        <pre>
+  i:int = 0
+  while True:
+      loop_start_value  :int = get_loop_start_value()
+      loop_end_value    :int = get_loop_end_value()
+      current_loop_value:int = loop_start_value + i
+      if current_loop_value > loop_end_value:
+          break
+      
+      # it evaluates the start value every time iteration value is used
+      def get_current_loop_value() -> int:
+          return get_loop_start_value() + i
+      loop_body(get_current_loop_value)
+      
+      i += 1</pre>
+        Because of its behavior, following optimizations may be necessary for your loop to run better:
+        <ul>
+          <li>
+            Stick to literal values for <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> whenever possible.      
+          </li>
+          <li>
+            If you must dynamically set <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span>,
+            then store it into a local variable first.
+            This will make sure that they do not get evaluated every time the output is used, improving performance.
+          </li>
+          <li>
+            If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Loop Value</span> is used multiple times, you will want to store it into a local variable first.
+            This will make sure that <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> does not get evaluated every time the output is used, improving performance.
+          </li>
+          <li>
+            If you have a performance critical loop and the range is small,
+            consider unrolling the loop by setting the content of the loop body as a composite node
+            and placing multiple instances of the node.
+            <img src="/image/finite_loop_unrolled_loop.webp" alt="finite loop unrolled loop" class="expandable_img" loading="lazy"/>
+          </li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node is unusually slow in load testing.
+    Looping through 10 values took ~200 units on average.
+    Looping through 1000 values took ~3000 units on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=break_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Break Loop</a>
+    </li>
+    <li>
+        <a href="?node=list_iteration_loop" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> List Iteration Loop</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

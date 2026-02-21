@@ -1,0 +1,129 @@
+:root {
+    --nav-width: 20rem;
+}
+
+#body_layout {
+    margin: calc(var(--margin-medium) * 2 + var(--header-height)) 0 0 calc(var(--nav-width) + 2 * var(--margin-medium));
+}
+
+nav {
+    display: block;
+    position: fixed;
+    top: calc(var(--header-height) + 2 * var(--margin-medium));
+    left: 0;
+    z-index: 50;
+
+    padding: var(--margin-medium);
+    width: var(--nav-width);
+    height: calc(100vh - var(--header-height) - 4 * var(--margin-medium));
+    background-color: var(--color-nav-back);
+    box-shadow: 0 0 var(--margin-medium) 0 black;
+
+    transition: 
+        width 0.1s ease-in-out,
+        height 0.1s ease-in-out;
+
+    & #nav_fold_button {
+        display: none;
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0 calc(var(--margin-medium) - 2px) 0;
+        /* background-color: #777; */
+        /* color: rgb(238, 153, 181); */
+        font-size: 4rem;
+        align-items: center;
+        justify-content: center;
+    }
+    & input {
+        width: calc(var(--nav-width) - 2 * var(--margin-small) - 2px);
+        height: 1rem;
+        padding: var(--margin-small);
+        margin: 0 0 var(--margin-medium) 0;
+        border: 1px solid black;
+        font-size: 1rem;
+    }
+    & #nav_list {
+        padding: 0;
+        margin: 0;
+        height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 3rem);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+
+        & a {
+            margin: 0;
+            width: calc(var(--nav-width) - 2 * var(--margin-small) -2px);
+            display: block;
+            padding: var(--margin-small);
+            border: 1px solid black;
+            font-family: var(--font-heading);
+            color: white;
+            text-decoration: none;
+        }
+        & a:hover {
+            cursor: pointer;
+            filter: brightness(150%);
+        }
+        & a.search_hide {
+            display: none;
+        }
+        & a div {
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+            white-space: nowrap;
+            line-height: 1.2rem;
+        }
+        & a svg {
+            display: inline;
+            width: 1.2rem;
+            height: 1.2rem;
+            vertical-align: text-bottom;
+            margin: 0 .3rem 0 0;
+        }
+    }
+}
+    
+.node {
+    width: 30rem;
+    display: block;
+}
+ul.see_also .node {
+    padding: 6px;
+}
+
+@media (width < 960px) {
+    :root {
+        --nav-width: 18rem;
+    }
+}
+
+@media (width < 720px) {
+    #body_layout {
+        margin: calc(var(--margin-medium) * 2 + var(--header-height)) 0 0 0;
+    }
+    main {
+        padding-top: calc(var(--margin-medium) + 5rem);
+    }
+    nav {
+        position: fixed;
+
+        & #nav_fold_button {
+            display: flex;
+        }
+        & #nav_list {
+            height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 6rem);
+        }
+    }
+    nav.nav_collapsed {
+        width: 3rem;
+        height: 3rem;
+
+        & input {
+            display: none;
+        }
+        & #nav_list {
+            display: none;
+        }
+    }
+}

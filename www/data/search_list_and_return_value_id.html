@@ -1,0 +1,81 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Search List and Return Value ID</h1>
+<p>
+    Searches a list for a value, returning the list of indices.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target List</span> (Generic) - The list to search in.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Generic) - The value to search for.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> ID List</span> (Integer List) - List of indices where the value is found at.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to find all occurrences of a value in a list.
+    If you only need to know whether the value is present,
+    use <a href="?node=list_includes_this_value" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> List Includes This Value</a> instead.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a string list depicting a result of a 10-pull.
+    We search this list for occurrences of <code>"Kokomi"</code> and print the indices,
+    so this example will print <code>"2"</code> and <code>"7"</code>.
+    <img src="/image/search_list_and_return_value_id_example.webp" alt="search list and return value id example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> will change the type of the other to match it.
+    </li>
+    <li>
+        If no matches are found, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> ID List</span> is empty.
+    </li>
+    <li>
+        For floating point numbers, this node uses approximate equality
+        (e.g. <code>10.0</code> and <code>10.00001</code> is considered equal by this node).
+        This approximate equality seems to be same as <a href="?node=equal" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Equal</a>,
+        but we cannot be completely sure.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    For integer list of length 10, this node took ~2 units to run on average.
+</p>
+<p>
+    For integer list of length 1000,
+    this node took ~10 units to run on average with 0 matches,
+    ~18 units to run with all entries matching.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=list_includes_this_value" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> List Includes This Value</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p><a href="#">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>
