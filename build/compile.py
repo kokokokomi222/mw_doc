@@ -127,7 +127,7 @@ def parse_link(state:ParseState) -> str:
             link_url = f"image/{tokens[1]}.webp"
             if not os.path.isfile(os.path.join(f"../{OUTPUT_DIR}", link_url)):
                 state.raise_error(f'Image does not exist: {tokens[1]}')
-            return f'<img src="/{link_url}" alt="{alt_text}" class="expandable_img" loading="lazy"/>'
+            return f'<img src="/mw_doc/{link_url}" alt="{alt_text}" class="expandable_img" loading="lazy"/>'
         case 'hoyo':
             url = f'https://act.hoyoverse.com/ys/ugc/tutorial/detail/{tokens[1]}'
             return f'<a class="outbound_link" href="{url}">{tokens[2]}</a>'
@@ -381,5 +381,5 @@ if __name__ == '__main__':
             if slug in slug_with_change:
                 compile_doc(full_path, slug)
 
-    with open('../{OUTPUT_DIR}/nodes.json', 'w', encoding='utf-8') as file:
+    with open(f'../{OUTPUT_DIR}/nodes.json', 'w', encoding='utf-8') as file:
         json.dump({'nodes': NODES}, file, indent=4)

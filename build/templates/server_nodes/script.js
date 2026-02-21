@@ -1,5 +1,5 @@
 const STUB = `<div class="stub">
-    <img src="/stub.webp" alt="Stub"/>
+    <img src="/mw_doc/stub.webp" alt="Stub"/>
     <p>
         This documentation page is a stub.
         It is an automatically generated placeholder.
@@ -66,7 +66,7 @@ function image_clicked(event) {
 let NODE_DATA = {};
 
 async function load_node_doc(slug, nav_method='push') {
-    fetch(`/data/${slug}.html`).then(
+    fetch(`/mw_doc/data/${slug}.html`).then(
         response => {
             if (response.ok) {
                 return response.text();
@@ -121,7 +121,7 @@ async function load_node_doc(slug, nav_method='push') {
     );
 }
 
-fetch('/nodes.json').then(
+fetch('/mw_doc/nodes.json').then(
     response => {
         if (response.ok) {
             return response.json();

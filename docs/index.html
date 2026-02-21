@@ -420,7 +420,7 @@ dialog::backdrop {
     <!-- <use x="0" y="0" width="1" height="1" href="#operation_icon"/> -->
 </svg>
         <header>
-            <h1><a href="/"><img src="/kokomi.webp" alt="Kokomi icon"></img></a>Koko's MW Doc</h1>
+            <h1><a href="/mw_doc/"><img src="/mw_doc/kokomi.webp" alt="Kokomi icon"></img></a>Koko's MW Doc</h1>
             <span>
                 Unofficial documentation for Miliastra Wonderland
                 <span class="bot">
@@ -504,7 +504,7 @@ dialog::backdrop {
 };
 let NODE_DATA = {};
 
-fetch('/nodes.json').then(
+fetch('/mw_doc/nodes.json').then(
     response => {
         if (response.ok) {
             return response.json();

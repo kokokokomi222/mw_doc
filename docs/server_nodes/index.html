@@ -548,7 +548,7 @@ ul.see_also .node {
     <!-- <use x="0" y="0" width="1" height="1" href="#operation_icon"/> -->
 </svg>
         <header>
-            <h1><a href="/"><img src="/kokomi.webp" alt="Kokomi icon"></img></a><a href="/">Koko's MW Doc</a> / Server Nodes</h1>
+            <h1><a href="/mw_doc/"><img src="/mw_doc/kokomi.webp" alt="Kokomi icon"></img></a><a href="/mw_doc/">Koko's MW Doc</a> / Server Nodes</h1>
             <span>
                 Unofficial documentation for Miliastra Wonderland
                 <span class="bot">
@@ -576,7 +576,7 @@ ul.see_also .node {
     </body>
     <script>
         const STUB = `<div class="stub">
-    <img src="/stub.webp" alt="Stub"/>
+    <img src="/mw_doc/stub.webp" alt="Stub"/>
     <p>
         This documentation page is a stub.
         It is an automatically generated placeholder.
@@ -643,7 +643,7 @@ function image_clicked(event) {
 let NODE_DATA = {};
 
 async function load_node_doc(slug, nav_method='push') {
-    fetch(`/data/${slug}.html`).then(
+    fetch(`/mw_doc/data/${slug}.html`).then(
         response => {
             if (response.ok) {
                 return response.text();
@@ -698,7 +698,7 @@ async function load_node_doc(slug, nav_method='push') {
     );
 }
 
-fetch('/nodes.json').then(
+fetch('/mw_doc/nodes.json').then(
     response => {
         if (response.ok) {
             return response.json();

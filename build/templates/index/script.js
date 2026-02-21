@@ -7,7 +7,7 @@ const NODE_TYPE_NAME = {
 };
 let NODE_DATA = {};
 
-fetch('/nodes.json').then(
+fetch('/mw_doc/nodes.json').then(
     response => {
         if (response.ok) {
             return response.json();

@@ -28,8 +28,8 @@ def page(slug:str, title:str, header_breadcrumb:str) -> str:
             script = dump(f'{slug}/script.js'),
         ))
 
-page('server_nodes', 'Server Nodes', '<a href="/">Koko\'s MW Doc</a> / Server Nodes')
-page('about', 'About', '<a href="/">Koko\'s MW Doc</a> / About')
+page('server_nodes', 'Server Nodes', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Server Nodes')
+page('about', 'About', '<a href="/mw_doc/">Koko\'s MW Doc</a> / About')
 page('index', 'Home', 'Koko\'s MW Doc')
 
 # TODO: handle footer
