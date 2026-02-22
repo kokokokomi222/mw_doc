@@ -50,7 +50,7 @@ We store this list in a local variable and then iterate through this list and pr
   without storing in a variable first, the modification will be lost.
 
 # Performance
-For a list of 5 entries, this node ~4 units to run on average.
+For a list of 5 entries, it took ~4 units to run on average.
 
 # See Also
 * [node:assembly_dictionary]

@@ -14,8 +14,13 @@ Creates a prefab group.
 * [output:Created_Entity_List] (Entity List) - Entities created in this way do not have a GUID
 
 # Usage
+A prefab group consists of multiple prefabs.
+Prefab groups let you place prefabs that repeatedly show up together with same relative positions.
+This node creates an instance of a prefab group dynamically.
+
 A prefab group can be created by drag selecting or shift selecting multiple prefabs,
-and then right click to bring up the context menu and selecting "Create Prefab Group".
+right clicking to bring up the context menu,
+and then selecting "Create Prefab Group".
 [image:create_prefab_group_create_menu]
 
 # Example
@@ -51,7 +56,7 @@ with level 90 and unit tags `[1073741826, 1073741827]`.
 * TODO: test what happens when dynamic entity limit is reached.
 
 # Performance
-Creating a prefab group with five prefabs with default setting took ~250 units to run on average.
+Creating a prefab group with five prefabs with the default setting took ~250 units to run on average.
 Setting [input:Unit_Tag_Index_List] does not seem to visibly affect the performance of this node.
 
 # See Also

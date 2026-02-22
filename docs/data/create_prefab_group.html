@@ -37,8 +37,14 @@
 
 <h2>Usage</h2>
 <p>
+    A prefab group consists of multiple prefabs.
+    Prefab groups let you place prefabs that repeatedly show up together with same relative positions.
+    This node creates an instance of a prefab group dynamically.
+</p>
+<p>
     A prefab group can be created by drag selecting or shift selecting multiple prefabs,
-    and then right click to bring up the context menu and selecting "Create Prefab Group".
+    right clicking to bring up the context menu,
+    and then selecting "Create Prefab Group".
     <img src="/mw_doc/image/create_prefab_group_create_menu.webp" alt="create prefab group create menu" class="expandable_img" loading="lazy"/>
 </p>
 
@@ -96,7 +102,7 @@
 
 <h2>Performance</h2>
 <p>
-    Creating a prefab group with five prefabs with default setting took ~250 units to run on average.
+    Creating a prefab group with five prefabs with the default setting took ~250 units to run on average.
     Setting <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> does not seem to visibly affect the performance of this node.
 </p>
 <span class="small">
@@ -124,6 +130,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/create_prefab_group.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

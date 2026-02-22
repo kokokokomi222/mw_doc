@@ -21,13 +21,13 @@ We get the minimum value of the list (which is `-5`), convert it to string, and 
   A more reasonable value to output would have been
   the maximum integer value `2147483647` for integer list,
   or the maximum float value (roughly 3.4\*10^38) for floating point number list.
-  You may want to make a composite node version of this node to handle empty list better.
+  You may want to make a composite node version of this node to handle the empty list better.
 * Changing the type of [input:List] or [output:Minimum_Value] will change the type of the other to match it.
 
 # Performance
-For integer list of length 10, this node took ~2 unit to run on average.
+For an integer list of length 10, it took ~2 unit to run on average.
 
-For integer list of length 1000, this node took ~6 unit to run on average.
+For an integer list of length 1000, it took ~6 unit to run on average.
 
 # See Also
 * [node:get_maximum_value_from_list]

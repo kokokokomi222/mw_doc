@@ -5,7 +5,7 @@ Outputs a string to the log.
 * [input:String] (String) - String to be printed
 
 # Usage
-This is NOT visible to players and is only used for print debugging while testing.
+This is **not** visible to players and is only used for print debugging while testing.
 Use a [hoyo:mhnltrr3g966:text box UI control] to show a string to players.
 
 To see the output, click Window &gt; Log menu from the top of the Miliastra Sandbox window.
@@ -22,7 +22,8 @@ This is how it appears in the log.
 
 # Notes
 * This node still prints the string even when the node graph is not selected in the log.
-* Long strings are trimmed from the output, only showing the first part of the string that fits in the log window.
+* Long strings are trimmed in the output,
+  only showing the first part of the string that fits in the log window.
   You may be able to resize the log window to see more.
 * If an empty string is passed, it will still print "print:".
 * The maximum length of a string is 1000.

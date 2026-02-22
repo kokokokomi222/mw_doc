@@ -28,8 +28,6 @@ In this example, we print a random floating point number between 0 and 1.
 # Performance
 This node took ~2 units to run on average.
 
-Input values do not seem to visibly affect the performance.
-
 # See Also
 * [node:get_random_integer]
 * [node:weighted_random]

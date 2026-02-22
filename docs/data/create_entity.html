@@ -16,7 +16,7 @@
 <h2>Usage</h2>
 <p>
     Typically, entities placed in the scene are created when the stage begins.
-    However, "Initial Create" can be set to false under "Create Setting",
+    However, "Initial Create" can be set to false under "Create Settings" in the entity detail panel,
     which allows you to create these entities later with this node.
     <img src="/mw_doc/image/create_entity_initial_setting.webp" alt="create entity initial setting" class="expandable_img" loading="lazy"/>
 </p>
@@ -56,10 +56,10 @@
         but tag B and C were passed into <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span>,
         then the created entity has tag B and C.
         However, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> is left empty, or an empty list is passed into it,
-        the tags set in the prefab detail panel will be used.
+        the tags set in the entity detail panel will be used.
     </li>
     <li>
-        If entity with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target GUID</span> already have been created, this node is no-op.
+        If the entity with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target GUID</span> has been created already, this node is no-op.
         In particular, this node does not modify the tag list of the entity in this case.
     </li>
     <li>
@@ -72,11 +72,14 @@
     <li>
         This node works perfectly fine with creations.
     </li>
+    <li>
+        TODO: test what happens when dynamic entity limit is reached.
+    </li>
 </ul>
 
 <h2>Performance</h2>
 <p>
-    Creating an entity with default dynamic unit setting took ~65 units to run on average.
+    Creating an entity with the default dynamic unit setting took ~65 units to run on average.
     Setting <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Unit Tag Index List</span> does not seem to visibly affect the performance of this node.
 </p>
 <span class="small">
@@ -104,6 +107,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/create_entity.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

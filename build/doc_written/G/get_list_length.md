@@ -21,9 +21,9 @@ We get the length of that list (which is 6), convert it to string, and print it.
 * If [input:List] is left empty without any input connected, this node returns 0 for [output:Length].
 
 # Performance
-For string list of length 10, this node took ~1 unit to run on average.
+For a string list of length 10, it took ~1 unit to run on average.
 
-For integer list of length 1000, this node took ~6 unit to run on average.
+For an integer list of length 1000, it took ~6 unit to run on average.
 This is maybe because the debugger stores and/or serializes the list,
 but we are unsure how much faster it runs in release.
 

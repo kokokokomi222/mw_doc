@@ -13,8 +13,9 @@
 <h2>Usage</h2>
 <p>
     Forwarded event keeps the same event output values.
-    In particular, event source entity (which is present in many events) is the original entity, not the forwarded entity.
-    Typically, event source entity is same as self entity.
+    In particular, event source entity (which is present in many events) is the original entity,
+    not the entity it is forwarded to.
+    Typically, event source entity is same as the self entity from <a href="?node=get_self_entity" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Self Entity</a>.
     But with forwarded event, event source entity may differ from the self entity.
 </p>
 
@@ -27,12 +28,12 @@
 <h2>Notes</h2>
 <ul>
     <li>
-        Forwarded event can be forwarded again. 
+        A forwarded event can be forwarded again.
         If an event is forwarded back to an entity that forwarded that event (thus making a loop),
         it seems to be a no-op (so it does not crash in an infinite loop).
     </li>
     <li>
-        Signal event should not be forwarded
+        A signal event should not be forwarded
         since it will be already be triggered by the original signal event on the target.
     </li>
 </ul>
@@ -50,6 +51,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/F/forwarding_event.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

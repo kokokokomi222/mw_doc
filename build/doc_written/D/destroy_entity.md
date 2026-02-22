@@ -19,7 +19,7 @@ We set "Effective Target" to "Creations".
 
 In the node graph added to the character,
 we destroy the entity that entered this collision trigger area.
-As a result, any creation that our character touch will be destroyed.
+As a result, any creation that our character touches will be destroyed.
 [image:destroy_entity_example]
 
 # Notes

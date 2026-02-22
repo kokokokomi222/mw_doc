@@ -51,7 +51,7 @@ and with unit tags `[1073741826, 1073741827]`.
 * TODO: test what happens when dynamic entity limit is reached.
 
 # Performance
-Creating an entity with default prefab setting took ~70 units to run on average.
+Creating an entity with the default prefab setting took ~70 units to run on average.
 Setting [input:Unit_Tag_Index_List] does not seem to visibly affect the performance of this node.
 
 # See Also

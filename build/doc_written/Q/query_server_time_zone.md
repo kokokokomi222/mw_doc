@@ -14,6 +14,8 @@ On 2026-02-02, the value was:
 * TW,HK,MO: `8` (China Standard Time)
 
 But we do not yet know how this value handles daylight saving time.
+We can guess that it will stay the same,
+because America Genshin Impact server does not seem to observe daylight saving time.
 
 # Example
 This example prints the server time zone output.

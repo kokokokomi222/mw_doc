@@ -23,16 +23,16 @@ The entry at index 0 was removed, so the resulting list is
 [image:remove_value_from_list_example]
 
 # Notes
-* If a negative index is used, this node raises a "List INDEX error" error, but continues the execution.
-* If the index is not less than the length of the list, 
+* If [input:Remove_ID] is negative, this node raises a "List INDEX error" error, but continues the execution.
+* If [input:Remove_ID] is not less than the length of the list, 
   this node raises an "Index exceeds list length" error
-  (little misleading, because if index is equal to list length, this error still occurs), 
+  (little misleading, because if [input:Remove_ID] is equal to the length of the list, this error still occurs), 
   but continues the execution.
 
 # Performance
-For integer list of length 10, it took ~2 units to run on average.
+For an integer list of length 10, it took ~2 units to run on average.
 
-For integer list of length 500, it took ~3 units to run on average.
+For an integer list of length 500, it took ~3 units to run on average.
 
 Index does not seem to affect performance visibly, regardless of removing at 0 or at the end of the list.
 

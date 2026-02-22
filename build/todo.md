@@ -1,7 +1,12 @@
 # TODO
 * equal - performance
 * data type conversion - float -> string behavior, performance
-* query_game_mode_and_player_number - verify match making in release
+* query_game_mode_and_player_number - verify match making in release\
+* create_entity - what happens at dynamic entity limit
+
+# MINOR NITPICKS
+* break loop example should have loop complete running
+* remove value from list should remove from middle, not front
 
 # NEXT NODES
 ## Execution
@@ -31,6 +36,8 @@
 * three variables - local, node graph, custom
 * default value of a type
 * container type and reference passing
+* removed vs destroyed
+* preset status
 
 # MATH OPERATION NODE SORTING
 ## Arithmetic

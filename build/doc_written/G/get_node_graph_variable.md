@@ -28,11 +28,11 @@ In this example, we get the node graph variable named `favorite_character` and p
 * If there does not exist a node graph variable named [input:Variable_Name],
   this node raises a "Custom Variable does not exist" error
   (misleading because "custom variable" and "node graph variable" are different)
-  and returns [hoyo:mhk23ora1wom:the default value of the type] selected for [output:Variable_Value].
+  and returns the default value of the type selected for [output:Variable_Value].
 * If the type of [output:Variable_Value] does not match the type of the node graph variable,
   this node raises a "Custom Variable type error" error
   (misleading because "custom variable" and "node graph variable" are different)
-  and returns [hoyo:mhk23ora1wom:the default value of the type] selected for [output:Variable_Value].
+  and returns the default value of the type selected for [output:Variable_Value].
 
 # Performance
 Getting a string node graph variable took ~3 units to run on average.

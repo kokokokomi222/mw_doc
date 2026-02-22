@@ -5,7 +5,7 @@ Generates weighted random number.
 * [input:Weight_List] (Integer List) - List of weights for each index.
 
 # Output Values
-* [output:Weight_ID] (Integer) - Randomly generated index. Ranges from 0 to N-1, where N is the length of the input list.
+* [output:Weight_ID] (Integer) - Randomly generated index. This is 0-indexed. Ranges from 0 to N-1, where N is the length of the input list.
 
 # Usage
 Use this node to generate a random number with weights.

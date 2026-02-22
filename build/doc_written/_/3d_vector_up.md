@@ -9,7 +9,6 @@ One could just use [node:create_3d_vector],
 but this node lets you document the intention more clearly.
 
 # Performance
-This node is unusually slow in load testing.
 This node took ~3 units to run on average.
 
 # See Also

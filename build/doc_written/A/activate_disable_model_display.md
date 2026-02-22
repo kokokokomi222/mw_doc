@@ -1,9 +1,9 @@
 # Summary
-Makes entity visible or invisible.
+Makes an entity visible or invisible.
 
 # Input Parameters
 * [input:Target_Entity] (Entity) - Entity to change visibility.
-* [input:Activate] (Boolean) - `Yes` to make entity visible, `No` to make entity invisible.
+* [input:Activate] (Boolean) - `Yes` to make the entity visible, `No` to make the entity invisible.
 
 # Usage
 Use this node to make the model of an entity visible or invisible to all players.

@@ -29,8 +29,6 @@ In this example, we set `buff` node graph variable to a random integer between 1
 # Performance
 This node took ~2 units to run on average.
 
-Input values do not seem to visibly affect the performance.
-
 # See Also
 * [node:get_random_floating_point_number]
 * [node:weighted_random]

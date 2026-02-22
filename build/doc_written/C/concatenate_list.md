@@ -6,7 +6,9 @@ Appends a list to the end of another list.
 * [input:Input_List] (Generic List) - List to append.
 
 # Usage
-Use this node to append a list to the end of another list. For example, if the target list is `[1, 2, 3]`, and the input list is `[99, 100]`, the target list will be modified to `[1, 2, 3, 99, 100]`.
+Use this node to append a list to the end of another list.
+For example, if [input:Target_List] is `[1, 2, 3]`, and [input:Input_List] is `[99, 100]`,
+[input:Target_List] will be modified to `[1, 2, 3, 99, 100]`.
 
 # Example
 In this example, a local variable was initially set to `["Venti", "Zhongli", "Raiden"]`. A second list, `["Nahida", "Furina", "Mavuika"]`, was appended to the end of the first list. The first list is modified to `["Venti", "Zhongli", "Raiden", "Nahida", "Furina", "Mavuika"]` after this node graph runs.

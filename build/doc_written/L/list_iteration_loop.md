@@ -15,7 +15,7 @@ See [node:break_loop] to see how to break the loop.
 
 It may be fine to use this node plainly for very simple tasks with tiny lists.
 However, this node is notoriously slow for various reasons.
-If you are intending to do any non-trivial amount of work with this loop,
+If you are intending to do any nontrivial amount of work with this loop,
 it is important to understand its exact behavior described in the "Notes" section below.
 
 # Example
@@ -28,8 +28,9 @@ node will be evaluated every iteration and the list will change.
 [image:set_local_variable_example]
 
 # Notes
-* Changing the type of Iteration List of Iteration Value will change the type of the other to match it.
-* [input:Iteration_List] is evaluated before each iteration. 
+* Changing the type of [input:Iteration_List] or [output:Iteration_Value] will change the type of the other to match it.
+* [input:Iteration_List] is evaluated before each iteration,
+  and it is also evaluated every time [output:Iteration_Value] is used.
   This list can be modified while the loop is running,
   and this can even change [output:Iteration_Value] during the same iteration.
   While we cannot be absolutely certain,

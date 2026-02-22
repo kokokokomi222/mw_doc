@@ -2,7 +2,8 @@
 Breaks out of a loop.
 
 # Usage
-Use this node if you want to stop [node:finite_loop] or [node:list_iteration_loop] in the middle.
+Use this node if you want to stop [node:finite_loop] or [node:list_iteration_loop]
+in the middle of the loop and continue the execution at [output:Loop_Complete].
 
 # Example
 In the following example, we are looping from 0 to 99 and printing the value.

@@ -39,10 +39,10 @@
 <h2>Notes</h2>
 <ul>
     <li>
-        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is negative, this node raises a "List INDEX error" error, but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to <code>""</code> (empty string).
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is negative, this node raises a "List INDEX error" error, but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to the default value of the type.
     </li>
     <li>
-        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is not less than the length of the list, "Index exceeds list length" error (little misleading, because if index is equal to list length, this error still occurs), but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to <code>""</code> (empty string).
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> ID</span> is not less than the length of the list, "Index exceeds list length" error (little misleading, because if index is equal to list length, this error still occurs), but continues the execution with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> set to the default value of the type.
     </li>
     <li>
         Changing the type of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List</span> or <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> will change the type of the other to match it.
@@ -51,10 +51,10 @@
 
 <h2>Performance</h2>
 <p>
-    For string list of length 10, this node took ~2 units to run on average.
+    For string list of length 10, it took ~2 units to run on average.
 </p>
 <p>
-    For integer list of length 1000, this node took ~7 units to run on average.
+    For integer list of length 1000, it took ~7 units to run on average.
 </p>
 <span class="small">
 Performance may vary for various reasons.
@@ -72,6 +72,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_corresponding_value_from_list.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

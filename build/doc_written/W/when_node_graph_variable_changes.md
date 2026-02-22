@@ -65,9 +65,9 @@ it works perfectly fine for container type variables as long as [node:set_node_g
   All events are polled in order after the execution of the node graph.
 
 # Performance
-Listening to changing an integer variable took ~3 units to run on average.
+Listening to the change of an integer variable took ~3 units to run on average.
 
-Listening to changing a list of 1000 integers took ~11 units to run on average.
+Listening to the change of a list of 1000 integers took ~11 units to run on average.
 
 [node:set_node_graph_variable] runs slightly faster if [input:Trigger_Event] is set to `No`.
 See [node:set_node_graph_variable] for detail.

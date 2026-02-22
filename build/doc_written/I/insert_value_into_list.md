@@ -21,19 +21,19 @@ In this example, a local variable was initially set to `["Amber", "Lisa", "Kaeya
 [image:insert_value_into_list_example]
 
 # Notes
-* If a negative index is used, this node is a no-op.
-* If the index is greater than the length of the list, this node is a no-op.
+* If [input:Insert_ID] is negative, this node is a no-op.
+* If [input:Insert_ID] is greater than the length of the list, this node is a no-op.
 * The maximum size of a list is 1000. If a value is inserted into a list of length 1000, this node is a no-op.
-* Changing the type of List or Inserted Value will change the type of the other to match it.
+* Changing the type of [input:List] or [input:Insert_Value] will change the type of the other to match it.
 
 # Performance
-For integer list of length 10, it took ~2 units to run on average.
+For an integer list of length 10, it took ~2 units to run on average.
 
-For integer list of length 500, it took ~4 units to run on average.
+For an integer list of length 500, it took ~4 units to run on average.
 
 Index does not seem to affect performance visibly, regardless of inserting at 0 or at the end of the list.
 
-I did not observe any kinks in performance at specific list length that might arise from reallocation while doubling the capacity of a dynamic array.
+I did not observe any kinks in performance at specific list lengths that might arise from reallocation while doubling the capacity of a dynamic array.
 
 # See Also
 * [node:set_list_value]

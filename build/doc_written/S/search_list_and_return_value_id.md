@@ -28,10 +28,10 @@ so this example will print `"2"` and `"7"`.
   but we cannot be completely sure.
 
 # Performance
-For integer list of length 10, this node took ~2 units to run on average.
+For an integer list of length 10, is took ~2 units to run on average.
 
-For integer list of length 1000,
-this node took ~10 units to run on average with 0 matches,
+For an integer list of length 1000,
+it took ~10 units to run on average with 0 matches,
 ~18 units to run with all entries matching.
 
 # See Also

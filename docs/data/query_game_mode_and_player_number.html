@@ -15,25 +15,31 @@
 
 <h2>Usage</h2>
 <p>
-    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Count</span> is the number of players that tried to enter this game.
-    If a player attempted to enter the game, but could not load into the game due to network issues,
-    they still count for this value.
+    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Count</span> is the number of players that tried to enter this game
+    (the players that were in the "Preparation Area" for room play,
+    or the players that were shown in the "Match successful" screen).
+    If a player attempted to enter the game, but could not load into the game due to a network issue or other issues,
+    they still count for this value (TODO: very difficult to verify thoroughly, needs more testing).
     If a player quit in the middle of the game, either deliberately or by getting disconnected,
     they still count for this value.
     This value does not change during the course of a game.
+    To actually get the number of player present in the game,
+    you may want to use <a href="?node=when_entity_is_created" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Created</a> on the player entity and
+    <a href="?node=when_entity_is_removed_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Removed/Destroyed</a> for the player entity.
+    Some stages use a ready button instead to figure out the players that are present.
 </p>
 <p>
     <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Gameplay Mode</span> is:
 </p>
 <ul>
     <li>
-        <code>Test Play</code> - if launched from Miliastra editor as Test Play, or Multiplayer Test Play.
+        <code>Test Play</code> - if the stage is launched from Miliastra editor as "Test Play" or "Multiplayer Test Play".
     </li>
     <li>
-        <code>Room Play</code> - if launched from a room.
+        <code>Room Play</code> - if the stage is launched from a room.
     </li>
     <li>
-        <code>Match Play</code> - if launched by going through the match making.
+        <code>Match Play</code> - if the stage is launched by going through the match making.
     </li>
 </ul>
 <p>
@@ -54,6 +60,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_game_mode_and_player_number.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

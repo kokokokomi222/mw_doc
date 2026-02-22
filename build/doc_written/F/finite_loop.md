@@ -19,7 +19,7 @@ See [node:break_loop] to see how to break the loop.
 
 It may be fine to use this node plainly for very simple tasks with a small range.
 However, this node is notoriously slow for various reasons.
-If you are intending to do any non-trivial amount of work with this loop,
+If you are intending to do any nontrivial amount of work with this loop,
 it is important to understand its exact behavior described in the "Notes" section below.
 
 # Example
@@ -28,7 +28,8 @@ and then prints "Loop completed!".
 [image:finite_loop_example]
 
 # Notes
-* [input:Loop_Start_Value] and [input:Loop_End_Value] are evaluated before each iteration.  
+* [input:Loop_Start_Value] and [input:Loop_End_Value] are evaluated before each iteration,
+  and [input:Loop_Start_Value] is evaluated every time [input:Current_Loop_value] is used.
   These values can be modified while the loop is running,
   and that can change [input:Current_Loop_value] during the same iteration.
   While we cannot be absolutely certain,
@@ -73,8 +74,8 @@ and then prints "Loop completed!".
 
 # Performance
 This node is unusually slow in load testing.
-Looping through 10 values took ~200 units on average.
-Looping through 1000 values took ~3000 units on average.
+Looping through 10 values took ~200 units to run on average.
+Looping through 1000 values took ~3000 units to run on average.
 
 # See Also
 * [node:break_loop]

@@ -12,12 +12,6 @@ Triggers when a custom variable changes its value.
 Use this node to listen to event where a custom variable changes.
 [input:Trigger_Event] must be set to `Yes` on [node:set_custom_variable] for this node to work.
 
-This node could be used to organize node graphs, sort of treating the node as functions of a program,
-by grouping logic that may be called multiple times.
-Such "function" can be called from other entity's node graph as well.
-However, these "functions" do not run on change right away in the middle of the node graph execution.
-Instead, it goes into the event queue and runs later.
-
 If you want to listen to changes to multiple custom variables,
 you will want to use [node:multiple_branches] where [output:Variable_Name] is connected to [input:Control_Expression].
 Even when you only listen to change of one custom variable,
@@ -29,6 +23,17 @@ See "Notes" section below for more detail.
 
 Even though the official documentation states that this node does not work for "Vessel-type Custom Variables",
 it works perfectly fine for container type variables as long as [node:set_custom_variable] was used to change the value.
+
+This node could be used to organize node graphs, sort of treating the node as functions of a program,
+by grouping logic that may be called multiple times.
+Such "function" can be called from other entity's node graph as well.
+However, these "functions" do not run on change right away in the middle of the node graph execution.
+Instead, it goes into the event queue and runs later.
+A signal is probably better to use if multiple node graphs may want to listen to it,
+or if it passes multiple parameters.
+But if you just want to pass in one parameter to one node graph,
+this method may be easier to reason with, because it is limited to just the node graphs held by the entity.
+Also, there is a limit of 99 signals per stage.
 
 # Example
 In this example, we are listening to an event where a custom variable named `score` is changing.
@@ -77,9 +82,9 @@ and then setting the second entry (i.e. at index 1) to be the difference of the 
   with [output:Pre-Change_Value] set to the default value of the type.
 
 # Performance
-Listening to changing an integer variable took ~3 units to run on average.
+Listening to the change of an integer variable took ~3 units to run on average.
 
-Listening to changing a list of 1000 integers took ~15 units to run on average.
+Listening to the change of a list of 1000 integers took ~15 units to run on average.
 
 [node:set_custom_variable] runs slightly faster if [input:Trigger_Event] is set to `No`.
 See [node:set_custom_variable] for detail.

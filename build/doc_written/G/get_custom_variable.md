@@ -24,13 +24,13 @@ In this example, we get the custom variable named `weapon` from the character th
 
 # Notes
 * If [input:Target_Entity] does not exist, this node raises "Entity does not exist" error,
-  and returns [hoyo:mhk23ora1wom:the default value of the type] selected for [output:Variable_Value].
+  and returns the default value of the type selected for [output:Variable_Value].
 * If there does not exist a custom variable named [input:Variable_Name],
   this node raises a "Custom Variable does not exist" warning
-  and returns [hoyo:mhk23ora1wom:the default value of the type] selected for [output:Variable_Value].
+  and returns the default value of the type selected for [output:Variable_Value].
 * If the type of [output:Variable_Value] does not match the type of the custom variable,
   this node raises a "Custom Variable type error" error
-  and returns [hoyo:mhk23ora1wom:the default value of the type] selected for [output:Variable_Value].
+  and returns the default value of the type selected for [output:Variable_Value].
 
 # Performance
 Getting a string custom variable took ~3 units to run on average.

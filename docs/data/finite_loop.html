@@ -34,7 +34,7 @@
 <p>
     It may be fine to use this node plainly for very simple tasks with a small range.
     However, this node is notoriously slow for various reasons.
-    If you are intending to do any non-trivial amount of work with this loop,
+    If you are intending to do any nontrivial amount of work with this loop,
     it is important to understand its exact behavior described in the "Notes" section below.
 </p>
 
@@ -48,7 +48,8 @@
 <h2>Notes</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> are evaluated before each iteration.  
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop End Value</span> are evaluated before each iteration,
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Start Value</span> is evaluated every time <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Current Loop value</span> is used.
         These values can be modified while the loop is running,
         and that can change <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Current Loop value</span> during the same iteration.
         While we cannot be absolutely certain,
@@ -95,8 +96,8 @@
 <h2>Performance</h2>
 <p>
     This node is unusually slow in load testing.
-    Looping through 10 values took ~200 units on average.
-    Looping through 1000 values took ~3000 units on average.
+    Looping through 10 values took ~200 units to run on average.
+    Looping through 1000 values took ~3000 units to run on average.
 </p>
 <span class="small">
 Performance may vary for various reasons.
@@ -117,6 +118,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/F/finite_loop.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

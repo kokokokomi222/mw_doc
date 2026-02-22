@@ -28,13 +28,6 @@
     <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Trigger Event</span> must be set to <code>Yes</code> on <a href="?node=set_custom_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Custom Variable</a> for this node to work.
 </p>
 <p>
-    This node could be used to organize node graphs, sort of treating the node as functions of a program,
-    by grouping logic that may be called multiple times.
-    Such "function" can be called from other entity's node graph as well.
-    However, these "functions" do not run on change right away in the middle of the node graph execution.
-    Instead, it goes into the event queue and runs later.
-</p>
-<p>
     If you want to listen to changes to multiple custom variables,
     you will want to use <a href="?node=multiple_branches" class="node flow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#flow_icon"/></svg> Multiple Branches</a> where <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Name</span> is connected to <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Control Expression</span>.
     Even when you only listen to change of one custom variable,
@@ -47,6 +40,18 @@
 <p>
     Even though the official documentation states that this node does not work for "Vessel-type Custom Variables",
     it works perfectly fine for container type variables as long as <a href="?node=set_custom_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Custom Variable</a> was used to change the value.
+</p>
+<p>
+    This node could be used to organize node graphs, sort of treating the node as functions of a program,
+    by grouping logic that may be called multiple times.
+    Such "function" can be called from other entity's node graph as well.
+    However, these "functions" do not run on change right away in the middle of the node graph execution.
+    Instead, it goes into the event queue and runs later.
+    A signal is probably better to use if multiple node graphs may want to listen to it,
+    or if it passes multiple parameters.
+    But if you just want to pass in one parameter to one node graph,
+    this method may be easier to reason with, because it is limited to just the node graphs held by the entity.
+    Also, there is a limit of 99 signals per stage.
 </p>
 
 <h2>Example</h2>
@@ -123,10 +128,10 @@
 
 <h2>Performance</h2>
 <p>
-    Listening to changing an integer variable took ~3 units to run on average.
+    Listening to the change of an integer variable took ~3 units to run on average.
 </p>
 <p>
-    Listening to changing a list of 1000 integers took ~15 units to run on average.
+    Listening to the change of a list of 1000 integers took ~15 units to run on average.
 </p>
 <p>
     <a href="?node=set_custom_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Custom Variable</a> runs slightly faster if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Trigger Event</span> is set to <code>No</code>.
@@ -151,6 +156,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_custom_variable_changes.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

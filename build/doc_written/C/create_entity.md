@@ -7,7 +7,7 @@ Creates a pre-placed entity.
 
 # Usage
 Typically, entities placed in the scene are created when the stage begins.
-However, "Initial Create" can be set to false under "Create Setting",
+However, "Initial Create" can be set to false under "Create Settings" in the entity detail panel,
 which allows you to create these entities later with this node.
 [image:create_entity_initial_setting]
 
@@ -38,16 +38,17 @@ and give unit tags with GUID `1073741825` and `1073741826`.
   but tag B and C were passed into [input:Unit_Tag_Index_List],
   then the created entity has tag B and C.
   However, if [input:Unit_Tag_Index_List] is left empty, or an empty list is passed into it,
-  the tags set in the prefab detail panel will be used.
-* If entity with [input:Target_GUID] already have been created, this node is no-op.
+  the tags set in the entity detail panel will be used.
+* If the entity with [input:Target_GUID] has been created already, this node is no-op.
   In particular, this node does not modify the tag list of the entity in this case.
 * If the entity with [input:Target_GUID] does not exist,
   this node raises a "GUID does not exist" error, but continues the execution.
 * An entity removed with [node:remove_entity] or [node:destroy_entity] can be created again with this node.
 * This node works perfectly fine with creations.
+* TODO: test what happens when dynamic entity limit is reached.
 
 # Performance
-Creating an entity with default dynamic unit setting took ~65 units to run on average.
+Creating an entity with the default dynamic unit setting took ~65 units to run on average.
 Setting [input:Unit_Tag_Index_List] does not seem to visibly affect the performance of this node.
 
 # See Also

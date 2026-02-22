@@ -60,6 +60,9 @@
     <li>
         If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Variable Value</span> is a container type,
         then it can be modified and the changes will be kept by the snapshot variable.
+        If <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a> was triggered in two different node graphs on the stage,
+        and both node graphs modify the snapshot variable,
+        the modification on the snapshot variable is kept across the node graphs (but please don't do this...).
     </li>
 </ul>
 
@@ -83,6 +86,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-21 (Luna IV)</p>
+    <p>Last updated: 2026-02-22 (Luna IV)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_custom_variable_snapshot.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

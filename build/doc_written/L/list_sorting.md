@@ -15,12 +15,11 @@ The resulting list is: `[-5, 0, 3, 99, 100]`.
 
 # Notes
 * If you do not select [input:Sort_By] enum, this node is a no-op.
-  It will silently do nothing and continue execution.
 
 # Performance
-For random integer list of length 10, it took ~4 units to run on average.
+For a random integer list of length 10, it took ~4 units to run on average.
 
-For random integer list of length 1000, it took ~50 units to run on average.
+For a random integer list of length 1000, it took ~50 units to run on average.
 
 This node runs faster on pre-sorted list, or almost sorted list.
 

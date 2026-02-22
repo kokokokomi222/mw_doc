@@ -36,6 +36,9 @@ by the value of the `score` custom variable from the destroyed entity.
   and returns the default value of the type of [output:Variable_Value].
 * If [output:Variable_Value] is a container type,
   then it can be modified and the changes will be kept by the snapshot variable.
+  If [node:when_entity_is_destroyed] was triggered in two different node graphs on the stage,
+  and both node graphs modify the snapshot variable,
+  the modification on the snapshot variable is kept across the node graphs (but please don't do this...).
 
 # Performance
 For a string variable, it took ~2 units to run on average.

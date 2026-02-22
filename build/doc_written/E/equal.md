@@ -22,11 +22,16 @@ because float operations are not exact and losses precision
 
 # Notes
 * It is difficult to say,
-  but the behavior of float comparison seems to be described by the following Python-like pseudocode:
+  but the behavior of float comparison seems to be approximately described by the following Python-like pseudocode:
   ```
-    # TODO: It feels like something like this. Actually figure out the bounds.
-    abs(a-b) < max(max(abs(a), abs(b)) * 0.000001, 0.000001)
+    # This is not exact, but it's close.
+    abs(input_1-input2) < max(max(abs(input_1), abs(input_2)) * 0.000001, 0.000001)
   ```
+  Simply put, this node tolerates ~0.000001 difference for values close to 0
+  (so 0 = 0.0000009 and 0 = -0.0000009 according to this node).
+  For "bigger" values (absolute value is greater than 1), say 1000,
+  it tolerates ~1000\*0.000001 ≈ ~0.001 difference
+  (so 1000 = 999.9991 and 1000 = 1000.0009 according to this node).
 
 # Performance
 **TO BE ADDED**

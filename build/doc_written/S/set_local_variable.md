@@ -11,6 +11,7 @@ This node lets us set the value of the variable.
 
 If you have states that only need to live during one execution of a node graph,
 local variables are what you should use to store those states.
+Think of local variables as temporary variables.
 
 When a node's output is connected to multiple nodes, 
 that node is evaluated each time the other nodes are evaluated.
@@ -35,9 +36,9 @@ node will be evaluated every iteration and the list will change.
   The resulting local variable will have different reference as the input value.
 
 # Performance
-For small integer values, it took ~2 units to run on average.
+For an integer, it took ~2 units to run on average.
 
-For 1000-character-long string, it took ~2 units to run on average.
+For a string of length 1000, it took ~2 units to run on average.
 
 # See Also
 * [node:get_local_variable]
