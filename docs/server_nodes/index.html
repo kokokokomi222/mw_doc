@@ -463,11 +463,14 @@ ul.see_also .node {
     nav {
         position: fixed;
 
+        & input {
+            height: 2rem;
+        }
         & #nav_fold_button {
             display: flex;
         }
         & #nav_list {
-            height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 6rem);
+            height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 8rem);
             & a div {
                 line-height: 2rem;
             }
