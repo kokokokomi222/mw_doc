@@ -19,7 +19,7 @@ Prefab groups let you place prefabs that repeatedly show up together with same r
 This node creates an instance of a prefab group dynamically.
 
 A prefab group can be created by drag selecting or shift selecting multiple prefabs,
-right clicking to bring up the context menu,
+right-clicking to bring up the context menu,
 and then selecting "Create Prefab Group".
 [image:create_prefab_group_create_menu]
 
