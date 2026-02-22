@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro|Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+3|Roboto+Mono&display=swap');
 
 :root {
     --color-main-back: #323237;
@@ -6,7 +6,7 @@
     --color-accent: #344E94;
     --color-nav-back: #26262C;
 
-    --font-heading: 'Source Sans Pro', sans-serif;
+    --font-heading: 'Source Sans 3', sans-serif;
     --font-content: 'Oxygen', sans-serif;
     --font-code   : 'Roboto Mono', monospace;
 

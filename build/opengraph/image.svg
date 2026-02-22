@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="width: 1200px; height: 630px;" viewBox="0 0 1200 630">
+    <defs>
+        <style type="text/css">
+            @font-face {
+                font-family: 'Source Sans 3';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesans3/v19/nwpBtKy2OAdR1K-IwhWudF-R9QMylBJAV3Bo8Kxf7GEK9Cs.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            @font-face {
+                font-family: 'Oxygen';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/oxygen/v16/2sDfZG1Wl4LcnbuKjk0m.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+        </style>
+    </defs>
+    <rect x="0" y="0" width="1200" height="630" fill="#323237"/>
+    <rect x="0" y="115" width="1200" height="400" fill="#344E94"/>
+    <image x="25" y="165" width="300" height="300" href="kokomi.png"/>
+    <text x="340" y="315" style="font-family: 'Source Sans 3'; font-size: 120px;" text-anchor="start" font-weight="bold" fill="white">
+        Koko's MW Doc
+    </text>
+    <text x="345" y="385" style="font-family: 'Oxygen'; font-size: 34px;" text-anchor="start" font-weight="bold" fill="white">
+        Unofficial documentation for Miliastra Wonderland
+    </text>
+</svg>

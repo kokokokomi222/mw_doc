@@ -10,7 +10,7 @@
 * `generate.py` generates stub "Markdown" in `doc_generated/` from `node_data.json`.
 * `compile.py` compiles the "Markdown" in `doc_generated/` and `doc_written/` into the final HTML. Run `compile.py full` to run it for every doc. This also performs spelling/grammar check.
 * `templating.py` templates the HTML/CSS/Javascript/SVG files in `templates/` into HTML.
-* Make a symbolic link named `mw_doc` to `/docs/` in a folder and then run `python -m http.server 8000 -d` in that folder to locally test.
+* Make a symbolic link named `mw_doc` to `/docs/` in a folder and then run `python -m http.server 8000` in that folder to locally test.
 * Simply push to Github to deploy the page.
 
 "Markdown" is in quotes, because it's not a "standard" Markdown (if such thing even exists).

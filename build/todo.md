@@ -1,5 +1,5 @@
 # TODO
-* equal - float comparison formula, performance
+* equal - performance
 * data type conversion - float -> string behavior, performance
 * query_game_mode_and_player_number - verify match making in release
 
@@ -22,8 +22,6 @@
     * Bitwise operations * 8
 
 # FEATURES
-* meta tags
-* edit history link
 * input/output in table
 * better ordering of math operation nodes
 * section link / scroll
