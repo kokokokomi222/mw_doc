@@ -205,7 +205,8 @@ footer {
     margin: 0 .3rem 0 0;
 }
 a.node {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     width: auto;
     vertical-align: middle;
     text-decoration: none;
@@ -231,15 +232,24 @@ a.node:hover {
     background-color: #0A4266;
 }
 
-.input_var {
-    color: #74b3d9;
+.input_var, .output_var {
     background-color: #19191d;
     padding: 2px 0.5rem;
+    line-height: 0.4rem;
+    font-family: var(--font-heading);
+    display: inline-flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    /* align-content: center; */
+    /* text-align: center; */
+    vertical-align: middle;
+    border: 1px solid #19191d;
+}
+.input_var {
+    color: #74b3d9;
 }
 .output_var {
     color: #d67dbc;
-    background-color: #19191d;
-    padding: 2px 0.5rem;
 }
 .input_var svg, .output_var svg {
     display: inline;
