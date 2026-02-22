@@ -27,9 +27,9 @@ In this example, a local variable was initially set to `["Amber", "Lisa", "Kaeya
 * Changing the type of [input:List] or [input:Insert_Value] will change the type of the other to match it.
 
 # Performance
-For an integer list of length 10, it took ~2 units to run on average.
+For an integer list of length 10, this node took ~2 units to run on average.
 
-For an integer list of length 500, it took ~4 units to run on average.
+For an integer list of length 500, this node took ~4 units to run on average.
 
 Index does not seem to affect performance visibly, regardless of inserting at 0 or at the end of the list.
 

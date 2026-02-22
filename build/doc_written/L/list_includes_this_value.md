@@ -27,9 +27,9 @@ We check whether `"Furina"` is in this list, then print `"Furina is in the team!
   but we cannot be completely sure.
 
 # Performance
-For an integer list of length 10, it took ~1 units to run on average.
+For an integer list of length 10, this node took ~1 units to run on average.
 
-For an integer list of length 1000, it took ~6 units to run on average.
+For an integer list of length 1000, this node took ~6 units to run on average.
 When the value was located at index 0 of the list, performance does not seem to be affected visibly.
 
 # See Also

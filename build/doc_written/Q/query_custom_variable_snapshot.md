@@ -41,7 +41,7 @@ by the value of the `score` custom variable from the destroyed entity.
   the modification on the snapshot variable is kept across the node graphs (but please don't do this...).
 
 # Performance
-For a string variable, it took ~2 units to run on average.
+For a string variable, this node took ~2 units to run on average.
 
 # See Also
 * [node:when_entity_is_destroyed]

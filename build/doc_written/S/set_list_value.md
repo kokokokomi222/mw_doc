@@ -27,9 +27,9 @@ In this example, a local variable was initially set to `["Neuvillette", "Furina"
 * Changing the type of [input:List] or [input:Value] will change the type of the other to match it.
 
 # Performance
-For an integer list of length 10, it took ~2 units to run on average.
+For an integer list of length 10, this node took ~2 units to run on average.
 
-For an integer list of length 500, it took ~4 units to run on average.
+For an integer list of length 500, this node took ~4 units to run on average.
 
 # See Also
 * [node:insert_value_into_list]

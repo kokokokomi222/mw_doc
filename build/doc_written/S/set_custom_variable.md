@@ -40,11 +40,11 @@ for the character entity that selected the tab.
   [image:set_custom_variable_container_reference_example]
 
 # Performance
-For a string custom variable, it took ~7 units to run on average when [input:Trigger_Event] is `No`.
-When [input:Trigger_Event] is `Yes`, it took ~9 units to run on average.
+For a string custom variable, this node took ~7 units to run on average when [input:Trigger_Event] is `No`.
+When [input:Trigger_Event] is `Yes`, this node took ~9 units to run on average.
 
-For an integer list of length 1000, it took ~27 units to run on average when [input:Trigger_Event] is `No`.
-When [input:Trigger_Event] is `Yes`, it took ~30 units to run on average.
+For an integer list of length 1000, this node took ~27 units to run on average when [input:Trigger_Event] is `No`.
+When [input:Trigger_Event] is `Yes`, this node took ~30 units to run on average.
 
 Whether [node:when_custom_variable_changes] exists to monitor the change does not seem to visibly affect performance.
 

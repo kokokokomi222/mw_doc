@@ -33,7 +33,7 @@ node will be evaluated every iteration and the list will change.
   However, it can be destroyed by [node:destroy_entity].
 
 # Performance
-To remove object entities with default setting, it took ~24 units to run on average.
+To remove object entities with default setting, this node took ~24 units to run on average.
 Whether the stage is listening to [node:when_entity_is_removed_destroyed]
 does not seem to visibly affect the performance of this node.
 

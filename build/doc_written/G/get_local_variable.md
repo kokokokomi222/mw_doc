@@ -57,9 +57,9 @@ node will be evaluated every iteration and the list will change.
   will change the type of the other to match it.
 
 # Performance
-For a string, it took ~3 units to run on average.
+For a string, this node took ~3 units to run on average.
 
-For an integer list of length 1000, it took ~13 units to run on average.
+For an integer list of length 1000, this node took ~13 units to run on average.
 
 # See Also
 * [node:set_local_variable]

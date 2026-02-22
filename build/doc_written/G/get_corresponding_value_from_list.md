@@ -25,9 +25,9 @@ We get the entry at index 2 (which is third entry, because [input:ID] is 0-index
 * Changing the type of [input:List] or [output:Value] will change the type of the other to match it.
 
 # Performance
-For string list of length 10, it took ~2 units to run on average.
+For string list of length 10, this node took ~2 units to run on average.
 
-For integer list of length 1000, it took ~7 units to run on average.
+For integer list of length 1000, this node took ~7 units to run on average.
 
 # See Also
 * [node:list_iteration_loop]

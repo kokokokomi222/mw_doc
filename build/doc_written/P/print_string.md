@@ -29,9 +29,9 @@ This is how it appears in the log.
 * The maximum length of a string is 1000.
 
 # Performance
-For a string of length 10, it took ~3 units to run on average.
+For a string of length 10, this node took ~3 units to run on average.
 
-For a string of length 1000, it took ~5 units to run on average.
+For a string of length 1000, this node took ~5 units to run on average.
 
 # Authors
 * kokokokomi222

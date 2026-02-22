@@ -31,7 +31,7 @@ As a result, any creation that our character touches will be destroyed.
 * If [input:Target_Entity] is a character entity, the character's HP is set to 0, plays the death animation, and dies.
 
 # Performance
-To destroy object entities with default setting, it took ~36 units to run on average.
+To destroy object entities with default setting, this node took ~36 units to run on average.
 Whether the stage is listening to [node:when_entity_is_destroyed] and/or [node:when_entity_is_removed_destroyed]
 does not seem to visibly affect the performance of this node.
 

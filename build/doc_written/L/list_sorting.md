@@ -17,9 +17,9 @@ The resulting list is: `[-5, 0, 3, 99, 100]`.
 * If you do not select [input:Sort_By] enum, this node is a no-op.
 
 # Performance
-For a random integer list of length 10, it took ~4 units to run on average.
+For a random integer list of length 10, this node took ~4 units to run on average.
 
-For a random integer list of length 1000, it took ~50 units to run on average.
+For a random integer list of length 1000, this node took ~50 units to run on average.
 
 This node runs faster on pre-sorted list, or almost sorted list.
 

@@ -23,7 +23,7 @@ A timer event is forwarded to another entity with a specific GUID in this exampl
   since it will be already be triggered by the original signal event on the target.
 
 # Performance
-For a timer event, it took ~2 units to run on average.
+For a timer event, this node took ~2 units to run on average.
 
 # Authors
 * kokokokomi222

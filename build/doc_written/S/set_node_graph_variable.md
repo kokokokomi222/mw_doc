@@ -39,11 +39,11 @@ In this example, we set the node graph variable `favorite_character` to `"Kokomi
   [image:set_node_graph_variable_container_reference_example]
 
 # Performance
-For a string node graph variable, it took ~3 units to run on average when [input:Trigger_Event] is `No`.
-When [input:Trigger_Event] is `Yes`, it took ~6 units to run on average.
+For a string node graph variable, this node took ~3 units to run on average when [input:Trigger_Event] is `No`.
+When [input:Trigger_Event] is `Yes`, this node took ~6 units to run on average.
 
-For an integer list of length 1000, it took ~8 units to run on average when [input:Trigger_Event] is `No`.
-When [input:Trigger_Event] is `Yes`, it took ~11 units to run on average.
+For an integer list of length 1000, this node took ~8 units to run on average when [input:Trigger_Event] is `No`.
+When [input:Trigger_Event] is `Yes`, this node took ~11 units to run on average.
 
 Whether [node:when_node_graph_variable_changes] exists to monitor the change does not seem to visibly affect performance.
 

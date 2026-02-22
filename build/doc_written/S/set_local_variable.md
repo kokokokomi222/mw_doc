@@ -36,9 +36,9 @@ node will be evaluated every iteration and the list will change.
   The resulting local variable will have different reference as the input value.
 
 # Performance
-For an integer, it took ~2 units to run on average.
+For an integer, this node took ~2 units to run on average.
 
-For a string of length 1000, it took ~2 units to run on average.
+For a string of length 1000, this node took ~2 units to run on average.
 
 # See Also
 * [node:get_local_variable]

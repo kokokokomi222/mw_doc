@@ -25,9 +25,9 @@ We get the maximum value of the list (which is `100`), convert it to string, and
 * Changing the type of [input:List] or [output:Maximum_Value] will change the type of the other to match it.
 
 # Performance
-For an integer list of length 10, it took ~2 unit to run on average.
+For an integer list of length 10, this node took ~2 unit to run on average.
 
-For an integer list of length 1000, it took ~6 unit to run on average.
+For an integer list of length 1000, this node took ~6 unit to run on average.
 
 # See Also
 * [node:get_minimum_value_from_list]
