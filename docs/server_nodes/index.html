@@ -632,11 +632,14 @@ let nav_fold_button = document.getElementById("nav_fold_button");
 nav_fold_button.addEventListener('click', nav_fold_toggle);
 let nav_list = document.getElementById("nav_list");
 
+let NODE_DATA = {};
+
 let search = document.getElementById('search');
 function search_update(event) {
-    x = event.currentTarget.value.toLowerCase().replace(" ", "_");
+    x = event.currentTarget.value.toLowerCase();
     for (let child of nav_list.children) {
-        if (child.getAttribute('slug').toLowerCase().includes(x)) {
+        const slug = child.getAttribute('slug');
+        if (NODE_DATA[slug]["name"].toLowerCase().includes(x)) {
             child.classList.remove('search_hide');
         }
         else {
@@ -671,8 +674,6 @@ function image_clicked(event) {
     modal.replaceChildren(preview);
     modal.showModal();
 }
-
-let NODE_DATA = {};
 
 async function load_node_doc(slug, nav_method='push') {
     fetch(`/mw_doc/data/${slug}.html`).then(
