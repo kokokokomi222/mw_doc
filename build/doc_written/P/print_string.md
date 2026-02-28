@@ -25,8 +25,20 @@ This is how it appears in the log.
 * Long strings are trimmed in the output,
   only showing the first part of the string that fits in the log window.
   You may be able to resize the log window to see more.
-* If an empty string is passed, it will still print "print:".
+* If an empty string is passed, it will still print `print:`.
 * The maximum length of a string is 1000.
+* If multiple of this node is called within a node graph execution,
+  the order is preserved in the log.
+  Node graph "Take Effect" log tends to come after the prints,
+  but there is no guarantee on the order.
+  [image:print_string_order]
+  In the above example, we have a node graph named `Announce` with two [node:print_string]s.
+  In the log, `"Hello World!"` is guaranteed to print before `"Kokomi is here!"`.
+  However, `Announce Take Effect` can come anywhere:
+  after the two prints (typical case that is shown below),
+  before the two prints, or even in between the two prints.
+  [image:print_string_order_log]
+
 
 # Performance
 For a string of length 10, this node took ~3 units to run on average.
