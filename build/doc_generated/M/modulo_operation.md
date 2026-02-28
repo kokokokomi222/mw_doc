@@ -1,5 +1,5 @@
 # Summary
- Returns the modulus of Input 2 and Input 1
+ Returns the result of input 1 modulo input 2, with input 1 as the dividend
 
 # Input Parameters
 * [input:] (Integer) - 

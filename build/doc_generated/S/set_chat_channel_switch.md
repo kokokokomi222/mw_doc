@@ -1,8 +1,9 @@
 # Summary
- Set the Chat Channel switch
+ Configure the voice and text toggles for the chat channel
 
 # Input Parameters
 * [input:Channel_Index] (Integer) - 
+* [input:Voice-Over_Switch] (Boolean) - 
 * [input:Text_Switch] (Boolean) - 
 
 # Usage

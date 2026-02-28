@@ -1,8 +1,8 @@
 # Summary
- Available only in Beyond Mode, revive the specified Character Entity
+ Available only in Classic Mode, revive the defeated active character entity of the specified player
 
 # Input Parameters
-* [input:Character_Entity] (Entity) - The Character Entity to be revived
+* [input:Player_Entity] (Entity) - 
 
 # Usage
 **TO BE ADDED**

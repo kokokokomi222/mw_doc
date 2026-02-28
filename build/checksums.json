@@ -351,8 +351,8 @@
     },
     "activate_disable_follow_motion_device": {
         "written": false,
-        "checksum": 1493521304,
-        "date": "2026-02-22"
+        "checksum": 3335540887,
+        "date": "2026-02-28"
     },
     "activate_disable_native_collision": {
         "written": false,
@@ -1106,8 +1106,8 @@
     },
     "invoke_deck_selector": {
         "written": false,
-        "checksum": 3570362273,
-        "date": "2026-02-22"
+        "checksum": 4261523543,
+        "date": "2026-02-28"
     },
     "left_shift_operation": {
         "written": false,
@@ -1161,8 +1161,8 @@
     },
     "modulo_operation": {
         "written": false,
-        "checksum": 1636933165,
-        "date": "2026-02-22"
+        "checksum": 4195307244,
+        "date": "2026-02-28"
     },
     "monitor_signal": {
         "written": false,
@@ -1486,8 +1486,8 @@
     },
     "revive_character": {
         "written": false,
-        "checksum": 132873850,
-        "date": "2026-02-22"
+        "checksum": 3927768179,
+        "date": "2026-02-28"
     },
     "right_shift_operation": {
         "written": false,
@@ -1521,8 +1521,8 @@
     },
     "set_character_disruptor_device": {
         "written": false,
-        "checksum": 1023878465,
-        "date": "2026-02-22"
+        "checksum": 23865533,
+        "date": "2026-02-28"
     },
     "set_character_skill_cd": {
         "written": false,
@@ -1531,8 +1531,8 @@
     },
     "set_chat_channel_switch": {
         "written": false,
-        "checksum": 829390314,
-        "date": "2026-02-22"
+        "checksum": 3770558100,
+        "date": "2026-02-28"
     },
     "set_current_environment_time": {
         "written": true,
@@ -1566,8 +1566,8 @@
     },
     "set_equipment_affix_value": {
         "written": false,
-        "checksum": 1292332722,
-        "date": "2026-02-22"
+        "checksum": 1385563221,
+        "date": "2026-02-28"
     },
     "set_faction_settlement_ranking_value": {
         "written": false,
@@ -1631,8 +1631,8 @@
     },
     "set_player_channel_permissions": {
         "written": false,
-        "checksum": 4280505853,
-        "date": "2026-02-22"
+        "checksum": 2907162207,
+        "date": "2026-02-28"
     },
     "set_player_escape_validity": {
         "written": false,
@@ -1811,13 +1811,13 @@
     },
     "switch_follow_motion_device_target_by_entity": {
         "written": false,
-        "checksum": 4163386866,
-        "date": "2026-02-22"
+        "checksum": 3553716979,
+        "date": "2026-02-28"
     },
     "switch_follow_motion_device_target_by_guid": {
         "written": false,
-        "checksum": 1256019742,
-        "date": "2026-02-22"
+        "checksum": 3837330641,
+        "date": "2026-02-28"
     },
     "switch_main_camera_template": {
         "written": false,
@@ -2071,8 +2071,8 @@
     },
     "when_tab_is_selected": {
         "written": false,
-        "checksum": 500666625,
-        "date": "2026-02-22"
+        "checksum": 2475257182,
+        "date": "2026-02-28"
     },
     "when_text_bubble_is_completed": {
         "written": false,
@@ -2173,5 +2173,25 @@
         "written": false,
         "checksum": 1614016869,
         "date": "2026-02-22"
+    },
+    "revive_the_active_character": {
+        "written": false,
+        "checksum": 2783361515,
+        "date": "2026-02-28"
+    },
+    "set_text_chat_permissions": {
+        "written": false,
+        "checksum": 2073713733,
+        "date": "2026-02-28"
+    },
+    "set_voice_chat_permissions": {
+        "written": false,
+        "checksum": 2714695982,
+        "date": "2026-02-28"
+    },
+    "set_voice_chat_scope": {
+        "written": false,
+        "checksum": 823094101,
+        "date": "2026-02-28"
     }
 }

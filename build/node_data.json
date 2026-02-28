@@ -49,13 +49,13 @@
                 "Input Parameter",
                 "Loop Start Value",
                 "Integer",
-                "Starting integer value for iteration"
+                "Loop includes this value"
             ],
             [
                 "Input Parameter",
                 "Loop End Value",
                 "Integer",
-                "Integer value at which the iteration ends"
+                "Loop includes this value"
             ],
             [
                 "Output Parameter",
@@ -535,7 +535,7 @@
     ],
     "Revive Character": [
         "execution",
-        " Revive the specified Character Entity",
+        " Available only in Beyond Mode, revive the specified Character Entity",
         [
             [
                 "Input Parameter",
@@ -727,6 +727,18 @@
                 "Input Parameter",
                 "Elemental Energy Increase Value",
                 "Floating Point Numbers",
+                ""
+            ]
+        ]
+    ],
+    "Revive the active character": [
+        "execution",
+        " Available only in Classic Mode, revive the defeated active character entity of the specified player",
+        [
+            [
+                "Input Parameter",
+                "Player Entity",
+                "Entity",
                 ""
             ]
         ]
@@ -1261,7 +1273,7 @@
                 "Input Parameter",
                 "Target Entity",
                 "Entity",
-                "Active Entity"
+                "Entity that a Follow Motion Device is attached to"
             ],
             [
                 "Input Parameter",
@@ -1279,7 +1291,7 @@
                 "Input Parameter",
                 "Target Entity",
                 "Entity",
-                "Active Entity"
+                "Entity that a Follow Motion Device is attached to"
             ],
             [
                 "Input Parameter",
@@ -1327,7 +1339,7 @@
                 "Input Parameter",
                 "Target Entity",
                 "Entity",
-                "Active Entity"
+                "Entity that a Follow Motion Device is attached to"
             ],
             [
                 "Input Parameter",
@@ -1783,7 +1795,7 @@
     ],
     "Set Character Disruptor Device": [
         "execution",
-        " Edit the Character Disruptor Device active on the Target Entity by ID; if the ID does not exist, the change has no effect",
+        " Edit the Character Disruptor Device active on the Target Entity by ID; if the ID does not exist, the Character Disruptor Device will no longer function after the modification",
         [
             [
                 "Input Parameter",
@@ -2749,7 +2761,7 @@
                 "Input Parameter",
                 "Select Duration",
                 "Floating Point Numbers",
-                "If empty, uses the Deck Selector's default configuration; otherwise, this time value is used as the effective durationUnit in seconds"
+                "If empty, uses the Deck Selector's default configuration; otherwise, this time value is used as the effective durationUnit in seconds. If the duration exceeds 2,000,000 seconds, it can no longer be invoked"
             ],
             [
                 "Input Parameter",
@@ -2779,22 +2791,7 @@
                 "Input Parameter",
                 "Refresh Mode",
                 "Enumeration",
-                "No Refresh",
-                "The minimum and maximum refresh count parameters are invalid, and the selection interface has no Refresh button"
-            ],
-            [
-                "",
-                "",
-                "",
-                "Partial Refresh",
-                "Both input parameters (minimum and maximum refresh count) take effect, and the selection screen includes a refresh button"
-            ],
-            [
-                "",
-                "",
-                "",
-                "Full Refresh",
-                "Both input parameters (minimum and maximum refresh count) are ignored. All results are returned by default, and the selection screen includes a refresh button"
+                "Cannot Refresh: Both input parameters (Refresh Maximum Quantity and Refresh Maximum Quantity) are ignored, and the selection screen has no refresh buttonPartial Refresh: Both input parameters (Refresh Maximum Quantity and Refresh Maximum Quantity) take effect, and the selection screen includes a refresh buttonRefresh All: Both input parameters (Refresh Maximum Quantity and Refresh Maximum Quantity) are ignored. All results are returned by default, and the selection screen includes a refresh button"
             ],
             [
                 "Input Parameter",
@@ -3502,7 +3499,7 @@
                 "Input Parameter",
                 "Affix ID",
                 "Integer",
-                ""
+                "Each ID corresponds to one single Affix"
             ],
             [
                 "Input Parameter",
@@ -4174,12 +4171,18 @@
     ],
     "Set Chat Channel Switch": [
         "execution",
-        " Set the Chat Channel switch",
+        " Configure the voice and text toggles for the chat channel",
         [
             [
                 "Input Parameter",
                 "Channel Index",
                 "Integer",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Voice-Over Switch",
+                "Boolean",
                 ""
             ],
             [
@@ -4208,6 +4211,90 @@
             ]
         ]
     ],
+    "Set Text Chat Permissions": [
+        "execution",
+        " Set the target player's permission to use text chat in the channel list",
+        [
+            [
+                "Input Parameter",
+                "Target Player",
+                "Entity",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Channel List",
+                "Integer List",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Limit Permissions",
+                "Boolean",
+                "When enabled, the corresponding functionality of the player in the designated channel list will be restricted"
+            ]
+        ]
+    ],
+    "Set Voice Chat Scope": [
+        "execution",
+        " Set the voice chat range of the target player within the channel list",
+        [
+            [
+                "Input Parameter",
+                "Target Player",
+                "Entity",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Channel List",
+                "Integer List",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Effective Range",
+                "Integer",
+                "This determines the distance within which the target player can hear voice chat from other players in the same channel, and does not affect the range at which other players can hear the target playerRange: 1\u2013100 m"
+            ],
+            [
+                "Input Parameter",
+                "Limit Scope",
+                "Boolean",
+                "The range takes effect only when this option is enabled; When disabled, the configured range value is ignored"
+            ]
+        ]
+    ],
+    "Set Voice Chat Permissions": [
+        "execution",
+        " Set the target player's permissions to use voice chat in the channel list",
+        [
+            [
+                "Input Parameter",
+                "Target Player",
+                "Entity",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Channel List",
+                "Integer List",
+                ""
+            ],
+            [
+                "Input Parameter",
+                "Restrict Voice Chat (Speak)",
+                "Boolean",
+                "When enabled, other players cannot hear the target player's voice"
+            ],
+            [
+                "Input Parameter",
+                "Restrict Voice Chat (Listen)",
+                "Boolean",
+                "When enabled, the target player cannot hear other players' voices"
+            ]
+        ]
+    ],
     "Set Player Channel Permissions": [
         "execution",
         " Set player channel permissions",
@@ -4228,7 +4315,7 @@
                 "Input Parameter",
                 "Join",
                 "Boolean",
-                "If set to True, the channel is available to the specified Player"
+                "When enabled, the channel is only available to the specified player(s)"
             ]
         ]
     ],
@@ -5404,7 +5491,7 @@
                 "Output Parameter",
                 "Tab ID",
                 "Integer",
-                "The tab ID"
+                "ID of the tab"
             ],
             [
                 "Output Parameter",
@@ -9460,7 +9547,7 @@
     ],
     "Data Type Conversion": [
         "operation",
-        " Converts input parameter types to another type for output. For specific rules, see Basic Concepts - [Conversion Rules Between Basic Data Types]",
+        " Converts input parameter types to another type for output. For specific rules, see Basic Concepts - [Conversion Rules Between Basic Data Types] Floating point numbers are rounded to integers when converted",
         [
             [
                 "Input Parameter",
@@ -10120,7 +10207,7 @@
     ],
     "Modulo Operation": [
         "operation",
-        " Returns the modulus of Input 2 and Input 1",
+        " Returns the result of input 1 modulo input 2, with input 1 as the dividend",
         [
             [
                 "Input Parameter",

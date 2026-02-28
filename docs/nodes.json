@@ -223,6 +223,12 @@
             "stub": true
         },
         {
+            "slug": "revive_the_active_character",
+            "name": "Revive the active character",
+            "type": "execution",
+            "stub": true
+        },
+        {
             "slug": "activate_disable_extra_collision",
             "name": "Activate/Disable Extra Collision",
             "type": "execution",
@@ -1011,6 +1017,24 @@
         {
             "slug": "set_players_current_channel",
             "name": "Set Player's Current Channel",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_text_chat_permissions",
+            "name": "Set Text Chat Permissions",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_voice_chat_scope",
+            "name": "Set Voice Chat Scope",
+            "type": "execution",
+            "stub": true
+        },
+        {
+            "slug": "set_voice_chat_permissions",
+            "name": "Set Voice Chat Permissions",
             "type": "execution",
             "stub": true
         },

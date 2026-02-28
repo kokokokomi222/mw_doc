@@ -1,5 +1,5 @@
 # Summary
- Edit the Character Disruptor Device active on the Target Entity by ID; if the ID does not exist, the change has no effect
+ Edit the Character Disruptor Device active on the Target Entity by ID; if the ID does not exist, the Character Disruptor Device will no longer function after the modification
 
 # Input Parameters
 * [input:Target_Entity] (Entity) - Active Entity

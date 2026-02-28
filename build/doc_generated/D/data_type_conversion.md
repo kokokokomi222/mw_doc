@@ -1,5 +1,5 @@
 # Summary
- Converts input parameter types to another type for output. For specific rules, see Basic Concepts - \[Conversion Rules Between Basic Data Types\]
+ Converts input parameter types to another type for output. For specific rules, see Basic Concepts - \[Conversion Rules Between Basic Data Types\] Floating point numbers are rounded to integers when converted
 
 # Input Parameters
 * [input:Input] (Generic) - 

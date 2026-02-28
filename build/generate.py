@@ -9,12 +9,10 @@ NODE_TYPE_FULL_NAME = {
     'query': 'Query Node',
     'operation': 'Operation Node',
 }
-NODE_TYPE_ICON = {
-    'execution': 'fa-code-branch',
-    'event': 'fa-paper-plane',
-    'flow': 'fa-chart-diagram',
-    'query': 'fa-magnifying-glass',
-    'operation': 'fa-calculator',
+
+NODE_NAME_FIX = {
+    "Get Entities With Specified Prefab on the Field":
+    "Get Entities With Specified Prefab ID on the Field",
 }
 
 def slug(name:str) -> str:
@@ -33,7 +31,7 @@ def escape(text:str) -> str:
     return text
 
 
-with open('output.json', 'r', encoding='utf-8') as file:
+with open('node_data.json', 'r', encoding='utf-8') as file:
     official_doc = json.load(file)
 
 if __name__ == '__main__':
@@ -44,6 +42,7 @@ if __name__ == '__main__':
         if node_name == 'SetListValue':
             node_name = 'Set List Value'
         node_slug = slug(node_name)
+        node_name = NODE_NAME_FIX.get(node_name, node_name)
         node_list.append({
             'slug': node_slug,
             'name': node_name,

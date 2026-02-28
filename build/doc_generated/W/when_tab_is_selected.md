@@ -4,7 +4,7 @@
 # Output Values
 * [output:Event_Source_Entity] (Entity) - Entity with the tab component mounted
 * [output:Event_Source_GUID] (GUID) - GUID of the Entity with the tab component mounted; outputs 0 if none exists
-* [output:Tab_ID] (Integer) - The tab ID
+* [output:Tab_ID] (Integer) - ID of the tab
 * [output:Selector_Entity] (Entity) - Character Entity that triggers the tab
 
 # Usage

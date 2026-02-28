@@ -1,8 +1,12 @@
 # Summary
- Available only in Beyond Mode, revive the specified Character Entity
+ Returns the value at the specified ID in the list (0-based)
 
 # Input Parameters
-* [input:Character_Entity] (Entity) - The Character Entity to be revived
+* [input:List] (Generic) - 
+* [input:ID] (Integer) - 
+
+# Output Values
+* [output:Value] (Generic) - 
 
 # Usage
 **TO BE ADDED**

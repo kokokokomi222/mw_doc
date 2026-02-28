@@ -2,7 +2,7 @@
  Switch the Follow Target of the Follow Motion Device by Entity
 
 # Input Parameters
-* [input:Target_Entity] (Entity) - Active Entity
+* [input:Target_Entity] (Entity) - Entity that a Follow Motion Device is attached to
 * [input:Follow_Target_Entity] (Entity) - The Entity that follows the Target
 * [input:Follow_Target_Attachment_Point_Name] (String) - Name of the Attachment Point to follow
 * [input:Location_Offset] (3D Vector) - Location Offset based on the Follow Coordinate System

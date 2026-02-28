@@ -2,7 +2,7 @@
  Enable/Disable the Follow Motion Device logic on the Target Entity
 
 # Input Parameters
-* [input:Target_Entity] (Entity) - Active Entity
+* [input:Target_Entity] (Entity) - Entity that a Follow Motion Device is attached to
 * [input:Activate] (Boolean) - Set to True to activate
 
 # Usage

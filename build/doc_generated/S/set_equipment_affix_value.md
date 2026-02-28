@@ -3,7 +3,7 @@
 
 # Input Parameters
 * [input:Equipment_Index] (Integer) - Integer ID generated during Equipment Initialization to identify the equipment instance
-* [input:Affix_ID] (Integer) - 
+* [input:Affix_ID] (Integer) - Each ID corresponds to one single Affix
 * [input:Affix_Value] (Floating Point Numbers) - 
 
 # Usage

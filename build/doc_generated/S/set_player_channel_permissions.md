@@ -4,7 +4,7 @@
 # Input Parameters
 * [input:Player_GUID] (GUID) - 
 * [input:Channel_Index] (Integer) - 
-* [input:Join] (Boolean) - If set to True, the channel is available to the specified Player
+* [input:Join] (Boolean) - When enabled, the channel is only available to the specified player(s)
 
 # Usage
 **TO BE ADDED**
