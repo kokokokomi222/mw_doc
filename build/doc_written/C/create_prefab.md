@@ -48,7 +48,10 @@ and with unit tags `[1073741826, 1073741827]`.
   the tags set in the prefab detail panel will be used.
 * Entities created by this node do not have a GUID.
   If [node:query_guid_by_entity] is called on an entity created by this node, it returns `0`.
-* TODO: test what happens when dynamic entity limit is reached.
+* There is a limit of 1000 entities on the field.
+  If this node is used when the limit is already reached,
+  this node raises "Prefab setting error or exceeded the maximum number of entities" error,
+  but continues execution.
 
 # Performance
 Creating an entity with the default prefab setting took ~70 units to run on average.

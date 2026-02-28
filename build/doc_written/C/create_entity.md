@@ -45,7 +45,11 @@ and give unit tags with GUID `1073741825` and `1073741826`.
   this node raises a "GUID does not exist" error, but continues the execution.
 * An entity removed with [node:remove_entity] or [node:destroy_entity] can be created again with this node.
 * This node works perfectly fine with creations.
-* TODO: test what happens when dynamic entity limit is reached.
+* There is a limit of 1000 entities on the field.
+  If this node is used when the limit is already reached,
+  this node raises "GUID setting error" error
+  (misleading because it should be an "Exceeded the maximum number of entities" error instead),
+  but continues execution.
 
 # Performance
 Creating an entity with the default dynamic unit setting took ~65 units to run on average.
