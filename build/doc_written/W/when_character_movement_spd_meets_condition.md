@@ -36,10 +36,17 @@ we play a timed VFX `10002128` (Anemo Shockwave) at the character.
   this node only triggers about 2 times per second.
   So the lowest effective "Trigger CD" is roughly `0.5` seconds.
   There is a huge delay between character accelerating and this node triggering,
-  and that may have to do with very infrequent event polling rate, but we cannot be sure.
-* [output:Current_Movement_SPD] includes the vertical component. When falling or jumping, the character may have higher speed than expected.
+  and that may have to do with very infrequent event polling rate
+  and/or server receiving the local position of the character late, but we cannot be sure.
+* [output:Current_Movement_SPD] includes the vertical component.
+  When falling or jumping, the character may have higher speed than expected.
 * The walking speed of Manekin/Manekina is roughly 5.
   Sprinting speed of Manekin/Manekina is roughly 8, but it can reach around 10 briefly.
+* The character speed is measured very inconsistently on a moving platform.
+  Even while the platform is moving at constant speed without turning,
+  the speed seems to be sometimes relative to the platform,
+  and sometimes it seems relative to the world.
+  This is probably because the server doesn't know the precise local position of the character immediately.
 
 # Performance
 This node took ~7 units to run on average.
