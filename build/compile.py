@@ -285,7 +285,7 @@ def parse_root(state:ParseState, slug:str, node) -> str:
                     s.append(f'''<h2>Credits</h2>
     <p>Written by: {", ".join(state.authors)}</p>
     <p>Last updated: {state.date_str} ({version_name})</p>
-    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/{first_char}/{slug}.md">See Edit History</a></p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/{first_char}/{slug}.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>''')
                 else:
                     s.append(f'''<h2>Credits</h2>
