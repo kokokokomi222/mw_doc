@@ -1,13 +1,70 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Settle Stage</h1>
 <p>
-     Triggers the Stage Settlement process, which executes out-of-stage logic as defined in Stage Settlement
+    Settles the stage.
 </p>
 
+<h2>Usage</h2>
+<p>
+    Settling the stage terminates the gameplay for every player,
+    and all players are sent to the results screen that shows
+    new achievements, competitive rank changes, scores and rankings of players, etc.
+</p>
+<p>
+    To actually set the results of settlement,
+    use "Stage Settlement" execution nodes such as
+    <a href="?node=set_player_settlement_success_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Settlement Success Status</a> or <a href="?node=set_player_settlement_ranking_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Settlement Ranking Value</a>.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, the player who selected the tab will have their settlement status set to <code>Victory</code>.
+    Then we settle the stage, ending the stage immediately.
+    <img src="/mw_doc/image/settle_stage_example.webp" alt="settle stage example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node removes all players and characters.
+        Thus, no settlement result can be set after this node has been executed.
+        We recommend that you do not run any logic after this node is called,
+        even though it can still run nodes after this node.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    In a single player game with all peripheral systems disabled,
+    this node took ~1200 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_player_settlement_success_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Settlement Success Status</a>
+    </li>
+    <li>
+        <a href="?node=set_player_settlement_ranking_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Settlement Ranking Value</a>
+    </li>
+    <li>
+        <a href="?node=set_faction_settlement_success_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Faction Settlement Success Status</a>
+    </li>
+    <li>
+        <a href="?node=set_faction_settlement_ranking_value" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Faction Settlement Ranking Value</a>
+    </li>
+    <li>
+        <a href="?node=set_player_settlement_scoreboard_data_display" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Settlement Scoreboard Data Display</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/settle_stage.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,27 +1,91 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If Entity Is on the Field</h1>
 <p>
-     Searches whether the specified Entity is present Note that Character Entities are still considered present even when Downed
+    Returns whether the entity is on the field.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to test whether it is on the field.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> On the Field</span> (Boolean) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> On the Field</span> (Boolean) - <code>Yes</code> if the entity is on the field, <code>No</code> otherwise.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node checks whether an entity is on the field.
+    When we store an entity as a variable, it only stores the entity ID.
+    If the entity were to be removed/destroyed and then recreated with <a href="?node=create_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Create Entity</a>,
+    the entity gets a new entity ID.
+    When the old entity ID stored in the variable is queried with this node,
+    it will say that the entity is not on the field.
+    The only exception is the character entities.
+    Read the "Notes" section below for detail.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we get the entity stored in the node graph variable named <code>boss</code>
+    and check whether this entity is still on the field.
+    If yes, we set the custom variable named <code>message</code> to <code>"Beat the boss first to continue"</code>.
+    If no, we send a signal named <code>Teleport to next zone</code>.
+    <img src="/mw_doc/image/query_if_entity_is_on_the_field_example.webp" alt="query if entity is on the field example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is invalid entity (e.g. default entity with ID 0),
+        this node returns <code>No</code>.
+    </li>
+    <li>
+        The stage entity is always on the field.
+    </li>
+    <li>
+        If the player is in the game, the player entity is considered to be on the field.
+        If the player is removed from disconnecting or quitting,
+        then the player is now considered to be not on the field.
+    </li>
+    <li>
+        When a character is destroyed, the character is still considered to be on the field.
+        After the character revives the entity ID still remains the same.
+        If the character is removed from the owner player disconnecting or quitting,
+        then the character is now considered to be not on the field.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_all_entities_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get All Entities on the Field</a>
+    </li>
+    <li>
+        <a href="?node=get_specified_type_of_entities_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Specified Type of Entities on the Field</a>
+    </li>
+    <li>
+        <a href="?node=get_entities_with_specified_prefab_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entities With Specified Prefab ID on the Field</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_if_entity_is_on_the_field.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,8 +1,8 @@
 # TODO
 * equal - performance
 * data type conversion - float -> string behavior, performance
-* query_game_mode_and_player_number - verify match making in release\
-* create_entity - what happens at dynamic entity limit
+* query_game_mode_and_player_number - verify match making in release
+* create_prefab_group - what happens at dynamic entity limit
 
 # MINOR NITPICKS
 * break loop example should have loop complete running
@@ -10,7 +10,6 @@
 
 # NEXT NODES
 ## Execution
-    * stage related * 3
     * set entity faction
     * player and character related * 10
     * timer related * 4
@@ -21,7 +20,7 @@
     * when timer is triggered
     * when global timer is triggered
 ## Query
-    * entity related * 24
+    * entity related * 19
     * get current global timer time
 ## Operation
     * Bitwise operations * 8

@@ -1,30 +1,89 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Character's Current Movement SPD</h1>
 <p>
-     Can only be searched when the Character has the [Monitor Movement Speed] Unit Status effect
+    Gets the speed and the velocity of a character.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> (Entity) - Character to get the speed from
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Speed</span> (Floating Point Numbers) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Speed</span> (Floating Point Numbers) - Speed of the character. Unit is meter / second.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Velocity Vector</span> (3D Vector) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Velocity Vector</span> (3D Vector) - Velocity of the character. Unit of the components of the vector is meter / second.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    To use this node, first a unit status must be created with an effect "Monitor Movement Rate".
+    The parameters of this unit status is not relevant for this node: any values will work.
+    Those parameters are for <a href="?node=when_character_movement_spd_meets_condition" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Movement SPD Meets Condition</a>.
+    <img src="/mw_doc/image/when_character_movement_spd_meets_condition_unit_status_configuration.webp" alt="when character movement spd meets condition unit status configuration" class="expandable_img" loading="lazy"/>
+    Next, character must have the unit status so that it can monitor the speed.
+    You can also use <a href="?node=add_unit_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Unit Status</a> to add the unit status to the character.
+    <img src="/mw_doc/image/when_character_movement_spd_meets_condition_character_configuration.webp" alt="when character movement spd meets condition character configuration" class="expandable_img" loading="lazy"/>
+    This node functions even if the condition of the effect is not satisfied,
+    as long as the effect is on the character.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, the node graph is on the character entity.
+    We print the character's speed and the y-component of the character's velocity.
+    <img src="/mw_doc/image/query_characters_current_movement_spd_example.webp" alt="query characters current movement spd example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If called in <a href="?node=when_character_movement_spd_meets_condition" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Movement SPD Meets Condition</a>,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Speed</span> of this node is always equal to
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Movement SPD</span> of the event node.
+    </li>
+    <li>
+        Square of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Speed</span> should be approximately equal to
+        the sum of squares of the components of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Velocity Vector</span>.
+    </li>
+    <li>
+        The walking speed of Manekin/Manekina is roughly 5.
+        Sprinting speed of Manekin/Manekina is roughly 8, but it can reach around 10 briefly.
+    </li>
+    <li>
+        The character speed is measured very inconsistently on a moving platform.
+        Even while the platform is moving at constant speed without turning,
+        the speed seems to be sometimes relative to the platform,
+        and sometimes it seems relative to the world.
+        This is probably because the server doesn't know the precise local position of the character immediately.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_character_movement_spd_meets_condition" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Movement SPD Meets Condition</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_characters_current_movement_spd.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

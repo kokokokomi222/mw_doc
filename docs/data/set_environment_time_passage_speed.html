@@ -1,20 +1,77 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Environment Time Passage Speed</h1>
 <p>
-     Minutes elapsed per second, limited to 0 - 60 (Teyvat speed is 1)
+    Sets the environment time speed.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time Passage Speed</span> (Floating Point Numbers) - Clamped to the range 0–60. Values outside this range are automatically set to 0 or 60
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time Passage Speed</span> (Floating Point Numbers) - Environment minute elapsed per real time second. Unit is (in-game environment minute) / (real life second). This value should be between <code>0.0</code> and <code>60.0</code>, inclusive.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    The environment time affects the lighting condition of the stage.
+    For instance, if the environment time is set to <code>18.0</code> (6pm), the sun will be setting.
+    The environment time can be configured in the "Stage Settings".
+    <img src="/mw_doc/image/set_current_environment_time_configure.webp" alt="set current environment time configure" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    This node lets us set the speed at which environment time increases.
+    For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time Passage Speed</span> is set to <code>10.0</code>,
+    10 in-game environment minutes will pass every real life second.
+    So a day-night cycle will occur every <code>24*60/10 = 144</code> real life seconds.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we toggle the boolean node graph variable named <code>game_paused</code>.
+    If the toggled value is <code>Yes</code>, we set the environment time speed to <code>0</code>.
+    Otherwise, we set the environment time speed to <code>4.8</code>.
+    <img src="/mw_doc/image/set_environment_time_passage_speed_example.webp" alt="set environment time passage speed example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time Passage Speed</span> is out of range (less than 0 <span class="emphasis">OR</span> greater than 60),
+        this node raises "Environment time passage speed exceeds the allowed range" error,
+        but executes the node by clamping the value between <code>0.0</code> and <code>60.0</code>.
+    </li>
+    <li>
+        At the maximum speed of <code>60.0</code>, a day-night cycle occurs every <code>24*60/60 = 24</code> real life seconds.
+    </li>
+    <li>
+        In Teyvat, the environment time speed is <code>1.0</code>.
+        One Teyvat minute passes every one real life second
+        and a day-night cycle occurs every 24 real life minutes.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_current_environment_time" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Current Environment Time</a>
+    </li>
+    <li>
+        <a href="?node=query_current_environment_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Current Environment Time</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/set_environment_time_passage_speed.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

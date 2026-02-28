@@ -130,19 +130,19 @@
             "slug": "settle_stage",
             "name": "Settle Stage",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_current_environment_time",
             "name": "Set Current Environment Time",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_environment_time_passage_speed",
             "name": "Set Environment Time Passage Speed",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_entity_faction",
@@ -1564,31 +1564,31 @@
             "slug": "query_characters_current_movement_spd",
             "name": "Query Character's Current Movement SPD",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_if_entity_is_on_the_field",
             "name": "Query If Entity Is on the Field",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_all_entities_on_the_field",
             "name": "Get All Entities on the Field",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_specified_type_of_entities_on_the_field",
             "name": "Get Specified Type of Entities on the Field",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_entities_with_specified_prefab_on_the_field",
-            "name": "Get Entities With Specified Prefab on the Field",
+            "name": "Get Entities With Specified Prefab ID on the Field",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_character_attribute",
@@ -1708,7 +1708,7 @@
             "slug": "query_current_environment_time",
             "name": "Query Current Environment Time",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_game_time_elapsed",

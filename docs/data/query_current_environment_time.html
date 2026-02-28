@@ -1,23 +1,65 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Current Environment Time</h1>
 <p>
-     Searches the current Environment Time, in the range [0, 24)
+    Gets the current environment time.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Environment Time</span> (Floating Point Numbers) - The value range is [0, 24)
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Environment Time</span> (Floating Point Numbers) - Hours since midnight. Unit is hours in in-game environment time (not real-life time). Greater or equal to 0 and less than 24 (i.e. 0 ≤ time &lt; 24).
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Loop Day</span> (Integer) - Number of Loop Days elapsed
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Current Loop Day</span> (Integer) - Number of days elapsed in the environment time. Starts counting from 0.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    The environment time affects the lighting condition of the stage.
+    For instance, if the environment time is set to <code>18.0</code> (6pm), the sun will be setting.
+    The environment time can be configured in the "Stage Settings".
+    <img src="/mw_doc/image/set_current_environment_time_configure.webp" alt="set current environment time configure" class="expandable_img" loading="lazy"/>
+    This node returns the current state of the environment time.
+</p>
+<p>
+    If you want to measure how long the game has been running,
+    use <a href="?node=query_game_time_elapsed" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Game Time Elapsed</a> or <a href="?node=get_current_global_timer_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Current Global Timer Time</a> instead.
+    This node is unreliable for measuring time,
+    because the speed of the environment time can be modified with <a href="?node=set_environment_time_passage_speed" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Environment Time Passage Speed</a> and even be paused.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we calculate the number of hours that have passed in the environment time,
+    assuming the stage started at 0:00 environment time.
+    The calculation is simply <code>24 * current_loop_day + current_environment_time</code> with some conversions between integer and float.
+    <img src="/mw_doc/image/query_current_environment_time_example.webp" alt="query current environment time example" class="expandable_img" loading="lazy"/>
+</p>
 
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
-
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_current_environment_time" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Current Environment Time</a>
+    </li>
+    <li>
+        <a href="?node=set_environment_time_passage_speed" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Environment Time Passage Speed</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_current_environment_time.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

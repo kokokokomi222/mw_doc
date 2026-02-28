@@ -1,20 +1,76 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Current Environment Time</h1>
 <p>
-     Instantly switch Environment Time to the specified hour. The parameter must be a Floating Point Number between 0 and 24 If the target hour is earlier than the current hour, it is treated as the next day (+1 day)
+    Sets the environment time.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span> (Floating Point Numbers) - Must be a floating point value between 0–24; this Node will not take effect if the value is outside this range
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span> (Floating Point Numbers) - Hours since midnight. Unit is hours in in-game environment time (not real-life time). Must be greater or equal to 0 and less than 24 (i.e. 0 ≤ time &lt; 24).
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    The environment time affects the lighting condition of the stage.
+    For instance, if the environment time is set to <code>18.0</code> (6pm), the sun will be setting.
+    The environment time can be configured in the "Stage Settings".
+    <img src="/mw_doc/image/set_current_environment_time_configure.webp" alt="set current environment time configure" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    This node lets us set the environment time in a node graph.
+    The environment time will immediately change to the specified value.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we listen to a signal named <code>Set Environment Time</code>.
+    We query the dictionary with the signal parameter <code>time</code> to get a float,
+    and set the environment time to that value.
+    For instance, if <code>time</code> was <code>"sunrise"</code>, then the environment time will be set to <code>6.0</code>.
+    <img src="/mw_doc/image/set_current_environment_time_example.webp" alt="set current environment time example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span> is out of range (less than 0 <span class="emphasis">OR</span> greater or equal to 24),
+        this node raises "Environment time exceeds the allowed range" error,
+        but executes this node as if <code>0.0</code> was passed into <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span> is strictly earlier than the current environment time,
+        it loops over to the next day.
+        So the environment time is always going forward.
+        This is relevant, because <a href="?node=query_current_environment_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Current Environment Time</a> returns the number of days elapsed.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Environment Time</span> is equal to the current environment time,
+        the time does not move forward from this node and the number of elapsed days stay the same.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_environment_time_passage_speed" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Environment Time Passage Speed</a>
+    </li>
+    <li>
+        <a href="?node=query_current_environment_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Current Environment Time</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/set_current_environment_time.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

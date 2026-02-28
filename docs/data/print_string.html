@@ -43,10 +43,23 @@
         You may be able to resize the log window to see more.
     </li>
     <li>
-        If an empty string is passed, it will still print "print:".
+        If an empty string is passed, it will still print <code>print:</code>.
     </li>
     <li>
         The maximum length of a string is 1000.
+    </li>
+    <li>
+        If multiple of this node is called within a node graph execution,
+        the order is preserved in the log.
+        Node graph "Take Effect" log tends to come after the prints,
+        but there is no guarantee on the order.
+        <img src="/mw_doc/image/print_string_order.webp" alt="print string order" class="expandable_img" loading="lazy"/>
+        In the above example, we have a node graph named <code>Announce</code> with two <a href="?node=print_string" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Print String</a>s.
+        In the log, <code>"Hello World!"</code> is guaranteed to print before <code>"Kokomi is here!"</code>.
+        However, <code>Announce Take Effect</code> can come anywhere:
+        after the two prints (typical case that is shown below),
+        before the two prints, or even in between the two prints.
+        <img src="/mw_doc/image/print_string_order_log.webp" alt="print string order log" class="expandable_img" loading="lazy"/>
     </li>
 </ul>
 
@@ -66,6 +79,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/P/print_string.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

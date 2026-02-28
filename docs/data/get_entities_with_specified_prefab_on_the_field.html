@@ -1,27 +1,79 @@
-<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entities With Specified Prefab on the Field</h1>
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entities With Specified Prefab ID on the Field</h1>
 <p>
-     Returns all Entities currently in the scene that were created by the specified Prefab ID
+    Gets the list of all entities with the specified prefab on the field.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Prefab ID</span> (Prefab ID) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Prefab ID</span> (Prefab ID) - Prefab to search for on the field. Typically copied from the top of the prefab details panel. e.g. <code>1012345678</code>
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Entity List</span> (Entity List) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Entity List</span> (Entity List) - List of all entities with the specified prefab on the field.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node returns the list of all entities with the specified prefab on the field.
+    Consider using <a href="?node=get_entity_list_by_unit_tag" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity List by Unit Tag</a> instead
+    if you need more fine control over the selection of the entities.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we get the list of all entities created from prefab <code>1077936129</code> on the field,
+    get its length, and set it to a custom variable named <code>num_coins_left</code>.
+    <img src="/mw_doc/image/get_entities_with_specified_prefab_on_the_field_example.webp" alt="get entities with specified prefab on the field example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node is called "Get Entity With Specified Prefab <span class="emphasis">ID</span> on the Field" in game.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Prefab ID</span> is not an ID for a prefab, this node returns the empty list of entities.
+    </li>
+    <li>
+        There is a limit of 1000 entities on the field.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    When there are 100 entities to return, this node took ~11 units to run on average.
+    When there are 900 entities to return, this node took ~75 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=query_if_entity_is_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If Entity Is on the Field</a>
+    </li>
+    <li>
+        <a href="?node=get_specified_type_of_entities_on_the_field" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Specified Type of Entities on the Field</a>
+    </li>
+    <li>
+        <a href="?node=get_entity_list_by_unit_tag" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity List by Unit Tag</a>
+    </li>
+    <li>
+        <a href="?node=get_entity_list_by_specified_prefab_id" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity List by Specified Prefab ID</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_entities_with_specified_prefab_on_the_field.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

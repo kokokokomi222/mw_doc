@@ -73,7 +73,11 @@
         This node works perfectly fine with creations.
     </li>
     <li>
-        TODO: test what happens when dynamic entity limit is reached.
+        There is a limit of 1000 entities on the field.
+        If this node is used when the limit is already reached,
+        this node raises "GUID setting error" error
+        (misleading because it should be an "Exceeded the maximum number of entities" error instead),
+        but continues execution.
     </li>
 </ul>
 
@@ -107,6 +111,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/create_entity.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

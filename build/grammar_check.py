@@ -5,7 +5,10 @@ IGNORED_RULES = {
     'ENGLISH_WORD_REPEAT_BEGINNING_RULE',
 }
 IGNORED_MATCH = {
+    ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
+    ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
     ('multiplication', 'PRP_MD_NN', 'can also underflow'),
+    ('print_string', 'NON_STANDARD_WORD', 'two "Print String"s'),
     ('query_server_time_zone', 'COMMA_PARENTHESIS_WHITESPACE', 'TW,HK,MO'),
     ('weighted_random', 'I_LOWERCASE', 'this node outputting i is'),
 }
@@ -26,6 +29,7 @@ CUSTOM_WORDS = [
     'cryo',
 
     'Moonglow',
+    'Teyvat',
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 
@@ -64,6 +68,10 @@ def check_spell(html_file_path:str) -> int:
         code_string = code.get_text()
         if code_string.startswith('[') and code_string.endswith(']'):
             code.string = '(a specific list)'
+        elif code_string.startswith('"') and code_string.endswith('"'):
+            pass
+        else:
+            code.string = f'"{code_string}"'
     raw_text = soup.get_text()
     lines = raw_text.split('\n')
     lines = [line.strip() for line in lines]

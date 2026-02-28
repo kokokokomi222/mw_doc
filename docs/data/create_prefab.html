@@ -89,7 +89,10 @@
         If <a href="?node=query_guid_by_entity" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query GUID by Entity</a> is called on an entity created by this node, it returns <code>0</code>.
     </li>
     <li>
-        TODO: test what happens when dynamic entity limit is reached.
+        There is a limit of 1000 entities on the field.
+        If this node is used when the limit is already reached,
+        this node raises "Prefab setting error or exceeded the maximum number of entities" error,
+        but continues execution.
     </li>
 </ul>
 
@@ -120,6 +123,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Last updated: 2026-02-28 (Luna V)</p>
     <p><a href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/create_prefab.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -111,8 +111,8 @@
     },
     "print_string": {
         "written": true,
-        "checksum": 1020762372,
-        "date": "2026-02-22"
+        "checksum": 3745309739,
+        "date": "2026-02-28"
     },
     "query_game_mode_and_player_number": {
         "written": true,
@@ -231,8 +231,8 @@
     },
     "search_list_and_return_value_id": {
         "written": true,
-        "checksum": 3831414193,
-        "date": "2026-02-22"
+        "checksum": 2895144045,
+        "date": "2026-02-28"
     },
     "activate_disable_model_display": {
         "written": true,
@@ -241,18 +241,18 @@
     },
     "create_entity": {
         "written": true,
-        "checksum": 2819731263,
-        "date": "2026-02-22"
+        "checksum": 137379373,
+        "date": "2026-02-28"
     },
     "create_prefab": {
         "written": true,
-        "checksum": 3005242438,
-        "date": "2026-02-22"
+        "checksum": 1463077256,
+        "date": "2026-02-28"
     },
     "create_prefab_group": {
         "written": true,
-        "checksum": 251165668,
-        "date": "2026-02-22"
+        "checksum": 3521885886,
+        "date": "2026-02-28"
     },
     "when_entity_is_destroyed": {
         "written": true,
@@ -281,8 +281,8 @@
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
-        "checksum": 200340079,
-        "date": "2026-02-22"
+        "checksum": 1932959049,
+        "date": "2026-02-28"
     },
     "get_node_graph_variable": {
         "written": true,
@@ -690,9 +690,9 @@
         "date": "2026-02-22"
     },
     "get_all_entities_on_the_field": {
-        "written": false,
-        "checksum": 3392107058,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2158433681,
+        "date": "2026-02-28"
     },
     "get_all_entities_within_the_collision_trigger": {
         "written": false,
@@ -745,9 +745,9 @@
         "date": "2026-02-22"
     },
     "get_entities_with_specified_prefab_on_the_field": {
-        "written": false,
-        "checksum": 2897278852,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2325623955,
+        "date": "2026-02-28"
     },
     "get_entitys_mini_map_marker_status": {
         "written": false,
@@ -990,9 +990,9 @@
         "date": "2026-02-22"
     },
     "get_specified_type_of_entities_on_the_field": {
-        "written": false,
-        "checksum": 853770907,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2786623650,
+        "date": "2026-02-28"
     },
     "get_specified_waypoint_info": {
         "written": false,
@@ -1205,9 +1205,9 @@
         "date": "2026-02-22"
     },
     "query_characters_current_movement_spd": {
-        "written": false,
-        "checksum": 2468933350,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 457872566,
+        "date": "2026-02-28"
     },
     "query_character_skill": {
         "written": false,
@@ -1225,9 +1225,9 @@
         "date": "2026-02-22"
     },
     "query_current_environment_time": {
-        "written": false,
-        "checksum": 3665014013,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3075201932,
+        "date": "2026-02-28"
     },
     "query_custom_shop_item_sales_info": {
         "written": false,
@@ -1310,9 +1310,9 @@
         "date": "2026-02-22"
     },
     "query_if_entity_is_on_the_field": {
-        "written": false,
-        "checksum": 1672731709,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1306786150,
+        "date": "2026-02-28"
     },
     "query_if_faction_is_hostile": {
         "written": false,
@@ -1505,9 +1505,9 @@
         "date": "2026-02-22"
     },
     "settle_stage": {
-        "written": false,
-        "checksum": 3815270988,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2027990319,
+        "date": "2026-02-28"
     },
     "set_achievement_progress_tally": {
         "written": false,
@@ -1535,9 +1535,9 @@
         "date": "2026-02-22"
     },
     "set_current_environment_time": {
-        "written": false,
-        "checksum": 2305253633,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1739289180,
+        "date": "2026-02-28"
     },
     "set_custom_shop_item_sales_info": {
         "written": false,
@@ -1560,9 +1560,9 @@
         "date": "2026-02-22"
     },
     "set_environment_time_passage_speed": {
-        "written": false,
-        "checksum": 2290673698,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2166591419,
+        "date": "2026-02-28"
     },
     "set_equipment_affix_value": {
         "written": false,
