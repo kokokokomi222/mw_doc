@@ -1,29 +1,98 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Faction Changes</h1>
 <p>
-     This event is triggered when an Entity's Faction changes
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Triggers when an entity changes its faction.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that changed faction.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if the entity was created dynamically.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Pre-Change Faction</span> (Faction) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Pre-Change Faction</span> (Faction) - Old faction of the entity before the change.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Post-Change Faction</span> (Faction) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Post-Change Faction</span> (Faction) - New faction of the entity after the change.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Faction is primarily used to split entities into teams with varying friendly/hostile relationships.
+    Creatures are only aggroed by hostile entities,
+    and ability units can be filtered to only target hostile faction entities (which is the default).
+</p>
+<p>
+    Factions can also be used for grouping players into teams for settlement.
+    By rewarding the result and ranking to factions,
+    faction players can be motivated to work together and compete against other factions.
+</p>
+<p>
+    Factions can be configured in "Stage Settings" but only in Beyond Mode.
+    The faction of each entity can be individually configured in the entity details panel.
+</p>
+<p>
+    This node triggers when an entity changes its faction,
+    which can only occur with <a href="?node=set_entity_faction" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Entity Faction</a>.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph mounted to a player.
+    When the player's faction changes,
+    we create a string list with the nickname of the player and the name of the faction
+    (which is obtained from a node graph variable dictionary called <code>faction_name</code> that maps faction to string).
+    That string list is stored to a custom variable named <code>message</code>.
+    <img src="/mw_doc/image/when_entity_faction_changes_example.webp" alt="when entity faction changes example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node cannot trigger on the stage entity.
+        <a href="?node=set_entity_faction" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Entity Faction</a> does not work on the stage entity,
+        so the stage cannot have a faction nor acquire a faction during runtime.
+    </li>
+    <li>
+        The faction of the character is always the same as the faction of the owning player.
+        If the faction of a player or a character changes using <a href="?node=set_entity_faction" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Entity Faction</a>,
+        the corresponding player and characters all change faction together,
+        and this node triggers on all such player and character entities.
+    </li>
+    <li>
+        This node triggers even when <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Pre-Change Faction</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Post-Change Faction</span> are the same.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_entity_faction" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Entity Faction</a>
+    </li>
+    <li>
+        <a href="?node=query_entity_faction" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Entity Faction</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-01 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_entity_faction_changes.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

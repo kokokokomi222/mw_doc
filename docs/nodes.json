@@ -148,7 +148,7 @@
             "slug": "set_entity_faction",
             "name": "Set Entity Faction",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "teleport_player",
@@ -1114,7 +1114,7 @@
             "slug": "when_entity_faction_changes",
             "name": "When Entity Faction Changes",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_the_character_is_down",
@@ -1744,13 +1744,13 @@
             "slug": "query_entity_faction",
             "name": "Query Entity Faction",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_if_faction_is_hostile",
             "name": "Query If Faction Is Hostile",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_if_all_player_characters_are_down",
@@ -2006,7 +2006,7 @@
         },
         {
             "slug": "get_faction_settlementranking_value",
-            "name": "Get Faction SettlementRanking Value",
+            "name": "Get Faction Settlement Ranking Value",
             "type": "query",
             "stub": true
         },

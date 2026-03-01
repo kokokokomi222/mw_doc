@@ -3,6 +3,7 @@
 * data type conversion - float -> string behavior, performance
 * query_game_mode_and_player_number - verify match making in release
 * create_prefab_group - what happens at dynamic entity limit
+* local variables and composite nodes
 
 # MINOR NITPICKS
 * break loop example should have loop complete running
@@ -10,12 +11,10 @@
 
 # NEXT NODES
 ## Execution
-    * set entity faction
     * player and character related * 10
     * timer related * 4
     * global timer related * 5
 ## Event
-    * when entity faction changes
     * player and character related * 6
     * when timer is triggered
     * when global timer is triggered

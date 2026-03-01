@@ -276,8 +276,8 @@
     },
     "when_entity_is_created": {
         "written": true,
-        "checksum": 85458144,
-        "date": "2026-02-22"
+        "checksum": 3391479902,
+        "date": "2026-03-01"
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
@@ -1255,9 +1255,9 @@
         "date": "2026-02-22"
     },
     "query_entity_faction": {
-        "written": false,
-        "checksum": 1622070808,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 885954466,
+        "date": "2026-03-01"
     },
     "query_equipment_config_id_by_equipment_id": {
         "written": false,
@@ -1315,9 +1315,9 @@
         "date": "2026-02-28"
     },
     "query_if_faction_is_hostile": {
-        "written": false,
-        "checksum": 155926051,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4058990570,
+        "date": "2026-03-01"
     },
     "query_if_specified_entity_is_in_combat": {
         "written": false,
@@ -1550,9 +1550,9 @@
         "date": "2026-02-22"
     },
     "set_entity_faction": {
-        "written": false,
-        "checksum": 3750668914,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3218090960,
+        "date": "2026-03-01"
     },
     "set_environment_configuration": {
         "written": false,
@@ -1945,9 +1945,9 @@
         "date": "2026-02-22"
     },
     "when_entity_faction_changes": {
-        "written": false,
-        "checksum": 764642620,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3883174168,
+        "date": "2026-03-01"
     },
     "when_equipment_affix_value_changes": {
         "written": false,
