@@ -10,7 +10,7 @@ Use this node to listen to event where entity is created.
 
 # Example
 In this example, when entity with the node graph is created,
-it plays a timed VFX (`47`, "White Appearing Dust") at the entity.
+it plays a timed VFX `47` (White Appearing Dust) at the entity.
 [image:when_entity_is_created_example]
 
 # Notes
