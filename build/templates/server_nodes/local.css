@@ -92,6 +92,31 @@ ul.see_also .node {
     padding: 6px;
 }
 
+.beyond_mode_only, .classic_mode_only {
+    margin: 0 0 var(--margin-medium) 0;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #006e49;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    & img {
+        height: 3em;
+        margin-right: var(--margin-medium);
+        aspect-ratio: 1 / 1;
+    }
+    & p {
+        margin: 0;
+    }
+}
+.beyond_mode_only {
+    background-color: #384794;
+}
+.classic_mode_only {
+    background-color: #04604e;
+}
+
 @media (width < 960px) {
     :root {
         --nav-width: 18rem;

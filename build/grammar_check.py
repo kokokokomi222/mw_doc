@@ -3,6 +3,7 @@ import language_tool_python as ltp
 
 IGNORED_RULES = {
     'ENGLISH_WORD_REPEAT_BEGINNING_RULE',
+    'WHITESPACE_RULE',
 }
 IGNORED_MATCH = {
     ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
@@ -30,6 +31,7 @@ CUSTOM_WORDS = [
 
     'Moonglow',
     'Teyvat',
+    'aggroed',
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 

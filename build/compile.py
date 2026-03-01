@@ -135,6 +135,10 @@ def parse_link(state:ParseState) -> str:
         case 'https':
             url = tokens[0]  + ':' + tokens[1]
             return f'<a class="outbound_link" href="{url}">{tokens[2]}</a>'
+        case 'beyond_mode_only':
+            return '<div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>'
+        case 'classic_mode_only':
+            return '<div class="classic_mode_only"><img src="/mw_doc/classic_mode.webp" alt="Classic Mode"><p>This server node is only available in <span class="emphasis">Classic Mode</span>.</p></div>'
         case _:
             state.raise_error(f'Unknown link type: {tokens[0]}')
 

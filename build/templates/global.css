@@ -269,6 +269,31 @@ li {
     display: block;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+    font-size: 1rem;
+
+    & tr:nth-of-type(odd) {
+        background-color: #dfdfec;
+    }
+    & tr:nth-of-type(even) {
+        background-color: #efefef;
+    }
+
+    & th {
+        background-color: var(--color-accent);
+        color: var(--color-main-text);
+        text-align: left;
+        padding: var(--margin-small) var(--margin-medium);
+    }
+    & td {
+        text-align: left;
+        padding: var(--margin-small) var(--margin-medium);
+    }    
+}
+
 #modal {
     border: 0;
     padding: 0;

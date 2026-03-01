@@ -13,6 +13,9 @@ NODE_TYPE_FULL_NAME = {
 NODE_NAME_FIX = {
     "Get Entities With Specified Prefab on the Field":
     "Get Entities With Specified Prefab ID on the Field",
+
+    "Get Faction SettlementRanking Value":
+    "Get Faction Settlement Ranking Value",
 }
 
 def slug(name:str) -> str:
