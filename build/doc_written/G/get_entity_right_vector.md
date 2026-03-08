@@ -1,0 +1,42 @@
+# Summary
+Returns the right vector of the entity.
+
+# Input Parameters
+* [input:Target_Entity] (Entity) - Entity to get the right vector from.
+
+# Output Values
+* [output:Right_Vector] (3D Vector) - Normalized right vector in the world coordinate space. This is always a unit vector.
+
+# Usage
+Use this node to get the normalized right vector of an entity.
+This is `(1, 0, 0)` vector in the entity's local coordinate space,
+transformed to the world coordinate space
+and then normalized to a unit vector.
+
+Positive X direction is right for characters and creatures,
+the direction that right hand would be toward in a T-pose.
+
+# Example
+In this example, we consider the character that selected the tab.
+Iterating a value from 1 to 5,
+we create a prefab at the location
+`i * (character's right vector) + (character location)`,
+where `i` is the value we are iterating.
+The result is that we get 5 prefabs created in a line going right from our character.
+[image:get_entity_right_vector_example]
+[image:get_entity_right_vector_for_character]
+
+# Notes
+* If [input:Target_Entity] does not exist,
+  this node raises "Entity does not exist" error and returns `(1, 0, 0)`.
+* If [input:Target_Entity] is scaled, [output:Right_Vector] is still a unit vector.
+
+# Performance
+This node took ~6 units to run on average.
+
+# See Also
+* [node:get_entity_forward_vector]
+* [node:get_entity_upward_vector]
+
+# Authors
+* kokokokomi222
