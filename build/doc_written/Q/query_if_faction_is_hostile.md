@@ -113,7 +113,7 @@ Factions can be set during runtime with [node:set_entity_faction] in Beyond Mode
 # Example
 In this example, we have a collision trigger on an entity.
 If the entity is hostile toward the entering entity,
-we play a timed VFX `10007048` (Red Ring Warning) at the entity.
+we play a timed VFX at the entity.
 [image:query_if_faction_is_hostile_example]
 
 # Notes

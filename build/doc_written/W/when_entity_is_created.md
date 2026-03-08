@@ -7,10 +7,13 @@ Triggers when an entity is created.
 
 # Usage
 Use this node to listen to event where entity is created.
+When a removed/destroyed entity is recreated with [node:create_entity]
+or [node:activate_disable_entity_deployment_group],
+it triggers this event again.
 
 # Example
 In this example, when entity with the node graph is created,
-it plays a timed VFX `47` (White Appearing Dust) at the entity.
+it plays a timed VFX at the entity.
 [image:when_entity_is_created_example]
 
 # Notes

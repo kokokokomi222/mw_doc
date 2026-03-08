@@ -26,7 +26,7 @@ but you still need the unit status effect on the character.
 
 # Example
 In this example, when the character triggers the speed monitor,
-we play a timed VFX `10002128` (Anemo Shockwave) at the character.
+we play a timed VFX at the character.
 [image:when_character_movement_spd_meets_condition_example]
 
 # Notes
