@@ -29,6 +29,13 @@ As a result, any creation that our character touches will be destroyed.
 * If [input:Target_Entity] is the stage entity, this node is no-op. Stage cannot be destroyed.
 * If [input:Target_Entity] is a player entity, this node is no-op. Player cannot be destroyed.
 * If [input:Target_Entity] is a character entity, the character's HP is set to 0, plays the death animation, and dies.
+* Node variables and custom variables of the destroyed entity
+  are immediately inaccessible after this node runs,
+  except for accessing the custom variables with [node:query_custom_variable_snapshot]
+  in [node:when_entity_is_destroyed].
+* If this node runs on a node graph
+  where [input:Target_Entity] is the self entity,
+  the node graph will still continue and finish the execution.
 
 # Performance
 To destroy object entities with default setting, this node took ~36 units to run on average.

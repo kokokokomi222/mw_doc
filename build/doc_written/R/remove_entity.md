@@ -31,6 +31,10 @@ node will be evaluated every iteration and the list will change.
 * If [input:Target_Entity] is a character entity, this node is no-op.
   Character cannot be removed by this node, but it is removed if the owning player leaves the stage.
   However, it can be destroyed by [node:destroy_entity].
+* Node variables and custom variables of the removed entity is immediately inaccessible after this node runs.
+* If this node runs on a node graph
+  where [input:Target_Entity] is the self entity,
+  the node graph will still continue and finish the execution.
 
 # Performance
 To remove object entities with default setting, this node took ~24 units to run on average.
