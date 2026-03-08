@@ -3,7 +3,7 @@ Triggers when a node graph variable changes its value.
 
 # Output Values
 * [output:Event_Source_Entity] (Entity) - Entity that holds the changed node graph variable.
-* [output:Event_Source_GUID] (GUID) -GUID of the above entity. `0` if the entity was created dynamically.
+* [output:Event_Source_GUID] (GUID) - GUID of the above entity. `0` if the entity was created dynamically.
 * [output:Variable_Name] (String) - Name of the changed node graph variable.
 * [output:Pre-Change_Value] (Generic) - The node graph variable's old value before the change.
 * [output:Post-Change_Value] (Generic) - The node graph variable's new value after the change.

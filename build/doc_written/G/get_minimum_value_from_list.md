@@ -1,5 +1,5 @@
 # Summary
-Get the minimum value of a list.
+Returns the minimum value of a list.
 
 # Input Parameters
 * [input:List] (Generic) - List to get the minimum value from. Must be an integer list or a floating point number list.

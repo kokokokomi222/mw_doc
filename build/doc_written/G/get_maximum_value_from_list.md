@@ -1,5 +1,5 @@
 # Summary
-Get the maximum value of a list.
+Returns the maximum value of a list.
 
 # Input Parameters
 * [input:List] (Generic) - List to get the maximum value from. Must be an integer list or a floating point number list.
