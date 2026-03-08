@@ -154,7 +154,7 @@
             "slug": "teleport_player",
             "name": "Teleport Player",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "revive_character",
@@ -1132,7 +1132,7 @@
             "slug": "when_player_teleport_completes",
             "name": "When Player Teleport Completes",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_all_players_characters_are_down",
@@ -1630,31 +1630,31 @@
             "slug": "get_entity_type",
             "name": "Get Entity Type",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_entity_location_and_rotation",
             "name": "Get Entity Location and Rotation",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_entity_forward_vector",
             "name": "Get Entity Forward Vector",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_entity_upward_vector",
             "name": "Get Entity Upward Vector",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_entity_right_vector",
             "name": "Get Entity Right Vector",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_list_of_entities_owned_by_the_entity",
@@ -1708,7 +1708,7 @@
             "slug": "get_self_entity",
             "name": "Get Self Entity",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_guid_by_entity",

@@ -51,6 +51,17 @@
     <li>
         If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a character entity, the character's HP is set to 0, plays the death animation, and dies.
     </li>
+    <li>
+        Node variables and custom variables of the destroyed entity
+        are immediately inaccessible after this node runs,
+        except for accessing the custom variables with <a href="?node=query_custom_variable_snapshot" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Custom Variable Snapshot</a>
+        in <a href="?node=when_entity_is_destroyed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Destroyed</a>.
+    </li>
+    <li>
+        If this node runs on a node graph
+        where <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is the self entity,
+        the node graph will still continue and finish the execution.
+    </li>
 </ul>
 
 <h2>Performance</h2>
@@ -81,6 +92,6 @@ First execution of a node within a node graph execution tend to take a bit longe
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Last updated: 2026-03-08 (Luna V)</p>
     <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/D/destroy_entity.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

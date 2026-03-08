@@ -7,11 +7,13 @@ IGNORED_RULES = {
 }
 IGNORED_MATCH = {
     ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
+    ('get_entity_type', 'KIND_OF_A', 'Returns the type of an entity'),
     ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
     ('multiplication', 'PRP_MD_NN', 'can also underflow'),
     ('print_string', 'NON_STANDARD_WORD', 'two "Print String"s'),
     ('query_server_time_zone', 'COMMA_PARENTHESIS_WHITESPACE', 'TW,HK,MO'),
     ('weighted_random', 'I_LOWERCASE', 'this node outputting i is'),
+    ('when_player_teleport_completes', 'SUBJECT_VERB_AGREEMENT_PLURAL', 'teleport is finished'),
 }
 CUSTOM_WORDS = [
     'Miliastra',

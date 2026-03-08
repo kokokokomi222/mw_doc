@@ -1,20 +1,70 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Self Entity</h1>
 <p>
-     Returns the Entity associated with this Node Graph
+    Returns the self entity.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Self Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Self Entity</span> (Entity) - Self entity, the entity that is mounting the node graph that is currently executing.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    All node graphs must be mounted to an entity for it to run.
+    When a node graph runs, it runs in the context of an entity.
+    This node returns that entity.
+</p>
+<p>
+    Many event nodes provide <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span>,
+    which is typically the same as the self entity.
+    However, this node may still be of use for a few reasons:
+</p>
+<ul>
+    <li>
+        If you want two or more event nodes to share a logic, then this node can be used.
+        See the "Example" section below for an example.
+    </li>
+    <li>
+        If you forwarded an event with <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> can differ from the self entity.
+    </li>
+    <li>
+        This node can help organize the node graph,
+        because we don't have to rely on one <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> output pin
+        to be connected to everything.
+    </li>
+    <li>
+        This node is shorter as a name for input.
+        <img src="/mw_doc/image/get_self_entity_is_shorter.webp" alt="get self entity is shorter" class="expandable_img" loading="lazy"/>
+    </li>
+</ul>
+
+<h2>Example</h2>
+<p>
+    In this example, this node graph listens to tab selection and UI control group event,
+    forwarded from a player entity.
+    For both events, we want to hide the model of the entity,
+    which is achieved by using this node.
+    <img src="/mw_doc/image/get_self_entity_example.webp" alt="get self entity example" class="expandable_img" loading="lazy"/>
+</p>
 
 
-
+<h2>Performance</h2>
+<p>
+    This node took less than 1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-08 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_self_entity.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

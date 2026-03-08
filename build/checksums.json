@@ -216,13 +216,13 @@
     },
     "get_maximum_value_from_list": {
         "written": true,
-        "checksum": 108059840,
-        "date": "2026-02-22"
+        "checksum": 1596611685,
+        "date": "2026-03-08"
     },
     "get_minimum_value_from_list": {
         "written": true,
-        "checksum": 2488336978,
-        "date": "2026-02-22"
+        "checksum": 948355519,
+        "date": "2026-03-08"
     },
     "list_includes_this_value": {
         "written": true,
@@ -266,23 +266,23 @@
     },
     "destroy_entity": {
         "written": true,
-        "checksum": 1329603010,
-        "date": "2026-02-22"
+        "checksum": 691550845,
+        "date": "2026-03-08"
     },
     "remove_entity": {
         "written": true,
-        "checksum": 4256559970,
-        "date": "2026-02-22"
+        "checksum": 838128845,
+        "date": "2026-03-08"
     },
     "when_entity_is_created": {
         "written": true,
-        "checksum": 3391479902,
-        "date": "2026-03-01"
+        "checksum": 3316870483,
+        "date": "2026-03-08"
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
-        "checksum": 1932959049,
-        "date": "2026-02-28"
+        "checksum": 2447207933,
+        "date": "2026-03-08"
     },
     "get_node_graph_variable": {
         "written": true,
@@ -306,8 +306,8 @@
     },
     "when_node_graph_variable_changes": {
         "written": true,
-        "checksum": 307273011,
-        "date": "2026-02-22"
+        "checksum": 1672671586,
+        "date": "2026-03-08"
     },
     "query_custom_variable_snapshot": {
         "written": true,
@@ -765,9 +765,9 @@
         "date": "2026-02-22"
     },
     "get_entity_forward_vector": {
-        "written": false,
-        "checksum": 2402036965,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 682714204,
+        "date": "2026-03-08"
     },
     "get_entity_list_by_specified_faction": {
         "written": false,
@@ -795,19 +795,19 @@
         "date": "2026-02-22"
     },
     "get_entity_location_and_rotation": {
-        "written": false,
-        "checksum": 3821631770,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3004652745,
+        "date": "2026-03-08"
     },
     "get_entity_right_vector": {
-        "written": false,
-        "checksum": 113326158,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 966750073,
+        "date": "2026-03-08"
     },
     "get_entity_type": {
-        "written": false,
-        "checksum": 579303437,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4051587857,
+        "date": "2026-03-08"
     },
     "get_entity_unit_tag_list": {
         "written": false,
@@ -815,9 +815,9 @@
         "date": "2026-02-22"
     },
     "get_entity_upward_vector": {
-        "written": false,
-        "checksum": 3117527504,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4089614347,
+        "date": "2026-03-08"
     },
     "get_equipment_affix_config_id": {
         "written": false,
@@ -985,9 +985,9 @@
         "date": "2026-02-22"
     },
     "get_self_entity": {
-        "written": false,
-        "checksum": 822647507,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2047221566,
+        "date": "2026-03-08"
     },
     "get_specified_type_of_entities_on_the_field": {
         "written": true,
@@ -1316,8 +1316,8 @@
     },
     "query_if_faction_is_hostile": {
         "written": true,
-        "checksum": 4058990570,
-        "date": "2026-03-01"
+        "checksum": 2058502018,
+        "date": "2026-03-08"
     },
     "query_if_specified_entity_is_in_combat": {
         "written": false,
@@ -1850,9 +1850,9 @@
         "date": "2026-02-22"
     },
     "teleport_player": {
-        "written": false,
-        "checksum": 3477011471,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3098441735,
+        "date": "2026-03-08"
     },
     "toggle_entity_light_source": {
         "written": false,
@@ -2035,9 +2035,9 @@
         "date": "2026-02-22"
     },
     "when_player_teleport_completes": {
-        "written": false,
-        "checksum": 2523479877,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1062729727,
+        "date": "2026-03-08"
     },
     "when_self_enters_combat": {
         "written": false,

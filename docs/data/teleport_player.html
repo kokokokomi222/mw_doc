@@ -1,26 +1,94 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Teleport Player</h1>
 <p>
-     Teleport the specified Player Entity. A loading interface may appear depending on teleport distance
+    Teleports a player.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Active Player
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Player entity to teleport.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> (3D Vector) - Absolute Location
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> (3D Vector) - Location in world coordinate space.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> (3D Vector) - Absolute Rotation
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> (3D Vector) - Rotation in world coordinate space.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node teleports a player to the specified location/rotation.
+    If the teleported location is far from the starting location,
+    a loading screen may show briefly.
+    See "Notes" section below for more detail.
+</p>
+<p>
+    Unfortunately, it seems that it is not possible to set the camera angle after the teleportation as of Luna V.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, when a player selects a tab on the entity,
+    we teleport the player to the location/rotation specified by a preset point.
+    <img src="/mw_doc/image/teleport_player_example.webp" alt="teleport player example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> does not exist,
+        this node raises "Entity does not exist" error
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error (misleading because the entity <span class="emphasis">does</span> exist)
+        but continues the execution.
+        In particular, this node does <span class="emphasis">not</span> work with character entities.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is outside the stage's "Effective Scene Range",
+        this node still functions correctly.
+    </li>
+    <li>
+        If any component of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is greater than <code>512.0</code> or less than <code>-512.0</code>,
+        this node is no-op.
+    </li>
+    <li>
+        If the distance from the current location to <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is greater than <code>60.0</code>,
+        a loading screen will show briefly, which appears as below.
+        <img src="/mw_doc/image/teleport_player_loading_screen.webp" alt="teleport player loading screen" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        There is a cooldown of 1 second for player teleportation.
+        If you attempt to teleport a player again when the player teleported less then a second ago,
+        this node is no-op.
+        If there are multiple teleport player nodes in one node graph execution,
+        the <span class="emphasis">first</span> one gets executed and the rest are no-op.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~30 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_player_teleport_completes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Teleport Completes</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-08 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/T/teleport_player.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

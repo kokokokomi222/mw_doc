@@ -1,23 +1,69 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Teleport Completes</h1>
 <p>
-     This event is triggered on the Player Entity's Node Graph when the Player completes teleportation This event is also triggered when a Player enters a Stage for the first time
+    Triggers when a player completes teleportation.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Entity</span> (Entity) - Player entity that completed teleportation.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player GUID</span> (GUID) - GUID of the player entity.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to listen to event when player teleports.
+    The event triggers after the teleport is finished.
+    Typically, this node should be added to a node graph that is mounted on a player entity.
+</p>
+<p>
+    The official documentation claims that this node triggers
+    "when a Player enters a Stage for the first time".
+    However, this does not seem to be true.
+    Use <a href="?node=when_entity_is_created" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entity Is Created</a> for the player entity to detect this event instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we listen to when the player completes teleportation
+    then we play a timed VFX at the character.
+    <img src="/mw_doc/image/when_player_teleport_completes_example.webp" alt="when player teleport completes example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        When a player revives, the player teleports to a revive point and thus this node is triggered.
+    </li>
+    <li>
+        This event can be forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>,
+        so this node could be on a node graph that is not mounted on a player entity.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=teleport_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Teleport Player</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-08 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_player_teleport_completes.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

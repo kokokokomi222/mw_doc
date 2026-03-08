@@ -11,15 +11,15 @@
 
 # NEXT NODES
 ## Execution
-    * player and character related * 10
+    * player and character related * 9/10
     * timer related * 4
     * global timer related * 5
 ## Event
-    * player and character related * 6
+    * player and character related * 5/6
     * when timer is triggered
     * when global timer is triggered
 ## Query
-    * entity related * 19
+    * entity related * 13/24
     * get current global timer time
 ## Operation
     * Bitwise operations * 8
@@ -28,6 +28,7 @@
 * input/output in table
 * better ordering of math operation nodes
 * section link / scroll
+* tag system (by topic, by beyond/classic only)
 
 # GUIDES - pages for consolidating repeatedly appearing concepts
 * error handling (many nodes are no-op. Some raise error but continues)
