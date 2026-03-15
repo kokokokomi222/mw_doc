@@ -30,6 +30,10 @@ The result is that we get 5 prefabs created in a line going right from our chara
 * If [input:Target_Entity] does not exist,
   this node raises "Entity does not exist" error and returns `(1, 0, 0)`.
 * If [input:Target_Entity] is scaled, [output:Right_Vector] is still a unit vector.
+* If [input:Target_Entity] is the stage entity, it always returns `(1, 0, 0)`.
+* If [input:Target_Entity] is a player entity, it returns the same right vector as its character.
+  In classic mode, all characters have the same location and rotation, so there is no ambiguity.
+
 
 # Performance
 This node took ~6 units to run on average.
