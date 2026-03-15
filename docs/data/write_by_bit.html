@@ -1,36 +1,119 @@
 <h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Write by bit</h1>
 <p>
-     Writes the write value as a binary number to the [start bit, end bit] of the target value (also a binary number). The start bit is indexed from 0, and the write length includes both the start and end bits If the binary significant length of the write value (counted from the first 1 from the left) exceeds the write length, the write fails and returns the original value If the write value is negative, it also fails due to exceeding the write length (the first bit of a negative number's binary representation is the sign bit 1)
+    Writes the bits of an integer.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> (Integer) - Binary value to write to.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> (Integer) - Binary value to overwrite with.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> (Integer) - Lowest bit to read. 0-indexed.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> (Integer) - Highest bit to read. 0-indexed.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - Binary integer, which is the result of overwriting the specified bits.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Say <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> is <code>a</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> is <code>b</code>.
+    The lowest read bit is "<code>a</code>-th bit", which represents <code>2^a</code>.
+    The highest read bit is "<code>b</code>-th bit", which represents <code>2^b</code>.
+    The range of bits includes both ends, i.e. <code>b-a+1</code> bits are written.
+    To put in C-style code, the output is 
+    <pre>
+(n & (~((1 &lt;&lt; (b+1)) - (1 &lt;&lt; a)))) + (m &lt;&lt; a)</pre>
+    where <code>n</code> is <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> and <code>m</code> is <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span>.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have that <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> is <code>77</code>,
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> is <code>9</code>,
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> is <code>2</code>,
+    and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> is <code>5</code>.
+    The binary representation of <code>77</code> is <code>1001101</code>.
+    We set 2nd bit to 5th bit (remember that the bits are 0-indexed),
+    which are originally <code>0011</code> in binary
+    and replace them with <code>1001</code> (binary representation of the input value <code>9</code>).
+    Therefore, the output is <code>1100101</code> in binary and thus <code>101</code> in decimal.
+</p>
+<p>
+    <pre>
+1 0 0 1 1 0 1
+  1 0 0 1
+-------------
+1 1 0 0 1 0 1
+  ^ ^ ^ ^
+6 5 4 3 2 1 0-th bit</pre>
+    <img src="/mw_doc/image/write_by_bit_example.webp" alt="write by bit example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> is negative,
+        Miliastra uses <a class="outbound_link" href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>
+        to represent the value in binary.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> is <code>-1</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> is <code>2</code>,
+        writing the bits from <code>0</code> to <code>2</code> yields <code>-6</code>,
+        because <code>-1</code>'s binary representation is <code>11111111111111111111111111111111</code> (32 1's),
+        so the result of writing is <code>11111111111111111111111111111010</code>.
+        We recommend that you avoid using negative integers with this node.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> is negative,
+        this node raises "Bit write value out of range" error,
+        and returns <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> as output.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write value</span> is greater or equal to <code>2^(b-a+1)</code> (i.e. has more than <code>b-a+1</code> bits),
+        where <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> is <code>a</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> is <code>b</code>,
+        this node raises "Bit write value out of range" error
+        and returns <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> as output.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span> is negative,
+        this node raises "Invalid bit index for write" error and returns <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> as output.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write starting position</span> is greater than <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Write end position</span>,
+        this node raises "Invalid bit index for write" error and returns <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Written value</span> as output.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=read_by_bit" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Read by bit</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-15 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/write_by_bit.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

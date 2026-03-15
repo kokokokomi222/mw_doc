@@ -327,6 +327,21 @@ table {
     }    
 }
 
+#quick_message {
+    width: 40rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 3rem;
+    left: calc(50% - 20rem);
+    background-color: var(--color-accent);
+    border: 1px solid white;
+    padding: var(--margin-small);
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 #modal {
     border: 0;
     padding: 0;
@@ -422,7 +437,6 @@ dialog::backdrop {
             <circle cx="20.5" cy="4.5" r="3" fill="currentColor"/>
             <circle cx="20.5" cy="12.5" r="3" fill="currentColor"/>
             <circle cx="20.5" cy="20.5" r="3" fill="currentColor"/>
-            <rect /> 
             <!-- svg has this weird quirk where it can't mask horizontal/vertical line, so we use rect instead. -->
             <rect x="5" y="11.5" width="16" height="2" fill="currentColor" mask="url(#flow_icon_mask)"/>
             <path d="M 20.5,4.5 H 16.5 A 3,3 0 0 0 13.5,7.5 V 17.5 A 3,3 0 0 0 16.5,20.5 H 20.5" fill="none" stroke="currentColor" stroke-width="2" mask="url(#flow_icon_mask)"/>
@@ -465,10 +479,35 @@ dialog::backdrop {
             <line x1="12" y1="12.5" x2="20.5" y2="12.5" stroke="#d67dbc" stroke-width="3" stroke-linecap="round"/>
             <path d="M 23,12.5 L 19,9 V 16 z" fill="#d67dbc" stroke="#d67dbc" stroke-width="1" stroke-linejoin="round"/>
         </symbol>
+        <symbol id="clipboard_icon" viewBox="0 0 25 25">
+            <mask id="clipboard_mask" maskUnits="objectBoundingBox">
+                <rect x="0" y="0" width="25" height="25" fill="white"/>
+                <rect x="7" y="2" width="6" height="2" rx="1" ry="1" fill="black" stroke="black" stroke-width="1"/>
+            </mask>
+            <rect x="4" y="3" width="12" height="16" rx="1" ry="1" fill="none" stroke="currentColor" stroke-width="1" mask="url(#clipboard_mask)"/>
+            <rect x="7" y="2" width="6" height="2" rx="1" ry="1" fill="none" stroke="currentColor" stroke-width="1"/>
+            <rect x="9" y="7" width="12" height="16" rx="1" ry="1" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 1"/>
+        </symbol>
+        <symbol id="tile_view_icon" viewBox="0 0 25 25">
+            <rect x="1"  y="1"  width="10" height="10" fill="currentColor"/>
+            <rect x="1"  y="14" width="10" height="10" fill="currentColor"/>
+            <rect x="14" y="1"  width="10" height="10" fill="currentColor"/>
+            <rect x="14" y="14" width="10" height="10" fill="currentColor"/>
+        </symbol>
+        <symbol id="list_view_icon" viewBox="0 0 25 25">
+            <rect x="1" y="2" width="3" height="3" fill="currentColor"/>
+            <rect x="7" y="2" width="17" height="3" fill="currentColor"/>
+            <rect x="1" y="8" width="3" height="3" fill="currentColor"/>
+            <rect x="7" y="8" width="17" height="3" fill="currentColor"/>
+            <rect x="1" y="14" width="3" height="3" fill="currentColor"/>
+            <rect x="7" y="14" width="17" height="3" fill="currentColor"/>
+            <rect x="1" y="20" width="3" height="3" fill="currentColor"/>
+            <rect x="7" y="20" width="17" height="3" fill="currentColor"/>
+        </symbol>
     </defs>
 
-    <!-- <rect x="0" y="0" width="1" height="1" fill="#444"/> -->
-    <!-- <use x="0" y="0" width="1" height="1" href="#operation_icon"/> -->
+    <rect x="0" y="0" width="1" height="1" fill="#444"/>
+    <use x="0" y="0" width="1" height="1" href="#clipboard_icon"/>
 </svg>
         <header>
             <h1><a href="/mw_doc/"><img src="/mw_doc/kokomi.webp" alt="Kokomi icon"></img></a><a href="/mw_doc/">Koko's MW Doc</a> / About</h1>
@@ -483,11 +522,7 @@ dialog::backdrop {
             </span>
         </header>
         <div id="body_layout">
-            <nav id="nav" class="nav_collapsed">
-                <div id="nav_fold_button">≡</div>
-                <input id="search" placeholder="Search"></input>
-                <div id="nav_list"></div>
-            </nav>
+            
             <main>
                 <div id="content">
                     <h2>Contact</h2>
@@ -539,9 +574,27 @@ dialog::backdrop {
                 </div>
             </main>
         </div>
+        <div id="quick_message"></div>
         <dialog id="modal">
         </dialog>
     </body>
+    <script>
+        const quick_message_div = document.getElementById('quick_message');
+        let last_quick_message_id = 0;
+
+        async function show_quick_message(text, duration_in_seconds=3) {
+            last_quick_message_id += 1;
+            let this_id = last_quick_message_id;
+
+            quick_message_div.innerText = text;
+            quick_message_div.style.display = 'flex';
+            await new Promise(resolve => setTimeout(resolve, duration_in_seconds*1000));
+
+            if (this_id == last_quick_message_id) {
+                quick_message_div.style.display = 'none';
+            }
+        }
+    </script>
     <script>
         
     </script>

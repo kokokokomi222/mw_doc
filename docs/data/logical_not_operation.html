@@ -1,27 +1,92 @@
 <h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Logical NOT Operation</h1>
 <p>
-     Performs a logical NOT operation on the input Boolean value and returns the result
+    Performs boolean NOT.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Input</span> (Boolean) - Operand for NOT.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Boolean) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Boolean) - Result of boolean NOT of the input.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    The output of the node is <code>Yes</code>, if and only if the input is <code>No</code>.
+    <style>
+        .y {
+            font-weight: bold;
+            color: green;
+        }
+        .n {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+    <table><tbody>
+        <tr>
+            <th>Input</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td class="y">Yes</td>
+            <td class="n">No</td>
+        </tr>
+        <tr>
+            <td class="n">No</td>
+            <td class="y">Yes</td>
+        </tr>
+    </tbody></table>
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we toggle the boolean node graph variable named <code>game_paused</code>.
+    If it was <code>Yes</code>, it becomes <code>No</code>.
+    If it was <code>No</code>, it becomes <code>Yes</code>.
+    <img src="/mw_doc/image/logical_not_operation_example.webp" alt="logical not operation example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If you leave the input empty, the input is considered to be <code>No</code> and this node returns <code>Yes</code>.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=logical_and_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Logical AND Operation</a>
+    </li>
+    <li>
+        <a href="?node=logical_or_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Logical OR Operation</a>
+    </li>
+    <li>
+        <a href="?node=logical_xor_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Logical XOR Operation</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-15 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/L/logical_not_operation.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

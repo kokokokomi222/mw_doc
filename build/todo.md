@@ -22,7 +22,8 @@
     * entity related * 13/24
     * get current global timer time
 ## Operation
-    * Bitwise operations * 8
+    done for now
+After that dictionary, UI stuff (tab/UI control), effects (vfx/sound/music), signal, and time operations
 
 # FEATURES
 * input/output in table

@@ -1,30 +1,90 @@
 <h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Left Shift Operation</h1>
 <p>
-     Performs a logical left shift on the input by the specified bit count and outputs the result
+    Performs bitwise left shift.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Integer) - Value to shift.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Left Shift Count</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Left Shift Count</span> (Integer) - Number of bits to shift by.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - Result of bitwise left shift.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    In general programming, bitwise operations are most often used in
+    low level programming or when encoding/decoding binary data.
+    For Miliastra, a potential application is for compression of data.
+    If you have 10000 boolean states in your stage,
+    it may be more feasible and performant to have one list of 500 integer 20-bit-fields,
+    instead of using a list of 10 structures of a boolean list of length 1000.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we are performing bitwise left shift of <code>19</code> by <code>2</code>.
+    Clearly, <code>19</code> is <code>10011</code> in binary.
+    So when it is left shifted by 2, the result is <code>1001100</code> in binary, which is <code>76</code> in decimal.
+    <img src="/mw_doc/image/left_shift_operation_example.webp" alt="left shift operation example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Left Shift Count</span> is negative,
+        this node raises "Bitwise shift count is less than 0" error,
+        and returns <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> as the output.
+    </li>
+    <li>
+        Miliastra uses 32-bit signed integer,
+        so it can only represent integers between -2,147,483,648 and 2,147,483,647, inclusive of both ends.
+        If the result of the shift is greater than the maximum value representable by 32-bit integer,
+        it will overflow and yield unexpected result.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> is <code>1</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Right Shift Count</span> is <code>31</code>,
+        this node outputs <code>-2147483648</code>.
+    </li>
+    <li>
+        For negative <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span>, Miliastra uses <a class="outbound_link" href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>
+        to represent the value in binary.
+        This node only keeps the lower 32 bits and any excess bits are discarded.
+        For example, <code>-1 << 1</code> is <code>-2</code>
+        because <code>-1</code>'s binary representation is <code>11111111111111111111111111111111</code> (32 1's)
+        and <code>-2</code>'s binary representation is <code>11111111111111111111111111111110</code>
+        in 32-bit integer with two's complement.
+        We recommend that you avoid using negative integers in bitwise operations.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=right_shift_operation" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Right Shift Operation</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-15 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/L/left_shift_operation.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

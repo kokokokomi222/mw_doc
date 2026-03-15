@@ -12,8 +12,17 @@ IGNORED_MATCH = {
     ('multiplication', 'PRP_MD_NN', 'can also underflow'),
     ('print_string', 'NON_STANDARD_WORD', 'two "Print String"s'),
     ('query_server_time_zone', 'COMMA_PARENTHESIS_WHITESPACE', 'TW,HK,MO'),
+    ('read_by_bit', 'EN_UNPAIRED_QUOTES', '""a"-th bit"'),
+    ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""a"-th bit"'),
+    ('read_by_bit', 'EN_UNPAIRED_QUOTES', '""b"-th bit"'),
+    ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""b"-th bit"'),
     ('weighted_random', 'I_LOWERCASE', 'this node outputting i is'),
     ('when_player_teleport_completes', 'SUBJECT_VERB_AGREEMENT_PLURAL', 'teleport is finished'),
+    ('write_by_bit', 'EN_UNPAIRED_QUOTES', '""a"-th bit"'),
+    ('write_by_bit', 'MORFOLOGIK_RULE_EN_US', '""a"-th bit"'),
+    ('write_by_bit', 'EN_UNPAIRED_QUOTES', '""b"-th bit"'),
+    ('write_by_bit', 'MORFOLOGIK_RULE_EN_US', '""b"-th bit"'),
+    ('write_by_bit', 'UPPERCASE_SENTENCE_START', 'where "n" is'),
 }
 CUSTOM_WORDS = [
     'Miliastra',
@@ -76,6 +85,10 @@ def check_spell(html_file_path:str) -> int:
             pass
         else:
             code.string = f'"{code_string}"'
+    for table in soup.find_all('table'):
+        new_table = soup.new_tag('span')
+        new_table.string = ', '.join(table.stripped_strings)
+        table.replace_with(new_table)
     raw_text = soup.get_text()
     lines = raw_text.split('\n')
     lines = [line.strip() for line in lines]

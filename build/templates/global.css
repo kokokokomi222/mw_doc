@@ -294,6 +294,21 @@ table {
     }    
 }
 
+#quick_message {
+    width: 40rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 3rem;
+    left: calc(50% - 20rem);
+    background-color: var(--color-accent);
+    border: 1px solid white;
+    padding: var(--margin-small);
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 #modal {
     border: 0;
     padding: 0;

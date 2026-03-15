@@ -2416,25 +2416,25 @@
             "slug": "logical_not_operation",
             "name": "Logical NOT Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "logical_or_operation",
             "name": "Logical OR Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "logical_xor_operation",
             "name": "Logical XOR Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "logical_and_operation",
             "name": "Logical AND Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "exponentiation",
@@ -2566,49 +2566,49 @@
             "slug": "left_shift_operation",
             "name": "Left Shift Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "right_shift_operation",
             "name": "Right Shift Operation",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "bitwise_and",
             "name": "Bitwise AND",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "bitwise_or",
             "name": "Bitwise OR",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "xor_exclusive_or",
             "name": "XOR (Exclusive OR)",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "bitwise_complement",
             "name": "Bitwise Complement",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "write_by_bit",
             "name": "Write by bit",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "read_by_bit",
             "name": "Read by bit",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "create_dictionary",

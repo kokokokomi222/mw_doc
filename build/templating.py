@@ -25,6 +25,7 @@ def page(slug:str, title:str, url:str, header_breadcrumb:str) -> str:
             svg = SVG,
             url = url,
             header_breadcrumb = header_breadcrumb,
+            nav = dump(f'{slug}/nav.html'),
             content = dump(f'{slug}/content.html'),
             script = dump(f'{slug}/script.js'),
         ))

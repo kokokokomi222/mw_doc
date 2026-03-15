@@ -495,19 +495,19 @@
         "date": "2026-02-22"
     },
     "bitwise_and": {
-        "written": false,
-        "checksum": 123927922,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2608198564,
+        "date": "2026-03-15"
     },
     "bitwise_complement": {
-        "written": false,
-        "checksum": 4008474275,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1078689719,
+        "date": "2026-03-15"
     },
     "bitwise_or": {
-        "written": false,
-        "checksum": 3654002624,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1638987553,
+        "date": "2026-03-15"
     },
     "calculate_day_of_the_week_from_timestamp": {
         "written": false,
@@ -766,8 +766,8 @@
     },
     "get_entity_forward_vector": {
         "written": true,
-        "checksum": 682714204,
-        "date": "2026-03-08"
+        "checksum": 3545657949,
+        "date": "2026-03-15"
     },
     "get_entity_list_by_specified_faction": {
         "written": false,
@@ -801,8 +801,8 @@
     },
     "get_entity_right_vector": {
         "written": true,
-        "checksum": 966750073,
-        "date": "2026-03-08"
+        "checksum": 809861796,
+        "date": "2026-03-15"
     },
     "get_entity_type": {
         "written": true,
@@ -816,8 +816,8 @@
     },
     "get_entity_upward_vector": {
         "written": true,
-        "checksum": 4089614347,
-        "date": "2026-03-08"
+        "checksum": 1112966457,
+        "date": "2026-03-15"
     },
     "get_equipment_affix_config_id": {
         "written": false,
@@ -1110,9 +1110,9 @@
         "date": "2026-02-28"
     },
     "left_shift_operation": {
-        "written": false,
-        "checksum": 3845280668,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1181742417,
+        "date": "2026-03-15"
     },
     "less_than": {
         "written": false,
@@ -1135,24 +1135,24 @@
         "date": "2026-02-22"
     },
     "logical_and_operation": {
-        "written": false,
-        "checksum": 2984772228,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 413120689,
+        "date": "2026-03-15"
     },
     "logical_not_operation": {
-        "written": false,
-        "checksum": 128633057,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2922035951,
+        "date": "2026-03-15"
     },
     "logical_or_operation": {
-        "written": false,
-        "checksum": 1195344547,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3223274608,
+        "date": "2026-03-15"
     },
     "logical_xor_operation": {
-        "written": false,
-        "checksum": 3855883462,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3593046520,
+        "date": "2026-03-15"
     },
     "modify_structure": {
         "written": false,
@@ -1400,9 +1400,9 @@
         "date": "2026-02-22"
     },
     "read_by_bit": {
-        "written": false,
-        "checksum": 2341517511,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 527729985,
+        "date": "2026-03-15"
     },
     "recover_basic_motion_device": {
         "written": false,
@@ -1490,9 +1490,9 @@
         "date": "2026-02-28"
     },
     "right_shift_operation": {
-        "written": false,
-        "checksum": 1611604729,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2854964855,
+        "date": "2026-03-15"
     },
     "round_to_integer_operation": {
         "written": false,
@@ -2120,14 +2120,14 @@
         "date": "2026-02-22"
     },
     "write_by_bit": {
-        "written": false,
-        "checksum": 2600121032,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2047183836,
+        "date": "2026-03-15"
     },
     "xor_exclusive_or": {
-        "written": false,
-        "checksum": 1690828772,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2525222348,
+        "date": "2026-03-15"
     },
     "3d_vector_addition": {
         "written": false,

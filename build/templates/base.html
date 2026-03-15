@@ -50,20 +50,34 @@
             </span>
         </header>
         <div id="body_layout">
-            <nav id="nav" class="nav_collapsed">
-                <div id="nav_fold_button">≡</div>
-                <input id="search" placeholder="Search"></input>
-                <div id="nav_list"></div>
-            </nav>
+            $nav
             <main>
                 <div id="content">
                     $content
                 </div>
             </main>
         </div>
+        <div id="quick_message"></div>
         <dialog id="modal">
         </dialog>
     </body>
+    <script>
+        const quick_message_div = document.getElementById('quick_message');
+        let last_quick_message_id = 0;
+
+        async function show_quick_message(text, duration_in_seconds=3) {
+            last_quick_message_id += 1;
+            let this_id = last_quick_message_id;
+
+            quick_message_div.innerText = text;
+            quick_message_div.style.display = 'flex';
+            await new Promise(resolve => setTimeout(resolve, duration_in_seconds*1000));
+
+            if (this_id == last_quick_message_id) {
+                quick_message_div.style.display = 'none';
+            }
+        }
+    </script>
     <script>
         $script
     </script>

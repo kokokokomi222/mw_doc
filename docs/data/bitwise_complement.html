@@ -1,27 +1,64 @@
 <h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Bitwise Complement</h1>
 <p>
-     Performs a bitwise complement operation on the input and returns the result
+    Performs bitwise complement.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Value</span> (Integer) - Operand.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Result</span> (Integer) - Result of bitwise complement of the input value.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Miliastra does not have any unsigned integer type, only signed 32-bit integer.
+    Since using this node will always involve a negative number,
+    we recommend avoid using this node.
+    Use <a href="?node=xor_exclusive_or" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> XOR (Exclusive OR)</a> instead whenever possible.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we are performing bitwise complement of <code>5</code>.
+    Clearly, <code>5</code> is <code>101</code> in binary.
+    So the bitwise complement of the input is <code>11111111111111111111111111111010</code>,
+    which is the binary representation of <code>-6</code> with two's complement.
+    <pre>
+~ 00000000000000000000000000000101 (5 in decimal)
+----------------------------------
+  11111111111111111111111111111010 (-6 in decimal)</pre>
+    <img src="/mw_doc/image/bitwise_complement_example.webp" alt="bitwise complement example" class="expandable_img" loading="lazy"/>
+</p>
 
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
-
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=xor_exclusive_or" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> XOR (Exclusive OR)</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-15 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/B/bitwise_complement.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>
