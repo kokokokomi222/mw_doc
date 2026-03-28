@@ -1,23 +1,80 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Current Interface Layout</h1>
 <p>
-     Switch the Target Player's current Interface Layout via Layout ID
+    Switch Interface Layout.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Entity of the player to switch interface layout for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Layout Index</span> (Integer) - Identifier for the UI Layout
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Layout Index</span> (Integer) - ID of the interface layout. e.g. <code>1073741825</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Interface layout is a collection of UI controls.
+    Interface layouts can be created in the "Manage UI Control Groups" panel,
+    which can be opened from the main menu.
+    <img src="/mw_doc/image/manage_ui_control_groups_menu.webp" alt="manage ui control groups menu" class="expandable_img" loading="lazy"/>
+    Each player has one interface layout displayed.
+    The initial layout can be configured in the class detail panel.
+    This node lets you switch to a different layout for a particular player.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, a new interface layout named <code>Koko's Layout</code> was created with ID <code>1073741845</code>.
+    <img src="/mw_doc/image/switch_current_interface_layout_configure.webp" alt="switch current interface layout configure" class="expandable_img" loading="lazy"/>
+    The node graph changes the interface layout of the player of the character that selected the tab.
+    <img src="/mw_doc/image/switch_current_interface_layout_example.webp" alt="switch current interface layout example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Layout Index</span> can be selected from the list of interface layouts by clicking the magnifying glass icon.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the entity may exist)
+        and continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Layout Index</span> is not an ID for an interface layout, this node is no-op.
+    </li>
+    <li>
+        Some UI controls play subtle animations when switched in by this node.
+        Thus, if you switch from layout A to layout B and then back to layout A in one node graph execution,
+        it can be noticed by the players by the entering animations playing.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<ul>
+    <li>
+        This node took ~6 units to run on average.
+    </li>
+</ul>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_players_current_ui_layout" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Player's Current UI Layout</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/switch_current_interface_layout.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

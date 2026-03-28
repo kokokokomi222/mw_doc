@@ -1,0 +1,134 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Opens floating interaction page.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to open the floating interaction page for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Floating Interaction Page Index</span> (Integer) - ID of the floating interaction page to open. e.g. <code>1073741825</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initialize List Data</span> (Dictionary that maps integer to list of Integers) - Dictionary where keys are IDs of "Tab" or "Single-Choice Window" UI controls (e.g. <code>1073741825</code>) and values are lists of visible item IDs of the control (e.g. <code>[1, 2, 3]</code>). Can be left blank.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Luna VI introduced various new UI controls,
+    but floating interaction page is the most complex one.
+    It allows craftspeople to create a beautiful UI page
+    that works with mouse, touch screen, and controller.
+    It is often overlaid and takes up full screen.
+    <img src="/mw_doc/image/floating_ui_page_preview.webp" alt="floating ui page preview" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Floating interaction page cannot be added directly to a layout.
+    Instead, this node is used to open the page defined in the "UI Control Group Library",
+    similar to how deck selector works.
+    See "Example" section below to see how a floating interaction page can be used.
+</p>
+<p>
+    Item lists for tabs and single-choice windows
+    can be updated dynamically with <a href="?node=update_floating_interaction_page_list_data" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Update Floating Interaction List Data</a>.
+</p>
+
+<h2>Example</h2>
+<p>
+    We will start by configuring a floating interaction page in "Manage UI Control Groups".
+    First, we must ensure that the UI Rendering mode is
+    "Hierarchical Rendering" instead of "Sequential Rendering".
+    Some of the new UI controls are only supported under the new "Hierarchical Rendering" mode.
+    Stages created after the start of Luna VI should default to "Hierarchical Rendering",
+    however older stages may need to adjust this mode.
+    <img src="/mw_doc/image/hierarchical_rendering_configure.webp" alt="hierarchical rendering configure" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Next, we create a floating interaction page in "UI Control Group Library".
+    Contents of the page can be edited under "Style" &gt; "Edit Details".
+    After filling out the contents, save the template and copy the ID of the template.
+    <img src="/mw_doc/image/floating_ui_page_configure.webp" alt="floating ui page configure" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Lastly, we create a node graph to open the page for the player that select the tab.
+    We also make item <code>1</code>, <code>2</code>, and <code>3</code> visible for the tab UI control with ID <code>1073741962</code>.
+    <img src="/mw_doc/image/show_floating_interaction_page_example.webp" alt="show floating interaction page example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist),
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Floating Interaction Page Index</span> is not an ID for a floating interaction page,
+        this node is no-op.
+    </li>
+    <li>
+        If the floating interaction page with the same ID is already open, this node is no-op.
+    </li>
+    <li>
+        If a floating interaction page with different ID is already open,
+        this node opens the specified floating interaction page.
+        As a result, two pages will be open, one on top of the other.
+        Only the page with the higher layer value will be interactable
+        (the most recently opened page in case of layer value tie).
+        When the interactable page is closed, the other page will now be interactable.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initialize List Data</span> is empty,
+        every item of tabs and single-choice windows will not be visible.
+    </li>
+    <li>
+        If a key of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initialize List Data</span> is not an ID for a UI control with list items,
+        it ignores that entry. Other legitimate entries will be processed.
+    </li>
+    <li>
+        If an entry of a value of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initialize List Data</span> is not a valid ID for a list item,
+        it ignores that entry. Other legitimate entries will be processed.
+    </li>
+    <li>
+        Floating interaction pages do not retain selection state when closed.
+        When they are re-opened with this node,
+        all tabs and single-choice windows are completely refreshed.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=update_floating_interaction_page_list_data" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Update Floating Interaction List Data</a>
+    </li>
+    <li>
+        <a href="?node=close_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Floating Interaction Page</a>
+    </li>
+    <li>
+        <a href="?node=when_floating_interaction_page_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Floating Interaction Page is Triggered</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/show_floating_interaction_page.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,94 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Play UI Animation on Control</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Plays UI animation.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to play the animation for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Animation Control Index</span> (Integer) - ID of the UI control to animate. e.g. <code>1073741825</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Luna VI introduced various new UI controls, and "UI Animation" is one of them.
+    It could be thought of as the equivalent of VFX for UI:
+    it shows a visual effect in the UI space instead of in game space.
+    This node is used to start playing UI animation.
+    This node also works for "Full-Screen UI Animation" control.
+</p>
+<p>
+    As noted in the "Notes" section below,
+    we recommend that this node is only used with non-looping effects.
+    Use <a href="?node=set_ui_control_group_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</a> instead to control visibility of looping effects.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we start playing a UI animation when the tab is selected.
+    <img src="/mw_doc/image/play_ui_animation_on_control_example.webp" alt="play ui animation on control example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Animation Control Index</span> can be selected from the list of valid UI animations
+        by clicking the magnifying glass icon.
+        It will not show UI controls that are irrelevant for this node.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the entity may exist)
+        but continues the execution.
+    </li>
+    <li>
+        If this node is called on a UI animation that is already playing,
+        it restarts the animation from the beginning.
+    </li>
+    <li>
+        If the UI animation uses a looping effect,
+        it replays the entering animation while retaining time state,
+        causing flicker in most cases, which is likely undesired.
+        We recommend against using this node for UI animation with looping effects.
+    </li>
+    <li>
+        If the target UI control is not visible in the current UI layout, this node is no-op.
+        You can toggle its visibility with <a href="?node=set_ui_control_group_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</a>.
+        Note that setting UI animation's visibility to <code>On</code> with <a href="?node=set_ui_control_group_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</a>
+        causes the animation to play from the beginning even without invoking this node.
+        In particular, you cannot set the visibility to <code>Off</code> or <code>Hidden</code>, play the animation, and setting the visibility back to <code>On</code> soon after to cause the animation to start from the middle;
+        it will only start from the beginning when the visibility was set to <code>On</code> in the last step.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_ui_control_group_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/P/play_ui_animation_on_control.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

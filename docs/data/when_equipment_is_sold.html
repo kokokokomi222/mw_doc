@@ -1,0 +1,85 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Equipment is Sold</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Triggers when an inventory owner sells an equipment.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Selling Inventory Owner Entity</span> (Entity) - Entity that sold the equipment.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Selling Inventory Owner GUID</span> (GUID) - GUID of the above entity. <code>0</code> if the entity was created dynamically.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index List</span> (List) - IDs of the equipments sold. It is a list of integers. e.g. <code>[2, 3, 5]</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This node listens to the event where equipment sale occurs between inventory owners via a shop.
+    The shop owner entity must be running a "Self Inventory Shop", not "Custom Items Shop".
+    The item sold must be equipment, not a normal item.
+    This node triggers in both situations:
+</p>
+<ul>
+    <li>
+        A character buys from a self inventory shop, triggering this node on the shop owner entity.
+    </li>
+    <li>
+        A character sells to a self inventory shop, triggering this node on the character entity.
+    </li>
+</ul>
+<p>
+    <a href="?node=when_equipment_is_purchased" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Equipment is Purchased</a> is always triggered at the same time,
+    but on the other entity of the transaction.
+</p>
+<p>
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index List</span> is the list of equipment IDs.
+    They are not equipment configuration IDs.
+    Note that "equipment ID" is an integer that identifies an instance of equipment, and it is typically small (e.g. <code>3</code>),
+    while "equipment configuration ID" is a configuration ID that identifies a class of equipment, and it is typically large (e.g. <code>1107296257</code>).
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we print <code>"I sold the cool sword!"</code>
+    when equipment with the specific configuration ID is sold
+    from the entity that mounts this node graph.
+    <img src="/mw_doc/image/when_equipment_is_sold_example.webp" alt="when equipment is sold example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        Bulk sale triggers this node.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_equipment_is_purchased" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Equipment is Purchased</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_equipment_is_sold.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,26 +1,41 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</h1>
 <p>
-     Edit the state of the UI Control in the Target Player's Interface Layout by its UI Control ID
+    Changes the status of UI control.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Entity of player to change the status of UI control for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Index</span> (Integer) - Identifier for the UI Control
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Index</span> (Integer) - ID of the UI Control.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Display Status</span> (Enumeration) - Off: Invisible and logic not runningOn: Visible and logic running normallyHidden: Invisible and logic running normally
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Display Status</span> (Enumeration) - One of <code>Off</code>, <code>On</code>, <code>Hidden</code>.
     </li>
 </ul>
+<p>
+    Off: Invisible and logic not running
+    On: Visible and logic running normally
+    Hidden: Invisible and logic running normally
+</p>
 
+<h2>Usage</h2>
+<p>
+    UI controls are user interface elements such as text, button, pop-up, or progress bar.
+    UI controls can be created and configured in the "Manage UI Control Groups" panel,
+    which can be opened from the main menu.
+    <img src="/mw_doc/image/manage_ui_control_groups_menu.webp" alt="manage ui control groups menu" class="expandable_img" loading="lazy"/>
+    This node lets you modify the status of the UI control, making it visible or invisible.
+</p>
 
 
 
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/set_ui_control_group_status.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

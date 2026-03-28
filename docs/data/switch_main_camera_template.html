@@ -1,23 +1,67 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Main Camera Template</h1>
 <p>
-     Switch the Main Camera Template for the target Player List to the specified Template
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Switches players' camera.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player List</span> (Entity List) - Active Player List
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player List</span> (Entity List) - List of player entities.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Camera Template Name</span> (String) - Camera Template Identifier
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Camera Template Name</span> (String) - Name of the camera to switch to, as specified in the "Manage Main Camera" panel.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Various cameras with different perspective and configuration can be specified in the "Manage Main Camera" panel,
+    which can be opened from the main menu.
+    <img src="/mw_doc/image/manage_main_camera_menu.webp" alt="manage main camera menu" class="expandable_img" loading="lazy"/>
+    This node can be used to change the camera for specific players.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we created a new camera named <code>Koko's First Person Camera</code> in the "Manage Main Camera" panel.
+    <img src="/mw_doc/image/manage_main_camera_example.webp" alt="manage main camera example" class="expandable_img" loading="lazy"/>
+    In the node graph, all players change their camera to <code>Koko's First Person Camera</code>
+    when a character selects the tab.
+    <img src="/mw_doc/image/switch_main_camera_template_example.webp" alt="switch main camera template example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player List</span> contains an entry that is not a player entity,
+        this node raises "Entity does not exist" error (can be misleading, because the non-player entity may exist).
+        This node ignores entries that are not player entities
+        and successfully changes the camera for valid player entity entries.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Camera Template Name</span> is not a name for a camera,
+        the camera changes to a follow character classic camera.
+        In particular, it does not change to the default camera.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    For a list of one player, this node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/switch_main_camera_template.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

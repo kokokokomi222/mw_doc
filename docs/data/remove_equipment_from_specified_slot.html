@@ -1,0 +1,81 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Equipment from Specified Slot</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Remove equipment from slot.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Owner Entity</span> (Entity) - Character entity to remove the equipment from.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Row Count</span> (Integer) - Row number of the slot to remove from. This is 0-indexed.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Column Count</span> (Integer) - Column number of the slot to remove from. This is 0-indexed.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Use this node to remove equipment from an equipment slot.
+    Removed equipment stays in the inventory.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we remove the equipment at second row (indexed by 1) and third column (indexed by 2).
+    <img src="/mw_doc/image/remove_equipment_from_specified_slot_example.webp" alt="remove equipment from specified slot example" class="expandable_img" loading="lazy"/>
+    This is the result of removal. Removed equipment stays in the inventory.
+    <img src="/mw_doc/image/remove_equipment_from_specified_slot_result.webp" alt="remove equipment from specified slot result" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Owner Entity</span> is not a character entity,
+        this node raises "Entity component does not exist" error,
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Owner Entity</span> does not have an "Equipment Slot" component,
+        this node raises "Entity component does not exist" error,
+        but continues the execution.
+    </li>
+    <li>
+        If there is no equipment slot at the coordinate indicated by
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Row Count</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Slot Column Count</span>,
+        this node is no-op.
+    </li>
+    <li>
+        If there is no equipment at the slot, this node is no-op.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    When equipment was removed, this node took ~10 units to run on average.
+    If there is no equipment at the slot, this node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=replace_equipment_to_the_specified_slot" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Replace Equipment to the Specified Slot</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/remove_equipment_from_specified_slot.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

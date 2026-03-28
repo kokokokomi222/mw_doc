@@ -26,8 +26,8 @@
     },
     "data_type_conversion": {
         "written": true,
-        "checksum": 1641558572,
-        "date": "2026-02-22"
+        "checksum": 4260277507,
+        "date": "2026-03-28"
     },
     "division": {
         "written": true,
@@ -241,13 +241,13 @@
     },
     "create_entity": {
         "written": true,
-        "checksum": 137379373,
-        "date": "2026-02-28"
+        "checksum": 2018794418,
+        "date": "2026-03-28"
     },
     "create_prefab": {
         "written": true,
-        "checksum": 1463077256,
-        "date": "2026-02-28"
+        "checksum": 4156588924,
+        "date": "2026-03-28"
     },
     "create_prefab_group": {
         "written": true,
@@ -281,28 +281,28 @@
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
-        "checksum": 2447207933,
-        "date": "2026-03-08"
+        "checksum": 3919967403,
+        "date": "2026-03-28"
     },
     "get_node_graph_variable": {
         "written": true,
-        "checksum": 497864658,
-        "date": "2026-02-22"
+        "checksum": 618436315,
+        "date": "2026-03-28"
     },
     "set_node_graph_variable": {
         "written": true,
-        "checksum": 4030012883,
-        "date": "2026-02-22"
+        "checksum": 489955084,
+        "date": "2026-03-28"
     },
     "set_custom_variable": {
         "written": true,
-        "checksum": 747947357,
-        "date": "2026-02-22"
+        "checksum": 1430581143,
+        "date": "2026-03-28"
     },
     "get_custom_variable": {
         "written": true,
-        "checksum": 3300080049,
-        "date": "2026-02-22"
+        "checksum": 1956796951,
+        "date": "2026-03-28"
     },
     "when_node_graph_variable_changes": {
         "written": true,
@@ -746,8 +746,8 @@
     },
     "get_entities_with_specified_prefab_on_the_field": {
         "written": true,
-        "checksum": 2325623955,
-        "date": "2026-02-28"
+        "checksum": 3089939048,
+        "date": "2026-03-28"
     },
     "get_entitys_mini_map_marker_status": {
         "written": false,
@@ -915,9 +915,9 @@
         "date": "2026-02-22"
     },
     "get_players_current_ui_layout": {
-        "written": false,
-        "checksum": 425300492,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3302125765,
+        "date": "2026-03-28"
     },
     "get_player_client_input_device_type": {
         "written": false,
@@ -1401,8 +1401,8 @@
     },
     "read_by_bit": {
         "written": true,
-        "checksum": 527729985,
-        "date": "2026-03-15"
+        "checksum": 3463208574,
+        "date": "2026-03-28"
     },
     "recover_basic_motion_device": {
         "written": false,
@@ -1725,9 +1725,9 @@
         "date": "2026-02-22"
     },
     "set_ui_control_group_status": {
-        "written": false,
-        "checksum": 194289921,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2147531004,
+        "date": "2026-03-28"
     },
     "sign_operation": {
         "written": false,
@@ -1770,9 +1770,9 @@
         "date": "2026-02-22"
     },
     "start_timer": {
-        "written": false,
-        "checksum": 101230190,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1329920221,
+        "date": "2026-03-28"
     },
     "stop_and_delete_basic_motion_device": {
         "written": false,
@@ -1805,9 +1805,9 @@
         "date": "2026-02-22"
     },
     "switch_current_interface_layout": {
-        "written": false,
-        "checksum": 1171350152,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3118643179,
+        "date": "2026-03-28"
     },
     "switch_follow_motion_device_target_by_entity": {
         "written": false,
@@ -1820,9 +1820,9 @@
         "date": "2026-02-28"
     },
     "switch_main_camera_template": {
-        "written": false,
-        "checksum": 2302433519,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2017487645,
+        "date": "2026-03-28"
     },
     "switch_the_scoring_group_that_affects_players_competitive_rank": {
         "written": false,
@@ -2121,8 +2121,8 @@
     },
     "write_by_bit": {
         "written": true,
-        "checksum": 2047183836,
-        "date": "2026-03-15"
+        "checksum": 4164799883,
+        "date": "2026-03-28"
     },
     "xor_exclusive_or": {
         "written": true,
@@ -2193,5 +2193,55 @@
         "written": false,
         "checksum": 823094101,
         "date": "2026-02-28"
+    },
+    "close_floating_interaction_page": {
+        "written": true,
+        "checksum": 2594060040,
+        "date": "2026-03-28"
+    },
+    "play_ui_animation_on_control": {
+        "written": true,
+        "checksum": 1312273256,
+        "date": "2026-03-28"
+    },
+    "remove_equipment_from_specified_slot": {
+        "written": true,
+        "checksum": 1634429198,
+        "date": "2026-03-28"
+    },
+    "reset_player_camera_to_follow_entity": {
+        "written": true,
+        "checksum": 219213970,
+        "date": "2026-03-28"
+    },
+    "set_player_camera_to_follow_entity": {
+        "written": true,
+        "checksum": 3970301785,
+        "date": "2026-03-28"
+    },
+    "show_floating_interaction_page": {
+        "written": true,
+        "checksum": 3016876530,
+        "date": "2026-03-28"
+    },
+    "update_floating_interaction_page_list_data": {
+        "written": true,
+        "checksum": 2053535017,
+        "date": "2026-03-28"
+    },
+    "when_equipment_is_purchased": {
+        "written": true,
+        "checksum": 1854914141,
+        "date": "2026-03-28"
+    },
+    "when_equipment_is_sold": {
+        "written": true,
+        "checksum": 3040377666,
+        "date": "2026-03-28"
+    },
+    "when_floating_interaction_page_is_triggered": {
+        "written": true,
+        "checksum": 1640306427,
+        "date": "2026-03-28"
     }
 }
