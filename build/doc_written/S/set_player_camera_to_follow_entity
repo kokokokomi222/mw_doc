@@ -1,0 +1,46 @@
+# Summary
+[beyond_mode_only]
+[early_info]
+
+Switch camera to follow entity.
+
+# Input Parameters
+* [input:Player_Entity] (Entity) - Entity of player to switch the camera for.
+* [input:Follow_Entity] (Entity) - Entity to follow with the camera. Must have an "Object Camera" component.
+* [input:Camera_Template_Name] (String) - Name of the object camera, as specified in the "Object Camera" component.
+
+# Usage
+Starting in Luna VI, craftperson can configure the camera to follow an entity.
+This allows finer control over the position of the camera and its movement.
+Use this node to start following an entity with the camera.
+See "Example" section below to see how to configure an object camera.
+
+# Example
+First, create an object camera from the "Manage Main Camera" panel.
+For this example, we name it `Koko's Cinematic Camera`.
+[image:set_player_camera_to_follow_entity_configure_camera]
+Next, create an "Object Camera" component on the entity that you want camera to follow.
+For this example, we selected the camera we created above
+and then named this object camera `Koko's Cinematic Camera for Ball`.
+[image:set_player_camera_to_follow_entity_configure_component]
+Lastly, a node graph is created to switch the camera to the object camera.
+[image:set_player_camera_to_follow_entity_example]
+
+# Notes
+* If [input:Player_Entity] is not a player entity,
+  this node raises "Entity does not exist" error
+  (can be misleading, because the entity may exist)
+  but continues the execution.
+* If [input:Follow_Entity] does not exist, this node is no-op.
+* If [input:Follow_Entity] does not have an "Object Camera" component
+  or [input:Camera_Template_Name] is not a name of an object camera specified in the component,
+  this node is no-op.
+
+# Performance
+This node took ~8 units to run on average.
+
+# See Also
+* [node:reset_player_camera_to_follow_entity]
+
+# Authors
+* kokokokomi222

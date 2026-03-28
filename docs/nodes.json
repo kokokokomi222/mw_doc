@@ -388,7 +388,7 @@
             "slug": "start_timer",
             "name": "Start Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "pause_timer",
@@ -436,7 +436,19 @@
             "slug": "switch_main_camera_template",
             "name": "Switch Main Camera Template",
             "type": "execution",
-            "stub": true
+            "stub": false
+        },
+        {
+            "slug": "set_player_camera_to_follow_entity",
+            "name": "Set Player Camera to Follow Entity",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "reset_player_camera_to_follow_entity",
+            "name": "Reset Player Camera to Follow Entity",
+            "type": "execution",
+            "stub": false
         },
         {
             "slug": "set_character_disruptor_device",
@@ -496,19 +508,25 @@
             "slug": "switch_current_interface_layout",
             "name": "Switch Current Interface Layout",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_ui_control_group_status",
             "name": "Set UI Control (Group) Status",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "remove_interface_control_group_from_control_group_library",
             "name": "Remove Interface Control Group From Control Group Library",
             "type": "execution",
             "stub": true
+        },
+        {
+            "slug": "play_ui_animation_on_control",
+            "name": "Play UI Animation on Control",
+            "type": "execution",
+            "stub": false
         },
         {
             "slug": "set_skill_cd_based_on_maximum_cd_percentage",
@@ -859,6 +877,12 @@
             "stub": true
         },
         {
+            "slug": "remove_equipment_from_specified_slot",
+            "name": "Remove Equipment from Specified Slot",
+            "type": "execution",
+            "stub": false
+        },
+        {
             "slug": "set_inventoryitem_drop_contents",
             "name": "Set InventoryItem Drop Contents",
             "type": "execution",
@@ -1067,6 +1091,24 @@
             "name": "Set the Preset Status Value of the Complex Creation",
             "type": "execution",
             "stub": true
+        },
+        {
+            "slug": "show_floating_interaction_page",
+            "name": "Show Floating Interaction Page",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "update_floating_interaction_page_list_data",
+            "name": "Update Floating Interaction List Data",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "close_floating_interaction_page",
+            "name": "Close Floating Interaction Page",
+            "type": "execution",
+            "stub": false
         },
         {
             "slug": "when_node_graph_variable_changes",
@@ -1381,6 +1423,18 @@
             "stub": true
         },
         {
+            "slug": "when_equipment_is_purchased",
+            "name": "When Equipment is Purchased",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_equipment_is_sold",
+            "name": "When Equipment is Sold",
+            "type": "event",
+            "stub": false
+        },
+        {
             "slug": "when_item_is_lost_from_inventory",
             "name": "When Item Is Lost From Inventory",
             "type": "event",
@@ -1421,6 +1475,12 @@
             "name": "When Complex Creation Preset Status Changes",
             "type": "event",
             "stub": true
+        },
+        {
+            "slug": "when_floating_interaction_page_is_triggered",
+            "name": "When Floating Interaction Page is Triggered",
+            "type": "event",
+            "stub": false
         },
         {
             "slug": "multiple_branches",
@@ -1840,7 +1900,7 @@
             "slug": "get_players_current_ui_layout",
             "name": "Get Player's Current UI Layout",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_creations_current_target",

@@ -1,0 +1,35 @@
+# Summary
+[beyond_mode_only]
+[early_info]
+
+Switches camera to follow player.
+
+# Input Parameters
+* [input:Player_Entity] (Entity) - Entity of the player to switch the camera for.
+
+# Usage
+Starting in Luna VI, craftperson can configure the camera to follow an entity.
+This allows finer control over the position of the camera and its movement.
+After using [node:set_player_camera_to_follow_entity],
+this node can be used to come back to the player camera.
+
+# Example
+In this example, we reset the camera to the player camera for the player that selects the tab.
+[image:reset_player_camera_to_follow_entity_example]
+
+# Notes
+* If [input:Player_Entity] is not a player entity,
+  this node raises "Entity does not exist" error
+  (can be misleading, because the entity may exist)
+  but continues the execution.
+* If you switch from the default camera A to a player camera B and then to an object camera C,
+  using this node will switch the camera back to camera B, not camera A.
+
+# Performance
+This node took ~8 units to run on average.
+
+# See Also
+* [node:set_player_camera_to_follow_entity]
+
+# Authors
+* kokokokomi222
