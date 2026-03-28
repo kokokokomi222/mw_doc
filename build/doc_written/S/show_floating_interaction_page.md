@@ -11,7 +11,7 @@ Opens floating interaction page.
 # Usage
 Luna VI introduced various new UI controls,
 but floating interaction page is the most complex one.
-It allows craftperpeople to create a beautiful UI page
+It allows craftspeople to create a beautiful UI page
 that works with mouse, touch screen, and controller.
 It is often overlaid and takes up full screen.
 [image:floating_ui_page_preview]

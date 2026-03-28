@@ -22,7 +22,7 @@ when a character selects the tab.
 
 # Notes
 * If [input:Target_Player_List] contains an entry that is not a player entity,
-  thie node raises "Enity does not exist" error (can be misleading, because the non-player entity may exist).
+  this node raises "Entity does not exist" error (can be misleading, because the non-player entity may exist).
   This node ignores entries that are not player entities
   and successfully changes the camera for valid player entity entries.
 * If [input:Camera_Template_Name] is not a name for a camera,

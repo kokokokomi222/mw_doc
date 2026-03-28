@@ -25,7 +25,7 @@ In this example, we start playing a UI animation when the tab is selected.
 # Notes
 * [input:Animation_Control_Index] can be selected from the list of valid UI animations
   by clicking the magnifying glass icon.
-  It will not show UI controls that are irrevant for this node.
+  It will not show UI controls that are irrelevant for this node.
 * If [input:Player_Entity] is not a player entity,
   this node raises "Entity does not exist" error
   (can be misleading, because the entity may exist)

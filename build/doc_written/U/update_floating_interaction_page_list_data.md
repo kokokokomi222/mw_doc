@@ -16,8 +16,8 @@ and in what order.
 
 # Example
 In this example, we created a tab UI control in a floating interaction page.
-The tab UI control has three items named `Ayaka`, `Barbara`, and `Columbina`.
-and their preset texts are set acoordingly.
+The tab UI control has three items named `Ayaka`, `Barbara`, and `Columbina`,
+and their preset texts are set accordingly.
 [image:update_floating_interaction_page_list_data_configure_tab]
 In the node graph, we update the content of the tab to `[3, 1]`
 when a specific UI control is triggered.

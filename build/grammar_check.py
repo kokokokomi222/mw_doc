@@ -16,6 +16,7 @@ IGNORED_MATCH = {
     ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""a"-th bit"'),
     ('read_by_bit', 'EN_UNPAIRED_QUOTES', '""b"-th bit"'),
     ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""b"-th bit"'),
+    ('switch_current_interface_layout', 'NOUN_VERB_CONFUSION', "back to layout A"),
     ('weighted_random', 'I_LOWERCASE', 'this node outputting i is'),
     ('when_player_teleport_completes', 'SUBJECT_VERB_AGREEMENT_PLURAL', 'teleport is finished'),
     ('write_by_bit', 'EN_UNPAIRED_QUOTES', '""a"-th bit"'),
@@ -26,11 +27,17 @@ IGNORED_MATCH = {
 }
 CUSTOM_WORDS = [
     'Miliastra',
+    'craftsperson',
+    'craftspeople',
 
     'Manekin',
     'Manekina',
+    'Ayaka',
+    'Barbara',
+    'Columbina',
     'Kokomi',
     'Furina',
+    'Koko',
 
     'anemo',
     'geo',
@@ -43,6 +50,7 @@ CUSTOM_WORDS = [
     'Moonglow',
     'Teyvat',
     'aggroed',
+    'interactable',
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 

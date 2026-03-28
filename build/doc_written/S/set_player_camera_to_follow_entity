@@ -10,7 +10,7 @@ Switch camera to follow entity.
 * [input:Camera_Template_Name] (String) - Name of the object camera, as specified in the "Object Camera" component.
 
 # Usage
-Starting in Luna VI, craftperson can configure the camera to follow an entity.
+Starting in Luna VI, craftsperson can configure the camera to follow an entity.
 This allows finer control over the position of the camera and its movement.
 Use this node to start following an entity with the camera.
 See "Example" section below to see how to configure an object camera.

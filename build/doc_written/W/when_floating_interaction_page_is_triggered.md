@@ -1,15 +1,15 @@
 # Summary
 [early_info]
 
-Triggers when a UI control on a floating interation page is used.
+Triggers when a UI control on a floating interaction page is used.
 
 # Output Values
 * [output:Player_Entity] (Entity) - Entity of the player that triggered the interaction.
 * [output:Player_GUID] (GUID) - GUID of the above player.
 * [output:Floating_Interaction_Page_Index] (Integer) - ID of the floating interaction page that contains that used UI control. e.g. `1073741889`
 * [output:Interactive_Item_Index] (Integer) - ID of the used UI control. e.g. `1073741890`
-* [output:List_Index] (List of Integers) - List with the ID of the used UI control as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. `[1073741890]` TODO: I'm not sure why this is a list instead of int.
-* [output:Selected_List_Item] (List of Integers) - List with the ID of the selected item as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. `[3]` TODO: I'm not sure why this is a list instead of int.
+* [output:List_Index] (List of Integers) - List with the ID of the used UI control as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. `[1073741890]` TODO: I'm not sure why this is a list instead of integer.
+* [output:Selected_List_Item] (List of Integers) - List with the ID of the selected item as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. `[3]` TODO: I'm not sure why this is a list instead of integer.
 
 # Usage
 See [node:show_floating_interaction_page] to learn how to open a floating interaction page.

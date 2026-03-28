@@ -26,7 +26,7 @@ The node graph changes the interface layout of the player of the character that 
   this node raises "Entity does not exist" error
   (can be misleading, because the entity may exist)
   and continues the execution.
-* If [input:Layout_Index] is not an ID for a interface layout, this node is no-op.
+* If [input:Layout_Index] is not an ID for an interface layout, this node is no-op.
 * Some UI controls play subtle animations when switched in by this node.
   Thus, if you switch from layout A to layout B and then back to layout A in one node graph execution,
   it can be noticed by the players by the entering animations playing.

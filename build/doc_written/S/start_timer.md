@@ -5,7 +5,7 @@ Starts a timer.
 * [input:Target_Entity] (Entity) - Entity to start the timer at.
 * [input:Timer_Name] (String) - Name of the timer. This name is outputted to [output:Timer_Name] for [node:when_timer_is_triggered].
 * [input:Loop] (Boolean) - If `Yes`, loops the timer.
-* [input:Timer_Sequence] (Floating Point Number List) - List of times after the start when the timer event should trigger. Unit of the entires of the list is seconds. All entires must be positive and strictly increasing.
+* [input:Timer_Sequence] (Floating Point Number List) - List of times after the start when the timer event should trigger. Unit of the entries of the list is seconds. All entries must be positive and strictly increasing.
 
 # Usage
 First, it's important to distinguish the difference between **timers** and **global timers**.
@@ -16,7 +16,7 @@ They may seem similar, but they are completely separate systems with different p
 On the other hand, **timer** can fire multiple times at specified times, and it can also repeat on loop.
 
 Timer can be used to control when certain events occur in your game.
-Timer can also used to space out computation when there's a lot of it.
+Timer can also be used to space out computation when there's a lot of it.
 
 # Example
 In this example, we start a timer named `test_timer` when a character selects the tab.
