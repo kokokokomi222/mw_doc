@@ -4,8 +4,8 @@ Writes the bits of an integer.
 # Input Parameters
 * [input:Written_value] (Integer) - Binary value to write to.
 * [input:Write_value] (Integer) - Binary value to overwrite with.
-* [input:Write_starting_position] (Integer) - Lowest bit to read. 0-indexed.
-* [input:Write_end_position] (Integer) - Highest bit to read. 0-indexed.
+* [input:Write_starting_position] (Integer) - Lowest bit to write. 0-indexed.
+* [input:Write_end_position] (Integer) - Highest bit to write. 0-indexed.
 
 # Output Values
 * [output:Result] (Integer) - Binary integer, which is the result of overwriting the specified bits.
@@ -51,14 +51,18 @@ Therefore, the output is `1100101` in binary and thus `101` in decimal.
   because `-1`'s binary representation is `11111111111111111111111111111111` (32 1's),
   so the result of writing is `11111111111111111111111111111010`.
   We recommend that you avoid using negative integers with this node.
-* If [input:Write_value] is negative,
-  this node raises "Bit write value out of range" error,
-  and returns [input:Written_value] as output.
 * If [input:Write_value] is greater or equal to `2^(b-a+1)` (i.e. has more than `b-a+1` bits),
   where [input:Write_starting_position] is `a` and [input:Write_end_position] is `b`,
   this node raises "Bit write value out of range" error
   and returns [input:Written_value] as output.
-* If [input:Write_starting_position] or [input:Write_end_position] is negative,
+* If [input:Write_value] is negative,
+  the highest bit of the binary representation is `1`
+  and thus [input:Write_starting_position] must be `0` and [input:Write_end_position] must be `31`.
+  Any other starting and end positions will raise "Bit write value out of range" error,
+  and returns [input:Written_value] as output.
+* If [input:Write_starting_position] is negative,
+  this node raises "Invalid bit index for write" error and returns [input:Written_value] as output.
+* If [input:Write_end_position] is greater or equal to 32,
   this node raises "Invalid bit index for write" error and returns [input:Written_value] as output.
 * If [input:Write_starting_position] is greater than [input:Write_end_position],
   this node raises "Invalid bit index for write" error and returns [input:Written_value] as output.

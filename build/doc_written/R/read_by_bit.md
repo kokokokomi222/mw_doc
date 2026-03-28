@@ -41,7 +41,9 @@ and thus `6` is the output in decimal.
   For example, if the value is `-1`, getting the bits from `0` to `2` yields `7`,
   because `-1`'s binary representation is `11111111111111111111111111111111` (32 1's).
   We recommend that you avoid using negative integers with this node.
-* If [input:Read_starting_position] or [input:Read_end_position] is negative,
+* If [input:Read_starting_position] is negative,
+  this node raises "Invalid bit index for read" error and returns `0`.
+* If [input:Read_end_position] is greater or equal to 32,
   this node raises "Invalid bit index for read" error and returns `0`.
 * If [input:Read_starting_position] is greater than [input:Read_end_position],
   this node raises "Invalid bit index for read" error and returns `0`.
