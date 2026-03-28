@@ -2,8 +2,8 @@
 Creates a pre-placed entity.
 
 # Input Parameters
-* [input:Target_GUID] (GUID) - GUID for the entity to create. Typically copied from the top of the entity details panel. e.g. `1012345678`
-* [input:Unit_Tag_Index_List] (Integer List) - List of unit tag IDs to put on the created entity. e.g. `[1023456789, 1023456790]`. Can be left empty.
+* [input:Target_GUID] (GUID) - GUID for the entity to create. Typically copied from the top of the entity details panel. e.g. `1077936129`
+* [input:Unit_Tag_Index_List] (Integer List) - List of unit tag IDs to put on the created entity. e.g. `[1073741825, 1073741826]`. Can be left empty.
 
 # Usage
 Typically, entities placed in the scene are created when the stage begins.

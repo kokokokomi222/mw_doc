@@ -2,7 +2,7 @@
 Gets the list of all entities with the specified prefab on the field.
 
 # Input Parameters
-* [input:Prefab_ID] (Prefab ID) - Prefab to search for on the field. Typically copied from the top of the prefab details panel. e.g. `1012345678`
+* [input:Prefab_ID] (Prefab ID) - Prefab to search for on the field. Typically copied from the top of the prefab details panel. e.g. `1077936129`
 
 # Output Values
 * [output:Entity_List] (Entity List) - List of all entities with the specified prefab on the field.

@@ -2,13 +2,13 @@
 Creates a prefab.
 
 # Input Parameters
-* [input:Prefab_ID] (Prefab ID) - Prefab ID for the prefab to create. Typically copied from the top of the prefab details panel. e.g. `1012345678`
+* [input:Prefab_ID] (Prefab ID) - Prefab ID for the prefab to create. Typically copied from the top of the prefab details panel. e.g. `1077936129`
 * [input:Location] (3D Vector) - Location in world coordinate space.
 * [input:Rotate] (3D Vector) - Rotation in world coordinate space.
 * [input:Owner_Entity] (Entity) - Owner of the created entity. Can be left empty.
 * [input:Overwrite_Level] (Boolean) - If `No`, [input:Level] is ignored and the prefab setting is used.
 * [input:Level] (Integer) - Level of the created entity. Only used if [input:Overwrite_Level] is `Yes`. Must be between 1 and 200, inclusive.
-* [input:Unit_Tag_Index_List] (Integer List) - List of unit tag IDs to put on the created entity. e.g. `[1023456789, 1023456790]`. Can be left empty. See "Notes" section below for detail.
+* [input:Unit_Tag_Index_List] (Integer List) - List of unit tag IDs to put on the created entity. e.g. `[1073741825, 1073741826]`. Can be left empty. See "Notes" section below for detail.
 
 # Output Values
 * [output:Created_Entity] (Entity) - The created entity.

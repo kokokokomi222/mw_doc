@@ -4,7 +4,7 @@ Triggers when "Monitor Movement Rate" unit status effect meets the condition.
 # Output Values
 * [output:Event_Source_Entity] (Entity) - Character entity that has the "Monitor Movement Rate" unit status effect and met its condition.
 * [output:Event_Source_GUID] (GUID) - Always `0`.
-* [output:Unit_Status_Config_ID] (Config ID) - Configuration ID of the unit status. e.g. `1012345678`.
+* [output:Unit_Status_Config_ID] (Config ID) - Configuration ID of the unit status. e.g. `1077936129`.
 * [output:Condition:_Comparison_Type] (Enumeration) - One of `Less Than`, `Less Than or Equal To`, `Greater Than`, `Greater Than or Equal To`. It cannot be `Equal To`.
 * [output:Condition:_Comparison_Value] (Floating Point Numbers) - Speed to compare with, as specified in the "Monitor Movement Rate" unit status effect. Unit is meter/second.
 * [output:Current_Movement_SPD] (Floating Point Numbers) - Current speed of the character entity. Unit is meter/second.

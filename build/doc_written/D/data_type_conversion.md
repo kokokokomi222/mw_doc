@@ -14,7 +14,7 @@ Conversion is limited to the following pairs of types listed below:
 * **Integer → Float** : e.g. `3` converts to `3.0`.
 * **Integer → String** : e.g. `3` converts to `"3"`.
 * **Entity → String** : Outputs entity ID as string. e.g. `"123"`
-* **GUID → String** : e.g. `1012345678` converts to `"1012345678"`
+* **GUID → String** : e.g. `1073741825` converts to `"1073741825"`
 * **Boolean → Integer** : `No` converts to `0`, `Yes` converts to `1`.
 * **Boolean → String** : `No` converts to `"False"`, `Yes` converts to `"True"`.
 * **Float → Integer** : Rounds to the integer. Use [node:round_to_integer_operation] instead.
