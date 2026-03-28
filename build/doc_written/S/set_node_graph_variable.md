@@ -37,6 +37,8 @@ In this example, we set the node graph variable `favorite_character` to `"Kokomi
   because the two lists start with the same content but separate reference,
   thus [node:set_list_value] only modifies one of the lists.
   [image:set_node_graph_variable_container_reference_example]
+* This node works in composite nodes.
+  It writes the node graph variable of the node graph that called the composite node.
 
 # Performance
 For a string node graph variable, this node took ~3 units to run on average when [input:Trigger_Event] is `No`.

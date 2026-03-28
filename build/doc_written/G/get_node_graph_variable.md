@@ -33,6 +33,8 @@ In this example, we get the node graph variable named `favorite_character` and p
   this node raises a "Custom Variable type error" error
   (misleading because "custom variable" and "node graph variable" are different)
   and returns the default value of the type selected for [output:Variable_Value].
+* This node works in composite nodes.
+  It retrieves the node graph variable from the node graph that called the composite node.
 
 # Performance
 Getting a string node graph variable took ~3 units to run on average.
