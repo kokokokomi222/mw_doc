@@ -24,6 +24,9 @@ for the character entity that selected the tab.
 
 # Notes
 * If [input:Target_Entity] does not exist, this node raises "Entity does not exist" error, but continues the execution.
+* If [input:Target_Entity] does not have a "Custom Variable" component,
+  this node raises "Custom Variable Component does not exist",
+  but continues the execution.
 * If there does not exist a custom variable named [input:Variable_Name],
   it creates a new custom variable with that name.
   Note that this behavior is different from [node:set_node_graph_variable].

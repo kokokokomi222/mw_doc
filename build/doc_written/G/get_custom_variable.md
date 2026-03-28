@@ -25,6 +25,9 @@ In this example, we get the custom variable named `weapon` from the character th
 # Notes
 * If [input:Target_Entity] does not exist, this node raises "Entity does not exist" error,
   and returns the default value of the type selected for [output:Variable_Value].
+* If [input:Target_Entity] does not have a "Custom Variable" component,
+  this node raises "Custom Variable Component does not exist",
+  and returns the default value of the type selected for [output:Variable_Value].
 * If there does not exist a custom variable named [input:Variable_Name],
   this node raises a "Custom Variable does not exist" warning
   and returns the default value of the type selected for [output:Variable_Value].
