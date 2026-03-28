@@ -31,7 +31,7 @@ def page(slug:str, title:str, url:str, header_breadcrumb:str) -> str:
         ))
 
 page('server_nodes', 'Server Nodes', '/server_nodes/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Server Nodes')
-page('looping_vfx', 'Looping VFX', '/looping_vfx/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Looping VFX')
+# page('looping_vfx', 'Looping VFX', '/looping_vfx/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Looping VFX')
 page('about', 'About', '/about/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / About')
 page('index', 'Home', '/', 'Koko\'s MW Doc')
 

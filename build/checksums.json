@@ -26,8 +26,8 @@
     },
     "data_type_conversion": {
         "written": true,
-        "checksum": 1641558572,
-        "date": "2026-02-22"
+        "checksum": 2369021388,
+        "date": "2026-03-28"
     },
     "division": {
         "written": true,
@@ -241,13 +241,13 @@
     },
     "create_entity": {
         "written": true,
-        "checksum": 137379373,
-        "date": "2026-02-28"
+        "checksum": 2643134375,
+        "date": "2026-03-28"
     },
     "create_prefab": {
         "written": true,
-        "checksum": 1463077256,
-        "date": "2026-02-28"
+        "checksum": 4074997723,
+        "date": "2026-03-28"
     },
     "create_prefab_group": {
         "written": true,
@@ -281,28 +281,28 @@
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
-        "checksum": 2447207933,
-        "date": "2026-03-08"
+        "checksum": 745190471,
+        "date": "2026-03-28"
     },
     "get_node_graph_variable": {
         "written": true,
-        "checksum": 497864658,
-        "date": "2026-02-22"
+        "checksum": 1792360046,
+        "date": "2026-03-28"
     },
     "set_node_graph_variable": {
         "written": true,
-        "checksum": 4030012883,
-        "date": "2026-02-22"
+        "checksum": 1611622200,
+        "date": "2026-03-28"
     },
     "set_custom_variable": {
         "written": true,
-        "checksum": 747947357,
-        "date": "2026-02-22"
+        "checksum": 2522005609,
+        "date": "2026-03-28"
     },
     "get_custom_variable": {
         "written": true,
-        "checksum": 3300080049,
-        "date": "2026-02-22"
+        "checksum": 2036640906,
+        "date": "2026-03-28"
     },
     "when_node_graph_variable_changes": {
         "written": true,
@@ -746,8 +746,8 @@
     },
     "get_entities_with_specified_prefab_on_the_field": {
         "written": true,
-        "checksum": 2325623955,
-        "date": "2026-02-28"
+        "checksum": 3089939048,
+        "date": "2026-03-28"
     },
     "get_entitys_mini_map_marker_status": {
         "written": false,
@@ -1401,8 +1401,8 @@
     },
     "read_by_bit": {
         "written": true,
-        "checksum": 527729985,
-        "date": "2026-03-15"
+        "checksum": 3463208574,
+        "date": "2026-03-28"
     },
     "recover_basic_motion_device": {
         "written": false,
@@ -2121,8 +2121,8 @@
     },
     "write_by_bit": {
         "written": true,
-        "checksum": 2047183836,
-        "date": "2026-03-15"
+        "checksum": 4164799883,
+        "date": "2026-03-28"
     },
     "xor_exclusive_or": {
         "written": true,
