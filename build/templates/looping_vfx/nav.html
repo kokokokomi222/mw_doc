@@ -1,6 +1,14 @@
 <nav id="nav">
     <div id="nav_tags">
-        <h2>Tags</h2>
+        <div id="nav_tags_title">
+            <h2>Tags</h2>
+            <div class="separator"></div>
+            <div id="nav_tags_active" style="display:none">
+                <span></span>
+                <a onclick="reset_all_tags()">Reset all</a>
+            </div>
+        </div>
+        <span id="nav_tags_help" class="small">Click to require a tag. Ctrl + click to ban a tag.</span>
         <div id="tag_list"></div>
     </div>
     <div id="nav_separator"></div>

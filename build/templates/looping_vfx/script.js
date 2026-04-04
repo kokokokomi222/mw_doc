@@ -33,6 +33,13 @@ function set_tag(tag, state) {
     }
 }
 
+function reset_all_tags(event) {
+    for (let tag of document.querySelectorAll("#tag_list > .tag_group > div")) {
+        set_tag(tag, "maybe");
+    }
+    refresh_effect_list();
+}
+
 function set_all_tags(event) {
     const state = event.currentTarget.getAttribute('data-state');
     const category_id = event.currentTarget.getAttribute('data-category-id');
@@ -63,15 +70,18 @@ function refresh_effect_list() {
     let search_text = canonize(document.getElementById('search').value);
     let checked = [];
     let banned = new Object();
+    let num_active_tags = 0;
     for (let tag of document.querySelectorAll("#tag_list .tag_group > div")) {
         const state = tag.getAttribute('data-state');
         const tag_id = Number(tag.getAttribute('data-tag-id'));
         switch (state) {
             case "yes":
                 checked.push(tag_id);
+                num_active_tags += 1;
             break;
             case "no":
                 banned[tag_id] = true;
+                num_active_tags += 1;
             break;
         }
     }
@@ -111,6 +121,9 @@ function refresh_effect_list() {
         }
     }
 
+    document.getElementById('nav_tags_active').style.display = num_active_tags > 0 ? "block" : "none";
+    document.querySelector('#nav_tags_active > span').innerText = num_active_tags > 1 ? `${num_active_tags} tags active` : "1 tag active";
+
     document.getElementById('effect_count').innerText = count.toString();
 }
 
@@ -125,6 +138,12 @@ function load_effect(effect_id) {
     const content_div = document.getElementById('content');
     
     const title = content_div.querySelector('h2');
+    if (effect['name_is_long']) {
+        title.classList.add('name_is_long');
+    }
+    else {
+        title.classList.remove('name_is_long');
+    }
     title.innerHTML = `${effect["display_name"]} - <a onclick="copy_effect_id();">ID: ${effect_id} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Copy ID to clipboard"><use x="0" y="0" width="1" height="1" href="#clipboard_icon"></use></svg></a>`;
 
     let tags = [];
@@ -138,7 +157,7 @@ function load_effect(effect_id) {
     tag_group.replaceChildren(...tags);
 
     const video_source = content_div.querySelector('source');
-    video_source.setAttribute('src', `/mw_doc/video/${effect_id}.mp4`);
+    video_source.setAttribute('src', `https://venerable-halva-c5d607.netlify.app/video/${effect_id}.mp4`);
     const video = content_div.querySelector('video');
     video.load();
 
@@ -196,6 +215,7 @@ fetch('/mw_doc/vfx_looping.json').then(
         EFFECTS = data["effects"];
         for (let effect of data["effects"]) {
             let name = effect["name"];
+            effect["name_is_long"] = name.length > 35;
             effect["canon_name"] = canonize(name);
             name = name.replace(/([a-z])([A-Z])/g, '$1<wbr/>$2');
             name = name.replace(/_(.)/g, '_<wbr/>$1');
@@ -271,7 +291,11 @@ fetch('/mw_doc/vfx_looping.json').then(
             for (let effect of data["effects"]) {
                 const effect_div = document.createElement('div');
                 effect_div.setAttribute('data-effect-id', effect["guid"]);
-                effect_div.innerHTML = `<img src="/mw_doc/kokomi.webp" alt=""/><span>${effect["display_name"]}</span><span>${effect["guid"]}</span>`;
+                if (effect["name_is_long"]) {
+                    effect_div.classList.add('name_is_long');
+                }
+                // src="/mw_doc/thumb/${effect["guid"]}.webp"
+                effect_div.innerHTML = `<img class="thumb_sprite thumb_${effect["guid"]}" alt="" loading="lazy"/><span>${effect["display_name"]}</span><span>${effect["guid"]}</span>`;
                 effects.push(effect_div);
                 effect_div.addEventListener("click", effect_selected);
             }
