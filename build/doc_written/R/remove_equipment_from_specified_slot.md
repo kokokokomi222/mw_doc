@@ -5,8 +5,8 @@ Remove equipment from slot.
 
 # Input Parameters
 * [input:Equipment_Slot_Owner_Entity] (Entity) - Character entity to remove the equipment from.
-* [input:Equipment_Slot_Row_Count] (Integer) - Row number of the slot to remove from. This is 0-indexed.
-* [input:Equipment_Slot_Column_Count] (Integer) - Column number of the slot to remove from. This is 0-indexed.
+* [input:Equipment_Slot_Row_Count] (Integer) - Row number of the equipment slot to remove from. This is 0-indexed.
+* [input:Equipment_Slot_Column_Count] (Integer) - Column number of the equipment slot to remove from. This is 0-indexed.
 
 # Usage
 Use this node to remove equipment from an equipment slot.
