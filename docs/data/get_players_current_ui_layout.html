@@ -1,27 +1,72 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Player's Current UI Layout</h1>
 <p>
-     Returns the ID of the currently active Interface Layout on the specified Player Entity
+    Returns the player's interface Layout ID.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Player entity from which to query the interface layout from.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Layout Index</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Layout Index</span> (Integer) - ID of the interface layout. e.g. <code>1073741825</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Interface layout is a collection of UI controls.
+    Interface layouts can be created in the "Manage UI Control Groups" panel,
+    which can be opened from the main menu.
+    <img src="/mw_doc/image/manage_ui_control_groups_menu.webp" alt="manage ui control groups menu" class="expandable_img" loading="lazy"/>
+    Each player has one interface layout displayed.
+    The initial layout can be configured in the class detail panel.
+    This node lets you query what interface layout is being used by a player.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we consider the player that selected the tab.
+    If the ID of the player's current interface layout is <code>1073741825</code>,
+    we turn off UI control <code>1073741839</code>.
+    If the ID of the player's current interface layout is <code>1073741845</code>,
+    we turn off UI control <code>1073741871</code>.
+    <img src="/mw_doc/image/get_players_current_ui_layout_example.webp" alt="get players current ui layout example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error 
+        (can be misleading, because the entity may exist) and returns 0.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=switch_current_interface_layout" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Current Interface Layout</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-04 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_players_current_ui_layout.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,27 +1,65 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Equipment Tag List</h1>
 <p>
-     Searches the list of all Tags on this Equipment instance
+    Gets the list of equipment tags from equipment instance.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - ID of the equipment. e.g. <code>3</code>
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Tag List</span> (Config ID List) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Tag List</span> (Config ID List) - List of configuration ID of the equipment tags on the specified equipment.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node lets you query the equipment tags from equipment.
+    Equipment tags can be configured in the item detail panel of the equipment,
+    under the "Interaction Settings" tab.
+    <img src="/mw_doc/image/equipment_tag_configure.webp" alt="equipment tag configure" class="expandable_img" loading="lazy"/>
+    This is currently the only way to set equipment tags.
+</p>
+<p>
+    Equipment tags can be configured to be shown in-game.
+    <img src="/mw_doc/image/equipment_tag_display.webp" alt="equipment tag display" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have an item node graph.
+    When equipment is equipped on a character,
+    we check whether the equipment has a certain tag.
+    If it does, we mount a looping VFX on the character.
+    <img src="/mw_doc/image/query_equipment_tag_list_example.webp" alt="query equipment tag list example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> is not an ID for equipment, this node returns the empty list.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-04 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_equipment_tag_list.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

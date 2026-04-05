@@ -1,29 +1,87 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Replace Equipment to the Specified Slot</h1>
 <p>
-     Replaces the specified equipment in the corresponding equipment slot of the target entity. If the equipment is already equipped in the equipment slot, the replacement will not take effect. If the target slot already contains an equipped item, that item will be replaced.
+    Equip equipment to an equipment slot.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Character entity that has an "Equipment Slot" component.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Row</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Row</span> (Integer) - Row number of the equipment slot to equip to. This is 0-indexed.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Column</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Column</span> (Integer) - Column number of the equipment slot to equip to. This is 0-indexed.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - The equipment instance is identified by an integer index generated during equipment initialization.
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - ID of the equipment to equip. e.g. <code>3</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to equip equipment to an equipment slot.
+</p>
 
+<h2>Example</h2>
+<p>
+    When tab is selected by a character,
+    we look for equipment with a specific equipment config ID from the inventory of the character.
+    The first instance of such equipment we find,
+    we equip the equipment to the slot at second row (indexed by 1) and third column (indexed by 2).
+    <img src="/mw_doc/image/replace_equipment_to_the_specified_slot_example.webp" alt="replace equipment to the specified slot example" class="expandable_img" loading="lazy"/>
+    This is the result of equipping. Equipped equipment stays in the inventory.
+    <img src="/mw_doc/image/replace_equipment_to_the_specified_slot_result.webp" alt="replace equipment to the specified slot result" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a character entity,
+        this node raises "Entity component does not exist" error,
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have an "Equipment Slot" component,
+        this node raises "Entity component does not exist" error,
+        but continues the execution.
+    </li>
+    <li>
+        If there is no equipment slot at the coordinate indicated by
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Row</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Column</span>, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> is not an ID of an equipment,
+        this node is no-op.
+    </li>
+    <li>
+        If the equipment specified by <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> is already equipped to any equipment slot,
+        this node is no-op.
+    </li>
+    <li>
+        If there is an equipment already equipped to the specified slot,
+        this node replaces the equipment at that slot,
+        i.e. the previously equipped equipment is unequipped from the slot
+        and the specified equipment is then equipped to the slot.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~10 units to run on average.
+    Whether equipping is successful or not does not seem to visibly affect performance.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-04 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/replace_equipment_to_the_specified_slot.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

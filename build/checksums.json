@@ -700,9 +700,9 @@
         "date": "2026-02-22"
     },
     "get_all_equipment_from_inventory": {
-        "written": false,
-        "checksum": 804975528,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1431713927,
+        "date": "2026-04-04"
     },
     "get_all_equipment_from_loot_component": {
         "written": false,
@@ -915,9 +915,9 @@
         "date": "2026-02-22"
     },
     "get_players_current_ui_layout": {
-        "written": false,
-        "checksum": 425300492,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3302125765,
+        "date": "2026-04-04"
     },
     "get_player_client_input_device_type": {
         "written": false,
@@ -1015,9 +1015,9 @@
         "date": "2026-02-22"
     },
     "get_the_equipment_index_of_the_specified_equipment_slot": {
-        "written": false,
-        "checksum": 3952463873,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1513221791,
+        "date": "2026-04-04"
     },
     "get_the_number_of_waypoints_in_the_global_path": {
         "written": false,
@@ -1260,14 +1260,14 @@
         "date": "2026-03-01"
     },
     "query_equipment_config_id_by_equipment_id": {
-        "written": false,
-        "checksum": 964950521,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1405364990,
+        "date": "2026-04-04"
     },
     "query_equipment_tag_list": {
-        "written": false,
-        "checksum": 1082261158,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1330428903,
+        "date": "2026-04-04"
     },
     "query_game_time_elapsed": {
         "written": false,
@@ -1470,9 +1470,9 @@
         "date": "2026-02-22"
     },
     "replace_equipment_to_the_specified_slot": {
-        "written": false,
-        "checksum": 3173279168,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3500375099,
+        "date": "2026-04-04"
     },
     "resume_timer": {
         "written": false,
@@ -1725,9 +1725,9 @@
         "date": "2026-02-22"
     },
     "set_ui_control_group_status": {
-        "written": false,
-        "checksum": 194289921,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 883327726,
+        "date": "2026-04-04"
     },
     "sign_operation": {
         "written": false,
@@ -1805,9 +1805,9 @@
         "date": "2026-02-22"
     },
     "switch_current_interface_layout": {
-        "written": false,
-        "checksum": 1171350152,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3118643179,
+        "date": "2026-04-04"
     },
     "switch_follow_motion_device_target_by_entity": {
         "written": false,
@@ -1955,9 +1955,9 @@
         "date": "2026-02-22"
     },
     "when_equipment_is_equipped": {
-        "written": false,
-        "checksum": 3765534942,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 465644089,
+        "date": "2026-04-04"
     },
     "when_equipment_is_initialized": {
         "written": false,
@@ -1965,9 +1965,9 @@
         "date": "2026-02-22"
     },
     "when_equipment_is_unequipped": {
-        "written": false,
-        "checksum": 256961969,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3192283629,
+        "date": "2026-04-04"
     },
     "when_exiting_collision_trigger": {
         "written": false,
@@ -2105,9 +2105,9 @@
         "date": "2026-02-22"
     },
     "when_ui_control_group_is_triggered": {
-        "written": false,
-        "checksum": 2078781762,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4261721736,
+        "date": "2026-04-04"
     },
     "when_unit_status_changes": {
         "written": false,
@@ -2121,8 +2121,8 @@
     },
     "write_by_bit": {
         "written": true,
-        "checksum": 4164799883,
-        "date": "2026-03-28"
+        "checksum": 800095955,
+        "date": "2026-04-04"
     },
     "xor_exclusive_or": {
         "written": true,

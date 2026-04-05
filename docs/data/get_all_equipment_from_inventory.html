@@ -1,27 +1,62 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get all equipment from Inventory</h1>
 <p>
-     Returns all Equipment in the Inventory; the output parameter is a list of all Equipment IDs
+    Gets the list of equipments from inventory.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Inventory Owner Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Inventory Owner Entity</span> (Entity) - Entity with "Inventory" component.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Equipment Index List</span> (Integer List) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Equipment Index List</span> (Integer List) - List of equipment ID of all equipments in the inventory. e.g. <code>[1, 2, 3]</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to get all equipments in an inventory.
+</p>
 
+<h2>Example</h2>
+<p>
+    When tab is selected by a character,
+    we look for equipment with a specific equipment config ID from the inventory of the character.
+    The first instance of such equipment we find,
+    we equip the equipment to the slot at second row (indexed by 1) and third column (indexed by 2).
+    <img src="/mw_doc/image/replace_equipment_to_the_specified_slot_example.webp" alt="replace equipment to the specified slot example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Inventory Owner Entity</span> is not an entity,
+        this node raises "Entity does not exist" error and returns the empty list.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Inventory Owner Entity</span> does not have an "Inventory" component,
+        this node raises "Entity component does not exist" error and returns the empty list.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-04 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_all_equipment_from_inventory.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>
