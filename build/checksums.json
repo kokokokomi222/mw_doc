@@ -26,8 +26,8 @@
     },
     "data_type_conversion": {
         "written": true,
-        "checksum": 4260277507,
-        "date": "2026-03-28"
+        "checksum": 2369021388,
+        "date": "2026-04-04"
     },
     "division": {
         "written": true,
@@ -241,13 +241,13 @@
     },
     "create_entity": {
         "written": true,
-        "checksum": 2018794418,
-        "date": "2026-03-28"
+        "checksum": 2643134375,
+        "date": "2026-04-04"
     },
     "create_prefab": {
         "written": true,
-        "checksum": 4156588924,
-        "date": "2026-03-28"
+        "checksum": 4074997723,
+        "date": "2026-04-04"
     },
     "create_prefab_group": {
         "written": true,
@@ -281,28 +281,28 @@
     },
     "when_character_movement_spd_meets_condition": {
         "written": true,
-        "checksum": 3919967403,
-        "date": "2026-03-28"
+        "checksum": 745190471,
+        "date": "2026-04-04"
     },
     "get_node_graph_variable": {
         "written": true,
-        "checksum": 618436315,
-        "date": "2026-03-28"
+        "checksum": 1792360046,
+        "date": "2026-04-04"
     },
     "set_node_graph_variable": {
         "written": true,
-        "checksum": 489955084,
-        "date": "2026-03-28"
+        "checksum": 1611622200,
+        "date": "2026-04-04"
     },
     "set_custom_variable": {
         "written": true,
-        "checksum": 1430581143,
-        "date": "2026-03-28"
+        "checksum": 2522005609,
+        "date": "2026-04-04"
     },
     "get_custom_variable": {
         "written": true,
-        "checksum": 1956796951,
-        "date": "2026-03-28"
+        "checksum": 2036640906,
+        "date": "2026-04-04"
     },
     "when_node_graph_variable_changes": {
         "written": true,
@@ -700,9 +700,9 @@
         "date": "2026-02-22"
     },
     "get_all_equipment_from_inventory": {
-        "written": false,
-        "checksum": 804975528,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1431713927,
+        "date": "2026-04-04"
     },
     "get_all_equipment_from_loot_component": {
         "written": false,
@@ -1015,9 +1015,9 @@
         "date": "2026-02-22"
     },
     "get_the_equipment_index_of_the_specified_equipment_slot": {
-        "written": false,
-        "checksum": 3952463873,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1513221791,
+        "date": "2026-04-04"
     },
     "get_the_number_of_waypoints_in_the_global_path": {
         "written": false,
@@ -1260,14 +1260,14 @@
         "date": "2026-03-01"
     },
     "query_equipment_config_id_by_equipment_id": {
-        "written": false,
-        "checksum": 964950521,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1405364990,
+        "date": "2026-04-04"
     },
     "query_equipment_tag_list": {
-        "written": false,
-        "checksum": 1082261158,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1330428903,
+        "date": "2026-04-04"
     },
     "query_game_time_elapsed": {
         "written": false,
@@ -1470,9 +1470,9 @@
         "date": "2026-02-22"
     },
     "replace_equipment_to_the_specified_slot": {
-        "written": false,
-        "checksum": 3173279168,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4046896115,
+        "date": "2026-04-04"
     },
     "resume_timer": {
         "written": false,
@@ -1955,9 +1955,9 @@
         "date": "2026-02-22"
     },
     "when_equipment_is_equipped": {
-        "written": false,
-        "checksum": 3765534942,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 465644089,
+        "date": "2026-04-04"
     },
     "when_equipment_is_initialized": {
         "written": false,
@@ -1965,9 +1965,9 @@
         "date": "2026-02-22"
     },
     "when_equipment_is_unequipped": {
-        "written": false,
-        "checksum": 256961969,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4150051791,
+        "date": "2026-04-04"
     },
     "when_exiting_collision_trigger": {
         "written": false,
@@ -2206,8 +2206,8 @@
     },
     "remove_equipment_from_specified_slot": {
         "written": true,
-        "checksum": 1634429198,
-        "date": "2026-03-28"
+        "checksum": 2665514448,
+        "date": "2026-04-04"
     },
     "reset_player_camera_to_follow_entity": {
         "written": true,
@@ -2231,13 +2231,13 @@
     },
     "when_equipment_is_purchased": {
         "written": true,
-        "checksum": 1854914141,
-        "date": "2026-03-28"
+        "checksum": 1386824774,
+        "date": "2026-04-04"
     },
     "when_equipment_is_sold": {
         "written": true,
-        "checksum": 3040377666,
-        "date": "2026-03-28"
+        "checksum": 3770447750,
+        "date": "2026-04-04"
     },
     "when_floating_interaction_page_is_triggered": {
         "written": true,

@@ -1,27 +1,65 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Equipment Config ID by Equipment ID</h1>
 <p>
-     Searches the Equipment Config ID by Equipment ID. The Equipment Instance ID can be obtained in the [Equipment Initialization] event
+    Gets the equipment config ID of an equipment instance.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> (Integer) - Equipment ID. e.g. <code>3</code>
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Equipment Config ID</span> (Config ID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Equipment Config ID</span> (Config ID) - Equipment configuration ID. e.g. <code>1107296257</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Each equipment has one "equipment configuration ID", which can be found at the top of the item details panel.
+    This is typically a large number: e.g. <code>1107296257</code>.
+    <img src="/mw_doc/image/equipment_config_id.webp" alt="equipment config id" class="expandable_img" loading="lazy"/>
+    Each instance of equipment has one "equipment ID", which specifically identifies the instance.
+    This is typically a small integer: e.g. <code>3</code>.
+</p>
+<p>
+    You can have multiple instances of one equipment:
+    e.g. 3 instances <code>1</code>, <code>2</code>, <code>3</code> can exist for the equipment <code>1107296257</code>.
+    This node gets the equipment configuration ID from equipment ID.
+</p>
 
+<h2>Example</h2>
+<p>
+    When equipment is equipped, we first print the name of the player.
+    We then print name of the equipment by looking up the dictionary with equipment config ID as key.
+    <img src="/mw_doc/image/when_equipment_is_equipped_example.webp" alt="when equipment is equipped example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Equipment Index</span> is not equipment ID for equipment,
+        this node returns <code>0</code>.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-04 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_equipment_config_id_by_equipment_id.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

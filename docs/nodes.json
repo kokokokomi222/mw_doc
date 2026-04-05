@@ -874,7 +874,7 @@
             "slug": "replace_equipment_to_the_specified_slot",
             "name": "Replace Equipment to the Specified Slot",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "remove_equipment_from_specified_slot",
@@ -1402,13 +1402,13 @@
             "slug": "when_equipment_is_equipped",
             "name": "When Equipment Is Equipped",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_equipment_is_unequipped",
             "name": "When Equipment Is Unequipped",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_equipment_is_initialized",
@@ -2146,13 +2146,13 @@
             "slug": "query_equipment_tag_list",
             "name": "Query Equipment Tag List",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_equipment_config_id_by_equipment_id",
             "name": "Query Equipment Config ID by Equipment ID",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_equipment_affix_list",
@@ -2176,7 +2176,7 @@
             "slug": "get_the_equipment_index_of_the_specified_equipment_slot",
             "name": "Get the Equipment Index of the Specified Equipment Slot",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_inventory_item_quantity",
@@ -2212,7 +2212,7 @@
             "slug": "get_all_equipment_from_inventory",
             "name": "Get all equipment from Inventory",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_loot_component_item_quantity",
