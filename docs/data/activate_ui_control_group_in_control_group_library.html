@@ -1,23 +1,90 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate UI Control Group in Control Group Library</h1>
 <p>
-     Activate the UI Control Groups stored as Custom Templates in the UI Control Group Library within the Target Player's Interface Layout
+    Add a UI control from template.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Entity of player to add the UI control for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Group Index</span> (Integer) - Identifier for the UI Control Group
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Group Index</span> (Integer) - ID of the UI control template. e.g. <code>1073741825</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    UI controls can be added to UI layout, so that it can be seen by players.
+    However, you can also define a UI control template and add it to the UI dynamically using this node.
+    Use <a href="?node=remove_ui_control_group_from_control_group_library" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove UI Control Group From Control Group Library</a> to remove the UI control added this way.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we defined a UI control template named <code>Important Popup</code> in the "UI Control Group Library".
+    <img src="/mw_doc/image/ui_control_template_configure.webp" alt="ui control template configure" class="expandable_img" loading="lazy"/>
+    In the node graph, we add this popup from the template.
+    The popup is added to the player of the character that selected the tab.
+    <img src="/mw_doc/image/activate_ui_control_group_in_control_group_library_example.webp" alt="activate ui control group in control group library example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Group Index</span> can be selected from the list of valid UI control templates
+        by clicking the magnifying glass icon.
+        It will show UI control templates that are relevant for this node,
+        but it also shows "Deck Selector" and "Floating Interaction Page",
+        which cannot be used with this node.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist)
+        and continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> UI Control Group Index</span> is not an ID for a UI control template,
+        this node is no-op.
+    </li>
+    <li>
+        If an instance of the UI control template has already been added, this node is no-op.
+        Only one instance of each template can be present at once.
+    </li>
+    <li>
+        UI controls added this way are independent from UI control layouts.
+        When player's UI layout is switched with <a href="?node=switch_current_interface_layout" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Current Interface Layout</a>,
+        all UI controls added with this node stay visible for the player.
+    </li>
+    <li>
+        All UI controls can be added this way (including UI control combinations),
+        except for "Deck Selector" and "Floating Interaction Page".
+        Use <a href="?node=invoke_deck_selector" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Invoke Deck Selector</a> instead to add "Deck Selector".
+        Use <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a> instead to add "Floating Interaction Page".
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~8 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=remove_ui_control_group_from_control_group_library" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove UI Control Group From Control Group Library</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-04-07 (Luna VI)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_ui_control_group_in_control_group_library.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -502,7 +502,7 @@
             "slug": "activate_ui_control_group_in_control_group_library",
             "name": "Activate UI Control Group in Control Group Library",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "switch_current_interface_layout",
@@ -517,10 +517,10 @@
             "stub": false
         },
         {
-            "slug": "remove_interface_control_group_from_control_group_library",
-            "name": "Remove Interface Control Group From Control Group Library",
+            "slug": "remove_ui_control_group_from_control_group_library",
+            "name": "Remove UI Control Group From Control Group Library",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "play_ui_animation_on_control",

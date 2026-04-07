@@ -9,6 +9,7 @@
 # MINOR NITPICKS
 * break loop example should have loop complete running
 * remove value from list should remove from middle, not front
+* 
 
 # NEXT NODES
 ## Execution
@@ -24,7 +25,7 @@
     * get current global timer time
 ## Operation
     done for now
-After that dictionary/struct, UI stuff (tab/UI control), effects (vfx/sound/music), signal, and time operations
+After that dictionary/struct, effects (vfx/sound/music), signal, and time operations
 
 # FEATURES
 * input/output in table
