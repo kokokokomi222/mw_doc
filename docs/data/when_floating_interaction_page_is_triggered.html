@@ -1,0 +1,93 @@
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Floating Interaction Page is Triggered</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Triggers when a UI control on a floating interaction page is used.
+</p>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Entity</span> (Entity) - Entity of the player that triggered the interaction.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player GUID</span> (GUID) - GUID of the above player.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Floating Interaction Page Index</span> (Integer) - ID of the floating interaction page that contains that used UI control. e.g. <code>1073741889</code>
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Interactive Item Index</span> (Integer) - ID of the used UI control. e.g. <code>1073741890</code>
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> List Index</span> (List of Integers) - List with the ID of the used UI control as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. <code>[1073741890]</code> TODO: I'm not sure why this is a list instead of integer.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Selected List Item</span> (List of Integers) - List with the ID of the selected item as its only entry, if the UI control is a tab or a single-choice window, empty list otherwise. e.g. <code>[3]</code> TODO: I'm not sure why this is a list instead of integer.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    See <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a> to learn how to open a floating interaction page.
+    This node can be used to listen to interactions from the page,
+    such as button press or switch toggle.
+    Note that <a href="?node=when_ui_control_group_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When UI Control Group Is Triggered</a> do not trigger
+    for UI controls on a floating interaction page.
+    This node should be mounted on a player entity, but the event can be forwarded.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we close the current floating interaction page
+    when a specific button on the page is triggered.
+    This node graph should be mounted on the player entity.
+    <img src="/mw_doc/image/close_floating_interaction_page_example.webp" alt="close floating interaction page example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node is triggered by the following UI controls: <ul>
+        <li>Interactive Button</li>
+        <li>Item Display</li>
+        <li>Custom Button</li>
+        <li>Custom Switch</li>
+        <li>Single-Choice Window (if "Return to Server Event" is enabled)</li>
+        <li>Tab (if "Return to Server Event" is enabled)</li>
+        </ul>
+        They do not trigger <a href="?node=when_ui_control_group_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When UI Control Group Is Triggered</a>
+        if they are on a floating interaction page.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~8 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a>
+    </li>
+    <li>
+        <a href="?node=update_floating_interaction_page_list_data" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Update Floating Interaction List Data</a>
+    </li>
+    <li>
+        <a href="?node=close_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Floating Interaction Page</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_floating_interaction_page_is_triggered.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

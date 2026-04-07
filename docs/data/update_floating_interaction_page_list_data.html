@@ -1,0 +1,123 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Update Floating Interaction List Data</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Updates the list of items of tab or single-choice window.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to update the page for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List Index</span> (Integer) - ID of the "Tab" or "Single-Choice Window" UI control to update. e.g. <code>1073741825</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span> (List) - IDs of the items in the UI control. List of integers. e.g. <code>[1, 2, 3]</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select First Item by Default</span> (Boolean) - <code>Yes</code> to select the first item. <code>No</code> otherwise.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Read <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a> to learn how to use floating interaction page.
+    This node lets you decide which items of "Tab" or "Single-Choice Window" to show,
+    and in what order.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we created a tab UI control in a floating interaction page.
+    The tab UI control has three items named <code>Ayaka</code>, <code>Barbara</code>, and <code>Columbina</code>,
+    and their preset texts are set accordingly.
+    <img src="/mw_doc/image/update_floating_interaction_page_list_data_configure_tab.webp" alt="update floating interaction page list data configure tab" class="expandable_img" loading="lazy"/>
+    In the node graph, we update the content of the tab to <code>[3, 1]</code>
+    when a specific UI control is triggered.
+    <img src="/mw_doc/image/update_floating_interaction_page_list_data_example.webp" alt="update floating interaction page list data example" class="expandable_img" loading="lazy"/>
+    As a result, only <code>Columbina</code> tab and <code>Ayaka</code> tab are visible, with <code>Columbina</code> tab selected.
+    <img src="/mw_doc/image/update_floating_interaction_page_list_data_result.webp" alt="update floating interaction page list data result" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist),
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> List Index</span> is not an ID for a UI control with list items,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span> contains a number
+        that is not the ID of a list item, it is ignored.
+        For example, if a tab has ID <code>1</code>, <code>2</code>, and <code>3</code>,
+        then <code>[0, 2, 4]</code> was passed into <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span>,
+        the result of this node is that only the list item with ID <code>2</code> is visible,
+        because <code>0</code> and <code>4</code> are not IDs and are ignored.
+    </li>
+    <li>
+        As seen in the "Example" section above,
+        the list items are laid out in the order given in <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select First Item by Default</span> is <code>No</code>,
+        it retains the previous selection if the selected item is visible after this node.
+        If it is not visible, it will select the first item in <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span>.
+        For example, let's say three list items <code>[1, 2, 3]</code> are initially visible,
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Visible List Item</span> is <code>[3, 1]</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Select First Item by Default</span> is <code>No</code>.
+        <ul>
+        <li>
+        If <code>1</code> was selected, <code>1</code> is selected after this node runs (it retains the previous selection).
+        </li>
+        <li>
+        If <code>2</code> was selected, <code>3</code> is selected after this node runs (it selects the first item in the new list).
+        </li>
+        </ul>
+        You can use this behavior to select a specific item as demonstrated in the example below.
+        <img src="/mw_doc/image/update_floating_interaction_page_list_data_select_hack.webp" alt="update floating interaction page list data select hack" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        If "Return to Server Event" is turned on in the list item panel,
+        <a href="?node=when_floating_interaction_page_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Floating Interaction Page is Triggered</a> triggers on this UI control
+        if this item gets selected after this node executes
+        even if the selection did not change.
+        <img src="/mw_doc/image/update_floating_interaction_page_list_data_server_event.webp" alt="update floating interaction page list data server event" class="expandable_img" loading="lazy"/>
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~6 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a>
+    </li>
+    <li>
+        <a href="?node=close_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Floating Interaction Page</a>
+    </li>
+    <li>
+        <a href="?node=when_floating_interaction_page_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Floating Interaction Page is Triggered</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/U/update_floating_interaction_page_list_data.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

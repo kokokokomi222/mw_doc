@@ -21,6 +21,7 @@ We then print name of the equipment by looking up the dictionary with equipment 
 * If this node is used in node graphs that are not "Item Node Graph", it never triggers.
   This node must be in an "Item Node Graph".
 * This node triggers when the equipment is manually unequipped.
+  It also triggers when the equipment was removed using [node:remove_equipment_from_specified_slot].
   It also triggers when the equipment was replaced out using [node:replace_equipment_to_the_specified_slot].
 
 # Performance

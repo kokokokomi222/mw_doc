@@ -42,7 +42,7 @@ This node took ~10 units to run on average.
 Whether equipping is successful or not does not seem to visibly affect performance.
 
 # See Also
-* **TO BE ADDED**
+* [node:remove_equipment_from_specified_slot]
 
 # Authors
 * kokokokomi222

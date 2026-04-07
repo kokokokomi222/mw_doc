@@ -1,0 +1,67 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Reset Player Camera to Follow Entity</h1>
+<p>
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Switches camera to follow player.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to switch the camera for.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Starting in Luna VI, craftsperson can configure the camera to follow an entity.
+    This allows finer control over the position of the camera and its movement.
+    After using <a href="?node=set_player_camera_to_follow_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Camera to Follow Entity</a>,
+    this node can be used to come back to the player camera.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we reset the camera to the player camera for the player that selects the tab.
+    <img src="/mw_doc/image/reset_player_camera_to_follow_entity_example.webp" alt="reset player camera to follow entity example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the entity may exist)
+        but continues the execution.
+    </li>
+    <li>
+        If you switch from the default camera A to a player camera B and then to an object camera C,
+        using this node will switch the camera back to camera B, not camera A.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~8 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_player_camera_to_follow_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Camera to Follow Entity</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/reset_player_camera_to_follow_entity.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

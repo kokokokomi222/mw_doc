@@ -1,0 +1,82 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Floating Interaction Page</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Closes floating interaction page.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to close the floating interaction page for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Floating Interaction Page Index</span> (Integer) - ID of the floating interaction page to close. e.g. <code>1073741825</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    See <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a> to learn how to open a floating interaction page.
+    This node can be used to close a page.
+    Inherent container of a floating interaction page also contains a close button,
+    which can be used to close the page without using this node or any node graph.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we close the current floating interaction page
+    when a specific button on the page is triggered.
+    This node graph should be mounted on the player entity.
+    <img src="/mw_doc/image/close_floating_interaction_page_example.webp" alt="close floating interaction page example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist),
+        but continues the execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Floating Interaction Page Index</span> is not an ID for an opened floating interaction page,
+        this node is no-op.
+    </li>
+    <li>
+        If there are multiple opened pages,
+        this node can close any of the opened floating interaction page.
+        It does not have to be the currently interactable page with the highest layer value.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=show_floating_interaction_page" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Show Floating Interaction Page</a>
+    </li>
+    <li>
+        <a href="?node=update_floating_interaction_page_list_data" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Update Floating Interaction List Data</a>
+    </li>
+    <li>
+        <a href="?node=when_floating_interaction_page_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Floating Interaction Page is Triggered</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/close_floating_interaction_page.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

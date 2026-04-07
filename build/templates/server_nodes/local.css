@@ -141,6 +141,7 @@ ul.see_also .node {
         }
         & #nav_fold_button {
             display: flex;
+            cursor: pointer;
         }
         & #nav_list {
             height: calc(100vh - var(--header-height) - 4 * var(--margin-medium) - 8rem);
