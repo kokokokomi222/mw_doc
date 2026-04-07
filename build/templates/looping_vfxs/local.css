@@ -182,7 +182,7 @@ nav {
 
         &.list_view > div {
             flex-direction: row;
-            padding: var(--margin-small) var(--margin-medium) var(--margin-small) var(--margin-small);
+            padding: 0 var(--margin-medium) 0 0;
             gap: var(--margin-small);
         }
         &.tile_view > div {
@@ -212,7 +212,7 @@ nav {
         }
 
         &.list_view > div > img {
-            --thumb-size: 2rem;
+            --thumb-size: 2.5rem;
             width: var(--thumb-size);
             height: var(--thumb-size);
         }

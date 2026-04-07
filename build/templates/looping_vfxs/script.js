@@ -157,7 +157,7 @@ function load_effect(effect_id) {
     tag_group.replaceChildren(...tags);
 
     const video_source = content_div.querySelector('source');
-    video_source.setAttribute('src', `https://venerable-halva-c5d607.netlify.app/video/${effect_id}.mp4`);
+    video_source.setAttribute('src', `https://media.genshin-artifact.app/video/${effect_id}.mp4`);
     const video = content_div.querySelector('video');
     video.load();
 
