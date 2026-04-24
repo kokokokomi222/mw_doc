@@ -1,5 +1,6 @@
 import string
 import os
+import shutil
 
 with open('templates/base.html', 'r', encoding='utf-8') as file:
     TEMPLATE = string.Template(file.read())
@@ -15,6 +16,9 @@ CSS = dump('global.css')
 SVG = dump('symbols.svg')
 
 def page(slug:str, title:str, url:str, header_breadcrumb:str) -> str:
+    if slug != 'index':
+        os.makedirs(f'../docs/{slug}', exist_ok=True)
+
     path = f'../docs/{slug}/index.html' if slug != 'index' else f'../docs/index.html'
 
     with open(path, 'w', encoding='utf-8') as file:
@@ -31,6 +35,8 @@ def page(slug:str, title:str, url:str, header_breadcrumb:str) -> str:
         ))
 
 page('server_nodes', 'Server Nodes', '/server_nodes/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Server Nodes')
+page('music', 'Music', '/music/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Music')
+page('timed_vfxs', 'Timed VFXs', '/timed_vfxs/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Timed VFXs')
 page('looping_vfxs', 'Looping VFXs', '/looping_vfxs/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / Looping VFXs')
 page('about', 'About', '/about/', '<a href="/mw_doc/">Koko\'s MW Doc</a> / About')
 page('index', 'Home', '/', 'Koko\'s MW Doc')

@@ -203,7 +203,7 @@ nav {
             display: none;
         }
 
-        &.list_view > div:nth-child(even) {
+        &.list_view > div.even_color {
             background-color: #ffffff11;
         }
 

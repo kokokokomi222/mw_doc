@@ -115,6 +115,12 @@ function refresh_effect_list() {
         if (is_passing()) {
             child.classList.remove('hide');
             count += 1;
+            if (count % 2 == 0) {
+                child.classList.add('even_color');
+            }
+            else {
+                child.classList.remove('even_color');
+            }
         }
         else {
             child.classList.add('hide');

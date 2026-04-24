@@ -1,0 +1,1911 @@
+{
+    "tags": [{
+        "tag_id": 201,
+        "name": "Exploration"
+    }, {
+        "tag_id": 202,
+        "name": "Battle"
+    }, {
+        "tag_id": 203,
+        "name": "Quest"
+    }, {
+        "tag_id": 204,
+        "name": "Other"
+    }, {
+        "tag_id": 301,
+        "name": "Mondstadt"
+    }, {
+        "tag_id": 302,
+        "name": "Liyue"
+    }, {
+        "tag_id": 303,
+        "name": "Inazuma"
+    }, {
+        "tag_id": 304,
+        "name": "Sumeru"
+    }, {
+        "tag_id": 305,
+        "name": "Fontaine"
+    }, {
+        "tag_id": 306,
+        "name": "Natlan"
+    }, {
+        "tag_id": 307,
+        "name": "Snezhnaya"
+    }, {
+        "tag_id": 308,
+        "name": "Nod Krai"
+    }, {
+        "tag_id": 351,
+        "name": "Golden Apple Archipelago"
+    }, {
+        "tag_id": 352,
+        "name": "Veluriyam Mirage (Bottleland)"
+    }, {
+        "tag_id": 353,
+        "name": "Simulanka"
+    }, {
+        "tag_id": 354,
+        "name": "Imaginarium Theater"
+    }, {
+        "tag_id": 401,
+        "name": "<1.5 minutes"
+    }, {
+        "tag_id": 402,
+        "name": "1.5~2 minutes"
+    }, {
+        "tag_id": 403,
+        "name": "2~3 minutes"
+    }, {
+        "tag_id": 404,
+        "name": "3~4 minutes"
+    }, {
+        "tag_id": 405,
+        "name": ">4 minutes"
+    }, {
+        "tag_id": 501,
+        "name": "<100 bpm"
+    }, {
+        "tag_id": 502,
+        "name": "100~109 bpm"
+    }, {
+        "tag_id": 503,
+        "name": "110~119 bpm"
+    }, {
+        "tag_id": 504,
+        "name": "120~129 bpm"
+    }, {
+        "tag_id": 505,
+        "name": "130~139 bpm"
+    }, {
+        "tag_id": 506,
+        "name": "140~149 bpm"
+    }, {
+        "tag_id": 507,
+        "name": ">=150 bpm"
+    }, {
+        "tag_id": 601,
+        "name": "Has battle leitmotif"
+    }],
+    "tag_categories": [{
+        "name": "Type (Official)",
+        "tag_ids": [201, 202, 203, 204]
+    }, {
+        "name": "Region",
+        "tag_ids": [301, 302, 303, 304, 305, 306, 307, 308, 351, 352, 353, 354]
+    }, {
+        "name": "Duration",
+        "tag_ids": [401, 402, 403, 404, 405]
+    }, {
+        "name": "BPM",
+        "tag_ids": [501, 502, 503, 504, 505, 506, 507]
+    }, {
+        "name": "Other",
+        "tag_ids": [601]
+    }],
+    "musics": [{
+        "guid": 10001,
+        "name": "Lightning Racing",
+        "duration": 71,
+        "tag_ids": [204, 306, 401, 505],
+        "youtube_id": "fMo8qo6jpTs",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 77,
+        "bpm": 136,
+        "description": "Played at Mualani's Tribal Chronicle (story quest) in Ameyalco Waters, Natlan. Played when player enters a Miliastra Wonderland stage."
+    }, {
+        "guid": 10002,
+        "name": "Gallant Challenge",
+        "duration": 223,
+        "tag_ids": [201, 302, 404, 503, 601],
+        "youtube_id": "QfZuTG9lXKA",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 3,
+        "track_num": 69,
+        "bpm": 115,
+        "description": "Played at Liyue as combat music."
+    }, {
+        "guid": 10003,
+        "name": "Chasing the Torrents",
+        "duration": 235,
+        "tag_ids": [201, 302, 404, 504, 601],
+        "youtube_id": "gK_Mm9Zql8E",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 3,
+        "track_num": 68,
+        "bpm": 126,
+        "description": "Played at Liyue as combat music."
+    }, {
+        "guid": 10004,
+        "name": "Ravine's Calcination",
+        "duration": 96,
+        "tag_ids": [201, 306, 402, 503],
+        "youtube_id": "TOktRBY3u84",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 63,
+        "bpm": 117,
+        "description": "Played at Sulfurous Veins, Tequemecan Valley, Natlan."
+    }, {
+        "guid": 10005,
+        "name": "Snare Awaiting",
+        "duration": 249,
+        "tag_ids": [201, 304, 405, 503],
+        "youtube_id": "X_ME_LndEi4",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 3,
+        "track_num": 93,
+        "bpm": 112,
+        "description": "Played in The Witherings at Sumeru as combat music."
+    }, {
+        "guid": 10006,
+        "name": "Cheerful March",
+        "duration": 86,
+        "tag_ids": [201, 352, 401, 507],
+        "youtube_id": "AMpeRRkjMIE",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 8,
+        "bpm": 178,
+        "description": "Played at Pavilion of Hermits, Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10007,
+        "name": "Voyage of the Black Crystal",
+        "duration": 114,
+        "tag_ids": [204, 352, 402, 504],
+        "youtube_id": "uiTZG_Ks71w",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 11,
+        "bpm": 123,
+        "description": "Played at Thinkers' Theater, Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10008,
+        "name": "Fatal Confrontation",
+        "duration": 254,
+        "tag_ids": [201, 304, 405, 504],
+        "youtube_id": "ypS8R_807zg",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 3,
+        "track_num": 95,
+        "bpm": 126,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10009,
+        "name": "Across Dimming Asterisms",
+        "duration": 242,
+        "tag_ids": [202, 304, 405, 502],
+        "youtube_id": "YvLZzUcyDWY",
+        "album": "The Unfathomable Sand Dunes",
+        "disc_num": 3,
+        "track_num": 102,
+        "bpm": 108,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10010,
+        "name": "What a Hopeful Voyage",
+        "duration": 170,
+        "tag_ids": [201, 351, 403, 502],
+        "youtube_id": "BUztFh_6fIQ",
+        "album": "The Shimmering Voyage",
+        "disc_num": 1,
+        "track_num": 1,
+        "bpm": 108,
+        "description": "Played while riding a waverider at Golden Apple Archipelago during the day."
+    }, {
+        "guid": 10011,
+        "name": "Wrathful Streaming Gold",
+        "duration": 255,
+        "tag_ids": [202, 304, 405, 505, 601],
+        "youtube_id": "R-Q_csBwBbc",
+        "album": "The Unfathomable Sand Dunes",
+        "disc_num": 3,
+        "track_num": 101,
+        "bpm": 133,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10012,
+        "name": "The Realm Within",
+        "duration": 194,
+        "tag_ids": [201, 302, 404, 504],
+        "youtube_id": "EfD-zFe26CU",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 2,
+        "track_num": 66,
+        "bpm": 120,
+        "description": "Played in various Liyue domains."
+    }, {
+        "guid": 10013,
+        "name": "Gilded Runner",
+        "duration": 246,
+        "tag_ids": [202, 304, 405, 505],
+        "youtube_id": "DIclOmL1LGg",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 4,
+        "track_num": 99,
+        "bpm": 136,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10014,
+        "name": "Swirls of the Stream",
+        "duration": 250,
+        "tag_ids": [202, 304, 405, 502, 601],
+        "youtube_id": "gjWRmoFIjjw",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 4,
+        "track_num": 97,
+        "bpm": 108,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10015,
+        "name": "Whispering Seabreeze",
+        "duration": 104,
+        "tag_ids": [201, 351, 402, 507],
+        "youtube_id": "Eklg0XpE9Zg",
+        "album": "The Shimmering Voyage",
+        "disc_num": 1,
+        "track_num": 5,
+        "bpm": 185,
+        "description": "Played at Golden Apple Archipelago during the day."
+    }, {
+        "guid": 10016,
+        "name": "Humming Amidst Rocks",
+        "duration": 100,
+        "tag_ids": [201, 302, 402, 504],
+        "youtube_id": "tzaJaCtBnDU",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 2,
+        "track_num": 39,
+        "bpm": 126,
+        "description": "Played at Bishui Plain, Liyue. Played at Huaguang Stone Forest, Minlin, Liyue."
+    }, {
+        "guid": 10017,
+        "name": "Chasing Flames Like Strings",
+        "duration": 104,
+        "tag_ids": [201, 306, 402, 503],
+        "youtube_id": "P1WxfSNSpzc",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 36,
+        "bpm": 110,
+        "description": "Played at Natlan during the day."
+    }, {
+        "guid": 10018,
+        "name": "Ariel's Footprints",
+        "duration": 86,
+        "tag_ids": [201, 351, 401, 507],
+        "youtube_id": "dbQkjd58kq8",
+        "album": "The Shimmering Voyage",
+        "disc_num": 1,
+        "track_num": 7,
+        "bpm": 157,
+        "description": "Played at Golden Apple Archipelago during the day."
+    }, {
+        "guid": 10019,
+        "name": "Glow of Nawpa Pacha",
+        "duration": 82,
+        "tag_ids": [201, 306, 401, 504],
+        "youtube_id": "FRp7uKBtK-I",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 60,
+        "bpm": 120,
+        "description": "Played at Scions of the Canopy, Coatepec Mountain, Natlan. Played at Ancestral Temple, Coatepec Mountain, Natlan."
+    }, {
+        "guid": 10020,
+        "name": "A Dance in Fire",
+        "duration": 223,
+        "tag_ids": [202, 306, 404, 506, 601],
+        "youtube_id": "Y69mDJxFsRA",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 75,
+        "bpm": 140,
+        "description": "Played at Natlan as combat music."
+    }, {
+        "guid": 10021,
+        "name": "Descendants of Ahkantenal",
+        "duration": 110,
+        "tag_ids": [201, 306, 402, 501],
+        "youtube_id": "LBqJ6sFH_bI",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 11,
+        "bpm": 89,
+        "description": "Played at Children of Echoes, Tequemecan Valley, Natlan."
+    }, {
+        "guid": 10022,
+        "name": "Menacing Cove",
+        "duration": 99,
+        "tag_ids": [201, 301, 402, 504],
+        "youtube_id": "FJA6rfUPbpc",
+        "album": "Vortex of Legends",
+        "disc_num": 1,
+        "track_num": 8,
+        "bpm": 126,
+        "description": "Played at Starglow Cavern, Dragonspine, Mondstadt."
+    }, {
+        "guid": 10023,
+        "name": "Blissful Little Ditty",
+        "duration": 91,
+        "tag_ids": [201, 352, 402, 501],
+        "youtube_id": "TIyEA3IyQpI",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 9,
+        "bpm": 88,
+        "description": "Played at Pavilion of Hermits, Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10024,
+        "name": "Hustle and Bustle of Ormos",
+        "duration": 109,
+        "tag_ids": [201, 304, 402, 501],
+        "youtube_id": "G4UabWhrlx4",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 1,
+        "track_num": 14,
+        "bpm": 96,
+        "description": "Played at Port Ormos, Ardravi Valley, Dharma Forest, Sumeru during the day."
+    }, {
+        "guid": 10025,
+        "name": "Before the Light Fades",
+        "duration": 251,
+        "tag_ids": [201, 304, 405, 504],
+        "youtube_id": "Kg6FZVnfdWY",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 3,
+        "track_num": 96,
+        "bpm": 126,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10026,
+        "name": "Idle Hours",
+        "duration": 94,
+        "tag_ids": [201, 306, 402, 501],
+        "youtube_id": "_HQCHRQ2yDg",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 1,
+        "track_num": 26,
+        "bpm": 92,
+        "description": "Played at Flower-Feather Clan, Quahuacan Cliff, Natlan at night."
+    }, {
+        "guid": 10027,
+        "name": "Rapid as Wildfires",
+        "duration": 260,
+        "tag_ids": [201, 302, 405, 503, 601],
+        "youtube_id": "tB9TZ1OX-Sw",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 3,
+        "track_num": 67,
+        "bpm": 117,
+        "description": "Played at Liyue as combat music."
+    }, {
+        "guid": 10028,
+        "name": "Struggle of Dying Embers",
+        "duration": 237,
+        "tag_ids": [201, 304, 404, 503],
+        "youtube_id": "Oai7rtkWsjs",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 3,
+        "track_num": 91,
+        "bpm": 112,
+        "description": "Played in The Witherings at Sumeru as combat music."
+    }, {
+        "guid": 10029,
+        "name": "Faint Tracks",
+        "duration": 73,
+        "tag_ids": [201, 302, 401, 503],
+        "youtube_id": "OanZ8vhOMY8",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 2,
+        "track_num": 37,
+        "bpm": 117,
+        "description": "Played at Huaguang Stone Forest, Minlin, Liyue."
+    }, {
+        "guid": 10030,
+        "name": "Swirls of Sachmis",
+        "duration": 244,
+        "tag_ids": [202, 304, 405, 502],
+        "youtube_id": "QWVsSH_2sbc",
+        "album": "The Unfathomable Sand Dunes",
+        "disc_num": 3,
+        "track_num": 104,
+        "bpm": 105,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10031,
+        "name": "Maze of Spirits",
+        "duration": 66,
+        "tag_ids": [204, 306, 401, 502],
+        "youtube_id": "gkaZaFmCc1U",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 3,
+        "track_num": 53,
+        "bpm": 108,
+        "description": "Played during Warrior's Challenge at Masters of the Night-Wind, Natlan."
+    }, {
+        "guid": 10032,
+        "name": "Venture of Tonalamatl",
+        "duration": 259,
+        "tag_ids": [202, 306, 405, 505, 601],
+        "youtube_id": "MDMRoyWGLzU",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 74,
+        "bpm": 136,
+        "description": "Played at Natlan as combat music."
+    }, {
+        "guid": 10033,
+        "name": "Secluded Sanctuary",
+        "duration": 94,
+        "tag_ids": [201, 302, 402, 504],
+        "youtube_id": "MratXajnczU",
+        "album": "Jade Moon Upon a Sea of Clouds",
+        "disc_num": 2,
+        "track_num": 55,
+        "bpm": 126,
+        "description": "Played at Liyue while raining."
+    }, {
+        "guid": 10034,
+        "name": "Chimes on the Blue Shore",
+        "duration": 93,
+        "tag_ids": [201, 306, 402, 506],
+        "youtube_id": "kKDTFAE7oGo",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 22,
+        "bpm": 144,
+        "description": "Played at People of the Springs, Toyac Springs, Natlan at night."
+    }, {
+        "guid": 10035,
+        "name": "The Horn Has Sounded",
+        "duration": 90,
+        "tag_ids": [201, 306, 402, 501],
+        "youtube_id": "zxiYM9NxIOE",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 9,
+        "bpm": 96,
+        "description": "Played at Collective of Plenty, Atocpan, Natlan."
+    }, {
+        "guid": 10036,
+        "name": "Jolts in the Forest",
+        "duration": 249,
+        "tag_ids": [202, 304, 405, 505],
+        "youtube_id": "Nahr59G12Ss",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 4,
+        "track_num": 100,
+        "bpm": 133,
+        "description": "Played at Dharma Forest, Sumeru as combat music. Played while fighting the common boss, Jadeplume Terrorshroom or Aeonblight Drake, as combat music."
+    }, {
+        "guid": 10037,
+        "name": "Halcyon Times",
+        "duration": 121,
+        "tag_ids": [201, 304, 403, 502],
+        "youtube_id": "9xuKIdRAm5I",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 108,
+        "description": "Played at Lambad's Tavern and Puspa Caf\u00e9 in Sumeru City, Avidya Forest, Dharma Forest, Sumeru."
+    }, {
+        "guid": 10038,
+        "name": "Strength in Motion",
+        "duration": 100,
+        "tag_ids": [201, 306, 402, 506],
+        "youtube_id": "T3svyUjGjxs",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 140,
+        "description": "Played at Collective of Plenty, Atocpan, Natlan at night."
+    }, {
+        "guid": 10039,
+        "name": "Where the Mists Enshroud",
+        "duration": 84,
+        "tag_ids": [201, 306, 401, 501],
+        "youtube_id": "AdVhhFcC8zI",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 1,
+        "track_num": 7,
+        "bpm": 99,
+        "description": "Played at Malinalco Grotto, Quahuacan Cliff, Natlan. Played at Tezcatepetonco Range, Natlan."
+    }, {
+        "guid": 10040,
+        "name": "Cautious Explorers",
+        "duration": 57,
+        "tag_ids": [201, 351, 401, 506],
+        "youtube_id": "4EuZvlwb18Y",
+        "album": "The Shimmering Voyage",
+        "disc_num": 1,
+        "track_num": 11,
+        "bpm": 148,
+        "description": "Played at Golden Apple Archipelago during the day."
+    }, {
+        "guid": 10041,
+        "name": "Eventide Caprice",
+        "duration": 98,
+        "tag_ids": [201, 352, 402, 507],
+        "youtube_id": "2JtNy0B3FuU",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 6,
+        "bpm": 167,
+        "description": "Played at Silver Bottle Courtyard, Veluriyam Mirage (Bottleland) at night."
+    }, {
+        "guid": 10042,
+        "name": "Chirping With Glee",
+        "duration": 95,
+        "tag_ids": [201, 352, 402, 504],
+        "youtube_id": "HsXH8UofMrs",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 10,
+        "bpm": 120,
+        "description": "Played at Pavilion of Hermits, Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10043,
+        "name": "Scarlet Song",
+        "duration": 79,
+        "tag_ids": [201, 306, 401, 504],
+        "youtube_id": "hdkmW2gqWfU",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 126,
+        "description": "Played at Stadium of the Sacred Flame, Basin of Unnumbered Flames, Natlan during the day."
+    }, {
+        "guid": 10044,
+        "name": "Rite of Battle",
+        "duration": 261,
+        "tag_ids": [202, 301, 405, 503, 601], 
+        "youtube_id": "mXH0qHk-fPQ",
+        "album": "The Wind and The Star Traveler",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 117,
+        "description": "Played at Mondstadt as combat music."
+    }, {
+        "guid": 10045,
+        "name": "The Chosen of Dragons' Trials",
+        "duration": 278,
+        "tag_ids": [202, 306, 405, 502, 601],
+        "youtube_id": "neaffQZHoh4",
+        "album": "Radiance Aflame",
+        "disc_num": 3,
+        "track_num": 58,
+        "bpm": 103,
+        "description": "Played at Ancient Sacred Mountain, Natlan as combat music."
+    }, {
+        "guid": 10046,
+        "name": "Anthem of the Savannah",
+        "duration": 252,
+        "tag_ids": [202, 306, 405, 504, 601],
+        "youtube_id": "IZNrWFHh8WI",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 73,
+        "bpm": 123,
+        "description": "Played at Natlan as combat music."
+    }, {
+        "guid": 10047,
+        "name": "Campa timoyetzticah, Cempaxochitl?",
+        "duration": 118,
+        "tag_ids": [201, 306, 402, 503],
+        "youtube_id": "XhnsjgfzZPM",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 8,
+        "bpm": 115,
+        "description": "Played at Weary Inn, Stadium of the Sacred Flame, Basin of Unnumbered Flames, Natlan."
+    }, {
+        "guid": 10048,
+        "name": "Village Surrounded by Green",
+        "duration": 153,
+        "tag_ids": [201, 304, 403, 503],
+        "youtube_id": "-qm0lPo7f4w",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 1,
+        "track_num": 18,
+        "bpm": 117,
+        "description": "Played at Vimara Village, Ardravi Valley, Dharma Forest, Sumeru duing the day."
+    }, {
+        "guid": 10049,
+        "name": "The Mushroom Creeps In",
+        "duration": 122,
+        "tag_ids": [201, 403, 504],
+        "youtube_id": "YwWjtfNM2IQ",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 30,
+        "bpm": 120,
+        "description": "Played in Varesa's Tribal Chronicle (story quest) for Collective of Plenty."
+    }, {
+        "guid": 10050,
+        "name": "Rhymes of Vales",
+        "duration": 246,
+        "tag_ids": [202, 304, 405, 502],
+        "youtube_id": "EXaKoH2zZSQ",
+        "album": "Forest of Jnana and Vidya",
+        "disc_num": 4,
+        "track_num": 98,
+        "bpm": 105,
+        "description": "Played at Dharma Forest, Sumeru as combat music."
+    }, {
+        "guid": 10051,
+        "name": "Moment of Solace",
+        "duration": 81,
+        "tag_ids": [203, 306, 401, 505],
+        "youtube_id": "sfu-6BYtfhE",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 25,
+        "bpm": 133,
+        "description": "Played in Natlan Archon Quest (Chapter V). Played in Mualani's Tribal Chronicle (story quest) for People of the Springs."
+    }, {
+        "guid": 10052,
+        "name": "Le fleuve secret",
+        "duration": 98,
+        "tag_ids": [201, 305, 402, 501],
+        "youtube_id": "mlpRq6RXsNI",
+        "album": "Fountain of Belleau",
+        "disc_num": 1,
+        "track_num": 15,
+        "bpm": 92,
+        "description": "Played at Fleuve Cendre, Court of Fontaine, Court of Fontaine Region, Fontaine."
+    }, {
+        "guid": 10053,
+        "name": "Let's Get Started!",
+        "duration": 123,
+        "tag_ids": [204, 352, 403, 506],
+        "youtube_id": "tAFHu-NgkGw",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 2,
+        "bpm": 140,
+        "description": "Played while riding Choo-Choo Cart at Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10054,
+        "name": "Sting Like a Bee!",
+        "duration": 50,
+        "tag_ids": [201, 305, 401, 502],
+        "youtube_id": "L7AtLW4VQXU",
+        "album": "Pelagic Primaevality",
+        "disc_num": 2,
+        "track_num": 36,
+        "bpm": 105,
+        "description": "Played in the world quest \"Both Brains and Brawn\" at Fortress of Meropide, Liffey Region, Fontaine."
+    }, {
+        "guid": 10055,
+        "name": "Sipping in the Soft Breeze",
+        "duration": 41,
+        "tag_ids": [201, 301, 401, 503],
+        "youtube_id": "STFG2-2PWAk",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 26,
+        "bpm": 117,
+        "description": "Played at The Cat's Tail (tavern), Mondstadt City, Starfell Valley, Mondstadt."
+    }, {
+        "guid": 10056,
+        "name": "Euphoric Ride",
+        "duration": 124,
+        "tag_ids": [204, 352, 403, 506],
+        "youtube_id": "TN0kNe3UWxA",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 1,
+        "bpm": 148,
+        "description": "Played while riding Choo-Choo Cart at Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10057,
+        "name": "A Fox's Little Daydream",
+        "duration": 138,
+        "tag_ids": [204, 403, 504],
+        "youtube_id": "85VPQ7Gds_M",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 29,
+        "bpm": 120,
+        "description": "Played in \"A Little Fox's Daydream\" (platformer game made by Kokomi and Mizuki) at the Mikawa Festival."
+    }, {
+        "guid": 10058,
+        "name": "Swirls of Shamshir",
+        "duration": 251,
+        "tag_ids": [202, 304, 405, 502, 601],
+        "youtube_id": "rqOtnxToDwM",
+        "album": "The Unfathomable Sand Dunes",
+        "disc_num": 3,
+        "track_num": 103,
+        "bpm": 108,
+        "description": "Played at Sumeru as combat music."
+    }, {
+        "guid": 10059,
+        "name": "Beat of Boulders",
+        "duration": 95,
+        "tag_ids": [201, 306, 402, 501],
+        "youtube_id": "eNr7twDJ8ko",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 13,
+        "bpm": 96,
+        "description": "Played at Children of Echoes, Tequemecan Valley, Natlan."
+    }, {
+        "guid": 10060,
+        "name": "Tumaini washa moto",
+        "duration": 151,
+        "tag_ids": [202, 306, 403, 504],
+        "youtube_id": "BgejKU_ceVU",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 3,
+        "track_num": 51,
+        "bpm": 120,
+        "description": "Played in the world quest \"Lost Traveler in the Ashen Realm\" in Cradle of Fleeting Dreams, Natlan."
+    }, {
+        "guid": 10061,
+        "name": "The Fire That Memory Keeps",
+        "duration": 103,
+        "tag_ids": [202, 306, 402, 504],
+        "youtube_id": "qKy_Ar1ig0w",
+        "album": "Radiance Aflame",
+        "disc_num": 3,
+        "track_num": 54,
+        "bpm": 129,
+        "description": "Played in the Natlan Archon Quest (Chapter V)."
+    }, {
+        "guid": 10062,
+        "name": "Shaping the Struggle",
+        "duration": 141,
+        "tag_ids": [202, 306, 403, 503],
+        "youtube_id": "UTQ2XfKrNIk",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 3,
+        "track_num": 50,
+        "bpm": 115,
+        "description": "Played at Ochkanatlan, Natlan as combat music."
+    }, {
+        "guid": 10063,
+        "name": "Path Lit by Night",
+        "duration": 85,
+        "tag_ids": [203, 306, 401, 506],
+        "youtube_id": "JCV-N2VrNi8",
+        "album": "Radiance Aflame",
+        "disc_num": 3,
+        "track_num": 55,
+        "bpm": 140,
+        "description": "Played in the Natlan Archon Quest (Chapter V)."
+    }, {
+        "guid": 10064,
+        "name": "Evening's Ease",
+        "duration": 84,
+        "tag_ids": [201, 306, 401, 504],
+        "youtube_id": "szI70SzFnQM",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 4,
+        "bpm": 126,
+        "description": "Played at Collective of Plenty, Atocpan, Natlan at night."
+    }, {
+        "guid": 10065,
+        "name": "Knights of Favonius",
+        "duration": 76,
+        "tag_ids": [201, 301, 401, 504],
+        "youtube_id": "ilOUWsl-Hac",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 10,
+        "bpm": 120,
+        "description": "Played at Knights of Favonius Headquarters, Mondstadt City, Starfell Valley, Mondstadt."
+    }, {
+        "guid": 10066,
+        "name": "The Songs of the Wrens",
+        "duration": 83,
+        "tag_ids": [201, 353, 401, 501],
+        "youtube_id": "Jtgg2mKYWhk",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 13,
+        "bpm": 99,
+        "description": "Played at Forest of Blessings, Simulanka."
+    }, {
+        "guid": 10067,
+        "name": "Glorious Metropole",
+        "duration": 118,
+        "tag_ids": [201, 353, 402, 506],
+        "youtube_id": "-m2VDb7aQ7Q",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 5,
+        "bpm": 144,
+        "description": "Played at Constellation Metropole, Simulanka."
+    }, {
+        "guid": 10068,
+        "name": "Pathfinder of Darkness",
+        "duration": 103,
+        "tag_ids": [201, 353, 402, 504],
+        "youtube_id": "ai4mTComdHE",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 19,
+        "bpm": 126,
+        "description": "Played at Broken Sea, Simulanka."
+    }, {
+        "guid": 10069,
+        "name": "Endless Echoes",
+        "duration": 253,
+        "tag_ids": [202, 301, 405, 507],
+        "youtube_id": "0eGJoxNSKOo",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 55,
+        "bpm": 167,
+        "description": "Played in various domains in Mondstadt."
+    }, {
+        "guid": 10070,
+        "name": "Magic Intrigues",
+        "duration": 231,
+        "tag_ids": [202, 301, 404, 504],
+        "youtube_id": "zbdAifPrsJI",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 58,
+        "bpm": 126,
+        "description": "Played in various domains in Mondstadt."
+    }, {
+        "guid": 10071,
+        "name": "Against the Invisible Net",
+        "duration": 256,
+        "tag_ids": [202, 303, 405, 504],
+        "youtube_id": "mKQfYtjpUYU",
+        "album": "Realm of Tranquil Eternity",
+        "disc_num": 3,
+        "track_num": 60,
+        "bpm": 129,
+        "description": "Played at Inazuma as combat music."
+    }, {
+        "guid": 10072,
+        "name": "Fiery Pursuit",
+        "duration": 256,
+        "tag_ids": [202, 303, 405, 504, 601],
+        "youtube_id": "BA7QsWpA7aU",
+        "album": "Realm of Tranquil Eternity",
+        "disc_num": 3,
+        "track_num": 62,
+        "bpm": 120,
+        "description": "Played while fighting various normal bosses at Inazuma as combat music."
+    }, {
+        "guid": 10073,
+        "name": "Rhythm From Ancient Times",
+        "duration": 221,
+        "tag_ids": [202, 301, 404, 504],
+        "youtube_id": "XweXKUZEeM4",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 54,
+        "bpm": 129,
+        "description": "Played in various domains in Mondstadt."
+    }, {
+        "guid": 10074,
+        "name": "Photon of Fluctuation",
+        "duration": 195,
+        "tag_ids": [202, 301, 404, 503, 601],
+        "youtube_id": "Iqd0Td56tyM",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 52,
+        "bpm": 117,
+        "description": "Played at Mondstadt as combat music."
+    }, {
+        "guid": 10075,
+        "name": "Beats of Water Drops",
+        "duration": 244,
+        "tag_ids": [202, 405, 503],
+        "youtube_id": "MwHcKVa34Fc",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 57,
+        "bpm": 117,
+        "description": "Played in various domains in Mondstadt and Liyue."
+    }, {
+        "guid": 10076,
+        "name": "Perpetual Motion of Wind",
+        "duration": 213,
+        "tag_ids": [202, 301, 404, 505],
+        "youtube_id": "ndQ27H4Rqyw",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 60,
+        "bpm": 133,
+        "description": "Played at Mondstadt City, Starfell Valley, Mondstadt while in a dragon storm caused by Stormterror (Dvalin)."
+    }, {
+        "guid": 10077,
+        "name": "Chattering Snowflakes",
+        "duration": 106,
+        "tag_ids": [201, 301, 402, 502],
+        "youtube_id": "b542mwVVJzg",
+        "album": "Vortex of Legends",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 105,
+        "description": "Played at Dragonspine, Mondstadt during the day."
+    }, {
+        "guid": 10078,
+        "name": "Overlord of the Thunderstorm",
+        "duration": 261,
+        "tag_ids": [202, 303, 405, 502, 601],
+        "youtube_id": "Edorx9j4gR8",
+        "album": "Realm of Tranquil Eternity",
+        "disc_num": 3,
+        "track_num": 61,
+        "bpm": 103,
+        "description": "Played at Inazuma as combat music."
+    }, {
+        "guid": 10079,
+        "name": "Duel in the Mist",
+        "duration": 249,
+        "tag_ids": [202, 303, 405, 506],
+        "youtube_id": "Oz5yO7-dkZs",
+        "album": "Realm of Tranquil Eternity",
+        "disc_num": 3,
+        "track_num": 59,
+        "bpm": 144,
+        "description": "Played at Inazuma as combat music."
+    }, {
+        "guid": 10080,
+        "name": "Charge! Fearless Warriors",
+        "duration": 239,
+        "tag_ids": [202, 301, 404, 506],
+        "youtube_id": "xCOhgkrYBcM",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 56,
+        "bpm": 140,
+        "description": "Played in the Mondstadt Archon Quest (Prologue). Played in the Diluc's story quest. Played in various domains."
+    }, {
+        "guid": 10081,
+        "name": "Glistening Shards",
+        "duration": 73,
+        "tag_ids": [201, 301, 401, 504],
+        "youtube_id": "T9zIfncFjZ0",
+        "album": "Vortex of Legends",
+        "disc_num": 1,
+        "track_num": 5,
+        "bpm": 123,
+        "description": "Played at Dragonspine, Mondstadt during the day."
+    }, {
+        "guid": 10082,
+        "name": "Angel's Share",
+        "duration": 114,
+        "tag_ids": [201, 301, 402, 502],
+        "youtube_id": "a7pjnn6nAs4",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 11,
+        "bpm": 105,
+        "description": "Played at Angel's Share (tavern), Mondstadt City, Starfell Valley, Mondstadt."
+    }, {
+        "guid": 10083,
+        "name": "His Resolution",
+        "duration": 284,
+        "tag_ids": [202, 301, 405, 504],
+        "youtube_id": "HV1w9RUGgOA",
+        "album": "City of Winds and Idylls",
+        "disc_num": 3,
+        "track_num": 53,
+        "bpm": 126,
+        "description": "Played at Mondstadt as combat music."
+    }, {
+        "guid": 10084,
+        "name": "Gentle Breeze Through the Pines",
+        "duration": 83,
+        "tag_ids": [201, 353, 401, 501],
+        "youtube_id": "VaWhQ1RyivM",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 14,
+        "bpm": 99,
+        "description": "Played at Forest of Blessings, Simulanka."
+    }, {
+        "guid": 10085,
+        "name": "Dragon and Determination",
+        "duration": 113,
+        "tag_ids": [202, 402, 502],
+        "youtube_id": "RUGxkmfBnNo",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 3,
+        "track_num": 66,
+        "bpm": 101,
+        "description": "Played in Durin's story quest."
+    }, {
+        "guid": 10086,
+        "name": "Sensational Sentence",
+        "duration": 133,
+        "tag_ids": [203, 305, 403, 504],
+        "youtube_id": "Us0uyr5v_tU",
+        "album": "Fountain of Belleau",
+        "disc_num": 1,
+        "track_num": 27,
+        "bpm": 120,
+        "description": "Played in Fontaine Archon Quest (Chapter IV). Played in various story quest for Fontaine characters (Neuvillette, Escoffier, Clorinde, Navia)."
+    }, {
+        "guid": 10087,
+        "name": "Tender Is the Night",
+        "duration": 100,
+        "tag_ids": [201, 353, 402, 501],
+        "youtube_id": "IoRTMGn-_C4",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 92,
+        "description": "Played at Constellation Metropole, Simulanka."
+    }, {
+        "guid": 10088,
+        "name": "Comedy of Errors",
+        "duration": 89,
+        "tag_ids": [201, 305, 401, 507],
+        "youtube_id": "0HwG2Nymjq0",
+        "album": "Pelagic Primaevality",
+        "disc_num": 2,
+        "track_num": 48,
+        "bpm": 161,
+        "description": "Played at a hilichurl camp at Fontaine Research Institute of Kinetic Energy Engineering Region, Fontaine."
+    }, {
+        "guid": 10089,
+        "name": "The Parade of Flying Squirrels",
+        "duration": 97,
+        "tag_ids": [201, 353, 402, 503],
+        "youtube_id": "u9eqY_5gX28",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 115,
+        "description": "Played at Forest of Blessings, Simulanka."
+    }, {
+        "guid": 10090,
+        "name": "Thanks for the Fire",
+        "duration": 152,
+        "tag_ids": [201, 306, 403, 503],
+        "youtube_id": "mzeCHt95DKw",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 4,
+        "bpm": 117,
+        "description": "Played at Stadium of the Sacred Flame, Basin of Unnumbered Flames, Natlan during the day."
+    }, {
+        "guid": 10091,
+        "name": "Jubilation of Calcine",
+        "duration": 156,
+        "tag_ids": [201, 306, 403, 505],
+        "youtube_id": "cc1QhrkBLgo",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 2,
+        "bpm": 136,
+        "description": "Played at Stadium of the Sacred Flame, Basin of Unnumbered Flames, Natlan during the day."
+    }, {
+        "guid": 10092,
+        "name": "The Sea and the Bells",
+        "duration": 96,
+        "tag_ids": [201, 306, 402, 507],
+        "youtube_id": "5FkxKwy2IS4",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 57,
+        "bpm": 152,
+        "description": "Played at Ameyalco Waters, Toyac Springs, Natlan at night."
+    }, {
+        "guid": 10093,
+        "name": "Arcana of Zipacna",
+        "duration": 106,
+        "tag_ids": [201, 306, 402, 501],
+        "youtube_id": "mhjCyv6wulA",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 96,
+        "description": "Played at Children of Echoes, Tequemecan Valley, Natlan."
+    }, {
+        "guid": 10094,
+        "name": "A Jolly Trick",
+        "duration": 89,
+        "tag_ids": [203, 302, 401, 501],
+        "youtube_id": "P1LLJV0HYFs",
+        "album": "Jadeite Redolence",
+        "disc_num": 1,
+        "track_num": 23,
+        "bpm": 83,
+        "description": "Played in \"Vibrant Harriers Aloft in Spring Breeze\" event (2024 Lantern Rite)."
+    }, {
+        "guid": 10095,
+        "name": "Tread the Tide",
+        "duration": 70,
+        "tag_ids": [203, 353, 401, 504],
+        "youtube_id": "iCf-fXTfsg8",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 22,
+        "bpm": 126,
+        "description": "Played in \"Boreal Flurry\" game from \"Summertide Scales and Tales\" event (Simulanka)."
+    }, {
+        "guid": 10096,
+        "name": "Happy Journey",
+        "duration": 153,
+        "tag_ids": [203, 403, 505],
+        "youtube_id": "b0A0d_Q8I40",
+        "album": "The Wind and The Star Traveler",
+        "disc_num": 1,
+        "track_num": 14,
+        "bpm": 133,
+        "description": "Played in various story quests (Jean, Tartaglia, Xiangling). Played in various events."
+    }, {
+        "guid": 10097,
+        "name": "Irresistible Force",
+        "duration": 250,
+        "tag_ids": [202, 302, 405, 502],
+        "youtube_id": "mDmE9taqiVs",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 35,
+        "bpm": 108,
+        "description": "Played in Interlude Archon Quest at The Chasm, Liyue. Played in the story quest for Baizhu and Xianyun"
+    }, {
+        "guid": 10098,
+        "name": "A Sweet Smile",
+        "duration": 60,
+        "tag_ids": [203, 301, 401, 507],
+        "youtube_id": "TUqvYZn5nvc",
+        "album": "The Wind and The Star Traveler",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 172,
+        "description": "Played in Mondstadt Archon Quest (Prologue). Played in the story quest for Jean and Amber."
+    }, {
+        "guid": 10099,
+        "name": "Welcome to the Industry",
+        "duration": 111,
+        "tag_ids": [201, 305, 402, 503],
+        "youtube_id": "d90UTnzTTQk",
+        "album": "Pelagic Primaevality",
+        "disc_num": 2,
+        "track_num": 35,
+        "bpm": 110,
+        "description": "Played at Fortress of Meropide, Liffey Region, Fontaine."
+    }, {
+        "guid": 10100,
+        "name": "Virelai des marees",
+        "duration": 250,
+        "tag_ids": [202, 305, 405, 504, 601],
+        "youtube_id": "khHAaErEqTQ",
+        "album": "Fountain of Belleau",
+        "disc_num": 4,
+        "track_num": 94,
+        "bpm": 123,
+        "description": "Played at Fontaine as combat music. Played at various Fontaine domains as combat music."
+    }, {
+        "guid": 10101,
+        "name": "Gathering Tempest",
+        "duration": 114,
+        "tag_ids": [204, 305, 402, 504],
+        "youtube_id": "DHq23oFnJYk",
+        "album": "Cantus Aeternus",
+        "disc_num": 2,
+        "track_num": 26,
+        "bpm": 120,
+        "description": "Played in the world quest \"Canticles of Harmony\" while riding a current with Scylla at Sea of Bygone Eras, Fontaine."
+    }, {
+        "guid": 10102,
+        "name": "Toast to Coast",
+        "duration": 103,
+        "tag_ids": [201, 305, 402, 501],
+        "youtube_id": "LE7HEOi8p88",
+        "album": "Pelagic Primaevality",
+        "disc_num": 1,
+        "track_num": 3,
+        "bpm": 96,
+        "description": "Played at The Rusty Rudder (tavern), Erinnyes Forest, Fontaine."
+    }, {
+        "guid": 10103,
+        "name": "Burst Into Flames",
+        "duration": 241,
+        "tag_ids": [202, 351, 405, 506],
+        "youtube_id": "vxPCwi0O1uw",
+        "album": "The Shimmering Voyage Vol. 2",
+        "disc_num": 2,
+        "track_num": 31,
+        "bpm": 140,
+        "description": "Played in \"The Islands' Stirring Strings\" (Xinyan's domain) during the Summertime Odyssey event (Golden Apple Archipelago)."
+    }, {
+        "guid": 10104,
+        "name": "Intricate Ruse",
+        "duration": 133,
+        "tag_ids": [201, 305, 403, 501],
+        "youtube_id": "EtEfbtj-t3Q",
+        "album": "Fountain of Belleau",
+        "disc_num": 2,
+        "track_num": 58,
+        "bpm": 99,
+        "description": "Played in the Lyney's story quest."
+    }, {
+        "guid": 10105,
+        "name": "Dazzling Moon of Metztli",
+        "duration": 116,
+        "tag_ids": [201, 306, 402, 506],
+        "youtube_id": "aTeCGVQME4s",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 21,
+        "bpm": 140,
+        "description": "Played at People of the Springs, Toyac Springs, Natlan at night."
+    }, {
+        "guid": 10106,
+        "name": "Rondeau des fleurs et des rapieres",
+        "duration": 240,
+        "tag_ids": [202, 305, 405, 504, 601],
+        "youtube_id": "lsSz0to5MnA",
+        "album": "Fountain of Belleau",
+        "disc_num": 4,
+        "track_num": 92,
+        "bpm": 123,
+        "description": "Played at Fontaine as combat music. Played in various Fontaine domains."
+    }, {
+        "guid": 10107,
+        "name": "Flickering Brightness",
+        "duration": 240,
+        "tag_ids": [201, 351, 405, 505],
+        "youtube_id": "nIvVen1FtYs",
+        "album": "The Shimmering Voyage Vol. 2",
+        "disc_num": 2,
+        "track_num": 30,
+        "bpm": 136,
+        "description": "Played in \"The Islands' Stirring Strings\" (Xinyan's domain) during the Summertime Odyssey event (Golden Apple Archipelago)."
+    }, {
+        "guid": 10108,
+        "name": "Requiem Resonantia",
+        "duration": 149,
+        "tag_ids": [202, 305, 403, 505],
+        "youtube_id": "pv6119nghXw",
+        "album": "Cantus Aeternus",
+        "disc_num": 3,
+        "track_num": 36,
+        "bpm": 136,
+        "description": "Played while fighting the common boss, Statue of Marble and Brass, at Faded Castle, Nostoi Region, Fontaine."
+    }, {
+        "guid": 10109,
+        "name": "Combat Beneath the Waves",
+        "duration": 247,
+        "tag_ids": [202, 303, 405, 507, 601],
+        "youtube_id": "UEVEmUWsfD0",
+        "album": "Islands of the Lost and Forgotten",
+        "disc_num": 3,
+        "track_num": 58,
+        "bpm": 156,
+        "description": "Played at Enkanomiya, Inazuma as combat music."
+    }, {
+        "guid": 10110,
+        "name": "Magick Without Tears",
+        "duration": 132,
+        "tag_ids": [201, 305, 403, 504],
+        "youtube_id": "KlZeFYF2yIA",
+        "album": "Pelagic Primaevality",
+        "disc_num": 1,
+        "track_num": 9,
+        "bpm": 123,
+        "description": "Played at Orthant of Wishes, Fort Charybdis Ruins (underground), Morte Region, Fontaine. Played at Orthant of Memory, Morte Region, Fontaine."
+    }, {
+        "guid": 10111,
+        "name": "Inevitable Conflict",
+        "duration": 247,
+        "tag_ids": [202, 302, 405, 503],
+        "youtube_id": "ZuV38DZQgvM",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 40,
+        "bpm": 112,
+        "description": "Played at Spiritstone, The Chasm, Liyue as combat music."
+    }, {
+        "guid": 10112,
+        "name": "Searching for Clues",
+        "duration": 137,
+        "tag_ids": [203, 305, 403, 501],
+        "youtube_id": "SIZhOtiGkHk",
+        "album": "Fountain of Belleau",
+        "disc_num": 1,
+        "track_num": 26,
+        "bpm": 92,
+        "description": "Played in Fontaine Archon Quest (Chapter IV). Played in Emilie's story quest."
+    }, {
+        "guid": 10113,
+        "name": "La derniere opportunite",
+        "duration": 94,
+        "tag_ids": [201, 305, 402, 504],
+        "youtube_id": "bQvPp03_Ygk",
+        "album": "Pelagic Primaevality",
+        "disc_num": 1,
+        "track_num": 19,
+        "bpm": 120,
+        "description": "Played in Fontaine Archon Quest (Chapter IV) at Fortress of Meropide, Liffey Region, Fontaine."
+    }, {
+        "guid": 10114,
+        "name": "Teegesellschaft of the Hexenzirkel",
+        "duration": 91,
+        "tag_ids": [201, 354, 402, 507],
+        "youtube_id": "2-rZrlslsLo",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 24,
+        "bpm": 167,
+        "description": "Played in the lobby of Imaginarium Theater."
+    }, {
+        "guid": 10115,
+        "name": "Salute of Eagles",
+        "duration": 88,
+        "tag_ids": [201, 306, 401, 504],
+        "youtube_id": "k9AmFZ4yMjo",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 1,
+        "track_num": 25,
+        "bpm": 126,
+        "description": "Played at Flower-Feather Clan, Quahuacan Cliff, Natlan during the day."
+    }, {
+        "guid": 10116,
+        "name": "Rainbow Leis",
+        "duration": 71,
+        "tag_ids": [204, 306, 401, 506],
+        "youtube_id": "rJH292sRCfY",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 23,
+        "bpm": 148,
+        "description": "Played at People of the Springs, Toyac Springs, Natlan."
+    }, {
+        "guid": 10117,
+        "name": "No Turning Back",
+        "duration": 246,
+        "tag_ids": [202, 303, 405, 507],
+        "youtube_id": "LIOGWrZLqLo",
+        "album": "Islands of the Lost and Forgotten",
+        "disc_num": 3,
+        "track_num": 60,
+        "bpm": 178,
+        "description": "Played while fighting the normal boss, Coral Defenders, at Dainichi Mikoshi, Enkanomiya, Inazuma."
+    }, {
+        "guid": 10118,
+        "name": "An Interesting Labour",
+        "duration": 87,
+        "tag_ids": [203, 301, 401, 503],
+        "youtube_id": "bAQIH73ua40",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 16,
+        "bpm": 115,
+        "description": "Played in the Mondstadt Archon Quest (Prologue). Played in various story quests (Amber, Itto, Xiangling). Played during timed challenge at Mondstadt City, Starfell Valley, Mondstadt."
+    }, {
+        "guid": 10119,
+        "name": "Stage's Coach",
+        "duration": 75,
+        "tag_ids": [201, 306, 401, 505],
+        "youtube_id": "CQz1hvjA8OU",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 3,
+        "track_num": 52,
+        "bpm": 133,
+        "description": "Played at Scorchwind Trial Grounds (Pakpaka Flying School), Tezcatepetonco Range, Natlan."
+    }, {
+        "guid": 10120,
+        "name": "Silhouette and Silk Steps",
+        "duration": 92,
+        "tag_ids": [203, 402, 504],
+        "youtube_id": "_tCFRDQPYyk",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 129,
+        "description": "Played in many Archon Quests. Played in various story quests (Xingqiu, Diluc, Xiangling). Played in Windtrace."
+    }, {
+        "guid": 10121,
+        "name": "Undersea Encounters",
+        "duration": 207,
+        "tag_ids": [202, 303, 404, 505],
+        "youtube_id": "AKp49IHQJRA",
+        "album": "Islands of the Lost and Forgotten",
+        "disc_num": 3,
+        "track_num": 59,
+        "bpm": 136,
+        "description": "Played at Enkanomiya, Inazuma as combat music."
+    }, {
+        "guid": 10122,
+        "name": "Delightful Whimsy",
+        "duration": 80,
+        "tag_ids": [201, 306, 401, 503],
+        "youtube_id": "dCRMV_mOr2E",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 44,
+        "bpm": 112,
+        "description": "Played at Natlan during the day."
+    }, {
+        "guid": 10123,
+        "name": "Savory Treat",
+        "duration": 86,
+        "tag_ids": [201, 303, 401, 502],
+        "youtube_id": "rxlGB48H3js",
+        "album": "Islands of the Lost and Forgotten",
+        "disc_num": 1,
+        "track_num": 17,
+        "bpm": 108,
+        "description": "Played at Uyuu Restaurant, Inazuma City, Narukami Island, Inazuma."
+    }, {
+        "guid": 10124,
+        "name": "Pleasure of Rural Life",
+        "duration": 83,
+        "tag_ids": [203, 302, 401, 506],
+        "youtube_id": "3az7JHGCk-c",
+        "album": "Jadeite Redolence",
+        "disc_num": 1,
+        "track_num": 24,
+        "bpm": 140,
+        "description": "Played in various Lantern Rite games and web events."
+    }, {
+        "guid": 10125,
+        "name": "Welp, Didn't Expect That",
+        "duration": 83,
+        "tag_ids": [203, 401, 504],
+        "youtube_id": "CVO8E69HEas",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 15,
+        "bpm": 126,
+        "description": "Played in the Liyue Archon Quest (Chapter I). Played in various story quests (Mona, Razor, Tartaglia, Kaeya, Xiangling)."
+    }, {
+        "guid": 10126,
+        "name": "Cakes and Ale for the Exiled",
+        "duration": 105,
+        "tag_ids": [201, 305, 402, 501],
+        "youtube_id": "Xdz3HXdR69E",
+        "album": "Fountain of Belleau",
+        "disc_num": 1,
+        "track_num": 16,
+        "bpm": 91,
+        "description": "Played at Fleuve Cendre, Court of Fontaine, Court of Fontaine Region, Fontaine."
+    }, {
+        "guid": 10127,
+        "name": "Perilous Path",
+        "duration": 140,
+        "tag_ids": [203, 403, 504],
+        "youtube_id": "d8WBw50dTGE",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 13,
+        "bpm": 123,
+        "description": "Played in many Archon Quests. Played in various story quests (Wriothesley, Yae Miko, Escoffier, Xingqiu, Raiden Shogun, Amber, Varka, Dehya, Sigewinne, Kaeya, Nahida, Itto, Alhaitham). Played in Varesa's Tribal Chronicle (story quest) for Collective of Plenty."
+    }, {
+        "guid": 10128,
+        "name": "Year of Tribulation",
+        "duration": 118,
+        "tag_ids": [204, 305, 402, 504],
+        "youtube_id": "Uru8qbqcMyo",
+        "album": "Cantus Aeternus",
+        "disc_num": 2,
+        "track_num": 25,
+        "bpm": 120,
+        "description": "Played during the bubble popping challenge at Faded Castle, Nostoi Region, Fontaine."
+    }, {
+        "guid": 10129,
+        "name": "Memories of a Lost Castle",
+        "duration": 123,
+        "tag_ids": [202, 354, 403, 504],
+        "youtube_id": "Zh_e4HGvBkk",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 3,
+        "track_num": 64,
+        "bpm": 129,
+        "description": "Played during act 4 to 6 in Imaginarium Theater."
+    }, {
+        "guid": 10130,
+        "name": "Die Mittsommernacht-Fantasie",
+        "duration": 235,
+        "tag_ids": [202, 351, 404, 507],
+        "youtube_id": "Cclxu9T0tcQ",
+        "album": "The Shimmering Voyage Vol. 2",
+        "disc_num": 2,
+        "track_num": 32,
+        "bpm": 167,
+        "description": "Played in \"Immernachtreich Keep\" (Fischl's domain) during the Summertime Odyssey event (Golden Apple Archipelago)."
+    }, {
+        "guid": 10131,
+        "name": "Breaking the Miasma",
+        "duration": 159,
+        "tag_ids": [202, 302, 403, 504],
+        "youtube_id": "vHybSX8vtBs",
+        "album": "Jadeite Redolence",
+        "disc_num": 2,
+        "track_num": 53,
+        "bpm": 129,
+        "description": "Played during miasma at Chenyu Value, Liyue as combat music."
+    }, {
+        "guid": 10132,
+        "name": "All the Pretty Courses",
+        "duration": 109,
+        "tag_ids": [201, 306, 402, 503],
+        "youtube_id": "kJVJPOKSXgw",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 1,
+        "track_num": 24,
+        "bpm": 110,
+        "description": "Played at Flower-Feather Clan, Quahuacan Cliff, Natlan during the day."
+    }, {
+        "guid": 10133,
+        "name": "Astral Yearning",
+        "duration": 124,
+        "tag_ids": [202, 354, 403, 504],
+        "youtube_id": "2EjktyYWjxA",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 3,
+        "track_num": 65,
+        "bpm": 129,
+        "description": "Played during act 7 to 10 in Imaginarium Theater."
+    }, {
+        "guid": 10134,
+        "name": "Summer Souvenir",
+        "duration": 133,
+        "tag_ids": [203, 353, 403, 504],
+        "youtube_id": "ySJF87UI3M4",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 1,
+        "track_num": 23,
+        "bpm": 126,
+        "description": "Played at Cave of Eerie Murmurs, Forest of Blessings, Simulanka. Played in the Durin's story quest."
+    }, {
+        "guid": 10135,
+        "name": "Ordeals, Rituals, Laws",
+        "duration": 157,
+        "tag_ids": [202, 305, 403, 501],
+        "youtube_id": "rVs3h9HYUV4",
+        "album": "Pelagic Primaevality",
+        "disc_num": 1,
+        "track_num": 12,
+        "bpm": 99,
+        "description": "Played at Tower of Ipsissimus, Morte Region, Fontaine as combat music."
+    }, {
+        "guid": 10136,
+        "name": "Make Haste, Partner",
+        "duration": 89,
+        "tag_ids": [203, 401, 504],
+        "youtube_id": "jPxTL3daTJA",
+        "album": "City of Winds and Idylls",
+        "disc_num": 1,
+        "track_num": 17,
+        "bpm": 123,
+        "description": "Played in various story quests (Cyno, Diluc, Kaeya, Amber)."
+    }, {
+        "guid": 10137,
+        "name": "Giorno per giorno",
+        "duration": 107,
+        "tag_ids": [201, 305, 402, 503],
+        "youtube_id": "Kqvldv1tpg4",
+        "album": "Cantus Aeternus",
+        "disc_num": 1,
+        "track_num": 2,
+        "bpm": 117,
+        "description": "Played at Petrichor, Nostoi Region, Fontaine during the day."
+    }, {
+        "guid": 10138,
+        "name": "Narukami-Bayashi",
+        "duration": 94,
+        "tag_ids": [201, 303, 402, 501],
+        "youtube_id": "qg-DcH3cX6k",
+        "album": "Islands of the Lost and Forgotten",
+        "disc_num": 1,
+        "track_num": 18,
+        "bpm": 98,
+        "description": "Played in Inazuma Archon Quest (Chapter II)."
+    }, {
+        "guid": 10139,
+        "name": "Whirl of Chalchiuhtlicue",
+        "duration": 133,
+        "tag_ids": [201, 306, 403, 504],
+        "youtube_id": "r0UWcGcnuS8",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 16,
+        "bpm": 120,
+        "description": "Played at Scions of the Canopy, Coatepec Mountain, Natlan at night."
+    }, {
+        "guid": 10140,
+        "name": "The Everlasting Trail",
+        "duration": 323,
+        "tag_ids": [202, 303, 405, 503],
+        "youtube_id": "STXMizHAh6k",
+        "album": "The Shimmering Voyage Vol. 2",
+        "disc_num": 3,
+        "track_num": 52,
+        "bpm": 115,
+        "description": "Played in Inazuma Archon Quest (Chapter II). Played in Mizuki's story quest."
+    }, {
+        "guid": 10141,
+        "name": "Dreams of the Ancient Realm",
+        "duration": 123,
+        "tag_ids": [202, 354, 403, 504],
+        "youtube_id": "0qUFmf_YL_s",
+        "album": "The Shimmering Voyage Vol. 4",
+        "disc_num": 3,
+        "track_num": 63,
+        "bpm": 129,
+        "description": "Played during act 1 to 3 in Imaginarium Theater."
+    }, {
+        "guid": 10142,
+        "name": "Makani 'olu'olu",
+        "duration": 118,
+        "tag_ids": [201, 306, 402, 506],
+        "youtube_id": "ImeaQLRPRKc",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 19,
+        "bpm": 140,
+        "description": "Played at People of the Springs, Toyac Springs, Natlan during the day."
+    }, {
+        "guid": 10143,
+        "name": "Clio's Memoirs",
+        "duration": 93,
+        "tag_ids": [203, 305, 402, 505],
+        "youtube_id": "TcUzuMxEf9o",
+        "album": "Pelagic Primaevality",
+        "disc_num": 1,
+        "track_num": 27,
+        "bpm": 136,
+        "description": "Played in story quests for Furina and Clorinde."
+    }, {
+        "guid": 10144,
+        "name": "Seething Animosity",
+        "duration": 229,
+        "tag_ids": [202, 302, 404, 502],
+        "youtube_id": "0jQiRZX9GiY",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 37,
+        "bpm": 103,
+        "description": "Played at Nameless Ruins, The Chasm, Liyue as combat music."
+    }, {
+        "guid": 10145,
+        "name": "Mountainborn Gale",
+        "duration": 117,
+        "tag_ids": [202, 302, 402, 505],
+        "youtube_id": "zcj3Nl5oQ-g",
+        "album": "Jadeite Redolence",
+        "disc_num": 2,
+        "track_num": 54,
+        "bpm": 136,
+        "description": "Played while fighting the common boss, Solitary Suanni, at Chenyu Vale: Southern Mountain, Chenyu Vale, Liyue as combat music."
+    }, {
+        "guid": 10146,
+        "name": "Tremor of Menace",
+        "duration": 250,
+        "tag_ids": [202, 302, 405, 502],
+        "youtube_id": "kp_ET9RDP94",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 36,
+        "bpm": 108,
+        "description": "Played at The Chasm, Liyue as combat music."
+    }, {
+        "guid": 10147,
+        "name": "Lamentation et Triomphe",
+        "duration": 240,
+        "tag_ids": [202, 305, 405, 504, 601],
+        "youtube_id": "MCNFSzVHrxA",
+        "album": "Fountain of Belleau",
+        "disc_num": 4,
+        "track_num": 93,
+        "bpm": 120,
+        "description": "Played at Fontaine as combat music. Played at various Fontaine domains as combat music."
+    }, {
+        "guid": 10148,
+        "name": "Rhythm of Inquiry",
+        "duration": 82,
+        "tag_ids": [201, 305, 354, 401, 505],
+        "youtube_id": "I44lXU1U1hQ",
+        "album": "Pelagic Primaevality",
+        "disc_num": 2,
+        "track_num": 44,
+        "bpm": 136,
+        "description": "Played at Kuisel's Clockwork Workshop, Fontaine Research Institute of Kinetic Energy Engineering Region, Fontaine. Played in the lobby of Imaginarium Theater."
+    }, {
+        "guid": 10149,
+        "name": "Impending Danger",
+        "duration": 246,
+        "tag_ids": [202, 302, 405, 504],
+        "youtube_id": "E9KODbplivA",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 39,
+        "bpm": 120,
+        "description": "Played at The Glowing Narrows, The Chasm, Liyue as combat music."
+    }, {
+        "guid": 10150,
+        "name": "Undercurrents of Hostility",
+        "duration": 258,
+        "tag_ids": [202, 302, 405, 504],
+        "youtube_id": "UMoLOpB8xHs",
+        "album": "Millelith's Watch",
+        "disc_num": 3,
+        "track_num": 38,
+        "bpm": 120,
+        "description": "Played at Nameless Ruins, The Chasm, Liyue as combat music."
+    }, {
+        "guid": 10151,
+        "name": "Sleep After the Toil",
+        "duration": 101,
+        "tag_ids": [201, 306, 402, 503],
+        "youtube_id": "2WlI752qmiQ",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 7,
+        "bpm": 112,
+        "description": "Played at Varesa's Orchard, Atocpan, Natlan during the day."
+    }, {
+        "guid": 10152,
+        "name": "Triumph of Mirth",
+        "duration": 111,
+        "tag_ids": [201, 352, 402, 504],
+        "youtube_id": "ryoT6f1HtIQ",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 7,
+        "bpm": 129,
+        "description": "Played at Pavilion of Hermits, Veluriyam Mirage (Bottleland)."
+    }, {
+        "guid": 10153,
+        "name": "The Brisk Morning Air",
+        "duration": 129,
+        "tag_ids": [201, 306, 403, 504],
+        "youtube_id": "F3B0BJ72X_A",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 2,
+        "bpm": 123,
+        "description": "Played at Collective of Plenty, Atocpan, Natlan during the day."
+    }, {
+        "guid": 10154,
+        "name": "With Witty Wit",
+        "duration": 102,
+        "tag_ids": [203, 402, 507],
+        "youtube_id": "EIyC1YJY2wY",
+        "album": "The Shimmering Voyage Vol. 3",
+        "disc_num": 1,
+        "track_num": 25,
+        "bpm": 161,
+        "description": "Played at Sumeru Archon Quest (Chapter III). Played in Cyno's story quest. Played in Varesa's Tribal Chronicle (story quest) for Collective of Plenty."
+    }, {
+        "guid": 10155,
+        "name": "Foundry of the Golden",
+        "duration": 101,
+        "tag_ids": [201, 306, 402, 504],
+        "youtube_id": "UqBw7sHAfg4",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 2,
+        "track_num": 62,
+        "bpm": 123,
+        "description": "Played at Sulfurous Veins, Tequemecan Valley, Natlan."
+    }, {
+        "guid": 10156,
+        "name": "Misty Redolence",
+        "duration": 82,
+        "tag_ids": [201, 303, 401, 506],
+        "youtube_id": "HU0pCElZqPA",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 26,
+        "bpm": 144,
+        "description": "Played at Aisa Bathhouse (run by Mizuki), Inazuma City, Narukami Island, Inazuma."
+    }, {
+        "guid": 10157,
+        "name": "Skyfire Circlet",
+        "duration": 124,
+        "tag_ids": [201, 306, 403, 504],
+        "youtube_id": "AGHII2cBTFc",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 10,
+        "bpm": 120,
+        "description": "Played at Skyfire Circlet, Atocpan, Natlan."
+    }, {
+        "guid": 10158,
+        "name": "Dance of the Brown Deer",
+        "duration": 100,
+        "tag_ids": [201, 306, 402, 506],
+        "youtube_id": "fOuA_379AX4",
+        "album": "Eternal Sun, Eternal Want",
+        "disc_num": 1,
+        "track_num": 21,
+        "bpm": 144,
+        "description": "Played at Xalac Vale, Tezcatepetonco Range, Natlan."
+    }, {
+        "guid": 10159,
+        "name": "Blaze of Fervent Night",
+        "duration": 71,
+        "tag_ids": [203, 401, 503],
+        "youtube_id": "DPoUUy1dsbI",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 1,
+        "track_num": 31,
+        "bpm": 110,
+        "description": "Played in Natlan Archon Quest (chapter V). Played in the world quest \"Open Your Heart to Me\" in Ochkanatlan, Natlan."
+    }, {
+        "guid": 10160,
+        "name": "Ri Yokobal kech ri Ajaw Ch'ulel",
+        "duration": 148,
+        "tag_ids": [201, 306, 403, 507],
+        "youtube_id": "3sbQ_IEh8lc",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 17,
+        "bpm": 152,
+        "description": "Played at Chamber of Deliberation, Ancient Sacred Mountain, Natlan. Played at Esoteric Arrays, Ancient Sacred Mountain, Natlan."
+    }, {
+        "guid": 10161,
+        "name": "Spring Returns in Splendor",
+        "duration": 112,
+        "tag_ids": [204, 302, 402, 502],
+        "youtube_id": "E2_pdRfNU2o",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 24,
+        "bpm": 108,
+        "description": "Played in the event page for Springtime Charms (Lantern Rite in 2025)."
+    }, {
+        "guid": 10162,
+        "name": "Grim Is the Night",
+        "duration": 134,
+        "tag_ids": [202, 306, 403, 501],
+        "youtube_id": "kSe-8377b9k",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 76,
+        "bpm": 99,
+        "description": "Played at Land of Myriad Megaliths, Sulfurous Veins, Tequemecan Valley, Natlan as combat music."
+    }, {
+        "guid": 10163,
+        "name": "Bounty of the Fertile Slopes",
+        "duration": 117,
+        "tag_ids": [201, 306, 402, 504],
+        "youtube_id": "rifOJik0nUM",
+        "album": "Radiance Aflame",
+        "disc_num": 1,
+        "track_num": 1,
+        "bpm": 129,
+        "description": "Played at Collective of Plenty, Atocpan, Natlan during the day."
+    }, {
+        "guid": 10164,
+        "name": "Chasing the Rainbow",
+        "duration": 96,
+        "tag_ids": [204, 306, 402, 503],
+        "youtube_id": "g4YBghCcUoo",
+        "album": "Land of Tleyaoyotl",
+        "disc_num": 3,
+        "track_num": 78,
+        "bpm": 117,
+        "description": "Played during Warrior's Challenge in Natlan."
+    }]
+}

@@ -97,6 +97,9 @@ header {
             width: 3rem;
             height: 3rem;
         }
+        & svg use {
+            color: inherit;
+        }
         span {
             font-size: 0.8rem;
             line-height: 1;
