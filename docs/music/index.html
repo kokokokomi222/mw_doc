@@ -699,14 +699,15 @@ main #content {
     #video_container {
         position: relative;
         width: 100%;
-        height: 16rem;
+        /* height: 16rem; */
+        aspect-ratio: 3/1;
         margin: var(--margin-medium) auto 0 auto;
 
-        & iframe {
+        /* & div {
             width: 100%;
             height: 100%;
             margin: 0;
-        }
+        } */
     }
 }
 
@@ -783,9 +784,9 @@ main #content {
     main #content {
         font-size: 0.8rem;
 
-        #video_container {
-            height: 12rem;
-        }
+        /* #video_container { */
+            /* height: 12rem; */
+        /* } */
     }
 }
 
@@ -808,26 +809,6 @@ main #content {
         & #nav_list {
             &.tile_view > div > img {
                 --thumb-size: 7rem;
-            }
-        }
-    }
-}
-
-@media (width < 800px) {
-    #nav_search_list {
-        & #nav_list {
-            &.tile_view > div > img {
-                --thumb-size: 6rem;
-            }
-        }
-    }
-}
-
-@media (width < 640px) {
-    #nav_search_list {
-        & #nav_list {
-            &.tile_view > div > img {
-                --thumb-size: 5rem;
             }
         }
     }
@@ -1064,15 +1045,19 @@ main #content {
 <!-- <pre id="music_wiki">
 </pre> -->
 <div id="video_container">
-    <iframe
+    <div data-plyr-provider="youtube" data-plyr-embed-id="Cclxu9T0tcQ"></div>
+    <!-- <iframe
         src="https://www.youtube.com/embed/Cclxu9T0tcQ"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-    ></iframe>
+    ></iframe> -->
 </div>
+
+<script src="/mw_doc/lib/plyr.js"></script>
+<link rel="stylesheet" href="/mw_doc/lib/plyr.css" />
                 </div>
             </main>
         </div>
@@ -1104,6 +1089,7 @@ let TAG_CATEGORY = new Object(); // id:int => category_id:int
 let CATEGORIES = [];
 let MUSIC_FROM_ID = new Object();
 let current_music_id = -1;
+let plyr_player = undefined;
 
 function canonize(s) {
     s = s.toLowerCase();
@@ -1256,17 +1242,35 @@ function load_music(music_id) {
     const tag_group = content_div.querySelector('div.tag_group');
     tag_group.replaceChildren(...tags);
 
-    const video_div = content_div.querySelector('#video_container');
-    video_div.innerHTML = `
-        <iframe
-            src="https://www.youtube.com/embed/${music['youtube_id']}"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-        ></iframe>
-    `;
+    // const video_div = content_div.querySelector('#video_container div');
+    if (plyr_player == undefined) {
+        const video_div = content_div.querySelector('#video_container div');
+        video_div.setAttribute('data-plyr-embed-id', music['youtube_id']);
+        plyr_player = new Plyr('#content #video_container div', {
+            'ratio': '3:1',
+            'youtube': { noCookie:true },
+        });
+    }
+    plyr_player.source = {
+        type: 'video',
+        sources: [
+            {
+                src: music['youtube_id'],
+                provider: 'youtube',
+            },
+        ],
+    };
+    // video_div.innerHTML = `<div id="player" data-plyr-provider="youtube" data-plyr-embed-id="${music['youtube_id']}"></div>`;
+    // `
+    //     <iframe
+    //         src="https://www.youtube.com/embed/${music['youtube_id']}"
+    //         title="YouTube video player"
+    //         frameborder="0"
+    //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    //         referrerpolicy="strict-origin-when-cross-origin"
+    //         allowfullscreen
+    //     ></iframe>
+    // `;
 
     const album = content_div.querySelector('#music_album');
     album.innerText = `${music['album']} (Disc ${music['disc_num']}, Track ${music['track_num']})`;

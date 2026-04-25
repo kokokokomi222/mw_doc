@@ -4,6 +4,7 @@ let TAG_CATEGORY = new Object(); // id:int => category_id:int
 let CATEGORIES = [];
 let MUSIC_FROM_ID = new Object();
 let current_music_id = -1;
+let plyr_player = undefined;
 
 function canonize(s) {
     s = s.toLowerCase();
@@ -156,17 +157,35 @@ function load_music(music_id) {
     const tag_group = content_div.querySelector('div.tag_group');
     tag_group.replaceChildren(...tags);
 
-    const video_div = content_div.querySelector('#video_container');
-    video_div.innerHTML = `
-        <iframe
-            src="https://www.youtube.com/embed/${music['youtube_id']}"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-        ></iframe>
-    `;
+    // const video_div = content_div.querySelector('#video_container div');
+    if (plyr_player == undefined) {
+        const video_div = content_div.querySelector('#video_container div');
+        video_div.setAttribute('data-plyr-embed-id', music['youtube_id']);
+        plyr_player = new Plyr('#content #video_container div', {
+            'ratio': '3:1',
+            'youtube': { noCookie:true },
+        });
+    }
+    plyr_player.source = {
+        type: 'video',
+        sources: [
+            {
+                src: music['youtube_id'],
+                provider: 'youtube',
+            },
+        ],
+    };
+    // video_div.innerHTML = `<div id="player" data-plyr-provider="youtube" data-plyr-embed-id="${music['youtube_id']}"></div>`;
+    // `
+    //     <iframe
+    //         src="https://www.youtube.com/embed/${music['youtube_id']}"
+    //         title="YouTube video player"
+    //         frameborder="0"
+    //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    //         referrerpolicy="strict-origin-when-cross-origin"
+    //         allowfullscreen
+    //     ></iframe>
+    // `;
 
     const album = content_div.querySelector('#music_album');
     album.innerText = `${music['album']} (Disc ${music['disc_num']}, Track ${music['track_num']})`;
