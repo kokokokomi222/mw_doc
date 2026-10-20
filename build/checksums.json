@@ -1136,8 +1136,8 @@
     },
     "logical_and_operation": {
         "written": true,
-        "checksum": 413120689,
-        "date": "2026-03-15"
+        "checksum": 2315342749,
+        "date": "2026-10-20"
     },
     "logical_not_operation": {
         "written": true,
@@ -1146,8 +1146,8 @@
     },
     "logical_or_operation": {
         "written": true,
-        "checksum": 3223274608,
-        "date": "2026-03-15"
+        "checksum": 2009561359,
+        "date": "2026-10-20"
     },
     "logical_xor_operation": {
         "written": true,

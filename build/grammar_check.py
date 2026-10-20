@@ -9,6 +9,8 @@ IGNORED_MATCH = {
     ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
     ('get_entity_type', 'KIND_OF_A', 'Returns the type of an entity'),
     ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
+    ('logical_and_operation', 'MORFOLOGIK_RULE_EN_US', 'veri'),
+    ('logical_or_operation', 'MORFOLOGIK_RULE_EN_US', 'veri'),
     ('multiplication', 'PRP_MD_NN', 'can also underflow'),
     ('print_string', 'NON_STANDARD_WORD', 'two "Print String"s'),
     ('query_control_motion_devices_current_movement_parameters', 'DASH_RULE', '20.00 - 8.00'),

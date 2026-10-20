@@ -53,6 +53,9 @@ The output of the node is `Yes`, if and only if both of the inputs are `Yes`.
 
 # Notes
 * If you leave any of the inputs empty, the input is considered to be `No`.
+* This node does not perform short-circuit evaluation.
+  It will evaluate both [input:Input_1] and [input:Input_2]
+  even if [input:Input_1] is `No`.
 
 # Performance
 This node took ~2 units to run on average.
@@ -63,4 +66,4 @@ This node took ~2 units to run on average.
 * [node:logical_not_operation]
 
 # Authors
-* kokokokomi222
+* kokokokomi222, veri
