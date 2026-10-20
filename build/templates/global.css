@@ -178,6 +178,9 @@ main {
     & img.expandable_img:hover {
         cursor: pointer;
     }
+    & img.expandable_img.small_img {
+        max-height: 30vh;
+    }
 }
 
 footer {

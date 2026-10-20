@@ -162,8 +162,12 @@ function load_music(music_id) {
         const video_div = content_div.querySelector('#video_container div');
         video_div.setAttribute('data-plyr-embed-id', music['youtube_id']);
         plyr_player = new Plyr('#content #video_container div', {
+            'autoplay': true,
             'ratio': '3:1',
-            'youtube': { noCookie:true },
+            'youtube': {
+                autoplay: 1,
+                noCookie:true 
+            },
         });
     }
     plyr_player.source = {

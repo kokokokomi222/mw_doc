@@ -203,7 +203,7 @@ nav {
             display: none;
         }
 
-        &.list_view > diveven_color {
+        &.list_view > div.even_color {
             background-color: #ffffff11;
         }
 
