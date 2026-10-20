@@ -1,23 +1,90 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</h1>
 <p>
-     Activate a Basic Motion Device configured within the Target Entity's Basic Motion Device Component
+    Start a basic motion device.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to start the basic motion device for
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Identifier for this motion device
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Name of the motion device, as specified in the basic motion device component
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    <span class="emphasis">Basic Motion Device</span> is an entity component that let us move dynamic entities.
+    It can be used without any node graph
+    by adding the component in the third tab of the entity detail panel
+    and setting an "Initially Effective" motion device.
+    <img src="/mw_doc/image/basic_motion_device_component.webp" alt="basic motion device component" class="expandable_img" loading="lazy"/>
+    However, the above method will move the entity at the start of the stage.
+    This node instead lets us dynamically start a basic motion device when we want to.
+</p>
+<p>
+    Despite the name, <span class="emphasis">Follow Motion Device</span> is a completely separate system,
+    and it has nothing to do with <span class="emphasis">Basic Motion Device</span>.
+    See <a href="?node=activate_disable_follow_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Follow Motion Device</a> for detail.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we create a moving platform that starts moving when tab is selected.
+    First, the "Basic Motion Device" and "Tab" component is added.
+    "Initially Effective" is set to <code>None</code> and we created a motion device named <code>"Move Toward Exit"</code>
+    <img src="/mw_doc/image/activate_basic_motion_device_config.webp" alt="activate basic motion device config" class="expandable_img" loading="lazy"/>
+    Next, we create a below node graph and add it to the entity.
+    <img src="/mw_doc/image/activate_basic_motion_device_example.webp" alt="activate basic motion device example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the basic motion device component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> does not exist in the basic motion device component,
+        this node is no-op.
+    </li>
+    <li>
+        <a href="?node=get_entity_location_and_rotation" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity Location and Rotation</a> reports the correct intermediate location and rotation
+        during this motion, unlike follow motion device or projectile motion device.
+    </li>
+    <li>
+        Multiple basic motion devices can run at the same time, 
+        but the behaviors of every combination of devices would be too complicated to describe.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~28 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=stop_and_delete_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Stop and Delete Basic Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=pause_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Pause Basic Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=recover_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover Basic Motion Device</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_basic_motion_device.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

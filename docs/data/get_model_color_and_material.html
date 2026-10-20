@@ -1,0 +1,126 @@
+<h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Model Color & Material</h1>
+<p>
+    Get custom color and material of the entity.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to get the custom color and material from. Must be an object entity.
+    </li>
+</ul>
+
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Enable Custom Color?</span> (Boolean) - <code>Yes</code> if the custom color is enabled, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span> (Blend Mode Enum) - One of <code>Override</code> or <code>Multiply</code>
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color</span> (Integer) - The custom color. <code>0xRRGGBB</code> where <code>RR</code> is the red, <code>GG</code> is the green, and <code>BB</code> is the blue component of the color in hexadecimal. e.g. <code>16776960</code> for yellow.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Opacity</span> (Floating Point Number) - The opacity of the custom color. Between 0 and 100, inclusive.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Enable Custom Material?</span> (Boolean) - <code>Yes</code> if the custom material is enabled, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Material</span> (Material Enum) - One of <code>Freeze</code> or <code>Petrification</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Luna VIII introduced custom color and material for entities.
+    With this feature, models can be put into different colors.
+    <img src="/mw_doc/image/model_color_material_config.webp" alt="model color material config" class="expandable_img" loading="lazy"/>
+    This node lets you get these custom color and material values in the node graph.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we get the custom color of the entity
+    and print the red, green, and blue component of the color.
+    Highest byte (bit 16 to 23) encodes red component of the color,
+    next byte (bit 8 to 15) encodes green,
+    and last byte (bit 0 to 7) encodes blue.
+    <img src="/mw_doc/image/get_model_color_and_material_example.webp" alt="get model color and material example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> must be an object entity.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a stage, character, player, or creation entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the non-player entity may exist).
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Enable Custom Color?</span> is <code>No</code>,
+        the values of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span>, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color</span>, <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Opacity</span> are not meaningful.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Enable Custom Material?</span> is <code>No</code>,
+        the value of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Material</span> is not meaningful.
+    </li>
+    <li>
+        If custom color is set to a color code that is out or range
+        (negative, or at least <code>2^24</code>) by <a href="?node=edit_model_color_and_material" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Edit Model Color & Material</a>,
+        this node returns that out-of-range number.
+        Thus, there is no guarantee that <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color</span> is between <code>0</code> and <code>2^24-1</code>.
+    </li>
+    <li>
+        When <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span> is <code>Override</code>,
+        it appears to use the following blending written in pseudo-shader code:
+        <code>output.rgb = original.rgb * (1.0-opacity/100.0) + custom_color.rgb * opacity/100.0</code>.
+        If the opacity is full at <code>100.0</code>, the model appears to be painted uniformly by the custom color.
+        Below is an example of a model painted blue at full opacity with <code>Override</code> blend mode.
+        <img src="/mw_doc/image/model_color_override.webp" alt="model color override" class="expandable_img small_img" loading="lazy"/>
+    </li>
+    <li>
+        When <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span> is <code>Multiply</code>,
+        it appears to use the following blending written in pseudo-shader code:
+        <code>output.rgb = original.rgb * (1.0-opacity/100.0) + original.rgb * custom_color.rgb * opacity/100.0</code>.  
+        If the opacity is full at <code>100.0</code>, the model appears to be in custom color,
+        but the darker parts of the original texture is kept dark.
+        Below is an example of a model painted blue at full opacity with <code>Multiply</code> blend mode.
+        <img src="/mw_doc/image/model_color_multiply.webp" alt="model color multiply" class="expandable_img small_img" loading="lazy"/>
+    </li>
+    <li>
+        Material seems to be applied after the custom color is applied.
+    </li>
+    <li>
+        Models with <code>Freeze</code> and <code>Petrification</code> custom material appears like the below example.
+        <img src="/mw_doc/image/model_custom_material.webp" alt="model custom material" class="expandable_img small_img" loading="lazy"/>
+    </li>
+    <li>
+        Custom color and material on decorations cannot be accessed or modified by node graphs.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=edit_model_color_and_material" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Edit Model Color & Material</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_model_color_and_material.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

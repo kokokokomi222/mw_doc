@@ -38,6 +38,22 @@ def get_version_name(date:str) -> str:
         return 'Luna VII'
     if date < '2026-08-11':
         return 'Luna VIII'
+    if date < '2026-09-22':
+        return 'v7.0'
+    if date < '2026-11-03':
+        return 'v7.1'
+    if date < '2026-12-15':
+        return 'v7.2'
+    if date < '2027-01-26':
+        return 'v7.3'
+    if date < '2027-03-09':
+        return 'v7.4'
+    if date < '2027-04-20':
+        return 'v7.5'
+    if date < '2027-06-01':
+        return 'v7.6'
+    if date < '2027-07-13':
+        return 'v7.7'
     return 'Unknown version'
 
 with open(f'../{OUTPUT_DIR}/nodes.json', 'r', encoding='utf-8') as file:
@@ -115,10 +131,16 @@ def parse_link(state:ParseState) -> str:
     tokens = s.split(':')
     match tokens[0]:
         case 'input':
-            param_name = ':'.join(tokens[1:]).replace('_', ' ')
+            param_name = ':'.join(tokens[1:])
+            if ' ' in param_name:
+                state.raise_error(f'Input parameter name should not have a space. Use underscore instead: "{param_name}"')
+            param_name = param_name.replace('_', ' ')
             return f'<span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> {param_name}</span>'
         case 'output':
-            param_name = ':'.join(tokens[1:]).replace('_', ' ')
+            param_name = ':'.join(tokens[1:])
+            if ' ' in param_name:
+                state.raise_error(f'Output value name should not have a space. Use underscore instead: "{param_name}"')
+            param_name = param_name.replace('_', ' ')
             return f'<span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> {param_name}</span>'
         case 'node':
             slug = tokens[1]
@@ -134,6 +156,12 @@ def parse_link(state:ParseState) -> str:
             if not os.path.isfile(os.path.join(f"../{OUTPUT_DIR}", link_url)):
                 state.raise_error(f'Image does not exist: {tokens[1]}')
             return f'<img src="/mw_doc/{link_url}" alt="{alt_text}" class="expandable_img" loading="lazy"/>'
+        case 'image_small':
+            alt_text = tokens[1].replace('_', ' ')
+            link_url = f"image/{tokens[1]}.webp"
+            if not os.path.isfile(os.path.join(f"../{OUTPUT_DIR}", link_url)):
+                state.raise_error(f'Image does not exist: {tokens[1]}')
+            return f'<img src="/mw_doc/{link_url}" alt="{alt_text}" class="expandable_img small_img" loading="lazy"/>'
         case 'hoyo':
             url = f'https://act.hoyoverse.com/ys/ugc/tutorial/detail/{tokens[1]}'
             return f'<a class="outbound_link" href="{url}">{tokens[2]}</a>'

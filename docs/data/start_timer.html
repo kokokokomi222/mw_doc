@@ -26,11 +26,17 @@
     <span class="emphasis">Global timers</span> only fire once, but it can count up or down.
     <span class="emphasis">Global timer</span> is primarily used to be displayed in UI by being mounted on the stage or a player.
     <span class="emphasis">Global timer</span> can also be used to precisely measure a span of time.
-    On the other hand, <span class="emphasis">timer</span> can fire multiple times at specified times, and it can also repeat on loop.
+    State of a <span class="emphasis">Global timer</span> can be queried by <a href="?node=get_current_global_timer_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Current Global Timer Time</a>.
+</p>
+<p>
+    On the other hand, <span class="emphasis">timer</span> can fire multiple times at specified moments, and it can also repeat on loop.
+    State of a <span class="emphasis">timer</span> cannot be queried from a node graph.
 </p>
 <p>
     Timer can be used to control when certain events occur in your game.
     Timer can also be used to space out computation when there's a lot of it.
+    Use this node to start a timer
+    and <a href="?node=when_timer_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Timer Is Triggered</a> to listen to when the timer is triggered.
 </p>
 
 <h2>Example</h2>
@@ -98,6 +104,32 @@
 <p>
     <img src="/mw_doc/image/start_timer_example.webp" alt="start timer example" class="expandable_img" loading="lazy"/>
 </p>
+<p>
+    If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop</span> was set to <code>No</code>, the behavior differs.
+    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> is now always <code>0</code> even on the last timer sequence:
+    <table><tbody>
+    <tr>
+        <th>Time after timer started</th>
+        <th>Timer Sequence ID output</th>
+        <th>Number of Loops output</th>
+    </tr>
+    <tr>
+        <td>1 second</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3 seconds</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>7 seconds</td>
+        <td>2</td>
+        <td>0</td>
+    </tr>
+    </tbody></table>
+</p>
 
 <h2>Notes</h2>
 <ul>
@@ -134,7 +166,7 @@
 
 <h2>Performance</h2>
 <p>
-    With <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Sequence</span> of length 5, this node took ~6 units on average.
+    With <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Sequence</span> of length 5, this node took ~6 units to run on average.
 </p>
 <span class="small">
 Performance may vary for various reasons.
@@ -157,10 +189,13 @@ First execution of a node within a node graph execution tend to take a bit longe
     <li>
         <a href="?node=when_timer_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Timer Is Triggered</a>
     </li>
+    <li>
+        <a href="?node=start_global_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start Global Timer</a>
+    </li>
 </ul>
 
 <h2>Credits</h2>
     <p>Written by: kokokokomi222</p>
-    <p>Last updated: 2026-03-28 (Luna V)</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
     <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/start_timer.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,136 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Edit Model Color & Material</h1>
+<p>
+    Set custom color and material of the entity.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to set the custom color and material. Must be an object entity.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Color Configurations</span> (Boolean) - <code>Yes</code> to apply new custom color configuration values, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Custom Color?</span> (Boolean) - <code>Yes</code> to enable the custom color, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> (Integer) - The custom color to apply. <code>0xRRGGBB</code> where <code>RR</code> is the red, <code>GG</code> is the green, and <code>BB</code> is the blue component of the color in hexadecimal. e.g. <code>16776960</code> for yellow.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Color Opacity</span> (Floating Point Number) - The opacity of the custom color. Between 0 and 100, inclusive.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Color Blend Mode</span> (Blend Mode Enum) - One of <code>Override</code> or <code>Multiply</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Material Configurations</span> (Boolean) - <code>Yes</code> to apply new custom material configuration values, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Custom Material?</span> (Boolean) - <code>Yes</code> to enable the custom material, <code>No</code> otherwise
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Material Type</span> (Material Enum) - One of <code>Freeze</code> or <code>Petrification</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Luna VIII introduced custom color and material for entities.
+    With this feature, models can be put into different colors.
+    <img src="/mw_doc/image/model_color_material_config.webp" alt="model color material config" class="expandable_img" loading="lazy"/>
+    This node lets you set these custom color and material values in the node graph.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we set the custom color of the entity.
+    Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Color Configurations</span> is <code>Yes</code>,
+    the color configurations (<span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Custom Color?</span>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Color Opacity</span>, and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Color Blend Mode</span>) are applied to the entity.
+    However, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Material Configurations</span> is <code>No</code>,
+    so the material configurations (<span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Custom Material?</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Material Type</span>) are ignored.
+    As a result, custom color gets enabled with 100% opacity blue with multiply blend mode.
+    <img src="/mw_doc/image/edit_model_color_and_material_example.webp" alt="edit model color and material example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> must be an object entity.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a stage, character, player, or creation entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the non-object entity may exist).
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> can be copied from the entity detail panel.
+        <img src="/mw_doc/image/color_code_copy.webp" alt="color code copy" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> is at least <code>2^24</code>, the lower 24 bits are used for the color.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> is <code>16777216 = 2^24</code>,
+        the lower 24 bits are all 0, so the color is set to black.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> is negative,
+        the lower 24 bits of the binary representation is used for the color.
+        Miliastra uses <a class="outbound_link" href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a>
+        to represent negative integers in binary.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Fill Color</span> is <code>-256</code>,
+        the binary representation of this number is <code>11111111111111111111111100000000</code>,
+        so the color is set to yellow.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Color Opacity</span> is not between 0 and 100,
+        this input is ignored and the original opacity value is kept.
+    </li>
+    <li>
+        When <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span> is <code>Override</code>,
+        it appears to use the following blending written in pseudo-shader code:
+        <code>output.rgb = original.rgb * (1.0-opacity/100.0) + custom_color.rgb * opacity/100.0</code>.
+        If the opacity is full at <code>100.0</code>, the model appears to be painted uniformly by the custom color.
+        Below is an example of a model painted blue at full opacity with <code>Override</code> blend mode.
+        <img src="/mw_doc/image/model_color_override.webp" alt="model color override" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        When <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Color Blend Mode</span> is <code>Multiply</code>,
+        it appears to use the following blending written in pseudo-shader code:
+        <code>output.rgb = original.rgb * (1.0-opacity/100.0) + original.rgb * custom_color.rgb * opacity/100.0)</code>.  
+        If the opacity is full at <code>100.0</code>, the model appears to be in custom color with the original.
+        Below is an example of a model painted blue at full opacity with <code>Multiply</code> blend mode.
+        <img src="/mw_doc/image/model_color_multiply.webp" alt="model color multiply" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        Material seems to be applied after the custom color is applied.
+    </li>
+    <li>
+        Models with <code>Freeze</code> and <code>Petrification</code> custom material appears like the below example.
+        <img src="/mw_doc/image/model_custom_material.webp" alt="model custom material" class="expandable_img small_img" loading="lazy"/>
+    </li>
+    <li>
+        Custom color and material on decorations cannot be accessed or modified by node graphs.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_model_color_and_material" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Model Color & Material</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/E/edit_model_color_and_material.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

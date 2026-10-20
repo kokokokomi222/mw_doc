@@ -127,6 +127,12 @@
             "stub": false
         },
         {
+            "slug": "edit_model_color_and_material",
+            "name": "Edit Model Color & Material",
+            "type": "execution",
+            "stub": false
+        },
+        {
             "slug": "settle_stage",
             "name": "Settle Stage",
             "type": "execution",
@@ -286,49 +292,49 @@
             "slug": "recover_basic_motion_device",
             "name": "Recover Basic Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_fixed_point_motion_device",
             "name": "Activate Fixed-Point Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_basic_motion_device",
             "name": "Activate Basic Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "add_target_oriented_rotation_based_motion_device",
             "name": "Add Target-Oriented Rotation-Based Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "add_uniform_basic_linear_motion_device",
             "name": "Add Uniform Basic Linear Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "add_uniform_basic_rotation_based_motion_device",
             "name": "Add Uniform Basic Rotation-Based Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "stop_and_delete_basic_motion_device",
             "name": "Stop and Delete Basic Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "pause_basic_motion_device",
             "name": "Pause Basic Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_follow_motion_device",
@@ -358,31 +364,31 @@
             "slug": "play_timed_effects",
             "name": "Play Timed Effects",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "clear_special_effects_based_on_special_effect_assets",
             "name": "Clear Special Effects Based on Special Effect Assets",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "mount_looping_special_effect",
             "name": "Mount Looping Special Effect",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "clear_looping_special_effect",
             "name": "Clear Looping Special Effect",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "resume_timer",
             "name": "Resume Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "start_timer",
@@ -394,43 +400,43 @@
             "slug": "pause_timer",
             "name": "Pause Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "stop_timer",
             "name": "Stop Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "recover_global_timer",
             "name": "Recover Global Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "start_global_timer",
             "name": "Start Global Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "increase_global_timer_value",
             "name": "Increase Global Timer Value",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "pause_global_timer",
             "name": "Pause Global Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "stop_global_timer",
             "name": "Stop Global Timer",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "switch_main_camera_template",
@@ -472,7 +478,7 @@
             "slug": "activate_disable_tab",
             "name": "Activate/Disable Tab",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_collision_trigger_source",
@@ -586,49 +592,49 @@
             "slug": "adjust_player_background_music_volume",
             "name": "Adjust Player Background Music Volume",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "adjust_specified_sound_effect_player",
             "name": "Adjust Specified Sound Effect Player",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "close_specified_sound_effect_player",
             "name": "Close Specified Sound Effect Player",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "start_pause_player_background_music",
             "name": "Start/Pause Player Background Music",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "start_pause_specified_sound_effect_player",
             "name": "Start/Pause Specified Sound Effect Player",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "add_sound_effect_player",
             "name": "Add Sound Effect Player",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "player_plays_one_shot_2d_sound_effect",
             "name": "Player Plays One-Shot 2D Sound Effect",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_player_background_music",
             "name": "Set Player Background Music",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "clear_unit_tags_from_entity",
@@ -676,7 +682,7 @@
             "slug": "send_signal",
             "name": "Send Signal",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_entity_active_nameplate",
@@ -748,37 +754,37 @@
             "slug": "sort_dictionary_by_key",
             "name": "Sort Dictionary by Key",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "sort_dictionary_by_value",
             "name": "Sort Dictionary by Value",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_or_add_key_value_pairs_to_dictionary",
             "name": "Set or Add Key Value Pairs to Dictionary",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "clear_dictionary",
             "name": "Clear Dictionary",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "remove_key_value_pairs_from_dictionary_by_key",
             "name": "Remove Key Value Pairs from Dictionary by Key",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "modify_structure",
             "name": "Modify Structure",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "remove_item_from_inventory_shop_sales_list",
@@ -1111,6 +1117,42 @@
             "stub": false
         },
         {
+            "slug": "set_player_to_activate_control_motion_device",
+            "name": "Set Player to Activate Control Motion Device",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_player_to_follow_control_motion_device",
+            "name": "Set Player to Follow Control Motion Device",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_player_to_leave_control_motion_device",
+            "name": "Set Player to Leave Control Motion Device",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_players_cursor_to_always_visible",
+            "name": "Set Player's Cursor to Always Visible",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_players_cursor_to_click_through_ui_controls",
+            "name": "Set Player's Cursor to Click Through UI Controls",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "enable_players_cursor_to_click_selectable_targets",
+            "name": "Enable Player's Cursor to Click Selectable Targets",
+            "type": "execution",
+            "stub": false
+        },
+        {
             "slug": "when_node_graph_variable_changes",
             "name": "When Node Graph Variable Changes",
             "type": "event",
@@ -1246,7 +1288,7 @@
             "slug": "when_basic_motion_device_stops",
             "name": "When Basic Motion Device Stops",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_path_reaches_waypoint",
@@ -1264,13 +1306,13 @@
             "slug": "when_timer_is_triggered",
             "name": "When Timer Is Triggered",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_global_timer_is_triggered",
             "name": "When Global Timer Is Triggered",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_ui_control_group_is_triggered",
@@ -1306,7 +1348,7 @@
             "slug": "when_tab_is_selected",
             "name": "When Tab Is Selected",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_creation_enters_combat",
@@ -1366,7 +1408,7 @@
             "slug": "monitor_signal",
             "name": "Monitor Signal",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_deck_selector_is_complete",
@@ -1479,6 +1521,24 @@
         {
             "slug": "when_floating_interaction_page_is_triggered",
             "name": "When Floating Interaction Page is Triggered",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_players_activated_control_motion_device_list_changes",
+            "name": "When Player's Activated Control Motion Device List Changes",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_player_follows_control_motion_device",
+            "name": "When Player Follows Control Motion Device",
+            "type": "event",
+            "stub": false
+        },
+        {
+            "slug": "when_player_leaves_control_motion_device",
+            "name": "When Player Leaves Control Motion Device",
             "type": "event",
             "stub": false
         },
@@ -1789,6 +1849,12 @@
             "stub": true
         },
         {
+            "slug": "get_model_color_and_material",
+            "name": "Get Model Color & Material",
+            "type": "query",
+            "stub": false
+        },
+        {
             "slug": "query_current_environment_time",
             "name": "Query Current Environment Time",
             "type": "query",
@@ -1798,7 +1864,7 @@
             "slug": "query_game_time_elapsed",
             "name": "Query Game Time Elapsed",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_entity_faction",
@@ -1894,7 +1960,7 @@
             "slug": "get_current_global_timer_time",
             "name": "Get Current Global Timer Time",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_players_current_ui_layout",
@@ -2074,37 +2140,37 @@
             "slug": "query_if_dictionary_contains_specific_key",
             "name": "Query If Dictionary Contains Specific Key",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_if_dictionary_contains_specific_value",
             "name": "Query If Dictionary Contains Specific Value",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_dictionarys_length",
             "name": "Query Dictionary's Length",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_dictionary_value_by_key",
             "name": "Query Dictionary Value by Key",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_list_of_keys_from_dictionary",
             "name": "Get List of Keys from Dictionary",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_list_of_values_from_dictionary",
             "name": "Get List of Values from Dictionary",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_inventory_shop_item_sales_info",
@@ -2321,6 +2387,30 @@
             "name": "Get the Preset Status Value of the Complex Creation",
             "type": "query",
             "stub": true
+        },
+        {
+            "slug": "query_players_currently_activated_control_motion_device_list",
+            "name": "Query Player's Currently Activated Control Motion Device List",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_players_followed_control_motion_device",
+            "name": "Query Player's Followed Control Motion Device",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "query_control_motion_devices_current_movement_parameters",
+            "name": "Query Control Motion Device's Current Movement Parameters",
+            "type": "query",
+            "stub": false
+        },
+        {
+            "slug": "check_whether_player_cursor_is_active",
+            "name": "Check Whether Player Cursor Is Active",
+            "type": "query",
+            "stub": false
         },
         {
             "slug": "enumerations_equal",
@@ -2674,25 +2764,25 @@
             "slug": "create_dictionary",
             "name": "Create Dictionary",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "assembly_dictionary",
             "name": "Assembly Dictionary",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "split_structure",
             "name": "Split Structure",
             "type": "operation",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "assemble_structure",
             "name": "Assemble Structure",
             "type": "operation",
-            "stub": true
+            "stub": false
         }
     ]
 }

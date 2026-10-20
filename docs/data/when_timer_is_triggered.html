@@ -1,32 +1,191 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Timer Is Triggered</h1>
 <p>
-     This event is triggered when the Timer reaches the specified time node
+    Triggers when the timer reaches specified time.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that has the timer.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of above Entity. <code>0</code> if the entity was created dynamically.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Name</span> (String) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Name</span> (String) - Name of the timer.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Sequence ID</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Sequence ID</span> (Integer) - Index of the time that was specified by the timer. 0-indexed.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> (Integer) - The number of times that a loop has been completed. Note that this value is already incremented on the last timer sequence if it is looping. See the example below for details.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    First, it's important to distinguish the difference between <span class="emphasis">timers</span> and <span class="emphasis">global timers</span>.
+    They may seem similar, but they are completely separate systems with different purposes.
+    <span class="emphasis">Global timers</span> only fire once, but it can count up or down.
+    <span class="emphasis">Global timer</span> is primarily used to be displayed in UI by being mounted on the stage or a player.
+    <span class="emphasis">Global timer</span> can also be used to precisely measure a span of time.
+    State of a <span class="emphasis">Global timer</span> can be queried by <a href="?node=get_current_global_timer_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Current Global Timer Time</a>.
+</p>
+<p>
+    On the other hand, <span class="emphasis">timer</span> can fire multiple times at specified moments, and it can also repeat on loop.
+    State of a <span class="emphasis">timer</span> cannot be queried from a node graph.
+</p>
+<p>
+    Timer can be used to control when certain events occur in your game.
+    Timer can also be used to space out computation when there's a lot of it.
+    Use <a href="?node=start_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start Timer</a> to start a timer
+    and then this node to listen to when the timer is triggered.
+</p>
+<p>
+    The way the value <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> works is not intuitive at all.
+    See the example for detail.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we start a timer named <code>test_timer</code> when a character selects the tab.
+    The list <code>[1, 3, 7]</code> is passed as <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Sequence</span>,
+    which means it will fire the timer event at 1 second, 3 seconds, and 7 seconds after the timer starts.
+    We also have a <a href="?node=when_timer_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Timer Is Triggered</a> which listens to the event,
+    and print the output of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Sequence ID</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span>.
+    Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop</span> is set to <code>Yes</code>, this sequence of events will repeat as follows:
+    <table><tbody>
+    <tr>
+        <th>Time after timer started</th>
+        <th>Timer Sequence ID output</th>
+        <th>Number of Loops output</th>
+    </tr>
+    <tr>
+        <td>1 second</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3 seconds</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>7 seconds</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>8 seconds</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>10 seconds</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>14 seconds</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>15 seconds</td>
+        <td>0</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>17 seconds</td>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>21 seconds</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    </tbody></table>
+    and so on.
+</p>
+<p>
+    <img src="/mw_doc/image/start_timer_example.webp" alt="start timer example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop</span> was set to <code>No</code>, the behavior differs.
+    <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> is now always <code>0</code> even on the last timer sequence:
+    <table><tbody>
+    <tr>
+        <th>Time after timer started</th>
+        <th>Timer Sequence ID output</th>
+        <th>Number of Loops output</th>
+    </tr>
+    <tr>
+        <td>1 second</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>3 seconds</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>7 seconds</td>
+        <td>2</td>
+        <td>0</td>
+    </tr>
+    </tbody></table>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        The output <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Number of Loops</span> increments on the event
+        when the last timer sequence is triggered and if it is looping.
+        See the above example for detail.
+    </li>
+    <li>
+        For maintenance of the node graph,
+        it is recommended that <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Timer Name</span> is always put
+        into <a href="?node=multiple_branches" class="node flow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#flow_icon"/></svg> Multiple Branches</a> or <a href="?node=equal" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Equal</a>
+        so it does not unexpectedly trigger on other timers.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~6 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=start_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start Timer</a>
+    </li>
+    <li>
+        <a href="?node=stop_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Stop Timer</a>
+    </li>
+    <li>
+        <a href="?node=pause_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Pause Timer</a>
+    </li>
+    <li>
+        <a href="?node=resume_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Resume Timer</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_timer_is_triggered.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

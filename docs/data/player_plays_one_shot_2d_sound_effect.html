@@ -1,29 +1,91 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Player Plays One-Shot 2D Sound Effect</h1>
 <p>
-     Player plays a one-shot 2D Sound Effect
+    Play a 2D sound effect.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Player entity to play the sound for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> (Integer) - ID of the sound asset. e.g. <code>50925</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - Volume of the sound. <code>0</code> means mute, <code>100</code> means full gain. This value scales the amplitude linearly. Must be between <code>0</code> and <code>100</code>, inclusive.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - Speed to play the sound at. <code>1.0</code> means default speed. Must be between <code>0.5</code> and <code>2.0</code>, inclusive.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node is a simple way to play a sound effect.
+    The sound will only play once.
+    It will not apply 3D sound effect,
+    so it will just play the sound in mono without any attenuation by distance.
+    With this node, you can also play a sound for just one player.
+</p>
+<p>
+    If you would like to repeat the sound on loop or use 3D sound effect,
+    use <a href="?node=add_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Sound Effect Player</a> instead.
+    If you want to play music, use <a href="?node=set_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Background Music</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we play a sound asset <code>50918</code> (Hint UI_Heavy_Crafting Complete)
+    for the player that select the tab.
+    It plays at volume 50 (half the amplitude, i.e. ~6dB softer than full gain).
+    The sound plays at 1.5 times the speed.
+    <img src="/mw_doc/image/player_plays_one_shot_2d_sound_effect_example.webp" alt="player plays one shot 2d sound effect example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> is not an ID for a sound,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> is negative or if it exceeds <code>100</code>, this node is no-op.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> is less than <code>0.5</code> or greater than <code>2.0</code>,
+        this node is no-op.
+    </li>
+    <li>
+        Unlike music, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> appears to apply pitch correction.
+        Faster speed does not mean that the pitch is higher.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=add_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Sound Effect Player</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/P/player_plays_one_shot_2d_sound_effect.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

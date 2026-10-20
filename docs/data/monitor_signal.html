@@ -1,26 +1,93 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> Monitor Signal</h1>
 <p>
-     Monitors Signal trigger events defined in the Signal Manager The Signal name to monitor must be selected first
+    Triggers when a signal is sent.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that has this node graph mounted.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of above Entity. 0 if the entity was created dynamically.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Signal Source Entity</span> (Entity) - The Entity that sent this signal using the Send Signal node
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Signal Source Entity</span> (Entity) - Entity that sent the signal.
+    </li>
+</ul>
+<p>
+    Selecting <span class="emphasis">Signal Name</span> shows the parameters of the signal as output values of the node.
+</p>
+
+<h2>Usage</h2>
+<p>
+    Signals are custom events you can trigger.
+    It is globally broadcasted to all entities,
+    so any entity can listen to it using this node
+    when a signal is sent with <a href="?node=send_signal" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Send Signal</a>.
+    Signals can be defined in the node graph editor by opening Server Signal Explorer
+    (from the bottom menu bar, or top menu &gt; Window &gt; Server Signal Explorer).
+    The name of the signal and its parameters can be set here.
+    <img src="/mw_doc/image/server_signal_explorer.webp" alt="server signal explorer" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Custom variable change could be used in place of signals
+    using <a href="?node=when_custom_variable_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Custom Variable Changes</a>
+    A signal is probably better to use if multiple node graphs may want to listen to it,
+    or if it passes multiple parameters.
+    But if you just want to pass in one parameter to one node graph,
+    this method may be easier to reason with,
+    because it is limited to just the node graphs held by the entity.
+    Also, there is a limit of 99 signals per stage.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we listen to a signal named <code>Round Finished</code>.
+    <img src="/mw_doc/image/monitor_signal_example.webp" alt="monitor signal example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        <span class="emphasis">Signal Name</span> does not have an input pin,
+        so it must be set statically.
+    </li>
+    <li>
+        <span class="emphasis">Signal Name</span> can be selected by clicking on the magnifier icon on the right.
+    </li>
+    <li>
+        If <span class="emphasis">Signal Name</span> is not selected, the verification of the stage fails and the stage cannot be played.
     </li>
 </ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
-
-
-
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=send_signal" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Send Signal</a>
+    </li>
+    <li>
+        <a href="?node=when_custom_variable_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Custom Variable Changes</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/M/monitor_signal.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

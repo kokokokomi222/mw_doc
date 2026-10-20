@@ -320,9 +320,9 @@
         "date": "2026-02-22"
     },
     "activate_basic_motion_device": {
-        "written": false,
-        "checksum": 1266463295,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2676429247,
+        "date": "2026-10-20"
     },
     "activate_disable_collision_trigger": {
         "written": false,
@@ -365,14 +365,14 @@
         "date": "2026-02-22"
     },
     "activate_disable_tab": {
-        "written": false,
-        "checksum": 3091292039,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 52087896,
+        "date": "2026-10-20"
     },
     "activate_fixed_point_motion_device": {
-        "written": false,
-        "checksum": 2805954229,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1715085743,
+        "date": "2026-10-20"
     },
     "activate_revive_point": {
         "written": false,
@@ -420,24 +420,24 @@
         "date": "2026-02-22"
     },
     "add_sound_effect_player": {
-        "written": false,
-        "checksum": 1885649462,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 680448488,
+        "date": "2026-10-20"
     },
     "add_target_oriented_rotation_based_motion_device": {
-        "written": false,
-        "checksum": 3979951079,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 252778504,
+        "date": "2026-10-20"
     },
     "add_uniform_basic_linear_motion_device": {
-        "written": false,
-        "checksum": 2465879963,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3099534024,
+        "date": "2026-10-20"
     },
     "add_uniform_basic_rotation_based_motion_device": {
-        "written": false,
-        "checksum": 1508768347,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 138391625,
+        "date": "2026-10-20"
     },
     "add_unit_status": {
         "written": false,
@@ -450,14 +450,14 @@
         "date": "2026-02-22"
     },
     "adjust_player_background_music_volume": {
-        "written": false,
-        "checksum": 4141459755,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4293233116,
+        "date": "2026-10-20"
     },
     "adjust_specified_sound_effect_player": {
-        "written": false,
-        "checksum": 1558213303,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1964772179,
+        "date": "2026-10-20"
     },
     "allow_forbid_player_to_revive": {
         "written": false,
@@ -485,14 +485,14 @@
         "date": "2026-02-22"
     },
     "assemble_structure": {
-        "written": false,
-        "checksum": 978123055,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 881597263,
+        "date": "2026-10-20"
     },
     "assembly_dictionary": {
-        "written": false,
-        "checksum": 2319331541,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4120287197,
+        "date": "2026-10-20"
     },
     "bitwise_and": {
         "written": true,
@@ -550,19 +550,19 @@
         "date": "2026-02-22"
     },
     "clear_dictionary": {
-        "written": false,
-        "checksum": 3988839829,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1438241471,
+        "date": "2026-10-20"
     },
     "clear_looping_special_effect": {
-        "written": false,
-        "checksum": 2168787094,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 554628055,
+        "date": "2026-10-20"
     },
     "clear_special_effects_based_on_special_effect_assets": {
-        "written": false,
-        "checksum": 2737463027,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1859104400,
+        "date": "2026-10-20"
     },
     "clear_specified_targets_aggro_list": {
         "written": false,
@@ -585,9 +585,9 @@
         "date": "2026-02-22"
     },
     "close_specified_sound_effect_player": {
-        "written": false,
-        "checksum": 2559617320,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3793975531,
+        "date": "2026-10-20"
     },
     "consume_gift_box": {
         "written": false,
@@ -600,9 +600,9 @@
         "date": "2026-02-22"
     },
     "create_dictionary": {
-        "written": false,
-        "checksum": 2788556026,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3109600016,
+        "date": "2026-10-20"
     },
     "create_projectile": {
         "written": false,
@@ -740,9 +740,9 @@
         "date": "2026-02-22"
     },
     "get_current_global_timer_time": {
-        "written": false,
-        "checksum": 2332063547,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3318815512,
+        "date": "2026-10-20"
     },
     "get_entities_with_specified_prefab_on_the_field": {
         "written": true,
@@ -870,9 +870,9 @@
         "date": "2026-02-22"
     },
     "get_list_of_keys_from_dictionary": {
-        "written": false,
-        "checksum": 3190599991,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3393119115,
+        "date": "2026-10-20"
     },
     "get_list_of_owners_that_have_the_target_as_their_aggro_target": {
         "written": false,
@@ -890,9 +890,9 @@
         "date": "2026-02-22"
     },
     "get_list_of_values_from_dictionary": {
-        "written": false,
-        "checksum": 4003423506,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2839592865,
+        "date": "2026-10-20"
     },
     "get_loot_component_currency_quantity": {
         "written": false,
@@ -986,8 +986,8 @@
     },
     "get_self_entity": {
         "written": true,
-        "checksum": 2047221566,
-        "date": "2026-03-08"
+        "checksum": 2676965776,
+        "date": "2026-10-20"
     },
     "get_specified_type_of_entities_on_the_field": {
         "written": true,
@@ -1055,9 +1055,9 @@
         "date": "2026-02-22"
     },
     "increase_global_timer_value": {
-        "written": false,
-        "checksum": 283402322,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 865646530,
+        "date": "2026-10-20"
     },
     "increase_inventory_currency_quantity": {
         "written": false,
@@ -1155,9 +1155,9 @@
         "date": "2026-03-15"
     },
     "modify_structure": {
-        "written": false,
-        "checksum": 2825719892,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1437230166,
+        "date": "2026-10-20"
     },
     "modulo_operation": {
         "written": false,
@@ -1165,14 +1165,14 @@
         "date": "2026-02-28"
     },
     "monitor_signal": {
-        "written": false,
-        "checksum": 285641406,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 13653158,
+        "date": "2026-10-20"
     },
     "mount_looping_special_effect": {
-        "written": false,
-        "checksum": 571412204,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3550593305,
+        "date": "2026-10-20"
     },
     "open_shop": {
         "written": false,
@@ -1180,29 +1180,29 @@
         "date": "2026-02-22"
     },
     "pause_basic_motion_device": {
-        "written": false,
-        "checksum": 3106038402,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1302750230,
+        "date": "2026-10-20"
     },
     "pause_global_timer": {
-        "written": false,
-        "checksum": 2914220508,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3686874765,
+        "date": "2026-10-20"
     },
     "pause_timer": {
-        "written": false,
-        "checksum": 4249771557,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2991571054,
+        "date": "2026-10-20"
     },
     "player_plays_one_shot_2d_sound_effect": {
-        "written": false,
-        "checksum": 784091532,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4203000278,
+        "date": "2026-10-20"
     },
     "play_timed_effects": {
-        "written": false,
-        "checksum": 2110304658,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2394472410,
+        "date": "2026-10-20"
     },
     "query_characters_current_movement_spd": {
         "written": true,
@@ -1240,14 +1240,14 @@
         "date": "2026-02-22"
     },
     "query_dictionarys_length": {
-        "written": false,
-        "checksum": 3274478268,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 134397007,
+        "date": "2026-10-20"
     },
     "query_dictionary_value_by_key": {
-        "written": false,
-        "checksum": 963185371,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4250923924,
+        "date": "2026-10-20"
     },
     "query_entity_by_guid": {
         "written": false,
@@ -1270,9 +1270,9 @@
         "date": "2026-04-04"
     },
     "query_game_time_elapsed": {
-        "written": false,
-        "checksum": 3971124025,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4293109034,
+        "date": "2026-10-20"
     },
     "query_global_aggro_transfer_multiplier": {
         "written": false,
@@ -1295,14 +1295,14 @@
         "date": "2026-02-22"
     },
     "query_if_dictionary_contains_specific_key": {
-        "written": false,
-        "checksum": 1101273525,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3801897851,
+        "date": "2026-10-20"
     },
     "query_if_dictionary_contains_specific_value": {
-        "written": false,
-        "checksum": 3306207376,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1323674487,
+        "date": "2026-10-20"
     },
     "query_if_entity_has_unit_status": {
         "written": false,
@@ -1405,14 +1405,14 @@
         "date": "2026-03-28"
     },
     "recover_basic_motion_device": {
-        "written": false,
-        "checksum": 4135321090,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4143572295,
+        "date": "2026-10-20"
     },
     "recover_global_timer": {
-        "written": false,
-        "checksum": 2594536042,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 677964761,
+        "date": "2026-10-20"
     },
     "recover_hp": {
         "written": false,
@@ -1450,9 +1450,9 @@
         "date": "2026-02-22"
     },
     "remove_key_value_pairs_from_dictionary_by_key": {
-        "written": false,
-        "checksum": 3564578412,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3879802718,
+        "date": "2026-10-20"
     },
     "remove_target_entity_from_aggro_list": {
         "written": false,
@@ -1475,9 +1475,9 @@
         "date": "2026-04-07"
     },
     "resume_timer": {
-        "written": false,
-        "checksum": 1540638745,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 740715154,
+        "date": "2026-10-20"
     },
     "revive_all_players_characters": {
         "written": false,
@@ -1500,9 +1500,9 @@
         "date": "2026-02-22"
     },
     "send_signal": {
-        "written": false,
-        "checksum": 3481847463,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 151743303,
+        "date": "2026-10-20"
     },
     "settle_stage": {
         "written": true,
@@ -1615,9 +1615,9 @@
         "date": "2026-02-22"
     },
     "set_or_add_key_value_pairs_to_dictionary": {
-        "written": false,
-        "checksum": 3124978367,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4053188301,
+        "date": "2026-10-20"
     },
     "set_players_current_channel": {
         "written": false,
@@ -1625,9 +1625,9 @@
         "date": "2026-02-22"
     },
     "set_player_background_music": {
-        "written": false,
-        "checksum": 2121111487,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3098304833,
+        "date": "2026-10-20"
     },
     "set_player_channel_permissions": {
         "written": false,
@@ -1740,54 +1740,54 @@
         "date": "2026-02-22"
     },
     "sort_dictionary_by_key": {
-        "written": false,
-        "checksum": 1679654153,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3799616465,
+        "date": "2026-10-20"
     },
     "sort_dictionary_by_value": {
-        "written": false,
-        "checksum": 1524803043,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1551693882,
+        "date": "2026-10-20"
     },
     "split_structure": {
-        "written": false,
-        "checksum": 887950593,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1074035182,
+        "date": "2026-10-20"
     },
     "start_global_timer": {
-        "written": false,
-        "checksum": 43924870,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1741910577,
+        "date": "2026-10-20"
     },
     "start_pause_player_background_music": {
-        "written": false,
-        "checksum": 340381796,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2704165033,
+        "date": "2026-10-20"
     },
     "start_pause_specified_sound_effect_player": {
-        "written": false,
-        "checksum": 87226406,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2332842497,
+        "date": "2026-10-20"
     },
     "start_timer": {
         "written": true,
-        "checksum": 1329920221,
-        "date": "2026-03-28"
+        "checksum": 1512884962,
+        "date": "2026-10-20"
     },
     "stop_and_delete_basic_motion_device": {
-        "written": false,
-        "checksum": 246243425,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2288344802,
+        "date": "2026-10-20"
     },
     "stop_global_timer": {
-        "written": false,
-        "checksum": 3291450569,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2744833471,
+        "date": "2026-10-20"
     },
     "stop_timer": {
-        "written": false,
-        "checksum": 750117978,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 316858813,
+        "date": "2026-10-20"
     },
     "subtraction": {
         "written": false,
@@ -1890,9 +1890,9 @@
         "date": "2026-02-22"
     },
     "when_basic_motion_device_stops": {
-        "written": false,
-        "checksum": 1192537631,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3180002561,
+        "date": "2026-10-20"
     },
     "when_character_revives": {
         "written": false,
@@ -1975,9 +1975,9 @@
         "date": "2026-02-22"
     },
     "when_global_timer_is_triggered": {
-        "written": false,
-        "checksum": 666249072,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 603077518,
+        "date": "2026-10-20"
     },
     "when_hp_is_recovered": {
         "written": false,
@@ -2070,9 +2070,9 @@
         "date": "2026-02-22"
     },
     "when_tab_is_selected": {
-        "written": false,
-        "checksum": 2475257182,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 890257747,
+        "date": "2026-10-20"
     },
     "when_text_bubble_is_completed": {
         "written": false,
@@ -2100,9 +2100,9 @@
         "date": "2026-02-22"
     },
     "when_timer_is_triggered": {
-        "written": false,
-        "checksum": 928945452,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2164428317,
+        "date": "2026-10-20"
     },
     "when_ui_control_group_is_triggered": {
         "written": true,
@@ -2231,8 +2231,8 @@
     },
     "when_equipment_is_purchased": {
         "written": true,
-        "checksum": 1386824774,
-        "date": "2026-04-07"
+        "checksum": 3274750479,
+        "date": "2026-05-18"
     },
     "when_equipment_is_sold": {
         "written": true,
@@ -2248,5 +2248,80 @@
         "written": true,
         "checksum": 3405661416,
         "date": "2026-04-07"
+    },
+    "check_whether_player_cursor_is_active": {
+        "written": true,
+        "checksum": 1251708481,
+        "date": "2026-10-20"
+    },
+    "edit_model_color_and_material": {
+        "written": true,
+        "checksum": 2674991460,
+        "date": "2026-10-20"
+    },
+    "get_model_color_and_material": {
+        "written": true,
+        "checksum": 846180515,
+        "date": "2026-10-20"
+    },
+    "query_control_motion_devices_current_movement_parameters": {
+        "written": true,
+        "checksum": 84768505,
+        "date": "2026-10-20"
+    },
+    "query_players_currently_activated_control_motion_device_list": {
+        "written": true,
+        "checksum": 3510811334,
+        "date": "2026-10-20"
+    },
+    "query_players_followed_control_motion_device": {
+        "written": true,
+        "checksum": 4024991794,
+        "date": "2026-10-20"
+    },
+    "enable_players_cursor_to_click_selectable_targets": {
+        "written": true,
+        "checksum": 3841191787,
+        "date": "2026-10-20"
+    },
+    "set_players_cursor_to_always_visible": {
+        "written": true,
+        "checksum": 415676340,
+        "date": "2026-10-20"
+    },
+    "set_players_cursor_to_click_through_ui_controls": {
+        "written": true,
+        "checksum": 3841191787,
+        "date": "2026-10-20"
+    },
+    "set_player_to_activate_control_motion_device": {
+        "written": true,
+        "checksum": 1920878114,
+        "date": "2026-10-20"
+    },
+    "set_player_to_follow_control_motion_device": {
+        "written": true,
+        "checksum": 8444143,
+        "date": "2026-10-20"
+    },
+    "set_player_to_leave_control_motion_device": {
+        "written": true,
+        "checksum": 645482413,
+        "date": "2026-10-20"
+    },
+    "when_players_activated_control_motion_device_list_changes": {
+        "written": true,
+        "checksum": 368900629,
+        "date": "2026-10-20"
+    },
+    "when_player_follows_control_motion_device": {
+        "written": true,
+        "checksum": 3373081004,
+        "date": "2026-10-20"
+    },
+    "when_player_leaves_control_motion_device": {
+        "written": true,
+        "checksum": 2832921280,
+        "date": "2026-10-20"
     }
 }

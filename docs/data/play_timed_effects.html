@@ -1,44 +1,138 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Play Timed Effects</h1>
 <p>
-     Play a Timed Effect relative to the Target Entity. A valid Target Entity and Attachment Point are required
+    Play a timed effect at an entity.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Special Effects Asset</span> (Config ID) - Identifier for this Effect
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Special Effects Asset</span> (Config ID) - ID of the timed effect to play. e.g. <code>10002012</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - If the Entity does not exist, the Effect will not play
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to play the effect at.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> (String) - If the Attachment Point Name does not exist, the Special Effect will not play
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> (String) - Name of the attachment point on the entity. e.g. <code>"GI_RootNode"</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Move With the Target</span> (Boolean) - If set to True, follows the Target Entity's Motion
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Move With the Target</span> (Boolean) - If <code>Yes</code>, the effect will follow the entity. If <code>No</code>, the effect will remain where it started playing.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotate With the Target</span> (Boolean) - If set to True, follows the Target Entity's Rotation
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotate With the Target</span> (Boolean) - If <code>Yes</code>, the effect will rotate with the entity. If <code>No</code>, the effect's rotation will remain fixed.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - Location Offset relative to the Target Entity's specified Attachment Point
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - Offset relative to the entity's attachment point. This transformation is in the entity coordinate space, taking entity transform into consideration.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - Rotation offset relative to the Target Entity's specified Attachment Point
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - Rotation relative to the entity's attachment point. This transformation is in the entity coordinate space, taking entity transform into consideration.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Zoom Multiplier</span> (Floating Point Numbers) - The Zoom Multiplier of this Effect
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Zoom Multiplier</span> (Floating Point Numbers) - Zoom multiplier for the effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Play Built-In Sound Effect</span> (Boolean) - If set to True, plays the built-in Sound Effect as well
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Play Built-In Sound Effect</span> (Boolean) - If <code>Yes</code>, the effect will play a built-in sound associated with the effect, if one exists.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This node is used to play timed effect,
+    which is a visual special effect that plays once and stops.
+    To play looping effect, use <a href="?node=mount_looping_special_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Mount Looping Special Effect</a> instead.
+    To play sound effect, use <a href="?node=start_pause_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start/Pause Specified Sound Effect Player</a>
+    or <a href="?node=player_plays_one_shot_2d_sound_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Player Plays One-Shot 2D Sound Effect</a> instead.
+</p>
+<p>
+    Effects may not be visible when you preview them for various reasons.
+    Some effects are too small or too large to be seen.
+    Some effects must be placed near ground for it to be visible.
+    Some effects also come with built-in sound with can be played with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Play Built-In Sound Effect</span>.
+    See the <a class="outbound_link" href="https://kokokokomi222.github.io/mw_doc/timed_vfxs/">timed effect browser</a>
+    for details on each timed effect.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, "Orange Fireworks" effect is played when a tab is selected on the entity.
+    <img src="/mw_doc/image/play_timed_effects_example.webp" alt="play timed effects example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Special Effects Asset</span> can be selected
+        by clicking on the magnifier icon on the right.
+        Clicking the play button plays the effect on stage as a preview
+        (although it may be difficult to see for some effects).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Special Effects Asset</span> is not an ID for a timed effect, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the "VFX Playing" component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has model visibility turned off
+        from the entity details panel or <a href="?node=activate_disable_model_display" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Model Display</a>,
+        the timed effect does not show.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> is not a name for an attachment point of the entity,
+        this node raises "Entity component does not exist" error, which is misleading.
+    </li>
+    <li>
+        The position of the played timed effect uses the entity coordinate system.
+        Any offset specified with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> or <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span>
+        takes effect after entity transformation is applied.
+    </li>
+    <li>
+        Entity zoom does not affect the effect size, but it does scale <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span>.
+        For example, if the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has a zoom of <code>(1.0, 1.5, 2.0)</code>
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> is <code>(3.0, 5.0, 7.0)</code>,
+        then the resulting offset in the stage coordinate space is <code>(3.0, 7.5, 14.0)</code>.
+    </li>
+    <li>
+        If entity is destroyed while the effect is playing,
+        The effect stops playing.
+    </li>
+    <li>
+        If there are too many effects already, this node may fail,
+        but this needs more testing.
+    </li>
+    <li>
+        Not all parts of the effect may scale by <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Zoom Multiplier</span>.
+        Some parts may even be visible even when <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Zoom Multiplier</span> is 0 or negative.
+    </li>
+    <li>
+        Appearance of effects can depend on camera location.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~9 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=mount_looping_special_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Mount Looping Special Effect</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/P/play_timed_effects.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

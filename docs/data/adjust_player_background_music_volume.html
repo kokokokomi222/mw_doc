@@ -1,23 +1,76 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Player Background Music Volume</h1>
 <p>
-     Adjust Player Background Music Volume
+    Adjusts music volume.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Player entity to adjust the music volume for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - Volume of the music. <code>0</code> means mute, <code>100</code> means full gain. This value scales the amplitude linearly. Must be between <code>0</code> and <code>100</code>, inclusive.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this to adjust background music volume for players.
+    Use <a href="?node=set_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Background Music</a> to set and start the music.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph mounted on the player.
+    When it receives <code>Music Volume Change</code> signal,
+    where <code>volume</code> is a floating point number ranging from <code>0</code> to <code>100</code>,
+    it computes the reasonable amplitude scale for the requested volume change
+    (the formula used here is <code>100 * 10^((100-volume)*0.015)</code>)
+    and use this node to change the music volume for the player.
+    <img src="/mw_doc/image/adjust_player_background_music_volume_example.webp" alt="adjust player background music volume example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> is negative or if it exceeds <code>100</code>, this node is no-op.
+    </li>
+    <li>
+        Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> scales the amplitude linearly,
+        it does not scale linearly with human perception, which is logarithmic.
+        If you are making a volume slider, you may want to account for this.
+        See the above example.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Background Music</a>
+    </li>
+    <li>
+        <a href="?node=start_pause_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start/Pause Player Background Music</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/adjust_player_background_music_volume.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

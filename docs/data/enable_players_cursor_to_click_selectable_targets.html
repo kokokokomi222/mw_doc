@@ -1,0 +1,84 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Enable Player's Cursor to Click Selectable Targets</h1>
+<p>
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Sets whether cursor can click through UI controls.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Entity of the player to set the cursor click-through for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Click Through UI Controls?</span> (Boolean) - <code>Yes</code> to let cursor collision work through all UI controls. <code>No</code> otherwise.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Luna VIII introduced various features involving cursors.
+    Cursor settings can be configured in the player detail panel.
+    "Allow UI control click-through" can be set to <code>Yes</code>
+    in order to make the cursor collisions to work even when a UI control is blocking it.
+    <img src="/mw_doc/image/player_cursor_config.webp" alt="player cursor config" class="expandable_img" loading="lazy"/>
+    This node lets you toggle this setting dynamically.
+</p>
+<p>
+    Note that this node does not affect UI controls that does not collide with cursor.
+    See the note below for detail.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, when a player selects the tab, we make the player's cursor visible.
+    <img src="/mw_doc/image/set_players_cursor_to_always_visible_example.webp" alt="set players cursor to always visible example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading, because the non-player entity may exist).
+    </li>
+    <li>
+        Not all UI controls block cursor collisions.
+        If the UI controls are not clickable (like text boxes or images),
+        the UI controls allow cursor collisions through
+        even when <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Click Through UI Controls?</span> is set to <code>No</code>.
+        This node only affects cursor collisions blocked by UI controls that are clickable,
+        like interactive button, custom button, custom switch, item display, etc.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_players_cursor_to_click_through_ui_controls" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player's Cursor to Click Through UI Controls</a>
+    </li>
+    <li>
+        <a href="?node=enable_players_cursor_to_click_selectable_targets" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Enable Player's Cursor to Click Selectable Targets</a>
+    </li>
+    <li>
+        <a href="?node=check_whether_player_cursor_is_active" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Check Whether Player Cursor Is Active</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/E/enable_players_cursor_to_click_selectable_targets.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

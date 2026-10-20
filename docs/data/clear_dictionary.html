@@ -1,20 +1,53 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Clear Dictionary</h1>
 <p>
-     Clear all Key-Value Pairs from the specified Dictionary
+    Clear a dictionary.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Dictionary</span> (Generic) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Dictionary</span> (Generic) - Dictionary to clear
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to clear a dictionary.
+    The dictionary will contain zero key-value pairs after this node runs.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we clear a node variable dictionary named <code>round_score</code> on signal <code>Round Ended</code>.
+    After the node runs, the dictionary will be completely empty with length 0.
+    <img src="/mw_doc/image/clear_dictionary_example.webp" alt="clear dictionary example" class="expandable_img" loading="lazy"/>
+</p>
 
 
+<h2>Performance</h2>
+<p>
+    This node is slow in load testing.
+    This is maybe because the debugger stores and/or serializes the dictionary,
+    but we are unsure how much faster it runs in release.
+    For a dictionary with 10 key-value pairs, this node took ~12 units to run on average.
+    For a dictionary with 100 key-value pairs, this node took ~120 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
-
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=remove_key_value_pairs_from_dictionary_by_key" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Remove Key Value Pairs from Dictionary by Key</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/clear_dictionary.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

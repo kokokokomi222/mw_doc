@@ -1,44 +1,170 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Fixed-Point Motion Device</h1>
 <p>
-     Dynamically add a Fixed-Point Basic Motion Device to the Target Entity during Stage runtime
+    Start a basic motion device with fixed-point motion.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity with basic motion device component
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Identifier for this motion device
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Name of the motion device to assign
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> (Enumeration) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> (Enumeration) - One of <code>Instant Movement</code> or <code>Uniform Linear Motion</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement SPD</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement SPD</span> (Floating Point Numbers) - Speed of the motion. Unit is in meter per seconds. "Movement Mode" must be <code>Uniform Linear Motion</code> and "Parameter Type" must be <code>Fixed Speed</code> for this argument to take effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> (3D Vector) - Absolute Location
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> (3D Vector) - Target Location.  This is in world coordinate space, and is not relative to the current location of the entity.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> (3D Vector) - Absolute Rotation
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> (3D Vector) - Target rotation. This is in world coordinate space, and is not relative to the current rotation of the entity. "Lock Rotation" must be <code>No</code> for this argument to take effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> (Boolean) - If <code>Yes</code>, the entity keeps its original rotation during the motion. If <code>No</code>, the entity continuously rotates toward "Target Rotation" during the motion.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> (Enumeration) - Options: Fixed Speed or Fixed Time
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> (Enumeration) - One of <code>Fixed Speed</code> or <code>Fixed Time</code>. "Movement Mode" must be <code>Uniform Linear Motion</code> for this argument to take effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Time</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Time</span> (Floating Point Numbers) - Duration of the motion. Unit is in seconds. "Movement Mode" must be <code>Uniform Linear Motion</code> and "Parameter Type" must be <code>Fixed Time</code> for this argument to take effect.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Basic motion device with fixed-point motion is typically configured in the component,
+    <img src="/mw_doc/image/fixed_point_motion_config.webp" alt="fixed point motion config" class="expandable_img" loading="lazy"/>
+    However, this node can create a basic motion device with fixed-point motion dynamically.
+    After this node executes, the newly created basic motion device starts running immediately,
+    without having to run <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a>.
+</p>
+<p>
+    This node has three different modes of operation:
+</p>
+<p>
+    <ol>
+        <li>
+            <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Instant Movement</code>. In this case, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> is ignored.
+            The entity teleports to the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> immediately.
+        </li>
+        <li>
+            <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Uniform Linear Motion</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> is <code>Fixed Speed</code>.
+            The entity moves toward <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span>, moving at the speed of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement SPD</span> meters per second.
+        </li>
+        <li>
+            <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Uniform Linear Motion</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> is <code>Fixed Time</code>.
+            The entity moves toward <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span>, taking <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Time</span> seconds to finish.
+        </li>
+    </ol>
+</p>
+<p>
+    In all these modes, the entity also turns toward <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span>
+    if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> is <code>No</code>,
+    working similarly as <a href="?node=add_target_oriented_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Target-Oriented Rotation-Based Motion Device</a>.
+    If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> is <code>Yes</code>, the entity will keep the initial rotation during the motion.
+</p>
+<p>
+    The <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is in the world coordinate space, 
+    not relative to the current location of the entity.
+    For example, if the current location of the entity is <code>(2, 0, 0)</code>,
+    and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is <code>(5, 0, 0)</code>,
+    the resulting motion is 3 meters translation, not 5 meters.
+</p>
+<p>
+    The <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> is in the world coordinate space, 
+    not relative to the current rotation of the entity.
+    For example, if the current rotation of the entity is <code>(0, 45, 0)</code>,
+    and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Rotation</span> is <code>(0, 180, 0)</code>,
+    the resulting motion is 135 degrees rotation, not 180 degrees.
+</p>
 
+<h2>Example</h2>
+<p>
+    This example demonstrates the first mode of operation.
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Instant Movement</code>,
+    so only <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> is relevant.
+    The entity will teleport to <code>(1, 0, 0)</code>.
+    Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> is <code>Yes</code>,
+    the rotation of the entity will stay the same.
+    <img src="/mw_doc/image/activate_fixed_point_motion_device_example_1.webp" alt="activate fixed point motion device example 1" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    This next example demonstrates the second mode of operation.
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Uniform Linear Motion</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> is <code>Fixed Speed</code>,
+    so only <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement SPD</span> is relevant.
+    The entity will move toward to <code>(2, 0, 0)</code> at speed of <code>1.5</code> meters per second until the target is reached.
+    Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> is <code>Yes</code>,
+    the rotation of the entity will stay the same.
+    <img src="/mw_doc/image/activate_fixed_point_motion_device_example_2.webp" alt="activate fixed point motion device example 2" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    This last example demonstrates the third mode of operation.
+    <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Mode</span> is <code>Uniform Linear Motion</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Parameter Type</span> is <code>Fixed Time</code>,
+    so only <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Location</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Movement Time</span> is relevant.
+    The entity will move toward to <code>(3, 0, 0)</code>, taking <code>1.8</code> seconds to do so.
+    Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lock Rotation</span> is <code>No</code>,
+    the entity will also rotate continuously and ending up with <code>(90, 0, 0)</code> rotation when the motion ends.
+    <img src="/mw_doc/image/activate_fixed_point_motion_device_example_2.webp" alt="activate fixed point motion device example 2" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node is inconsistently named.
+        Other equivalent nodes start with "Add", but this node start with "Activate".
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the basic motion device component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        <a href="?node=get_entity_location_and_rotation" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity Location and Rotation</a> reports the correct intermediate location and rotation
+        during this motion, unlike follow motion device or projectile motion device.
+    </li>
+    <li>
+        If there is already a running basic motion device on this entity named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span>,
+        this node stops that device in the middle of the motion.
+        However, this does not overwrite the basic motion device statically defined in the component.
+        See examples in the notes of <a href="?node=add_uniform_basic_linear_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Linear Motion Device</a> and
+        <a href="?node=add_uniform_basic_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Rotation-Based Motion Device</a> for more detail.
+        <p>This behavior is complicated to understand,
+        so we recommend not using duplicate names and explicitly use <a href="?node=stop_and_delete_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Stop and Delete Basic Motion Device</a> instead.</p>
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~32 units to run on average, but it seems to have high variance.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=add_uniform_basic_linear_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Linear Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=add_uniform_basic_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Rotation-Based Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=add_target_oriented_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Target-Oriented Rotation-Based Motion Device</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_fixed_point_motion_device.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,23 +1,66 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover Basic Motion Device</h1>
 <p>
-     Resume a paused Basic Motion Device on the Target Entity. The Target Entity must have the Basic Motion Device Component
+    Resume a paused basic motion device.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity with a paused basic motion device
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Identifier for this motion device
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Name of the motion device, as specified in the basic motion device component
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    See <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a> for details on basic motion device.
+    This node resumes a basic motion device paused with <a href="?node=pause_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Pause Basic Motion Device</a>.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph mounted on an entity with basic motion device component.
+    When we receive <code>Time Stop Skill Used</code> signal,
+    we pause the basic motion device named <code>"Move Toward Exit"</code>.
+    When we receive <code>Time Stop Skill Ended</code> signal,
+    we resume the basic motion device named <code>"Move Toward Exit"</code>.
+    <img src="/mw_doc/image/pause_basic_motion_device_example.webp" alt="pause basic motion device example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the basic motion device component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If there is no paused basic motion device with name <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span>,
+        this node is no-op.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~7 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=pause_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Pause Basic Motion Device</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/recover_basic_motion_device.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

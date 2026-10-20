@@ -1,30 +1,81 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Dictionary Value by Key</h1>
 <p>
-     Searches the corresponding Value in the Dictionary by Key. If the Key does not exist, returns the type's default value
+    Returns the value corresponding the key in the dictionary.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Dictionary</span> (Generic) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Dictionary</span> (Generic) - The dictionary to query the value from
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Key</span> (Generic) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Key</span> (Generic) - Key in the dictionary
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> (Generic) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span> (Generic) - Value that corresponds the key in the dictionary
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    This is the primary query on dictionaries, getting the value from the key.
+    You will likely use this node if you are using a dictionary. 
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a node graph variable dictionary named <code>round_score</code>
+    which stores key-value pair of player entity and player's score.
+    When a player selects the tab,
+    we get the current score of the player from the dictionary using <a href="?node=query_dictionary_value_by_key" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Dictionary Value by Key</a>,
+    then set the new score of the player by adding 100.
+    <img src="/mw_doc/image/set_or_add_key_value_pairs_to_dictionary_example.webp" alt="set or add key value pairs to dictionary example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Key</span> is not a key in the dictionary, 
+        this node returns the default value of the type of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Value</span>.
+        To properly test whether a key is in the dictionary,
+        use <a href="?node=query_if_dictionary_contains_specific_key" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If Dictionary Contains Specific Key</a> instead.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node is slow in load testing.
+    This is maybe because the debugger stores and/or serializes the dictionary,
+    but we are unsure how much faster it runs in release.
+    For a dictionary with 10 key-value pairs, this node took ~12 units on average.
+    For a dictionary with 100 key-value pairs, this node took ~80 units on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_or_add_key_value_pairs_to_dictionary" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set or Add Key Value Pairs to Dictionary</a>
+    </li>
+    <li>
+        <a href="?node=query_if_dictionary_contains_specific_key" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If Dictionary Contains Specific Key</a>
+    </li>
+    <li>
+        <a href="?node=query_if_dictionary_contains_specific_value" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If Dictionary Contains Specific Value</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/Q/query_dictionary_value_by_key.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

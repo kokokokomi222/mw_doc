@@ -1,13 +1,87 @@
 <h1 class="operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Operation Node"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Assemble Structure</h1>
 <p>
-     Combines multiple parameters into a single Structure-type value
+    Creates a structure instance from field values.
 </p>
 
+<h2>Input Parameters</h2>
+<p>
+    Input parameters are the field values, which depend on the structure.
+</p>
 
+<h2>Output Values</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Structure Name Here</span> (Structure) - Assembled structure from the field values.
+    </li>
+</ul>
 
+<h2>Usage</h2>
+<p>
+    Structure is a data container of fields, which are variables with a name and a type.
+    For example, you could define a structure representing a wave of enemies, and the fields could be "name" with string type, "music" with integer type, "deploy_group" with integer type, etc.
+    It is similar to struct in programming languages like C.
+    Miliastra structures do not have methods, just fields.
+    It can be defined in the "Advanced Data Management" under the main menu.
+    <img src="/mw_doc/image/advanced_data_management.webp" alt="advanced data management" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Structures are also used for save files in Miliastra.
+    Save data structures can be defined in "Advanced Data Management" under "In-Game Save Data Structure".
+    Then, in the "Manage In-Game Save" under the main menu, save template can be defined.
+    This defines save custom variables for players, which can be read and written with
+    <a href="?node=get_custom_variable" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Custom Variable</a> and <a href="?node=set_custom_variable" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Custom Variable</a>.
+</p>
+<p>
+    This node lets you create an instance of a structure by providing the values of the structure fields.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we save our state to the player save custom variable.
+    Player level, skill, and character location is queried
+    and then put together into a structure
+    and then saved to the player.
+    <img src="/mw_doc/image/assemble_structure_example.webp" alt="assemble structure example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        You must hit "Apply All" button in "Advanced Data Management"
+        in order to see the new/modified structure in the node graph editor.
+    </li>
+    <li>
+        If any of the field values are left empty,
+        this node uses the default value of the type to create the structure,
+        instead of using the default values of the structure
+        as defined in "Advanced Data Management".
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    The performance of this node varies heavily depending on the structure and the field values.
+    Profile it for your use case.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=modify_structure" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Modify Structure</a>
+    </li>
+    <li>
+        <a href="?node=split_structure" class="node operation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#operation_icon"/></svg> Split Structure</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/assemble_structure.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

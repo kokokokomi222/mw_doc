@@ -9,23 +9,9 @@
 # MINOR NITPICKS
 * break loop example should have loop complete running
 * remove value from list should remove from middle, not front
-* 
 
 # NEXT NODES
-## Execution
-    * player and character related * 9/10
-    * timer related * 4
-    * global timer related * 5
-## Event
-    * player and character related * 5/6
-    * when timer is triggered
-    * when global timer is triggered
-## Query
-    * entity related * 13/24
-    * get current global timer time
-## Operation
-    done for now
-After that dictionary/struct, effects (vfx/sound/music), signal, and time operations
+Now tracked in google doc
 
 # FEATURES
 * input/output in table
@@ -40,6 +26,7 @@ After that dictionary/struct, effects (vfx/sound/music), signal, and time operat
 * container type and reference passing
 * removed vs destroyed
 * preset status
+* timer vs global timer
 
 # MATH OPERATION NODE SORTING
 ## Arithmetic

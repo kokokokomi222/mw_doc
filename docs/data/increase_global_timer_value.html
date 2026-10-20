@@ -1,26 +1,87 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Global Timer Value</h1>
 <p>
-     Adjust the time of a running Global Timer via the Node Graph If the timer is paused first and then modified to reduce the time, the modified time will be at least 0 seconds. For countdown timers, pausing followed by modifying the time to 0s will trigger the [When the Global Timer Is Triggered] event upon resuming the timer. If the timer is paused first, then modified to 0s, followed by modifying the time to increase it, and finally resumed, the [When the Global Timer Is Triggered] event will not be triggered.
+    Modifies the time of a global timer.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to modify the global timer from.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Name</span> (String) - Identifier for the Timer. Only Timer Names configured in Timer Management can be referenced
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Name</span> (String) - Name of the timer as specified in Timer Management.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Increase Value</span> (Floating Point Numbers) - For a Countdown Timer, a positive value increases the remaining time; a negative value decreases the remaining timeIf the timer is set to Stopwatch, a positive value increases the accumulated time, while a negative value decreases it
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Increase Value</span> (Floating Point Numbers) - Number of seconds to increase the global timer by.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to modify the time of a global timer.
+    For a countdown timer, positive <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Increase Value</span> means that the remaining time will increase.
+    For a stopwatch timer, positive <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Increase Value</span> means that the accumulated time will increase.
+    Use negative value to decrease the time instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have an entity with collision trigger set only to collide with characters.
+    When the player collides with this entity,
+    we increase the global timer named <code>Round Timer</code> by 10 seconds
+    and then destroy this entity.
+    <img src="/mw_doc/image/increase_global_timer_value_example.webp" alt="increase global timer value example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error and continues execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the global timer component,
+        this node raises "Entity component does not exist" error and continues execution.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Timer Name</span> is not the name of a global timer defined in Timer Management,
+        this node is no-op.
+    </li>
+    <li>
+        If the resulting time is non-negative, the time is set to 0 on the global timer.
+        This is true for paused global timers as well.
+    </li>
+    <li>
+        If the global timer is a countdown timer and the resulting time is non-negative,
+        The global timer is stopped and <a href="?node=when_global_timer_is_triggered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Global Timer Is Triggered</a> event is triggered.
+        If it is paused, the stopping and the event happens
+        when it is resumed with 0 time on the global timer.  
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~8 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=start_global_timer" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start Global Timer</a>
+    </li>
+    <li>
+        <a href="?node=get_current_global_timer_time" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Current Global Timer Time</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/I/increase_global_timer_value.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

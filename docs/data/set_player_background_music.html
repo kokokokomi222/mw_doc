@@ -1,44 +1,186 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Background Music</h1>
 <p>
-     Set player background music parameters
+    Plays a music.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Player entity to play the music for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Background Music Index</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Background Music Index</span> (Integer) - ID of the music. e.g. <code>10109</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Start Time</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Start Time</span> (Floating Point Numbers) - Time to start the music at. Unit is seconds.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> End Time</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> End Time</span> (Floating Point Numbers) - Time to stop the music at. Unit is seconds.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - Volume of the music. <code>0</code> means mute, <code>100</code> means full gain. This value scales the amplitude linearly. Must be between <code>0</code> and <code>100</code>, inclusive.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> (Boolean) - If <code>Yes</code>, loop the music, repeating it indefinitely.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> (Floating Point Numbers) - Amount of silence before looping the music. Unit is seconds.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - Speed to play the music at. <code>1.0</code> means default speed. Must be between <code>0.5</code> and <code>2.0</code>, inclusive.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Fade In/Out</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Fade In/Out</span> (Boolean) - If <code>Yes</code>, fade the music in and out. See notes for details.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Miliastra stages can play various built-in Genshin music for players.
+    The music can be browsed from Manage Background Music menu.
+    Background music can be set here,
+    and that will play the music for all players when the stage starts
+    without using any node graphs.
+    <img src="/mw_doc/image/manage_background_music_menu.webp" alt="manage background music menu" class="expandable_img" loading="lazy"/>
+    <img src="/mw_doc/image/manage_background_music_window.webp" alt="manage background music window" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to play music from node graph.
+    Available music can be browsed <a class="outbound_link" href="https://kokokokomi222.github.io/mw_doc/music/">here</a>.
+</p>
+<p>
+    Use <a href="?node=player_plays_one_shot_2d_sound_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Player Plays One-Shot 2D Sound Effect</a> or <a href="?node=add_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Sound Effect Player</a>
+    to play a sound effect instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, the music with ID <code>10130</code> (Die Mittsommernacht-Fantasie)
+    starts playing for the player when the tab is selected by the player.
+    It plays the section starting from 3:00 (180 seconds from start) to 3:10 (190 seconds from start),
+    at volume 50 (half the amplitude, i.e. ~6dB softer than full gain).
+    It loops the section with 3 second silence between the loops.
+    The music is played at the normal speed.
+    The music fades in at the beginning of the section and fades out at the end of the section.
+    The fade is linear.
+    In this particular example, the fade-in took 5 seconds and the fade-out took 2 seconds
+    (see notes for more detail on fade duration).
+</p>
+<p>
+    <img src="/mw_doc/image/set_player_background_music_example.webp" alt="set player background music example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    The envelope looks like the following when graphed:
+</p>
+<p>
+    <img src="/mw_doc/image/music_envelope.webp" alt="music envelope" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If this node cannot run due to any of the problems listed below,
+        it will not cause any side effect.
+        Any music that is already playing will continue to play.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Background Music Index</span> can be selected by clicking on the magnifier icon on the right.
+        Clicking the play button plays the music for preview.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error
+        (can be misleading because the entity may exist).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Background Music Index</span> is not an ID for a music,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Start Time</span> is negative, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> End Time</span> exceeds the music duration,
+        this value is clamped to the music duration.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Start Time</span> is greater than <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> End Time</span>,
+        this node is no-op.
+        If the two values are equal, this node runs
+        (with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Fade In/Out</span> set to <code>Yes</code>, it will even play a bit of music).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> is negative or if it exceeds <code>100</code>, this node is no-op.
+    </li>
+    <li>
+        Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> scales the amplitude linearly,
+        it does not scale linearly with human perception, which is logarithmic.
+        If you are making a volume slider, you may want to account for this.
+        See <a href="?node=adjust_player_background_music_volume" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Player Background Music Volume</a> for an example.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> is <code>Yes</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> is negative, this node is no-op.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> is <code>No</code>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> can be any value.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> is not scaled by <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span>.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> is <code>3</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> is <code>1.5</code>,
+        the loop interval will take 3 seconds.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> is less than <code>0.5</code> or greater than <code>2.0</code>,
+        this node is no-op.
+    </li>
+    <li>
+        Unlike sound effects, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> does not apply pitch correction.
+        Faster speed means the music plays at higher pitch.
+    </li>
+    <li>
+        Fade in/out is linear on amplitude.
+        The fade-out seems to always take two seconds,
+        but fade-in seems to vary in time, ranging from 2 to 5 seconds.
+        This needs more testing.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Fade In/Out</span> is set to <code>Yes</code>
+        and the part of the music played is short,
+        It can increase the duration of the played part of the music.
+        This needs more testing.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Enable Fade In/Out</span> behaves strangely with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span>.
+        It can increase the duration of the played part of the music.
+        This needs more testing.
+    </li>
+    <li>
+        Background music may continue to play during loading out of the game.
+        You may want to stop the music before settling the stage.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=adjust_player_background_music_volume" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Player Background Music Volume</a>
+    </li>
+    <li>
+        <a href="?node=start_pause_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start/Pause Player Background Music</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/set_player_background_music.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

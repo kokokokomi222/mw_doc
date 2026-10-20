@@ -1,29 +1,98 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Target-Oriented Rotation-Based Motion Device</h1>
 <p>
-     Dynamically add a Basic Motion Device with Target-Oriented Rotation to the Target Entity during Stage runtime
+    Start a basic motion device that rotate towards a target rotation.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity with basic motion device component
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Identifier for this motion device
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span> (String) - Name of the motion device to assign
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Duration</span> (Floating Point Numbers) - The duration for which this motion device remains active
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Duration</span> (Floating Point Numbers) - The duration for which this motion device remains active. Unit is in seconds.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Angle</span> (3D Vector) - Absolute Angle
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Angle</span> (3D Vector) - Target rotation. This is in world coordinate space, and is not relative to the current rotation of the entity.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    Basic motion device that rotate towards target is typically configured in the component,
+    where the duration and the target rotation can be specified.
+    <img src="/mw_doc/image/rotate_towards_target_config.webp" alt="rotate towards target config" class="expandable_img" loading="lazy"/>
+    However, this node can create a basic motion device that rotate towards target dynamically,
+    specifying the duration and the target rotation on runtime.
+    After this node executes, the newly created basic motion device starts running immediately,
+    without having to run <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a>.
+</p>
+<p>
+    The <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Angle</span> is in the world coordinate space, 
+    not relative to the current rotation of the entity.
+    For example, if the current rotation of the entity is <code>(0, 45, 0)</code>,
+    and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Angle</span> is <code>(0, 180, 0)</code>,
+    the resulting motion is 135 degrees rotation, not 180 degrees.
+</p>
+<p>
+    The motion follows <a class="outbound_link" href="https://en.wikipedia.org/wiki/Spherical_linear_interpolation">spherical linear interpolation</a>,
+    often shortened as slerp, to achieve smooth transition from one rotation to another.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, when tab is selected,
+    the entity will start turning toward the character that selected the tab for 2 seconds,
+    ending up facing the character when it stops.
+    Note that <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a> was not needed to start moving.
+    <img src="/mw_doc/image/add_target_oriented_rotation_based_motion_device_example.webp" alt="add target oriented rotation based motion device example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Angle</span> is more appropriately named "Target Rotation" as in <a href="?node=activate_fixed_point_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Fixed-Point Motion Device</a>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the basic motion device component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        <a href="?node=get_entity_location_and_rotation" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Entity Location and Rotation</a> reports the correct intermediate rotation
+        during this motion, unlike follow motion device or projectile motion device.
+    </li>
+    <li>
+        If there is already a running basic motion device on this entity named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Motion Device Name</span>,
+        this node stops that device in the middle of the motion.
+        However, this does not overwrite the basic motion device statically defined in the component.
+        See examples in the notes of <a href="?node=add_uniform_basic_linear_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Linear Motion Device</a> and
+        <a href="?node=add_uniform_basic_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Rotation-Based Motion Device</a> for more detail.
+        <p>This behavior is complicated to understand,
+        so we recommend not using duplicate names and explicitly use <a href="?node=stop_and_delete_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Stop and Delete Basic Motion Device</a> instead.</p>
     </li>
 </ul>
 
 
-
-
-
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_basic_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Basic Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=add_uniform_basic_linear_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Linear Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=add_uniform_basic_rotation_based_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Uniform Basic Rotation-Based Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=activate_fixed_point_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Fixed-Point Motion Device</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/add_target_oriented_rotation_based_motion_device.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

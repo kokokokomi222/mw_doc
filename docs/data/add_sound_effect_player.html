@@ -1,57 +1,215 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Add Sound Effect Player</h1>
 <p>
-     Dynamically add a Sound Effect Player. The Unit must have a Sound Effect Player Component
+    Plays a sound.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity to play the sound from. It must have an SFX Player component.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> (Integer) - ID of the sound effect. e.g. <code>50925</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> (Integer) - Volume of the sound. <code>0</code> means mute, <code>100</code> means full gain. This value scales the amplitude linearly. Must be between <code>0</code> and <code>100</code>, inclusive.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> (Floating Point Numbers) - Speed to play the sound at. <code>1.0</code> means default speed. Must be between <code>0.5</code> and <code>2.0</code>, inclusive.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> (Boolean) - If <code>Yes</code>, loop the sound, repeating it indefinitely.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval Time</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval Time</span> (Floating Point Numbers) - Amount of silence before looping the sound. Unit is seconds.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 3D Sound Effect</span> (Boolean) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 3D Sound Effect</span> (Boolean) - If <code>Yes</code>, play the sound using 3D sound effect, applying panning and distance based attenuation.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Range Radius</span> (Floating Point Numbers) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Range Radius</span> (Floating Point Numbers) - Radius of the 3D sound effect. The sound will not be heard outside the range. Unit is in meters. Must be between <code>1.0</code> and <code>1000.0</code>.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attenuation Mode</span> (Enumeration) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attenuation Mode</span> (Enumeration) - One of <code>Linear Attenuation</code>, <code>Fast Then Slow</code>, and <code>Slow Then Fast</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> (String) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> (String) - Name of the attachment point on the entity. e.g. <code>"GI_RootNode"</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Offset</span> (3D Vector) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Offset</span> (3D Vector) - Offset relative to the entity's attachment point. This transformation is in the entity coordinate space, taking entity transform into consideration.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> SFX Player ID</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> SFX Player ID</span> (Integer) - ID of the resulting sound player if the sound is looping. <code>-1</code> if the node failed or if the sound is not looping.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Miliastra can play sound effects from entities.
+    Sounds can be added to entities from SFX Player component,
+    and it will be played when the entity is created
+    without having to use node graphs.
+    <img src="/mw_doc/image/sfx_player_component.webp" alt="sfx player component" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to play sounds from node graph.
+    If you just need to play a sound once as a 2D effect,
+    use <a href="?node=player_plays_one_shot_2d_sound_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Player Plays One-Shot 2D Sound Effect</a> instead
+    which does the same thing but much simpler.
+    If you want to play music, use <a href="?node=set_player_background_music" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set Player Background Music</a> instead.
+</p>
+<p>
+    Sound effects in Miliastra are capable of some basic 3D sound features.
+    It can do attenuation: making the sound softer as players get further away from the sound source.
+    It also utilizes stereo channels to give players the sense of the direction of the audio source.
+</p>
+<p>
+    The returned value <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> SFX Player ID</span> can be used by
+</p>
+<ul>
+    <li>
+        <a href="?node=close_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Specified Sound Effect Player</a> - to stop the sound
+    </li>
+    <li>
+        <a href="?node=start_pause_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start/Pause Specified Sound Effect Player</a> - to pause/resume the sound
+    </li>
+    <li>
+        <a href="?node=adjust_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Specified Sound Effect Player</a> - to adjust the volume or the playback speed
+    </li>
+</ul>
 
+<h2>Example</h2>
+<p>
+    In this example, the sound with ID <code>50662</code> (Object_Loop SFX_Hum_04)
+    starts playing at this entity when the tab is selected by a player.
+    It plays at volume 50 (half the amplitude, i.e. ~6dB softer than full gain).
+    It plays at twice the speed.
+    It will loop the sound with 0.5 second silence between the loops
+    (so it will play for 2.5 seconds, pause for 0.5 seconds, and then repeat the cycle).
+    It plays as a 3D effect, so the sound will be heard louder if the player is closer to the entity.
+    The 3D sound radius is set to 50 meters,
+    so if the player is more than 50 meters from the sound player,
+    the sound will not be heard by the player.
+    Attenuation mode is set to <code>Slow Then Fast</code>,
+    so the sound will get softer as player move away from the entity
+    but the rate at which the sound gets softer is low at first but increase as the distance increases.
+    The sound player is attached 1 meter higher than <code>GI_RootNode</code> attachment point.
+    The 1 meter here is not affected by the entity's zoom (see notes for more detail).
+    <img src="/mw_doc/image/add_sound_effect_player_example.webp" alt="add sound effect player example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> can be selected by clicking on the magnifier icon on the right.
+        Clicking the play button plays the sound for preview.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not an entity,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the SFX Player component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        Stage entity and the player entities cannot have SFX Player component.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Sound Effect Asset Index</span> is not an ID for a sound,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> is negative or if it exceeds <code>100</code>, this node is no-op.
+    </li>
+    <li>
+        Because <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Volume</span> scales the amplitude linearly,
+        it does not scale linearly with human perception, which is logarithmic.
+        If you are making a volume slider, you may want to account for this.
+        See <a href="?node=adjust_player_background_music_volume" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Player Background Music Volume</a> for an example.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> is less than <code>0.5</code> or greater than <code>2.0</code>,
+        this node is no-op.
+    </li>
+    <li>
+        Unlike music, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Playback Speed</span> appears to apply pitch correction.
+        Faster speed does not mean that the pitch is higher.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> is <code>Yes</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> is negative, this node is no-op.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> is <code>No</code>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Interval</span> can be any value.
+    </li>
+    <li>
+        One entity can only have 10 looping sound effect players at once.
+        If this node is called with <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Loop Playback</span> set to <code>Yes</code>
+        while the entity already has 10 looping sound effect players,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 3D Sound Effect</span> is <code>Yes</code>
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Range Radius</span> is less than <code>1.0</code> or greater than <code>1000.0</code>,
+        this node is no-op.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 3D Sound Effect</span> is <code>No</code>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Range Radius</span> can be any value.
+    </li>
+    <li>
+        The attenuation curve approximately looks like the following:
+        <img src="/mw_doc/image/attenuation_curve.webp" alt="attenuation curve" class="expandable_img" loading="lazy"/>
+        <code>Fast Then Slow</code> eases out while <code>Slow Then Fast</code> eases in.
+        The attenuation factor is multiplied to the amplitude of the sound.
+        The attenuation factor should be inversely proportional to the distance in physics,
+        so <code>Fast Then Slow</code> may be the most physically accurate one out of the three.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> 3D Sound Effect</span> is <code>Yes</code>
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Name</span> is not a name for an attachment point of the entity,
+        this node succeeds in making a sound player, but does not play the sound.
+    </li>
+    <li>
+        Unlike visual special effects,
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Offset</span> is not affected by the entity's zoom,
+        but it is affected by location and rotation.
+        The preview of the player location and range preview in the SFX Player component is incorrect
+        when the entity has non-default zoom.
+        You may want to define a custom attachment point
+        instead of using <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Attachment Point Offset</span>.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~9 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tend to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=player_plays_one_shot_2d_sound_effect" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Player Plays One-Shot 2D Sound Effect</a>
+    </li>
+    <li>
+        <a href="?node=adjust_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Adjust Specified Sound Effect Player</a>
+    </li>
+    <li>
+        <a href="?node=start_pause_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Start/Pause Specified Sound Effect Player</a>
+    </li>
+    <li>
+        <a href="?node=close_specified_sound_effect_player" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Close Specified Sound Effect Player</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-10-20 (v7.1)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/add_sound_effect_player.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

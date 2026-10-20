@@ -11,6 +11,7 @@ IGNORED_MATCH = {
     ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
     ('multiplication', 'PRP_MD_NN', 'can also underflow'),
     ('print_string', 'NON_STANDARD_WORD', 'two "Print String"s'),
+    ('query_control_motion_devices_current_movement_parameters', 'DASH_RULE', '20.00 - 8.00'),
     ('query_server_time_zone', 'COMMA_PARENTHESIS_WHITESPACE', 'TW,HK,MO'),
     ('read_by_bit', 'EN_UNPAIRED_QUOTES', '""a"-th bit"'),
     ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""a"-th bit"'),
@@ -24,6 +25,7 @@ IGNORED_MATCH = {
     ('write_by_bit', 'EN_UNPAIRED_QUOTES', '""b"-th bit"'),
     ('write_by_bit', 'MORFOLOGIK_RULE_EN_US', '""b"-th bit"'),
     ('write_by_bit', 'UPPERCASE_SENTENCE_START', 'where "n" is'),
+    ('write_by_bit', 'MORFOLOGIK_RULE_EN_US', 'Da Spud Lord'),
 }
 CUSTOM_WORDS = [
     'Miliastra',
@@ -37,6 +39,11 @@ CUSTOM_WORDS = [
     'Columbina',
     'Kokomi',
     'Furina',
+    'Genshin',
+    'Moonglow',
+    'Teyvat',
+    'Mittsommernacht-Fantasie',
+    'Hilichurl',
     'Koko',
 
     'anemo',
@@ -47,10 +54,14 @@ CUSTOM_WORDS = [
     'pyro',
     'cryo',
 
-    'Moonglow',
-    'Teyvat',
     'aggroed',
     'interactable',
+    'rgb',
+    'hashable',
+    'slerp',
+    'RootNode',
+    'AvatarRoot',
+    'sqrt',
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 
@@ -89,6 +100,8 @@ def check_spell(html_file_path:str) -> int:
         code_string = code.get_text()
         if code_string.startswith('[') and code_string.endswith(']'):
             code.string = '(a specific list)'
+        elif code_string.startswith('{') and code_string.endswith('}'):
+            code.string = '(a specific dict)'
         elif code_string.startswith('"') and code_string.endswith('"'):
             pass
         else:
@@ -120,4 +133,14 @@ def check_spell(html_file_path:str) -> int:
     return len(raw_text.split())
 
 if __name__ == '__main__':
-    check_spell('../docs/data/create_entity.html')
+    # check_spell('../docs/data/create_entity.html')
+    with open('grammar_test.txt', 'r', encoding='utf-8') as file:
+        matches = ltp_tool.check(file.read())
+        for match in matches:
+            i = match.offset_in_context
+            j = i + match.error_length
+            print(f'{BLUE}Message:{RESET}', match.message, f'({YELLOW}{match.rule_id}{RESET})')
+            print(f'{BLUE}Suggestion:{RESET}', ', '.join(match.replacements[:10]))
+            print(f'{BLUE}Context:{RESET}', match.context)
+            print(' '*8, ' '*i + YELLOW + '^'*(j-i) + RESET)
+            print()

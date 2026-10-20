@@ -13,10 +13,15 @@ They may seem similar, but they are completely separate systems with different p
 **Global timers** only fire once, but it can count up or down.
 **Global timer** is primarily used to be displayed in UI by being mounted on the stage or a player.
 **Global timer** can also be used to precisely measure a span of time.
-On the other hand, **timer** can fire multiple times at specified times, and it can also repeat on loop.
+State of a **Global timer** can be queried by [node:get_current_global_timer_time].
+
+On the other hand, **timer** can fire multiple times at specified moments, and it can also repeat on loop.
+State of a **timer** cannot be queried from a node graph.
 
 Timer can be used to control when certain events occur in your game.
 Timer can also be used to space out computation when there's a lot of it.
+Use this node to start a timer
+and [node:when_timer_is_triggered] to listen to when the timer is triggered.
 
 # Example
 In this example, we start a timer named `test_timer` when a character selects the tab.
@@ -81,6 +86,31 @@ and so on.
 
 [image:start_timer_example]
 
+If [input:Loop] was set to `No`, the behavior differs.
+[output:Number_of_Loops] is now always `0` even on the last timer sequence:
+<table><tbody>
+<tr>
+    <th>Time after timer started</th>
+    <th>Timer Sequence ID output</th>
+    <th>Number of Loops output</th>
+</tr>
+<tr>
+    <td>1 second</td>
+    <td>0</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>3 seconds</td>
+    <td>1</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>7 seconds</td>
+    <td>2</td>
+    <td>0</td>
+</tr>
+</tbody></table>
+
 # Notes
 * If [input:Target_Entity] does not exist,
   this node raises "Entity does not exist" error and continues execution.
@@ -101,13 +131,14 @@ and so on.
 * If [input:Timer_Sequence] has more than 100 entries, this node is no-op.
 
 # Performance
-With [input:Timer_Sequence] of length 5, this node took ~6 units on average.
+With [input:Timer_Sequence] of length 5, this node took ~6 units to run on average.
 
 # See Also
 * [node:stop_timer]
 * [node:pause_timer]
 * [node:resume_timer]
 * [node:when_timer_is_triggered]
+* [node:start_global_timer]
 
 # Authors
 * kokokokomi222
