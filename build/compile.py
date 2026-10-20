@@ -339,7 +339,7 @@ def parse_root(state:ParseState, slug:str, node) -> str:
 Performance may vary for various reasons.
 These numbers are just for giving a sense of rough magnitude.
 Performance may differ from profiling in a test play when playing a published stage.
-First execution of a node within a node graph execution tend to take a bit longer.
+First execution of a node within a node graph execution tends to take a bit longer.
 </span>''')
             case 'Input Parameters', 'Output Values':
                 s.append(title)
