@@ -1,0 +1,87 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Native Push Collision</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Sets native push collidability.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Creation Entity</span> (Entity) - Complex creation entity to set the native push collidability for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Native Push Collision ID</span> (Integer) - ID for the native push collision. e.g. <code>1</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) - If <code>Yes</code>, push collision is enabled. If <code>No</code>, it is disabled.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    v7.2 introduced push collision, which can be configured for complex creation entities.
+    Each entity has one to several native collision geometry that can be independently enabled.
+    This defines collision with characters or other creations.
+    If the push collision is turned off,
+    this complex creation entity can walk through characters and other creations,
+    but it will still collide with object entities and react to creation disruptor device.
+</p>
+<p>
+    <img src="/mw_doc/image/native_push_collision_config.webp" alt="native push collision config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to either enable or disable this native push collisions.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have a large hydro slime that has native push collision enabled.
+    <img src="/mw_doc/image/native_push_collision_example.webp" alt="native push collision example" class="expandable_img" loading="lazy"/>
+    We disable the native push collision when player selects the tab.
+    <img src="/mw_doc/image/activate_disable_native_push_collision_example.webp" alt="activate disable native push collision example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a creation entity,
+        this node raises "Entity does not exist" error (which can be misleading).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a creation entity, but not a complex creation entity,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Native Push Collision ID</span> is not an ID of a native push collision,
+        this node is no-op.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_disable_native_collision" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Native Collision</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_extra_push_collision" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Extra Push Collision</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-03 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_disable_native_push_collision.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

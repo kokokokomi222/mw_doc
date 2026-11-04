@@ -6,6 +6,7 @@ IGNORED_RULES = {
     'WHITESPACE_RULE',
 }
 IGNORED_MATCH = {
+    ('activate_disable_extra_push_collision', 'HAVE_PART_AGREEMENT', 'extra push collision component'),
     ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
     ('get_entity_type', 'KIND_OF_A', 'Returns the type of an entity'),
     ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
@@ -64,6 +65,7 @@ CUSTOM_WORDS = [
     'RootNode',
     'AvatarRoot',
     'sqrt',
+    'collidability',
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 

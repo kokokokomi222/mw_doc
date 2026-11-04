@@ -1,0 +1,81 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Combat Text Filter Template</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Switches combat text filter template.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Player entity to switch the combat text filter template for.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Combat Text Template ID</span> (Integer) - ID for the combat text filter template, as defined in the component. e.g. <code>1</code>
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    v7.2 introduced combat text filter,
+    giving craftspeople ability to hide or adjust the size of combat texts.
+    <img src="/mw_doc/image/combat_text_filter_example.webp" alt="combat text filter example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Combat text filter can be configured in Combat Text Prompt Filter component for players.
+    <img src="/mw_doc/image/combat_text_prompt_config.webp" alt="combat text prompt config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to switch player's combat text filter to a different template.
+</p>
+<p>
+    Note that even though this node is available in classic mode,
+    Combat Text Prompt Filter component does not exist on classic mode.
+    Thus, it cannot perform any meaningful function in classic mode.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have two combat text filter templates configured:
+    <code>1</code> being normal and <code>2</code> being smaller text.
+    We change the combat text filter template to <code>1</code> for the player that selects the tab.
+    <img src="/mw_doc/image/switch_combat_text_filter_template_example.webp" alt="switch combat text filter template example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> does not have a Combat Text Prompt Filter component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Combat Text Template ID</span> is <code>0</code>,
+        the player gets its combat text prompt filter disabled,
+        reverting to the default text size and display.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Combat Text Template ID</span> is not an ID for a combat text template and is not <code>0</code>,
+        this node is no-op.
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
+
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-03 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/switch_combat_text_filter_template.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,0 +1,112 @@
+<h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase CD for Specified Skill Instance</h1>
+<p>
+    <div class="early_info"><img src="/mw_doc/early_info.webp" alt="Early Info"><p>This documentation was published soon after the release of this node. Some of the information may be inaccurate. <a href="https://forms.gle/SEe61aTg6L3Am65B9">Let me know</a> if you find something wrong.</p></div>
+</p>
+<p>
+    Modifies cooldown for skill instance.
+</p>
+
+<h2>Input Parameters</h2>
+<ul>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Character entity that has the skill instance.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Skill Instance ID</span> (Integer) - ID of the skill instance. e.g. <code>10000001</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> CD Increase Value</span> (Floating Point Numbers) - Cooldown to set for the skill instance. Unit is seconds.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Limit Maximum CD Time</span> (Boolean) - If <code>Yes</code>, the resulting cooldown is clamped to the cooldown of the skill.
+    </li>
+</ul>
+
+<h2>Usage</h2>
+<p>
+    This node, introduced in v7.2,
+    allows us to modify the cooldown for the specific skill instance.
+</p>
+<p>
+    To modify the cooldown for the skill that is active on the skill slot,
+    use <a href="?node=increase_character_skill_cd" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Character Skill CD</a> instead.
+</p>
+
+<h2>Example</h2>
+<p>
+    In this example, we have an entity with two tabs.
+    If the first tab is selected,
+    we add a skill instance to the skill slot <code>Skill1: E</code>
+    and store the skill instance to a node variable.
+    If the second tab is selected,
+    we increase the cooldown of that skill instance to <code>5</code>.
+    <img src="/mw_doc/image/increase_cd_for_specified_skill_instance_example.webp" alt="increase cd for specified skill instance example" class="expandable_img" loading="lazy"/>
+</p>
+
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not an existing entity,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not a character entity,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Skill Instance ID</span> is not an ID for a skill instance,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> CD</span> is negative, the cooldown is decreased.
+        If the resulting cooldown would be negative, the cooldown is set to <code>0</code>,
+        i.e. the skill is ready to use after this node runs.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Limit Maximum CD Time</span> is <code>Yes</code>
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> CD</span> exceeds the skill cooldown configured in the skill,
+        cooldown is set to the value configured in the skill.
+        For example, if the skill is configured for 20 seconds as pictured below
+        and <code>30</code> was passed in to <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> CD</span>,
+        the resulting cooldown after this node runs is <code>20</code>.
+        <img src="/mw_doc/image/skill_cooldown_config.webp" alt="skill cooldown config" class="expandable_img" loading="lazy"/>
+    </li>
+    <li>
+        If the skill was in cooldown when this node runs,
+        the cooldown button will retain the displayed maximum CD it was using.
+        Below example shows a case where skill cooldown is <code>20</code>,
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> CD</span> is <code>5</code>, and the cooldown is <code>10</code>.
+        <img src="/mw_doc/image/skill_button_cooldown_example_3.webp" alt="skill button cooldown example 3" class="expandable_img" loading="lazy"/>
+        If the skill was not in cooldown when this node runs,
+        the cooldown button will set the displayed maximum CD as the new cooldown.
+        Below example shows the same case as before.
+        <img src="/mw_doc/image/skill_button_cooldown_example_2.webp" alt="skill button cooldown example 2" class="expandable_img" loading="lazy"/>
+    </li>
+</ul>
+
+<h2>Performance</h2>
+<p>
+    This node took ~4 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
+
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=set_cd_for_specified_skill_instance" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set CD for Specified Skill Instance</a>
+    </li>
+    <li>
+        <a href="?node=increase_character_skill_cd" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Character Skill CD</a>
+    </li>
+</ul>
+
+<h2>Credits</h2>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-03 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/I/increase_cd_for_specified_skill_instance.md">See Edit History</a></p>
+    <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

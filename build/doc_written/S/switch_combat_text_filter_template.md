@@ -10,7 +10,7 @@ Switches combat text filter template.
 
 # Usage
 v7.2 introduced combat text filter,
-giving craftpeople ability to hide or adjust the size of combat texts.
+giving craftspeople ability to hide or adjust the size of combat texts.
 [image:combat_text_filter_example]
 
 Combat text filter can be configured in Combat Text Prompt Filter component for players.
@@ -23,9 +23,9 @@ Combat Text Prompt Filter component does not exist on classic mode.
 Thus, it cannot perform any meaningful function in classic mode.
 
 # Example
-In this example, we have two combat text filter template configured:
+In this example, we have two combat text filter templates configured:
 `1` being normal and `2` being smaller text.
-We change the combat text filter template to `2` for the player that selects the tab.
+We change the combat text filter template to `1` for the player that selects the tab.
 [image:switch_combat_text_filter_template_example]
 
 # Notes

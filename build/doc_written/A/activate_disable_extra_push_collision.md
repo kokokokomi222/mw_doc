@@ -39,7 +39,7 @@ We disable the extra push collision when player selects the tab.
   this node raises "Entity does not exist" error.
 * If [input:Target_Entity] does not have an extra push collision component,
   this node raises "Entity component does not exist" error.
-* If [input:Extra_Push_Collision_ID] is not an ID of a extra push collision,
+* If [input:Extra_Push_Collision_ID] is not an ID of an extra push collision,
   this node is no-op.
 
 # Performance
