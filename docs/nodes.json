@@ -259,6 +259,18 @@
             "stub": true
         },
         {
+            "slug": "activate_disable_native_push_collision",
+            "name": "Activate/Disable Native Push Collision",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "activate_disable_extra_push_collision",
+            "name": "Activate/Disable Extra Push Collision",
+            "type": "execution",
+            "stub": false
+        },
+        {
             "slug": "activate_disable_collision_trigger",
             "name": "Activate/Disable Collision Trigger",
             "type": "execution",
@@ -287,6 +299,12 @@
             "name": "Recover HP Directly",
             "type": "execution",
             "stub": true
+        },
+        {
+            "slug": "switch_combat_text_filter_template",
+            "name": "Switch Combat Text Filter Template",
+            "type": "execution",
+            "stub": false
         },
         {
             "slug": "recover_basic_motion_device",
@@ -587,6 +605,18 @@
             "name": "Delete Character Skill by ID",
             "type": "execution",
             "stub": true
+        },
+        {
+            "slug": "set_cd_for_specified_skill_instance",
+            "name": "Set CD for Specified Skill Instance",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "increase_cd_for_specified_skill_instance",
+            "name": "Increase CD for Specified Skill Instance",
+            "type": "execution",
+            "stub": false
         },
         {
             "slug": "adjust_player_background_music_volume",
@@ -1149,6 +1179,12 @@
         {
             "slug": "enable_players_cursor_to_click_selectable_targets",
             "name": "Enable Player's Cursor to Click Selectable Targets",
+            "type": "execution",
+            "stub": false
+        },
+        {
+            "slug": "set_creation_disruptor_device",
+            "name": "Set Creation Disruptor Device",
             "type": "execution",
             "stub": false
         },
