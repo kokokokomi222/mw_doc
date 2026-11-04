@@ -1,27 +1,72 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Player Entity to Which the Character Belongs</h1>
 <p>
-     Returns the Player Entity that owns the Character Entity
+    Gets the player that owns the character.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> (Entity) - Character entity.
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Affiliated Player Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Affiliated Player Entity</span> (Entity) - Player entity that owns the character.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to get the player entity from a character entity.
+    This node is very frequently used in Miliastra.
+    Use <a href="?node=get_all_character_entities_of_specified_player" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get All Character Entities of Specified Player</a>
+    to get the character entities from a player entity.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we make a UI control visible for a player
+    when the player selects the tab.
+    Note that <code>Selector Entity</code> from <a href="?node=when_tab_is_selected" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Tab Is Selected</a> is a character entity,
+    but <a href="?node=set_ui_control_group_status" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Set UI Control (Group) Status</a> wants the player entity,
+    so we had to "convert" the character entity to player entity.
+    <img src="/mw_doc/image/set_ui_control_group_status_example.webp" alt="set ui control group status example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> does not exist,
+        this node raises "Entity does not exist" error and returns <code>0</code>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Character Entity</span> is not a character entity,
+        this node raises "Entity does not exist" error, which is misleading, and returns <code>0</code>.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_all_character_entities_of_specified_player" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get All Character Entities of Specified Player</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_player_entity_to_which_the_character_belongs.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

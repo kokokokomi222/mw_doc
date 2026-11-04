@@ -1,23 +1,75 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Active Text Bubble</h1>
 <p>
-     In the Target Entity's Text Bubble Component, replace the current active Text Bubble with the one corresponding to the Config ID
+    Activates a text bubble.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity with a text bubble component.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Text Bubble Configuration ID</span> (Config ID) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Text Bubble Configuration ID</span> (Config ID) - ID for the text bubble. e.g. <code>1</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Text bubble can be used to show text at an entity.
+    It can be configured in text bubble component,
+    which can be mounted on object, creation, and character entities.
+    <img src="/mw_doc/image/text_bubble_config.webp" alt="text bubble config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to activate a text bubble.
+    Only one text bubble can be active at a time on an entity.
+    So if this entity already has an active text bubble when this node is used,
+    the new text bubble will replace the old one.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we show a text bubble on an entity
+    when a collision trigger is triggered on that entity.
+    <img src="/mw_doc/image/switch_active_text_bubble_example.webp" alt="switch active text bubble example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the text bubble component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Text Bubble Configuration ID</span> is not an ID of a text bubble,
+        any active text bubble on the entity is deactivated.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_text_bubble_is_completed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Text Bubble Is Completed</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/switch_active_text_bubble.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

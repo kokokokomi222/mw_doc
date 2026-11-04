@@ -1,38 +1,129 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Follow Motion Device Target by GUID</h1>
 <p>
-     Switch the Follow Target of the Follow Motion Device by GUID
+    Sets a follow target of the follow motion device.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity that a Follow Motion Device is attached to
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Following entity with a follow motion device component.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target GUID</span> (GUID) - Identifier for the Follow Target
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target GUID</span> (GUID) - GUID of the entity to follow.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target Attachment Point Name</span> (String) - Name of the Attachment Point to follow
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target Attachment Point Name</span> (String) - Name of the attachment point of the follow target entity. e.g. <code>GI_RootNode</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - Location Offset based on the Follow Coordinate System
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - Location offset. Coordinate system depends on the follow coordinate system below.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - Rotation Offset based on the Follow Coordinate System
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - Rotation offset. Coordinate system depends on the follow coordinate system below.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Coordinate System</span> (Enumeration) - Options: Relative Coordinate System or World Coordinate System
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Coordinate System</span> (Enumeration) - One of <code>Relative Coordinate System</code> or <code>World Coordinate System</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Type</span> (Enumeration) - Options: Completely Follow, Follow Location, Follow Rotation
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Type</span> (Enumeration) - One of <code>Completely Follow</code>, <code>Follow Location</code>, or <code>Follow Rotation</code>.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Follow motion device can be used to make an entity follow another entity.
+    It can be configured in the follow motion device component.
+    <img src="/mw_doc/image/follow_motion_device_config.webp" alt="follow motion device config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to set the follow target entity.
+    You may want to use <a href="?node=switch_follow_motion_device_target_by_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Follow Motion Device Target by Entity</a> instead,
+    which works very similarly.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, this entity will follow the player 1 entity
+    if it is not following a player entity when the tab is selected.
+    It will follow <code>(0, 0, -1)</code> offset from <code>GI_Chest</code> attachment point of the player's character.
+    The offset is in the coordinate system of the character entity.
+    It will follow the location and rotation of the character.
+    <img src="/mw_doc/image/switch_follow_motion_device_target_by_entity_example.webp" alt="switch follow motion device target by entity example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the follow motion device component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If the follow motion device of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is currently deactivated,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target GUID</span> is not a GUID of an existing entity,
+        the entity will stop following any entity.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target GUID</span> can be the GUID of the stage entity,
+        although the stage doesn't move, so this behavior is not useful.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target GUID</span> is GUID of a player entity,
+        the entity will follow the active character of the player.
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target Attachment Point Name</span> should be an attachment point for the character.
+        If the follow target entity is queried using <a href="?node=get_follow_motion_device_target" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Follow Motion Device Target</a>,
+        it returns the player entity.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Target Attachment Point Name</span> is not
+        a name of an attachment point of the follow target entity,
+        it defaults to <code>GI_RootNode</code>.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Coordinate System</span> is <code>Relative Coordinate System</code>,
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> are
+        in the follow target entity's coordinate system.
+        It will be transformed by the follow target entity's rotation, but not entity's zoom.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Follow Coordinate System</span> is <code>Relative Coordinate System</code>,
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> are
+        in stage coordinate system.
+        It will not be transformed by the follow target entity's rotation or zoom.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~8 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_disable_follow_motion_device" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Follow Motion Device</a>
+    </li>
+    <li>
+        <a href="?node=switch_follow_motion_device_target_by_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Follow Motion Device Target by Entity</a>
+    </li>
+    <li>
+        <a href="?node=get_follow_motion_device_target" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Follow Motion Device Target</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-28 (Luna V)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/S/switch_follow_motion_device_target_by_guid.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

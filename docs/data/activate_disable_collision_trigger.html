@@ -1,26 +1,82 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Collision Trigger</h1>
 <p>
-     Edit the Collision Trigger Component data to Activate/Disable the Trigger at the specified ID
+    Sets collision trigger.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Entity with collision trigger component.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Trigger ID</span> (Integer) - Identifier for this Collision Trigger
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Trigger ID</span> (Integer) - ID for a collision trigger. e.g. <code>1</code>
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) - Set to True to activate
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) -If <code>Yes</code>, collision trigger is enabled. If <code>No</code>, it is disabled.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Collision triggers are used to detect whether an entity is within certain geometry.
+    Collision triggers can be configured in the collision trigger component.
+    <img src="/mw_doc/image/collision_trigger_config.webp" alt="collision trigger config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to enable and disable collision triggers.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we enable the collision trigger if a player selects the tab.
+    <img src="/mw_doc/image/activate_disable_collision_trigger_example.webp" alt="activate disable collision trigger example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the collision trigger component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Trigger ID</span> is not an ID of a collision trigger,
+        this node is no-op.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_entering_collision_trigger" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entering Collision Trigger</a>
+    </li>
+    <li>
+        <a href="?node=when_exiting_collision_trigger" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Exiting Collision Trigger</a>
+    </li>
+    <li>
+        <a href="?node=get_all_entities_within_the_collision_trigger" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get All Entities Within the Collision Trigger</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_collision_trigger_source" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Collision Trigger Source</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_disable_collision_trigger.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

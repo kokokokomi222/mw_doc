@@ -1,23 +1,139 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Change Player Class</h1>
 <p>
-     Set the Player's current Class to the Class referenced by the Config ID
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Changes player's class.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Player entity to change the class for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Class Config ID</span> (Config ID) - Class Identifier
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Class Config ID</span> (Config ID) - ID of the class. e.g. <code>1090519041</code>
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Existing Skill Handling</span> (Enumeration) - One of <code>Clear All</code> or <code>Preserve Unrelated Skills</code>.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    In Miliastra's beyond mode, each player has a current class.
+    Each class represents different capability of the current player,
+    and the class comes with many configurations such as:
+</p>
+<ul>
+    <li>
+        Camera
+    </li>
+    <li>
+        UI layout
+    </li>
+    <li>
+        Whether the player can Jump/sprint/climb/glide
+    </li>
+    <li>
+        Level
+    </li>
+    <li>
+        HP/ATK/DEF scale curve
+    </li>
+    <li>
+        Maximum stamina
+    </li>
+    <li>
+        Aggro multiplier
+    </li>
+    <li>
+        Interruption intake setting
+    </li>
+    <li>
+        Skills
+    </li>
+    <li>
+        Custom variables
+    </li>
+    <li>
+        Unit statuses
+    </li>
+    <li>
+        Node graphs
+    </li>
+</ul>
+<p>
+    This node switches the player's class to another class.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have two classes configured: <code>Sword user</code> and <code>Bow user</code>.
+    <img src="/mw_doc/image/two_classes_created.webp" alt="two classes created" class="expandable_img" loading="lazy"/>
+    When a player selects the first tab, the player class is changed to <code>Sword user</code>.
+    When a player selects the second tab, the player class is changed to <code>Bow user</code>.
+    <img src="/mw_doc/image/change_player_class_example.webp" alt="change player class example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> is not a player entity,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Class Config ID</span> is not an ID of a class,
+        this node is no-op.
+    </li>
+    <li>
+        I could not get <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Existing Skill Handling</span> to show any behavior.
+        Regardless of the argument value,
+        the resulting skills on the player seems to be
+        only the skills configured on the new class,
+        not preserving any of the skills from the previous class.
+        More testing is needed.
+    </li>
+    <li>
+        If the changed class is the same as the previous class,
+        <a href="?node=when_player_class_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Class Changes</a> and <a href="?node=when_player_class_is_removed" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Class Is Removed</a> do not trigger.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    When the player successfully changed to a different class, this node took ~80 units to run on average. 
+    When the node failed or did not change to a different class, this node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=change_players_current_class_level" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Change Player's Current Class Level</a>
+    </li>
+    <li>
+        <a href="?node=increase_players_current_class_exp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Player's Current Class EXP</a>
+    </li>
+    <li>
+        <a href="?node=when_player_class_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Class Changes</a>
+    </li>
+    <li>
+        <a href="?node=query_player_class" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Player Class</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/change_player_class.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

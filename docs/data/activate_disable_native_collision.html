@@ -1,23 +1,77 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Native Collision</h1>
 <p>
-     Edit the Entity's Native Collision
+    Sets native collidability.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Active Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Object entity to set the collision for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) - Set to True to activate
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Activate</span> (Boolean) - If <code>Yes</code>, native collision is enabled. If <code>No</code>, it is disabled.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Native collision is used so that characters can collide with the entity.
+    Object entity can have its native collision configured in the entity details panel.
+</p>
+<p>
+    <img src="/mw_doc/image/native_collision_config.webp" alt="native collision config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to either enable or disable this native collision.
+</p>
+<p>
+    If you need to add more character collision geometry to the entity,
+    use extra collision component.
+    If you need to detect whether an entity is within certain geometry,
+    use collision trigger component instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, this entity's native collision is disabled if a player selects a tab.
+    <img src="/mw_doc/image/activate_disable_native_collision_example.webp" alt="activate disable native collision example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not an exiting entity,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is not an object entity,
+        this node is no-op.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~2 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_disable_native_collision_climbability" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Native Collision Climbability</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_extra_collision" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Extra Collision</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_disable_native_collision.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

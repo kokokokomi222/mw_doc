@@ -1,27 +1,106 @@
 <h1 class="query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Query Node"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Player ID by Player GUID</h1>
 <p>
-     Returns the Player ID based on Player GUID, where the ID indicates which Player they are
+    Gets the player ID from player GUID.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player GUID</span> (GUID) - 
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player GUID</span> (GUID) - GUID of a player entity. e.g. <code>1086324738</code>
     </li>
 </ul>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player ID</span> (Integer) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player ID</span> (Integer) - ID of the player. It ranges from 1 to 8, inclusive.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to get the player ID from player GUID.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we print the ID of the player that selected this tab.
+    <img src="/mw_doc/image/get_player_id_by_player_guid_example.webp" alt="get player id by player guid example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player GUID</span> is not a GUID for a player, this node returns <code>0</code>.
+    </li>
+    <li>
+        Player GUIDs are fixed for all stages.
+        Player 1's GUID is always <code>1086324738</code> and
+        the next player's GUID is 1 more than the previous player's GUID.
+        <table><tbody>
+        <tr>
+          <th>Player ID</th>
+          <th>Player GUID</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1086324738</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>1086324739</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>1086324740</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>1086324741</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>1086324742</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>1086324743</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>1086324744</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>1086324745</td>
+        </tr>
+        </tbody></table>
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=get_player_guid_by_player_id" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Player GUID by Player ID</a>
+    </li>
+    <li>
+        <a href="?node=query_guid_by_entity" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query GUID by Entity</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/G/get_player_id_by_player_guid.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

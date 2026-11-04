@@ -166,37 +166,37 @@
             "slug": "revive_character",
             "name": "Revive Character",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "revive_all_players_characters",
             "name": "Revive All Player's Characters",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "defeat_all_players_characters",
             "name": "Defeat All Player's Characters",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_revive_point",
             "name": "Activate Revive Point",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_player_revive_time",
             "name": "Set Player Revive Time",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_player_remaining_revives",
             "name": "Set Player Remaining Revives",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_environment_configuration",
@@ -208,13 +208,13 @@
             "slug": "allow_forbid_player_to_revive",
             "name": "Allow/Forbid Player to Revive",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "deactivate_revive_point",
             "name": "Deactivate Revive Point",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "set_characters_elemental_energy",
@@ -238,25 +238,25 @@
             "slug": "activate_disable_extra_collision",
             "name": "Activate/Disable Extra Collision",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_extra_collision_climbability",
             "name": "Activate/Disable Extra Collision Climbability",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_native_collision",
             "name": "Activate/Disable Native Collision",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_native_collision_climbability",
             "name": "Activate/Disable Native Collision Climbability",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_disable_native_push_collision",
@@ -274,31 +274,31 @@
             "slug": "activate_disable_collision_trigger",
             "name": "Activate/Disable Collision Trigger",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "initiate_attack",
             "name": "Initiate Attack",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "recover_hp",
             "name": "Recover HP",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "hp_loss",
             "name": "HP Loss",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "recover_hp_directly",
             "name": "Recover HP Directly",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "switch_combat_text_filter_template",
@@ -358,19 +358,19 @@
             "slug": "activate_disable_follow_motion_device",
             "name": "Activate/Disable Follow Motion Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "switch_follow_motion_device_target_by_guid",
             "name": "Switch Follow Motion Device Target by GUID",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "switch_follow_motion_device_target_by_entity",
             "name": "Switch Follow Motion Device Target by Entity",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "create_projectile",
@@ -478,7 +478,7 @@
             "slug": "set_character_disruptor_device",
             "name": "Set Character Disruptor Device",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "add_unit_status",
@@ -502,25 +502,25 @@
             "slug": "activate_disable_collision_trigger_source",
             "name": "Activate/Disable Collision Trigger Source",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "change_players_current_class_level",
             "name": "Change Player's Current Class Level",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "change_player_class",
             "name": "Change Player Class",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "increase_players_current_class_exp",
             "name": "Increase Player's Current Class EXP",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "activate_ui_control_group_in_control_group_library",
@@ -724,7 +724,7 @@
             "slug": "switch_active_text_bubble",
             "name": "Switch Active Text Bubble",
             "type": "execution",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "close_deck_selector",
@@ -1240,13 +1240,13 @@
             "slug": "when_the_character_is_down",
             "name": "When the Character Is Down",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_character_revives",
             "name": "When Character Revives",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_player_teleport_completes",
@@ -1258,19 +1258,19 @@
             "slug": "when_all_players_characters_are_down",
             "name": "When All Player's Characters Are Down",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_all_players_characters_are_revived",
             "name": "When All Player's Characters Are Revived",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_player_is_abnormally_downed_and_revives",
             "name": "When Player Is Abnormally Downed and Revives",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_the_active_character_changes",
@@ -1282,43 +1282,43 @@
             "slug": "when_entering_collision_trigger",
             "name": "When Entering Collision Trigger",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_exiting_collision_trigger",
             "name": "When Exiting Collision Trigger",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_hp_is_recovered",
             "name": "When HP Is Recovered",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_initiating_hp_recovery",
             "name": "When Initiating HP Recovery",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_attack_hits",
             "name": "When Attack Hits",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_attacked",
             "name": "When Attacked",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_entering_an_interruptible_state",
-            "name": "When Entering an Interruptible State",
+            "name": "When Entering an Interrupt-Vulnerable State",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_basic_motion_device_stops",
@@ -1402,19 +1402,19 @@
             "slug": "when_player_class_level_changes",
             "name": "When Player Class Level Changes",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_player_class_changes",
             "name": "When Player Class Changes",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_player_class_is_removed",
             "name": "When Player Class Is Removed",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_skill_node_is_called",
@@ -1456,7 +1456,7 @@
             "slug": "when_text_bubble_is_completed",
             "name": "When Text Bubble Is Completed",
             "type": "event",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "when_selling_inventory_items_in_the_shop",
@@ -1918,19 +1918,19 @@
             "slug": "query_if_all_player_characters_are_down",
             "name": "Query If All Player Characters Are Down",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_player_guid_by_player_id",
             "name": "Get Player GUID by Player ID",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_player_id_by_player_guid",
             "name": "Get Player ID by Player GUID",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_player_client_input_device_type",
@@ -1942,13 +1942,13 @@
             "slug": "get_player_entity_to_which_the_character_belongs",
             "name": "Get Player Entity to Which the Character Belongs",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_player_revive_time",
             "name": "Get Player Revive Time",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_player_nickname",
@@ -1960,19 +1960,19 @@
             "slug": "get_player_remaining_revives",
             "name": "Get Player Remaining Revives",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_list_of_player_entities_on_the_field",
             "name": "Get List of Player Entities on the Field",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_all_character_entities_of_specified_player",
             "name": "Get All Character Entities of Specified Player",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_active_character_of_specified_player",
@@ -1990,7 +1990,7 @@
             "slug": "get_follow_motion_device_target",
             "name": "Get Follow Motion Device Target",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "get_current_global_timer_time",
@@ -2026,13 +2026,13 @@
             "slug": "query_player_class_level",
             "name": "Query Player Class Level",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_player_class",
             "name": "Query Player Class",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_character_skill",
@@ -2350,7 +2350,7 @@
             "slug": "get_all_entities_within_the_collision_trigger",
             "name": "Get All Entities Within the Collision Trigger",
             "type": "query",
-            "stub": true
+            "stub": false
         },
         {
             "slug": "query_specified_mini_map_marker_information",

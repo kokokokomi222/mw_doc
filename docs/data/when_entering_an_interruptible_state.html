@@ -1,26 +1,107 @@
-<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entering an Interruptible State</h1>
+<h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Entering an Interrupt-Vulnerable State</h1>
 <p>
-     Available only in Beyond Mode. This event is triggered when an Entity is attacked and enters the Vulnerable Status
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Triggers when entity's poise breaks.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that had its poise broken and entered interruption-vulnerable state.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if it was dynamically created.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker</span> (Entity) - Entity that dealt the attack that caused the poise break.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Each character and creation entity has a bar for interruption
+    (known as "poise bar" in Genshin community),
+    which work similarly as HP bar, but for interruption.
+    Poise bar determines how much poise damage the entity can take
+    before the poise breaks and enters interrupt-vulnerable state for staggering.
+    <img src="/mw_doc/image/interrupt_demo.webp" alt="interrupt demo" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Maximum interruption bar is <code>100</code> for characters
+    and typically ranges from <code>30</code> to <code>2000</code> for creations.
+    Object entity does not have a poise bar and cannot break poise.
+    Interrupt value (known as "poise damage" in Genshin community)
+    can be configured in the ability unit for objects,
+    or character skill client nodes for skills.
+    Interruption resistance can reduce the poise damage taken by the poise bar.
+    <img src="/mw_doc/image/interrupt_value_config.webp" alt="interrupt value config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    When the poise break, it can stagger the entity.
+    The effect of stagger depends on the attack.
+    This effect can be configured under "On-hit performance" in ability unit component.
+    It can also interrupt when characters or creations are casting skills.
+    See <a class="outbound_link" href="https://genshin-impact.fandom.com/wiki/Interruption_Resistance">Interruption Resistance</a>
+    for details on the poise mechanism.
+    <img src="/mw_doc/image/stagger_config.webp" alt="stagger config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to listen to the event when the entity is interrupted.
+    Use <a href="?node=get_creation_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Creation Attribute</a> or <a href="?node=get_character_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Character Attribute</a> to
+    query values about interruption.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we play a special effect <code>86</code> (Yellow Hit Feedback) on the entity
+    when this entity is interrupted.
+    <img src="/mw_doc/image/when_entering_an_interruptible_state_example.webp" alt="when entering an interruptible state example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node was renamed from "When Entering an Interruptible State"
+        to "When Entering an Interrupt-Vulnerable State".
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        If "Current Interruption Status" of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> is queried from
+        <a href="?node=get_creation_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Creation Attribute</a> or <a href="?node=get_character_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Character Attribute</a> during this event,
+        it returns <code>Interrupt-Vulnerable State</code>.
+    </li>
+    <li>
+        If the poise break was caused by a transformative reaction
+        (e.g. overloaded, electro-charged),
+        then <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker</span> is the entity that initiated the reaction.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_entering_an_interruptible_state.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

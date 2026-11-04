@@ -1,41 +1,215 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</h1>
 <p>
-     Make the specified Entity initiate an attack. The Entity that uses this node must have the corresponding Ability Unit configured. There are two usage modes: When the Ability Unit is [Hitbox Attack], it executes a hitbox attack centered on the Target Entity's Location When the Ability Unit is [Direct Attack], it directly attacks the Target Entity
+    Attacks using ability unit.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Depending on the Ability Unit, this can be treated either as the reference target for the Hitbox Location or as the attack target
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target entity to attack.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span> (Floating Point Numbers) - The coefficient applied to the damage dealt by this attack
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span> (Floating Point Numbers) - Multiplier value for the damage. See notes for detail.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span> (Floating Point Numbers) - The incremental damage applied by this attack
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span> (Floating Point Numbers) - Additive value for the damage. See notes for detail.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - When using Hitbox Attack, determines the Hitbox offsetWhen using Direct Attack, determines the hit-detection location for the attack and thus where on-hit special effects are created
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> (3D Vector) - Offset for the attack. Used for transforming hitbox and on-hit special effects. This is relative to the entity coordinate space.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - When using Hitbox Attack, determines the Hitbox rotationWhen using Direct Attack, determines the hit-detection location for the attack and thus the rotation used for on-hit effects
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> (3D Vector) - Rotation for the attack. Used for transforming hitbox and on-hit special effects. This is relative to the entity coordinate space.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> (String) - Referenced Ability Unit. Must be configured on the entity associated with this Node Graph
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> (String) - Ability unit to use for the attack, configured in the entity that mounts this node graph.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Ability Unit Config</span> (Boolean) - When set to True, the four parameters — Damage Coefficient, Damage Increment, Location Offset, and Rotation Offset — overwrite parameters of the same name in the Ability Unit. When set to False, the Ability Unit's original configuration is used
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Ability Unit Config</span> (Boolean) - If <code>Yes</code>, use <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span>, <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span>, and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> values. If <code>No</code>, ignore these values and use the values in the ability unit configuration.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initiator Entity</span> (Entity) - Determines the Initiator Entity for this attack. Defaults to the Entity associated with this Node Graph. Affects which attacker is identified in events such as On Hit and When Attacked
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initiator Entity</span> (Entity) - Define initiating entity for this attack. This entity is used for the attacker stats and passed to <a href="?node=when_attack_hits" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attack Hits</a> and <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a>. Default is ?????
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit Parent Entity</span> (Entity) - Entity that holds the ability unit for the attack.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Object entities can have ability units, which are used to deal damage or heal entities.
+    <img src="/mw_doc/image/ability_unit_menu.webp" alt="ability unit menu" class="expandable_img" loading="lazy"/>
+    This node uses "Hitbox Attack" or "Direct Attack" ability unit.
+    For "Recover HP" ability unit, use <a href="?node=recover_hp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP</a> instead.
+</p>
+<p>
+    If you would like to cause HP decrease without having an initiator
+    and not generating attack events, use <a href="?node=hp_loss" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> HP Loss</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    First, we have a Pyro Veneficus Mechanicus entity as attacker.
+    It has level <code>100</code> with ATK <code>1000</code>.
+    It has a hitbox attack ability unit named <code>pyro_hitbox</code>,
+    configured to apply pyro and have no damage variation.
+    <img src="/mw_doc/image/pyro_attack_config.webp" alt="pyro attack config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Next, we have a large electro slime as target.
+    It has the default configuration, except the level was modified to <code>60</code>.
+    The DEF of the creation will be <code>5*60+500 = 800</code> by default.
+</p>
+<p>
+    Lastly, we have a node graph mounted on the Pyro Veneficus Mechanicus entity.
+    When a tab is selected, this entity attacks the electro slime using the ability unit <code>pyro_hitbox</code>
+    but overriding <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span> to <code>1.2</code> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span> to <code>345</code>.
+    <img src="/mw_doc/image/initiate_attack_example.webp" alt="initiate attack example" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    The resulting damage is:
+    <pre>
+  (1.2 * 1000 + 345)               # multiplier is 1.2, ATK is 1000, additive damage is 345
+* (1 - 800 / (800 + 5*100 + 500))  # electro slime's DEF is 800, attacker's level is 100
+* (1 - 0.1)                        # electro slime has 10% pyro resistence by default
+* 1                                # object's crit rate is 0 by default, so this attack will not crit
+= 772.5</pre>
+</p>
+<p>
+    Because the electro slime has electro aura on it,
+    this pyro attack will trigger overloaded transformative reaction.
+    Level used for this reaction is the "level of stage environment" (not the level of the attacker)
+    which is configured in stage setting, and we have set it to 90 for this example.
+    Elemental mastery of the attacking entity is 0 by default.
+</p>
+<p>
+    The overloaded reaction damage is:
+    <pre>
+  2.75         # v5.2 changed overloaded multiplier from 2 to 2.75
+* 1202.813736  # transformative reaction multiplier for level 90 environment
+* 1            # EM is 0 and no reaction bonus
+* (1 - 0.1)    # overloaded damage is affected by pyro RES, which is 10% for this slime
+≈ 2976.96</pre>
+    <img src="/mw_doc/image/initiate_attack_result.webp" alt="initiate attack result" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a stage or player entity, this node is no-op.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Coefficient</span> can be negative.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Increment</span> can be negative.
+    </li>
+    <li>
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Location Offset</span> and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Rotation Offset</span> are
+        in the entity coordinate system of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span>.
+        It takes affect after taking entity location and rotation into account,
+        but entity zoom does not affect the attack location.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initiator Entity</span> is left blank,
+        it defaults to the entity mounting this node graph.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Initiator Entity</span> is the stage or player entity, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit Parent Entity</span> is left blank,
+        it defaults to the entity mounting this node graph.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit Parent Entity</span> does not have the ability unit named <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span>,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is an object entity and the ability unit is "Hitbox Attack",
+        hurtbox must be configured on the target before it can receive damage from this node.
+    </li>
+    <li>
+        The ability unit can filter its attack by faction and entity type.
+        Target entity may not receive damage from this node if the target is filtered out.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is invincible,
+        it will not receive damage, damage number does not show,
+        and <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a> triggers with zero damage.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: Invincible" unit status effect,
+        it will not receive damage, damage number does not show,
+        and <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a> does not trigger.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: HP Locked" unit status effect,
+        it will not receive damage, damage number does not show,
+        and <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a> triggers with zero damage.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has
+        "Special Status: HP Cannot Drop Below Specified Value" unit status effect,
+        it does receive damage, full damage number show,
+        and <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a> triggers with the full damage,
+        but the HP will not drop below the configured value.
+    </li>
+    <li>
+        The damage formula is:
+        <pre>
+  final_damage =   (damage_coefficient * ATK_of_attacker + damage_increment)
+                 * (1 + total_damage_bonuses - total_damage_reductions)
+                 * (1 - DEF_of_target / (DEF_of_target + 5 * level_of_attacker + 500))
+                 * (1 - resistance)
+                 * (1 + crit_dmg if critical hit, 1 otherwise)</pre>
+        See the example section for an example.
+        <p>
+        Level used for transformative reaction (e.g. swirl) or catalyze damage (e.g. spread)
+        is the "level of stage environment" configured in the stage setting,
+        not the initiator's level.
+        </p>
+        <p>
+        It would not be possible to describe the entire Genshin damage system in detail on this page,
+        since it is very complex.
+        See <a class="outbound_link" href="https://genshin-impact.fandom.com/wiki/Damage">damage</a> for more detail.
+        </p>
+    </li>
+    <li>
+        Attack from this node can crit.
+        Use "CRIT Hit Trigger Change Value" unit status effect for crit rate
+        and "CRIT DMG Change Value" unit status effect for crit damage.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~17 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=hp_loss" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> HP Loss</a>
+    </li>
+    <li>
+        <a href="?node=when_attack_hits" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attack Hits</a>
+    </li>
+    <li>
+        <a href="?node=when_attacked" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/I/initiate_attack.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

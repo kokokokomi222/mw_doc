@@ -1,35 +1,117 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> HP Loss</h1>
 <p>
-     Directly cause the specified target to lose HP. Losing HP is not an attack, so it does not trigger attack-related events
+    Decreases HP of an entity.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target that loses HP
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target entity that loses HP.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> HP Loss</span> (Floating Point Numbers) - The amount of HP lost in this instance
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> HP Loss</span> (Floating Point Numbers) - Amount of HP to lose.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lethal</span> (Boolean) - If set to False, this HP loss will leave the Target with at least 1 HP remaining
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lethal</span> (Boolean) - If <code>No</code>, this HP loss does not occur if it would bring the HP to <code>0</code> or less.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be blocked by invincibility</span> (Boolean) - If set to True, and the Target is set to Invincible via Unit Status, HP loss has no effect
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be blocked by invincible</span> (Boolean) - If <code>Yes</code>, this node has no effect if the target entity has "Special Status: Invincible" unit status effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be Blocked by Locked HP?</span> (Boolean) - If set to True, and the Target's HP is locked via Unit Status, HP loss has no effect
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be Blocked by Locked HP</span> (Boolean) - If <code>Yes</code>, this node has no effect if the target entity has "Special Status: HP Locked" unit status effect.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Pop-Up Type</span> (Enumeration) - No Pop-UpNormal Pop-UpCRIT Hit Pop-Up
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Pop-Up Type</span> (Enumeration) - One of <code>No Pop-Up</code>, <code>Regular Pop-Up</code>, or <code>CRIT Hit Pop-Up</code>
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to decrease HP of an entity.
+    If you would like the decrease to be an attack
+    that has initiator, does elemental reactions, and generates attack events,
+    use <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we decrease the HP of this entity by 100 every 3 seconds.
+    <img src="/mw_doc/image/hp_loss_example.webp" alt="hp loss example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node has been renamed from "HP Loss" to "Lose HP".
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a stage or player entity,
+        this node raises "Entity does not exist" error (which can be misleading).
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> HP Loss</span> is negative, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Lethal</span> is <code>No</code>
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> HP Loss</span> is greater or equal to the current HP of <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span>,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: Invincible" unit status effect
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be blocked by invincible</span> is <code>Yes</code>,
+        this node is no-op.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: Invincible" unit status effect
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be blocked by invincible</span> is <code>No</code>,
+        the hp loss occurs, but the text pop up does not show.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: HP Locked" unit status effect
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be Blocked by Locked HP</span> is <code>Yes</code>,
+        this node is no-op.
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: HP Locked" unit status effect
+        and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Can be Blocked by Locked HP</span> is <code>No</code>,
+        the hp loss occurs, but the text pop up does not show.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has "Special Status: HP Cannot Drop Below Specified Value" unit status effect,
+        the HP loss will not bring it below the configured HP threshold.
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has 10000 max HP, 6000 current HP,
+        HP threshold configured to 50%, and <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> HP Loss</span> is 2000,
+        then the resulting HP loss is 1000 because the entity cannot go below 5000 HP.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Damage Pop-Up Type</span> is not <code>No Pop-Up</code>, the damage will appear as white text.
+        <img src="/mw_doc/image/hp_loss_regular_popup.webp" alt="hp loss regular popup" class="expandable_img" loading="lazy"/>
+        Text is bigger for <code>CRIT Hit Pop-Up</code>.
+        The displayed HP loss amount is rounded up to an integer
+        (this rounding behavior differs from healing text).
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~12 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/H/hp_loss.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

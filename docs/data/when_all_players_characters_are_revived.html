@@ -1,20 +1,73 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When All Player's Characters Are Revived</h1>
 <p>
-     This event is triggered on the Player Entity's Node Graph when all of the Player's Characters are Revived
+    Triggers when all characters are revived for a player.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Player Entity</span> (Entity) - Player entity that has the revived characters.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to listen to the event when all characters are revived for a player.
+    This node must be mounted on the player entity.
+    Consider using <a href="?node=when_character_revives" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Revives</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we show a UI control on the player that is revived.
+    <img src="/mw_doc/image/when_all_players_characters_are_revived_example.webp" alt="when all players characters are revived example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node is triggered when the revive initiates as the loading screen starts to show,
+        not when the loading screen goes away.
+    </li>
+    <li>
+        <a href="?node=revive_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive Character</a> does not trigger this node,
+        but <a href="?node=revive_all_players_characters" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive All Player's Characters</a> does trigger this node.
+    </li>
+    <li>
+        Abnormal downing (drowning and falling) does not trigger this node.
+        Use <a href="?node=when_player_is_abnormally_downed_and_revives" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Is Abnormally Downed and Revives</a> to listen to this event.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=revive_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive Character</a>
+    </li>
+    <li>
+        <a href="?node=revive_all_players_characters" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive All Player's Characters</a>
+    </li>
+    <li>
+        <a href="?node=revive_the_active_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive the active character</a>
+    </li>
+    <li>
+        <a href="?node=when_character_revives" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Revives</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_all_players_characters_are_revived.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

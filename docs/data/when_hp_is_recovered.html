@@ -1,32 +1,123 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When HP Is Recovered</h1>
 <p>
-     This event is triggered when an Entity's HP is restored
+    Triggers when an entity is healed.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that was healed.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if it was dynamically created.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Healer Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Healer Entity</span> (Entity) - Entity that initiated the healing.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recovery Amount</span> (Floating Point Numbers) - Actual healing amount. If the Entity had not lost any HP prior to healing, the amount is 0
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recovery Amount</span> (Floating Point Numbers) - Effective healing amount. See notes for detail.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recover Tag List</span> (String List) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recover Tag List</span> (String List) - List of tags associated with this healing.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to listen to the event when the entity gets healed.
+    This node must be mounted on the target of the healing.
+    This healing can come from
+</p>
+<ul>
+    <li>
+        <a href="?node=recover_hp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP</a>
+    </li>
+    <li>
+        <a href="?node=recover_hp_directly" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP Directly</a>
+    </li>
+    <li>
+        Client node "Recover Character's HP".
+    </li>
+    <li>
+        Character skills/bursts/passives/constellations, weapon passives, or artifact set effects in classic mode.
+    </li>
+</ul>
 
+<h2>Example</h2>
+<p>
+    In this example, we show a text bubble (saying "Thank you")
+    if this entity was healed by a character and the healing was at least 1000 HP.
+    <img src="/mw_doc/image/when_hp_is_recovered_example.webp" alt="when hp is recovered example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        If there was healing bonus or incoming healing bonus involved,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recovery Amount</span> reflects the value after the bonus.
+    </li>
+    <li>
+        If a heal overflows (i.e. heals more than needed to reach max HP),
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recovery Amount</span> only accounts for the HP that was increased.
+        For instance, if the entity already had full HP,
+        then <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Recovery Amount</span> is 0.
+    </li>
+    <li>
+        If current HP of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> is queried
+        with <a href="?node=get_object_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Object Attribute</a> in this event,
+        it shows the HP after the healing.
+    </li>
+    <li>
+        Node graph cannot be mounted to a character in classic mode.
+        If you want to listen to this event on a character, there is a following hack:
+        <ol>
+          <li>
+            Create an item node graph
+            <img src="/mw_doc/image/char_combat_monitor_hack_step_1.webp" alt="char combat monitor hack step 1" class="expandable_img" loading="lazy"/>
+          </li>
+          <li>
+            Create a dummy item that mounts the item node graph.
+            <img src="/mw_doc/image/char_combat_monitor_hack_step_2.webp" alt="char combat monitor hack step 2" class="expandable_img" loading="lazy"/>
+          </li>
+          <li>
+            Add an inventory component to the character and put the dummy item in the inventory.
+            <img src="/mw_doc/image/char_combat_monitor_hack_step_3.webp" alt="char combat monitor hack step 3" class="expandable_img" loading="lazy"/>
+          </li>
+        </ol>
+        Then the item node graph should be able to listen to this node event for the character.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~4 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=recover_hp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP</a>
+    </li>
+    <li>
+        <a href="?node=recover_hp_directly" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP Directly</a>
+    </li>
+    <li>
+        <a href="?node=when_initiating_hp_recovery" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Initiating HP Recovery</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_hp_is_recovered.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

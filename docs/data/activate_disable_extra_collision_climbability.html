@@ -1,6 +1,6 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Extra Collision Climbability</h1>
 <p>
-     Edit the Climbability of the Entity's Extra Collision Component
+    Sets the climability of an extra collision.
 </p>
 
 <h2>Input Parameters</h2>
@@ -16,11 +16,71 @@
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Native collision is used so that characters can collide with the entity.
+    Extra collision component can be used to add or change the collision geometry.
+</p>
+<p>
+    <img src="/mw_doc/image/extra_collision_config.webp" alt="extra collision config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to set the climbability of the extra collision.
+    Characters will be able to climb this extra collision geometry if climbability is enabled.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, this entity's extra collision climbability is disabled if a player selects a tab.
+    <img src="/mw_doc/image/activate_disable_extra_collision_climbability_example.webp" alt="activate disable extra collision climbability example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not have the extra collision component,
+        this node raises "Entity component does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Extra Collision ID</span> is not an ID of an extra collision,
+        this node is no-op.
+    </li>
+    <li>
+        If the extra collision is currently disabled,
+        this node still modifies the climbability.
+        For example, the extra collision is not climbable after the below node graph executes
+        even if it was initially climbable.
+        <img src="/mw_doc/image/set_extra_climbability_is_independent.webp" alt="set extra climbability is independent" class="expandable_img" loading="lazy"/>
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~3 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=activate_disable_extra_collision" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Extra Collision</a>
+    </li>
+    <li>
+        <a href="?node=activate_disable_native_collision_climbability" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate/Disable Native Collision Climbability</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_disable_extra_collision_climbability.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

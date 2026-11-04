@@ -1,23 +1,100 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive All Player's Characters</h1>
 <p>
-     Revive all character entities of a specified player, but this node is only effective when the player is in a state where all their characters are down. In Beyond Mode, since each player has only one character, this node has the same effect as the "Revive Character" node. In Classic Mode, players can have multiple characters. If only some of the characters are down, this node will not take effect, meaning it will not revive the downed characters.
+    Revives all characters of a player.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - The Player Entity that owns the Character
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Player entity to revive the characters for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Deduct Revives</span> (Boolean) - If set to False, the Revive Count will not be deducted
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Deduct Revives</span> (Boolean) - If <code>Yes</code>, reduce the revive count by 1. If <code>No</code>, keep the revive count the same.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to revive all characters owned by a player.
+    The character is revived at a revive point.
+    This node does not work if any of the characters are alive.
+    See notes for detail.
+</p>
+<p>
+    Consider using <a href="?node=revive_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive Character</a> instead in beyond mode,
+    if you want to revive the character where they were downed.
+    Consider using <a href="?node=revive_the_active_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive the active character</a> instead in classic mode.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, player 1's characters are revived
+    when another player selects the tab on this entity.
+    <img src="/mw_doc/image/revive_all_players_characters_example.webp" alt="revive all players characters example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error, which is misleading.
+    </li>
+    <li>
+        In beyond mode, this node revives the character owned by the player.
+        In classic mode, this node revives all characters owned by the player
+        only when every character owned by the player is down.
+    </li>
+    <li>
+        This node succeeds even when the player has 0 revives left,
+        regardless of what <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Deduct Revives</span> is.
+    </li>
+    <li>
+        This node fails to revive the characters
+        if the <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span>'s character is in a death animation.
+    </li>
+    <li>
+        For the player that is reviving, a loading screen shows briefly
+        which appears as below:
+        <img src="/mw_doc/image/teleport_player_loading_screen.webp" alt="teleport player loading screen" class="expandable_img" loading="lazy"/>
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~190 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=revive_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive Character</a>
+    </li>
+    <li>
+        <a href="?node=revive_the_active_character" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Revive the active character</a>
+    </li>
+    <li>
+        <a href="?node=allow_forbid_player_to_revive" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Allow/Forbid Player to Revive</a>
+    </li>
+    <li>
+        <a href="?node=when_character_revives" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Character Revives</a>
+    </li>
+    <li>
+        <a href="?node=when_all_players_characters_are_revived" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When All Player's Characters Are Revived</a>.
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/revive_all_players_characters.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -325,14 +325,14 @@
         "date": "2026-10-20"
     },
     "activate_disable_collision_trigger": {
-        "written": false,
-        "checksum": 232507002,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 367485625,
+        "date": "2026-11-04"
     },
     "activate_disable_collision_trigger_source": {
-        "written": false,
-        "checksum": 1238261992,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2313094502,
+        "date": "2026-11-04"
     },
     "activate_disable_entity_deployment_group": {
         "written": false,
@@ -340,29 +340,29 @@
         "date": "2026-02-22"
     },
     "activate_disable_extra_collision": {
-        "written": false,
-        "checksum": 3557573604,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 504677256,
+        "date": "2026-11-04"
     },
     "activate_disable_extra_collision_climbability": {
-        "written": false,
-        "checksum": 2311976006,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2154850266,
+        "date": "2026-11-04"
     },
     "activate_disable_follow_motion_device": {
-        "written": false,
-        "checksum": 3335540887,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 1868794033,
+        "date": "2026-11-04"
     },
     "activate_disable_native_collision": {
-        "written": false,
-        "checksum": 2664057225,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3661914982,
+        "date": "2026-11-04"
     },
     "activate_disable_native_collision_climbability": {
-        "written": false,
-        "checksum": 1443070077,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2214745479,
+        "date": "2026-11-04"
     },
     "activate_disable_tab": {
         "written": true,
@@ -375,9 +375,9 @@
         "date": "2026-10-20"
     },
     "activate_revive_point": {
-        "written": false,
-        "checksum": 3807045507,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2123171821,
+        "date": "2026-11-04"
     },
     "activate_ui_control_group_in_control_group_library": {
         "written": true,
@@ -460,9 +460,9 @@
         "date": "2026-10-20"
     },
     "allow_forbid_player_to_revive": {
-        "written": false,
-        "checksum": 1061547574,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 580984626,
+        "date": "2026-11-04"
     },
     "arccosine_function": {
         "written": false,
@@ -530,14 +530,14 @@
         "date": "2026-02-22"
     },
     "change_players_current_class_level": {
-        "written": false,
-        "checksum": 3337256097,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2058897515,
+        "date": "2026-11-04"
     },
     "change_player_class": {
-        "written": false,
-        "checksum": 3850010239,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2673578061,
+        "date": "2026-11-04"
     },
     "check_classic_mode_character_id": {
         "written": false,
@@ -610,14 +610,14 @@
         "date": "2026-02-22"
     },
     "deactivate_revive_point": {
-        "written": false,
-        "checksum": 590590268,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4103541634,
+        "date": "2026-11-04"
     },
     "defeat_all_players_characters": {
-        "written": false,
-        "checksum": 2847349152,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 951202396,
+        "date": "2026-11-04"
     },
     "degrees_to_radians": {
         "written": false,
@@ -675,9 +675,9 @@
         "date": "2026-02-22"
     },
     "get_all_character_entities_of_specified_player": {
-        "written": false,
-        "checksum": 1077570056,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4186185650,
+        "date": "2026-11-04"
     },
     "get_all_currency_from_inventory": {
         "written": false,
@@ -695,9 +695,9 @@
         "date": "2026-02-28"
     },
     "get_all_entities_within_the_collision_trigger": {
-        "written": false,
-        "checksum": 175770257,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2949032952,
+        "date": "2026-11-04"
     },
     "get_all_equipment_from_inventory": {
         "written": true,
@@ -845,9 +845,9 @@
         "date": "2026-02-22"
     },
     "get_follow_motion_device_target": {
-        "written": false,
-        "checksum": 3682297259,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3028531204,
+        "date": "2026-11-04"
     },
     "get_inventory_capacity": {
         "written": false,
@@ -885,9 +885,9 @@
         "date": "2026-02-22"
     },
     "get_list_of_player_entities_on_the_field": {
-        "written": false,
-        "checksum": 4199378736,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1512838859,
+        "date": "2026-11-04"
     },
     "get_list_of_values_from_dictionary": {
         "written": true,
@@ -925,9 +925,9 @@
         "date": "2026-02-22"
     },
     "get_player_entity_to_which_the_character_belongs": {
-        "written": false,
-        "checksum": 2665040999,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3361018319,
+        "date": "2026-11-04"
     },
     "get_player_escape_validity": {
         "written": false,
@@ -935,14 +935,14 @@
         "date": "2026-02-22"
     },
     "get_player_guid_by_player_id": {
-        "written": false,
-        "checksum": 3423058545,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 4276998502,
+        "date": "2026-11-04"
     },
     "get_player_id_by_player_guid": {
-        "written": false,
-        "checksum": 3989933353,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3782473747,
+        "date": "2026-11-04"
     },
     "get_player_nickname": {
         "written": false,
@@ -960,14 +960,14 @@
         "date": "2026-02-22"
     },
     "get_player_remaining_revives": {
-        "written": false,
-        "checksum": 438427682,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 825554900,
+        "date": "2026-11-04"
     },
     "get_player_revive_time": {
-        "written": false,
-        "checksum": 3330167604,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1733251389,
+        "date": "2026-11-04"
     },
     "get_player_settlement_ranking_value": {
         "written": false,
@@ -1040,9 +1040,9 @@
         "date": "2026-02-22"
     },
     "hp_loss": {
-        "written": false,
-        "checksum": 1749831391,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3476992680,
+        "date": "2026-11-04"
     },
     "increases_characters_elemental_energy": {
         "written": false,
@@ -1085,9 +1085,9 @@
         "date": "2026-02-22"
     },
     "increase_players_current_class_exp": {
-        "written": false,
-        "checksum": 420733071,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 605333312,
+        "date": "2026-11-04"
     },
     "increase_skill_resource_amount": {
         "written": false,
@@ -1100,9 +1100,9 @@
         "date": "2026-02-22"
     },
     "initiate_attack": {
-        "written": false,
-        "checksum": 2188282200,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3400162766,
+        "date": "2026-11-04"
     },
     "invoke_deck_selector": {
         "written": false,
@@ -1290,9 +1290,9 @@
         "date": "2026-02-22"
     },
     "query_if_all_player_characters_are_down": {
-        "written": false,
-        "checksum": 385074975,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2509432594,
+        "date": "2026-11-04"
     },
     "query_if_dictionary_contains_specific_key": {
         "written": true,
@@ -1335,14 +1335,14 @@
         "date": "2026-02-22"
     },
     "query_player_class": {
-        "written": false,
-        "checksum": 3963312166,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3382282746,
+        "date": "2026-11-04"
     },
     "query_player_class_level": {
-        "written": false,
-        "checksum": 2775412931,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1767557398,
+        "date": "2026-11-04"
     },
     "query_preset_point_position_rotation": {
         "written": false,
@@ -1415,14 +1415,14 @@
         "date": "2026-10-20"
     },
     "recover_hp": {
-        "written": false,
-        "checksum": 2873177430,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1063061512,
+        "date": "2026-11-04"
     },
     "recover_hp_directly": {
-        "written": false,
-        "checksum": 3641661512,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2171251984,
+        "date": "2026-11-04"
     },
     "remove_equipment_affix": {
         "written": false,
@@ -1480,14 +1480,14 @@
         "date": "2026-10-20"
     },
     "revive_all_players_characters": {
-        "written": false,
-        "checksum": 866660567,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 949976675,
+        "date": "2026-11-04"
     },
     "revive_character": {
-        "written": false,
-        "checksum": 3927768179,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 122902500,
+        "date": "2026-11-04"
     },
     "right_shift_operation": {
         "written": true,
@@ -1520,9 +1520,9 @@
         "date": "2026-02-22"
     },
     "set_character_disruptor_device": {
-        "written": false,
-        "checksum": 23865533,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 555522826,
+        "date": "2026-11-04"
     },
     "set_character_skill_cd": {
         "written": false,
@@ -1670,14 +1670,14 @@
         "date": "2026-02-22"
     },
     "set_player_remaining_revives": {
-        "written": false,
-        "checksum": 1277460977,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1171476211,
+        "date": "2026-11-04"
     },
     "set_player_revive_time": {
-        "written": false,
-        "checksum": 1235807369,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1825611530,
+        "date": "2026-11-04"
     },
     "set_player_settlement_ranking_value": {
         "written": false,
@@ -1795,9 +1795,9 @@
         "date": "2026-02-22"
     },
     "switch_active_text_bubble": {
-        "written": false,
-        "checksum": 1269241737,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 976741768,
+        "date": "2026-11-04"
     },
     "switch_creation_patrol_template": {
         "written": false,
@@ -1810,14 +1810,14 @@
         "date": "2026-04-04"
     },
     "switch_follow_motion_device_target_by_entity": {
-        "written": false,
-        "checksum": 3553716979,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 3057370073,
+        "date": "2026-11-04"
     },
     "switch_follow_motion_device_target_by_guid": {
-        "written": false,
-        "checksum": 3837330641,
-        "date": "2026-02-28"
+        "written": true,
+        "checksum": 2925928312,
+        "date": "2026-11-04"
     },
     "switch_main_camera_template": {
         "written": true,
@@ -1870,24 +1870,24 @@
         "date": "2026-02-22"
     },
     "when_all_players_characters_are_down": {
-        "written": false,
-        "checksum": 3313901459,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3392184168,
+        "date": "2026-11-04"
     },
     "when_all_players_characters_are_revived": {
-        "written": false,
-        "checksum": 3857241489,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 342293112,
+        "date": "2026-11-04"
     },
     "when_attacked": {
-        "written": false,
-        "checksum": 3598393142,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3430289080,
+        "date": "2026-11-04"
     },
     "when_attack_hits": {
-        "written": false,
-        "checksum": 2036405773,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 671281114,
+        "date": "2026-11-04"
     },
     "when_basic_motion_device_stops": {
         "written": true,
@@ -1895,9 +1895,9 @@
         "date": "2026-10-20"
     },
     "when_character_revives": {
-        "written": false,
-        "checksum": 2232109923,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1807842846,
+        "date": "2026-11-04"
     },
     "when_complex_creation_preset_status_changes": {
         "written": false,
@@ -1935,14 +1935,14 @@
         "date": "2026-02-22"
     },
     "when_entering_an_interruptible_state": {
-        "written": false,
-        "checksum": 1097458767,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1193464154,
+        "date": "2026-11-04"
     },
     "when_entering_collision_trigger": {
-        "written": false,
-        "checksum": 3375065082,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 913052385,
+        "date": "2026-11-04"
     },
     "when_entity_faction_changes": {
         "written": true,
@@ -1970,9 +1970,9 @@
         "date": "2026-04-07"
     },
     "when_exiting_collision_trigger": {
-        "written": false,
-        "checksum": 586561828,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1686388846,
+        "date": "2026-11-04"
     },
     "when_global_timer_is_triggered": {
         "written": true,
@@ -1980,14 +1980,14 @@
         "date": "2026-10-20"
     },
     "when_hp_is_recovered": {
-        "written": false,
-        "checksum": 3711421704,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3282502791,
+        "date": "2026-11-04"
     },
     "when_initiating_hp_recovery": {
-        "written": false,
-        "checksum": 2261977945,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3004675316,
+        "date": "2026-11-04"
     },
     "when_items_in_the_inventory_are_used": {
         "written": false,
@@ -2015,24 +2015,24 @@
         "date": "2026-02-22"
     },
     "when_player_class_changes": {
-        "written": false,
-        "checksum": 1025930826,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3045313266,
+        "date": "2026-11-04"
     },
     "when_player_class_is_removed": {
-        "written": false,
-        "checksum": 2495516986,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 2204792760,
+        "date": "2026-11-04"
     },
     "when_player_class_level_changes": {
-        "written": false,
-        "checksum": 1209324575,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1526821662,
+        "date": "2026-11-04"
     },
     "when_player_is_abnormally_downed_and_revives": {
-        "written": false,
-        "checksum": 1363206225,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 3911623180,
+        "date": "2026-11-04"
     },
     "when_player_teleport_completes": {
         "written": true,
@@ -2075,9 +2075,9 @@
         "date": "2026-10-20"
     },
     "when_text_bubble_is_completed": {
-        "written": false,
-        "checksum": 1846900600,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1937357419,
+        "date": "2026-11-04"
     },
     "when_the_active_character_changes": {
         "written": false,
@@ -2085,9 +2085,9 @@
         "date": "2026-02-22"
     },
     "when_the_character_is_down": {
-        "written": false,
-        "checksum": 1377203745,
-        "date": "2026-02-22"
+        "written": true,
+        "checksum": 1132558603,
+        "date": "2026-11-04"
     },
     "when_the_quantity_of_inventory_currency_changes": {
         "written": false,

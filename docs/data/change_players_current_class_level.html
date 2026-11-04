@@ -1,23 +1,102 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Change Player's Current Class Level</h1>
 <p>
-     Set the Player's current Class Level. If it exceeds the defined range, the change will not take effect
+    <div class="beyond_mode_only"><img src="/mw_doc/beyond_mode.webp" alt="Beyond Mode"><p>This server node is only available in <span class="emphasis">Beyond Mode</span>.</p></div>
+</p>
+<p>
+    Changes player's class level.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Active Player Entity
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> (Entity) - Player entity to change the class level for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> (Integer) - Edited Level
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> (Integer) - New level. Must be between 1 and maximum level of the class, inclusive.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to change the level of player's class.
+    Note that each class has its own level,
+    so the level may change if the class is changed using <a href="?node=change_player_class" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Change Player Class</a>.
+    The maximum class level can be configured in the class details panel.
+    <img src="/mw_doc/image/class_maximum_level.webp" alt="class maximum level" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    You may want to use <a href="?node=increase_players_current_class_exp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Player's Current Class EXP</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we increase the player's class level by one when the tab is selected.
+    <img src="/mw_doc/image/change_players_current_class_level_example.webp" alt="change players current class level example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Player</span> is not a player entity,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Level</span> is less than 1 or greater than the class maximum level,
+        this node is no-op.
+    </li>
+    <li>
+        If this node successfully runs, class EXP is set to 0.
+        If this node fails, the current EXP does not change.
+    </li>
+    <li>
+        If the changed level is same as the previous level,
+        then <a href="?node=when_player_class_level_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Class Level Changes</a> does not trigger.
+    </li>
+    <li>
+        Class maximum level can be configured to an integer between 1 and 200, inclusive.
+    </li>
+    <li>
+        If the level increases from previous level, a yellow effect is played on the character,
+        quickly followed by a blue effect with level number on the head.
+        If level increases multiple times quickly,
+        all the yellow effects are played together right away,
+        but the blue effects are put on a queue and plays one at a time.
+        <img src="/mw_doc/image/level_up_effect_yellow.webp" alt="level up effect yellow" class="expandable_img" loading="lazy"/>
+        <img src="/mw_doc/image/level_up_effect_blue.webp" alt="level up effect blue" class="expandable_img" loading="lazy"/>
+        If the level stays the same or decreases, no effect is played.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~30 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=increase_players_current_class_exp" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Increase Player's Current Class EXP</a>
+    </li>
+    <li>
+        <a href="?node=when_player_class_level_changes" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Class Level Changes</a>
+    </li>
+    <li>
+        <a href="?node=query_player_class_level" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query Player Class Level</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/C/change_players_current_class_level.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

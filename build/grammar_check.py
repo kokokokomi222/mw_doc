@@ -7,6 +7,7 @@ IGNORED_RULES = {
 }
 IGNORED_MATCH = {
     ('activate_disable_extra_push_collision', 'HAVE_PART_AGREEMENT', 'extra push collision component'),
+    ('allow_forbid_player_to_revive', 'ALLOW_TO_DO', 'Allow Revive'),
     ('get_entities_with_specified_prefab_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_coins_left'),
     ('get_entity_type', 'KIND_OF_A', 'Returns the type of an entity'),
     ('get_specified_type_of_entities_on_the_field', 'MORFOLOGIK_RULE_EN_US', 'num_creatures_left'),
@@ -22,6 +23,8 @@ IGNORED_MATCH = {
     ('read_by_bit', 'MORFOLOGIK_RULE_EN_US', '""b"-th bit"'),
     ('switch_current_interface_layout', 'NOUN_VERB_CONFUSION', "back to layout A"),
     ('weighted_random', 'I_LOWERCASE', 'this node outputting i is'),
+    ('when_hp_is_recovered', 'A_INFINITIVE', 'a heal overflows'),
+    ('when_initiating_hp_recovery', 'A_INFINITIVE', 'a heal overflows'),
     ('when_player_teleport_completes', 'SUBJECT_VERB_AGREEMENT_PLURAL', 'teleport is finished'),
     ('write_by_bit', 'EN_UNPAIRED_QUOTES', '""a"-th bit"'),
     ('write_by_bit', 'MORFOLOGIK_RULE_EN_US', '""a"-th bit"'),
@@ -48,6 +51,8 @@ CUSTOM_WORDS = [
     'Mittsommernacht-Fantasie',
     'Hilichurl',
     'Koko',
+    "Veneficus",
+    "Mechanicus",
 
     'anemo',
     'geo',
@@ -66,6 +71,9 @@ CUSTOM_WORDS = [
     'AvatarRoot',
     'sqrt',
     'collidability',
+    'climbability',
+    "hitbox",
+    "hurtbox",
 ]
 ltp_tool = ltp.LanguageTool('en-US', new_spellings=CUSTOM_WORDS)
 

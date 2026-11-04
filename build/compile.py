@@ -11,6 +11,7 @@ import zlib
 import datetime
 import sys
 import string
+import shutil
 
 INDENT = ' '*4
 OUTPUT_DIR = 'docs'
@@ -363,6 +364,14 @@ if __name__ == '__main__':
     dir_path = os.path.dirname(file_path)
     os.chdir(dir_path)
     full_compile = len(sys.argv) > 1 and sys.argv[1] == 'full'
+
+    if full_compile:
+        for full_path, slug in walk_doc_dir('doc_written'):
+            if full_path.find('new_docs') >= 0:
+                c = slug[0]
+                if c not in string.ascii_lowercase:
+                    c = '_'
+                shutil.move(full_path, f'doc_written/{c}/{slug}.md')
 
     slug_with_change = set()
     with open('checksums.json', 'r', encoding='utf-8') as file:

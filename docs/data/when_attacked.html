@@ -1,38 +1,137 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attacked</h1>
 <p>
-     This event is triggered when the Entity is attacked (In Classic Mode, due to the Craftsperson's settings, the actual damage may differ from other scenarios.)
+    Triggers when an entity is attacked.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> (Entity) - Entity that was attacked.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> (GUID) - GUID of the above entity. <code>0</code> if it was dynamically created.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker Entity</span> (Entity) - Entity that initiated the attack.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage</span> (Floating Point Numbers) - Actual damage dealt. If no damage is dealt due to Invincible or other reasons, the amount is 0
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage</span> (Floating Point Numbers) - Effective damage amount dealt. See notes for detail.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attack Tag List</span> (String List) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attack Tag List</span> (String List) - List of tags associated with this attack.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Elemental Type</span> (Enumeration) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Elemental Type</span> (Enumeration) - One of <code>Pyro</code>, <code>Hydro</code>, <code>Anemo</code>, <code>Electro</code>, <code>Dendro</code>, <code>Cryo</code>, <code>Geo</code>, <code>None</code>.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Elemental Attack Potency</span> (Floating Point Numbers) - Elemental Gauge in the Attack
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Elemental Attack Potency</span> (Floating Point Numbers) - Elemental attack potency value of the attack. Unit is 1/25 gauge unit. See notes for detail.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to listen to the event when the entity gets attacked.
+    This node must be mounted on the target of the attack.
+    This attack can come from
+</p>
+<ul>
+    <li>
+        <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a>
+    </li>
+    <li>
+        Various character skill client nodes.
+    </li>
+    <li>
+        Characters skills/bursts/passives/constellations,
+        weapon passives, or artifact set passives in classic mode.
+    </li>
+    <li>
+        Transformative elemental reactions (e.g. swirl, bloom).
+    </li>
+</ul>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a dictionary named <code>total_damage</code>
+    where key is attacker entity and the value is the total damage dealt to this entity.
+    When this entity is attacked, we update the dictionary by querying the current value,
+    adding the new damage, and writing the new total to the dictionary.
+    <img src="/mw_doc/image/when_attacked_example.webp" alt="when attacked example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> and <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source GUID</span> may not be the same as the self entity,
+        if it was forwarded by <a href="?node=forwarding_event" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Forwarding Event</a>.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> is invincible,
+        this event triggers with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage</span> equal to <code>0</code>.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> has "Special Status: Invincible",
+        this event does not trigger.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> has "Special Status: HP Locked",
+        this event triggers with <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Damage</span> equal to <code>0</code>.
+    </li>
+    <li>
+        If <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> has "Special Status: HP Cannot Drop Below Specified Value",
+        this event triggers with the full damage, but the HP lost may be less or even 0.
+    </li>
+    <li>
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Elemental Attack Potency</span> is the amount of elemental gauge applied by this attack.
+        25 is 1 unit of gauge (1U), which is the unofficial unit that Genshin community uses.
+        More gauge means the elemental aura will last longer.
+        More gauge also means it will cancel out other elemental aura more if it reacts with that element.
+        The precise gauge mechanism is very complex.
+        See <a class="outbound_link" href="https://genshin-impact.fandom.com/wiki/Elemental_Gauge_Theory">Elemental Gauge Theory</a>
+        for detail.
+    </li>
+    <li>
+        If current HP of <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span> is queried
+        with <a href="?node=get_object_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Object Attribute</a>, <a href="?node=get_character_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Character Attribute</a>,
+        or <a href="?node=get_creation_attribute" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Get Creation Attribute</a> in this event,
+        it shows the HP after the damage is dealt.
+    </li>
+    <li>
+        If an attack is fatal for <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Event Source Entity</span>,
+        this node does not trigger.
+    </li>
+    <li>
+        This node does not trigger with <a href="?node=hp_loss" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> HP Loss</a>.
+    </li>
+    <li>
+        For transformative reactions,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Attacker Entity</span> is the entity that initiated the reaction.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~10 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a>
+    </li>
+    <li>
+        <a href="?node=when_attack_hits" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Attack Hits</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_attacked.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

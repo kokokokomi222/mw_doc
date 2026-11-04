@@ -1,32 +1,139 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP</h1>
 <p>
-     Restore HP to the specified Target Entity via an Ability Unit
+    Heals using ability unit.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target of HP restoration
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> (Entity) - Target entity to recover HP for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> (Floating Point Numbers) - The amount of HP restored in this healing instance
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> (Floating Point Numbers) - Amount of HP to recover. The final healing amount may change from healing bonus and incoming healing bonus. See notes below.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> (String) - Referenced Ability Unit. Must be configured on the entity associated with this Node Graph
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> (String) - Ability unit to use for recovering HP, configured in the entity that mounts this node graph.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Ability Unit Config</span> (Boolean) - When set to True, the Recovery Amount overwrites the parameter of the same name in the Ability Unit. When set to False, the Ability Unit's original configuration is used
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Overwrite Ability Unit Config</span> (Boolean) - If <code>Yes</code>, use <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> value. If <code>No</code>, ignore this value and use the value in the ability unit configuration.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recover Initiator Entity</span> (Entity) - Determines the Initiator Entity of this healing action. Defaults to the Entity associated with this Node Graph. Affects healer identification in events such asWhen HP Is RecoveredandWhen Initiating HP Recovery
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recover Initiator Entity</span> (Entity) - Define initiator entity for this HP recovery. This is passed to <a href="?node=when_hp_is_recovered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When HP Is Recovered</a> and <a href="?node=when_initiating_hp_recovery" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Initiating HP Recovery</a>. This parameter does not need to have a "Recover HP" ability unit. Default is the entity that mounts this node graph.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Object entities can have ability units, which are used to deal damage or heal entities.
+    <img src="/mw_doc/image/ability_unit_menu.webp" alt="ability unit menu" class="expandable_img" loading="lazy"/>
+    This node uses "Recover HP" ability unit.
+    For "Hitbox Attack" or "Direct Attack" ability unit, use <a href="?node=initiate_attack" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Initiate Attack</a> instead.
+    Also consider using <a href="?node=recover_hp_directly" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP Directly</a>,
+    which can heal without configuring an ability unit and is more expressive.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a recover HP ability unit configured on an entity.
+    <img src="/mw_doc/image/ability_unit_recover_config.webp" alt="ability unit recover config" class="expandable_img" loading="lazy"/>
+    This entity heals the character of the player that selects the tab.
+    Because the ability unit config was overwritten,
+    it will heal 500 HP, not 1000 HP,
+    assuming there is no healing bonus or incoming healing bonus involved.
+    <img src="/mw_doc/image/recover_hp_example.webp" alt="recover hp example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> does not exist, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> is a stage or player entity, this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span> has
+        "Special Status: Cannot recover HP" unit status effect,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> is negative, it is clamped to <code>0</code>.
+        <a href="?node=when_hp_is_recovered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When HP Is Recovered</a> and <a href="?node=when_initiating_hp_recovery" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Initiating HP Recovery</a> still triggers in this case.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> is not a name of an ability unit the entity that mounts this node graph,
+        this node is no-op.
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recover Initiator Entity</span> does not have to have an ability unit.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Ability Unit</span> is a name of "Hitbox Attack" or "Direct Attack" ability unit,
+        this node is no-op.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recover Initiator Entity</span> is left blank,
+        it defaults to the entity that mounts this node graph.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recover Initiator Entity</span> is a stage or a player entity,
+        this node is no-op.
+    </li>
+    <li>
+        A green effect is played on <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Target Entity</span>
+        and displays the effective healing amount in green text
+        if this node successfully runs with more than <code>0</code> recovered HP.
+        <img src="/mw_doc/image/recover_hp_effect.webp" alt="recover hp effect" class="expandable_img" loading="lazy"/>
+        The displayed healing amount is rounded down to an integer
+        (this rounding behavior differs from damage text).
+        If the healing amount gets rounded down to <code>0</code>, it will show <code>1</code> instead.
+    </li>
+    <li>
+        The healing formula is:
+        <pre>
+  healing_adjustment = healing_bonus_of_healer + incoming_healing_bonus_of_target
+  final_healing_amount = recovery_amount * (1 + healing_adjustment)</pre>
+        For example, if <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> is <code>1000</code>,
+        the healing bonus of the healer is 85.9%,
+        and the incoming healing bonus of the target is 52%,
+        the effective healing amount is <code>1000*(1+0.859+0.52) = 2379</code>.
+        Note that healing bonus is a separate stat from incoming healing bonus.
+        Healing bonus is available as unit status effect as "Healing Effect Adjustment Rate",
+        and incoming healing bonus as "Healing Received Adjustment Rate".
+        In classic mode, healing bonus and incoming healing bonus from
+        ascension passives, talents, constellations, weapon passives, and artifact set effects
+        all apply for this node.
+        If the ability unit is configured so that "Ignore Recovery Adjustment" is set to <code>No</code>,
+        then the final healing amount is just simply <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Recovery Amount</span> without any adjustment,
+        ignoring healing bonus and incoming healing bonus.
+        See <a class="outbound_link" href="https://genshin-impact.fandom.com/wiki/Healing">Healing</a> for detail.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~25 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=recover_hp_directly" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Recover HP Directly</a>
+    </li>
+    <li>
+        <a href="?node=when_hp_is_recovered" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When HP Is Recovered</a>
+    </li>
+    <li>
+        <a href="?node=when_initiating_hp_recovery" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Initiating HP Recovery</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/R/recover_hp.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

@@ -1,26 +1,93 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When the Character Is Down</h1>
 <p>
-     When a Character is Downed, the Node Graph on the Character Entity can trigger this event
+    Triggers when a character is downed.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Character Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Character Entity</span> (Entity) - Character entity that was downed.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Reason</span> (Enumeration) - Node Graph caused: the Character was Downed by the Destroy Entity node in the Node GraphNormal Down: the Character was Downed because HP reached 0Abnormal Down: the character was downed due to drowning, falling into an abyss, etc.
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Reason</span> (Enumeration) - One of <code>Node Graph Triggered</code>, <code>Normal Defeat</code>, or <code>Abnormal Defeat</code>
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Knockdown Entity</span> (Entity) - 
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Knockdown Entity</span> (Entity) - If normally defeated, entity that dealt the fatal damage. <code>0</code> otherwise.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Use this node to listen to the event when the character is downed.
+    This can occur in multiple ways:
+</p>
+<ul>
+    <li>
+        HP reaching <code>0</code> from damage (<code>Normal Defeat</code>).
+    </li>
+    <li>
+        Using <a href="?node=hp_loss" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> HP Loss</a> on the character (<code>Node Graph Triggered</code>).
+    </li>
+    <li>
+        Using <a href="?node=destroy_entity" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Destroy Entity</a> on the character (<code>Node Graph Triggered</code>).
+    </li>
+    <li>
+        Using <a href="?node=defeat_all_players_characters" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Defeat All Player's Characters</a> on the character (<code>Node Graph Triggered</code>).
+    </li>
+    <li>
+        Drowning by running out of stamina while swimming (<code>Abnormal Defeat</code>).
+    </li>
+    <li>
+        Falling too far down the stage (<code>Abnormal Defeat</code>).
+    </li>
+</ul>
+<p>
+    This node must be mounted on the character entity.
+    Consider using <a href="?node=when_all_players_characters_are_down" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When All Player's Characters Are Down</a> instead.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, when a character is downed,
+    we decrease the custom variable <code>score</code> of the player by 1.
+    If this downing was caused by another character,
+    we increase the custom variable <code>score</code> of the attacking player by 1.
+    <img src="/mw_doc/image/when_the_character_is_down_example.webp" alt="when the character is down example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        This node is triggered as the death animation begins.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~5 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=when_all_players_characters_are_down" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When All Player's Characters Are Down</a>
+    </li>
+    <li>
+        <a href="?node=when_player_is_abnormally_downed_and_revives" class="node event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Player Is Abnormally Downed and Revives</a>
+    </li>
+    <li>
+        <a href="?node=query_if_all_player_characters_are_down" class="node query"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#query_icon"/></svg> Query If All Player Characters Are Down</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_the_character_is_down.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

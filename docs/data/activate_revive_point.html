@@ -1,23 +1,78 @@
 <h1 class="execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Execution Node"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Activate Revive Point</h1>
 <p>
-     Activate the specified Revive Point ID for the player. When the player later triggers Revive logic, they can revive at this Revive Point
+    Activates a revive point.
 </p>
 
 <h2>Input Parameters</h2>
 <ul>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Active Player
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> (Entity) - Player entity to activate the revive point for.
     </li>
     <li>
-        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Revive Point ID</span> (Integer) - Identifier for this Revive Point
+        <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Revive Point ID</span> (Integer) - ID of the revive point to activate.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    When all characters of a player are down,
+    the player can revive at revive points.
+    Revive points can be configured in stage setting.
+    <img src="/mw_doc/image/revive_point_config.webp" alt="revive point config" class="expandable_img" loading="lazy"/>
+    The list of active revive points for players can be configured
+    in player template details panel.
+    <img src="/mw_doc/image/player_revive_point_config.webp" alt="player revive point config" class="expandable_img" loading="lazy"/>
+    Use this node to activate a revive point for a player.
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we activate the revive point with ID <code>2</code>
+    and deactivate the revive point with ID <code>1</code>
+    for a player that selects the tab.
+    <img src="/mw_doc/image/activate_revive_point_example.webp" alt="activate revive point example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> does not exist,
+        this node raises "Entity does not exist" error.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Player Entity</span> is not a player entity,
+        this node raises "Entity does not exist" error, which is misleading.
+    </li>
+    <li>
+        If <span class="input_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#input_icon"/></svg> Revive Point ID</span> is not an ID of a revive point,
+        this node is no-op.
+    </li>
+    <li>
+        If this node runs while the player is in the revive screen,
+        the revive point is valid for the player's revival from this revive screen.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~1 unit to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=deactivate_revive_point" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Deactivate Revive Point</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/A/activate_revive_point.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>

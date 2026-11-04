@@ -1,29 +1,110 @@
 <h1 class="event"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" title="Event Node"><use x="0" y="0" width="1" height="1" href="#event_icon"/></svg> When Text Bubble Is Completed</h1>
 <p>
-     This event can only be mounted by Text Bubble Components and is received by the Entity's Node Graph that completed the dialogue Completion refers to when the final line of dialogue has finished playing
+    Triggers when text bubble is completed.
 </p>
 
 <h2>Output Values</h2>
 <ul>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Bubble Owner Entity</span> (Entity) - Runtime Entity with the Text Bubble component mounted
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Bubble Owner Entity</span> (Entity) - Entity with a text bubble component.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Character Entity</span> (Entity) - Target Character of the current Bubble dialogue
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Character Entity</span> (Entity) - Character entity that can see the text bubble.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Configuration ID</span> (Config ID) - Currently active Text Bubble Config ID
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Configuration ID</span> (Config ID) - ID of the currently active text bubble.
     </li>
     <li>
-        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span> (Integer) - Number of times the currently active Text Bubble has been fully played for this dialogue Character
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span> (Integer) - Number of times the character have seen this text bubble completed.
     </li>
 </ul>
 
+<h2>Usage</h2>
+<p>
+    Text bubble can be used to show text at an entity.
+    It can be configured in text bubble component,
+    which can be mounted on object, creation, and character entities.
+    <img src="/mw_doc/image/text_bubble_config.webp" alt="text bubble config" class="expandable_img" loading="lazy"/>
+</p>
+<p>
+    Use this node to listen to the event when a text bubble completes.
+    This node must be mounted on the entity that has the text bubble component.
+    It is important that "Send end event?" is set to <code>Yes</code>.
+    If not, this node will not be triggered.
+    <img src="/mw_doc/image/text_bubble_event_config.webp" alt="text bubble event config" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Example</h2>
+<p>
+    In this example, we have a bomb entity configured with text bubble counting down.
+    We destroy the entity after the text bubble is completed.
+    <img src="/mw_doc/image/when_text_bubble_is_completed_example.webp" alt="when text bubble is completed example" class="expandable_img" loading="lazy"/>
+</p>
 
+<h2>Notes</h2>
+<ul>
+    <li>
+        "Send end event?" must be set to <code>Yes</code> on the component to trigger this event.
+    </li>
+    <li>
+        If the text bubble is configured to loop,
+        this node will trigger every time the loop ends.
+    </li>
+    <li>
+        If the text bubble contains multiple texts, 
+        this node only triggers when the last text completes.
+    </li>
+    <li>
+        If the text bubble is switched to other text bubble by <a href="?node=switch_active_text_bubble" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Active Text Bubble</a>
+        (or deactivated by the node),
+        this node does not trigger.
+    </li>
+    <li>
+        If no character is within the visible radius of the entity,
+        this node does not trigger.
+        This radius is centered at the root of the entity,
+        not the attachment point of the text bubble.
+    </li>
+    <li>
+        If there are multiple characters within the visible radius of the entity,
+        this node is triggered once for each character.
+        The value <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span> is tracked separately for each player.
+        Even if a player switches to another character in classic mode,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span> will be the total time seen by the player,
+        not the character.
+    </li>
+    <li>
+        If the text bubble is set to be initially effective,
+        this node reports different <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Configuration ID</span> then expected.
+        This initial text bubble is also considered separate
+        for the purpose of counting <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span>.
+    </li>
+    <li>
+        If the entity is destroyed and created again,
+        <span class="output_var"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#output_icon"/></svg> Text Bubble Completion Count</span> counts are reset.
+    </li>
+</ul>
 
+<h2>Performance</h2>
+<p>
+    This node took ~6 units to run on average.
+</p>
+<span class="small">
+Performance may vary for various reasons.
+These numbers are just for giving a sense of rough magnitude.
+Performance may differ from profiling in a test play when playing a published stage.
+First execution of a node within a node graph execution tends to take a bit longer.
+</span>
 
+<h2>See Also</h2>
+<ul class="ul_no_dot see_also">
+    <li>
+        <a href="?node=switch_active_text_bubble" class="node execution"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><use x="0" y="0" width="1" height="1" href="#execution_icon"/></svg> Switch Active Text Bubble</a>
+    </li>
+</ul>
 
 <h2>Credits</h2>
-    <p>Last updated: 2026-02-22 (Luna IV)</p>
+    <p>Written by: kokokokomi222</p>
+    <p>Last updated: 2026-11-04 (v7.2)</p>
+    <p><a class="outbound_link" href="https://github.com/kokokokomi222/mw_doc/commits/master/build/doc_written/W/when_text_bubble_is_completed.md">See Edit History</a></p>
     <p>Got improvement to this doc? <a class="outbound_link" href="https://forms.gle/SEe61aTg6L3Am65B9">Please submit it here.</a></p>
