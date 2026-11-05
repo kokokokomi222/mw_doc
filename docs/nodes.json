@@ -290,7 +290,7 @@
         },
         {
             "slug": "hp_loss",
-            "name": "HP Loss",
+            "name": "Lose HP",
             "type": "execution",
             "stub": false
         },
