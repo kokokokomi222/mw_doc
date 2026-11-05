@@ -346,7 +346,7 @@
     },
     "activate_disable_extra_collision_climbability": {
         "written": true,
-        "checksum": 2154850266,
+        "checksum": 4186134048,
         "date": "2026-11-04"
     },
     "activate_disable_follow_motion_device": {
@@ -461,7 +461,7 @@
     },
     "allow_forbid_player_to_revive": {
         "written": true,
-        "checksum": 580984626,
+        "checksum": 2040667530,
         "date": "2026-11-04"
     },
     "arccosine_function": {
@@ -936,12 +936,12 @@
     },
     "get_player_guid_by_player_id": {
         "written": true,
-        "checksum": 4276998502,
+        "checksum": 3010243354,
         "date": "2026-11-04"
     },
     "get_player_id_by_player_guid": {
         "written": true,
-        "checksum": 3782473747,
+        "checksum": 1351096004,
         "date": "2026-11-04"
     },
     "get_player_nickname": {

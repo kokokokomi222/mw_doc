@@ -1,5 +1,5 @@
 # Summary
-Sets the climability of an extra collision.
+Sets the climbability of an extra collision.
 
 # Input Parameters
 * [input:Target_Entity] (Entity) - Active Entity

@@ -9,7 +9,8 @@ Gets the player GUID from player ID.
 
 # Usage
 Use this node to get the player GUID from player ID.
-Player ID is the slot.
+ID of a player is the slot they occupied in the room.
+[image:room_slots]
 
 # Example
 In this example, we show a UI control for player 1 when the tab is selected.
